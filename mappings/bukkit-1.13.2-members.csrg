@@ -23,7 +23,13 @@ AttributeInstance a (D)V setValue
 AttributeInstance e ()D getValue
 AttributeMapServer b ()Ljava/util/Set; getAttributes
 AttributeRanged b maximum
+AxisAlignedBB a minX
+AxisAlignedBB b minY
 AxisAlignedBB c (DDD)LAxisAlignedBB; grow
+AxisAlignedBB c minZ
+AxisAlignedBB d maxX
+AxisAlignedBB e maxY
+AxisAlignedBB f maxZ
 AxisAlignedBB h (D)LAxisAlignedBB; shrink
 BaseBlockPosition e ZERO
 BaseBlockPosition f (DDD)D distanceSquared
@@ -58,6 +64,79 @@ BiomeBase$Geography q NETHER
 BiomeBase$Precipitation a NONE
 BiomeBase$Precipitation b RAIN
 BiomeBase$Precipitation c SNOW
+Biomes A STONE_SHORE
+Biomes B SNOWY_BEACH
+Biomes C BIRCH_FOREST
+Biomes D BIRCH_FOREST_HILLS
+Biomes E DARK_FOREST
+Biomes F SNOWY_TAIGA
+Biomes G SNOWY_TAIGA_HILLS
+Biomes H GIANT_TREE_TAIGA
+Biomes I GIANT_TREE_TAIGA_HILLS
+Biomes J WOODED_MOUNTAINS
+Biomes K SAVANNA
+Biomes L SAVANNA_PLATEAU
+Biomes M BADLANDS
+Biomes N WOODED_BADLANDS_PLATEAU
+Biomes O BADLANDS_PLATEAU
+Biomes P SMALL_END_ISLANDS
+Biomes Q END_MIDLANDS
+Biomes R END_HIGHLANDS
+Biomes S END_BARRENS
+Biomes T WARM_OCEAN
+Biomes U LUKEWARM_OCEAN
+Biomes V COLD_OCEAN
+Biomes W DEEP_WARM_OCEAN
+Biomes X DEEP_LUKEWARM_OCEAN
+Biomes Y DEEP_COLD_OCEAN
+Biomes Z DEEP_FROZEN_OCEAN
+Biomes a OCEAN
+Biomes aa THE_VOID
+Biomes ab SUNFLOWER_PLAINS
+Biomes ac DESERT_LAKES
+Biomes ad GRAVELLY_MOUNTAINS
+Biomes ae FLOWER_FOREST
+Biomes af TAIGA_MOUNTAINS
+Biomes ag SWAMP_HILLS
+Biomes ah ICE_SPIKES
+Biomes ai MODIFIED_JUNGLE
+Biomes aj MODIFIED_JUNGLE_EDGE
+Biomes ak TALL_BIRCH_FOREST
+Biomes al TALL_BIRCH_HILLS
+Biomes am DARK_FOREST_HILLS
+Biomes an SNOWY_TAIGA_MOUNTAINS
+Biomes ao GIANT_SPRUCE_TAIGA
+Biomes ap GIANT_SPRUCE_TAIGA_HILLS
+Biomes aq MODIFIED_GRAVELLY_MOUNTAINS
+Biomes ar SHATTERED_SAVANNA
+Biomes as SHATTERED_SAVANNA_PLATEAU
+Biomes at ERODED_BADLANDS
+Biomes au MODIFIED_WOODED_BADLANDS_PLATEAU
+Biomes av MODIFIED_BADLANDS_PLATEAU
+Biomes c PLAINS
+Biomes d DESERT
+Biomes e MOUNTAINS
+Biomes f FOREST
+Biomes g TAIGA
+Biomes h SWAMP
+Biomes i RIVER
+Biomes j NETHER
+Biomes k THE_END
+Biomes l FROZEN_OCEAN
+Biomes m FROZEN_RIVER
+Biomes n SNOWY_TUNDRA
+Biomes o SNOWY_MOUNTAINS
+Biomes p MUSHROOM_FIELDS
+Biomes q MUSHROOM_FIELD_SHORE
+Biomes r BEACH
+Biomes s DESERT_HILLS
+Biomes t WOODED_HILLS
+Biomes u TAIGA_HILLS
+Biomes v MOUNTAIN_EDGE
+Biomes w JUNGLE
+Biomes x JUNGLE_HILLS
+Biomes y JUNGLE_EDGE
+Biomes z DEEP_OCEAN
 Block a (I)LIBlockData; getByCombinedId
 Block a (LBlockActionContext;)LIBlockData; getPlacedState
 Block a (LIBlockData;ILWorld;LBlockPosition;Ljava/util/Random;)I getDropCount
@@ -1353,6 +1432,7 @@ Entity bD ()LAxisAlignedBB; getBoundingBox
 Entity bF ()F getHeadHeight
 Entity bH ()LBlockPosition; getChunkCoordinates
 Entity bJ ()LWorld; getWorld
+Entity bQ ()Ljava/util/Collection; getAllPassengers
 Entity bS ()LEntity; getRootVehicle
 Entity bU ()LEntity; getVehicle
 Entity bW ()I getMaxFireTicks
@@ -1389,6 +1469,7 @@ Entity m (LEntity;)Z startRiding
 Entity m (Z)V setCustomNameVisible
 Entity m world
 Entity n lastX
+Entity o (LEntity;)V addPassenger
 Entity o lastY
 Entity p (LEntity;)V removePassenger
 Entity p lastZ
@@ -1411,6 +1492,7 @@ EntityAnimal H ()Z isTypeNotPersistent
 EntityAnimal a (LDamageSource;F)Z damageEntity
 EntityAnimal a (LEntityAnimal;)Z mate
 EntityAnimal b (LEntityHuman;)I getExpValue
+EntityAnimal bD breedCause
 EntityAnimal dE ()LEntityPlayer; getBreedCause
 EntityAnimal dF ()Z isInLove
 EntityAnimal dG ()V resetLove
@@ -1542,8 +1624,8 @@ EntityFireball d dirZ
 EntityFireworks a FIREWORK_ITEM
 EntityFireworks c ticksFlown
 EntityFireworks d expectedLifespan
-EntityFish dD ()Z isFromBucket
-EntityFish s (Z)V setFromBucket
+EntityFish a (Z)V setFromBucket
+EntityFish dA ()Z isFromBucket
 EntityFishingHook a hooked
 EntityFishingHook c isInGround
 EntityFishingHook e owner
@@ -1590,7 +1672,9 @@ EntityHuman a (LITileEntityContainer;)V openTileEntity
 EntityHuman a (LItemStack;I)V enchantDone
 EntityHuman a (LItemStack;Z)LEntityItem; drop
 EntityHuman a (LTileEntitySign;)V openSign
+EntityHuman a (Ljava/util/Collection;)I discoverRecipes
 EntityHuman b (LBlockPosition;Z)V setRespawnPosition
+EntityHuman b (Ljava/util/Collection;)I undiscoverRecipes
 EntityHuman bB inventory
 EntityHuman bC enderChest
 EntityHuman bD defaultContainer
@@ -1704,6 +1788,7 @@ EntityLiving D (LEntity;)Z hasLineOfSight
 EntityLiving a (LDamageSource;)V die
 EntityLiving a (LDamageSource;F)Z damageEntity
 EntityLiving a (LEntity;I)V receive
+EntityLiving a (LEntityLiving;)V setLastDamager
 EntityLiving a (LEnumItemSlot;LItemStack;)V setSlot
 EntityLiving a (LIAttribute;)LAttributeInstance; getAttributeInstance
 EntityLiving a (LMobEffectList;)Z hasEffect
@@ -1854,7 +1939,7 @@ EntityProjectile g blockZ
 EntityProjectile h shooterId
 EntityProjectile i ()LEntityLiving; getShooter
 EntityPufferFish b (I)V setPuffState
-EntityPufferFish dD ()I getPuffState
+EntityPufferFish dA ()I getPuffState
 EntityRabbit dA ()I getRabbitType
 EntityRabbit p (I)V setRabbitType
 EntitySheep b (LEnumColor;)V setColor
@@ -1916,7 +2001,7 @@ EntityTrackerEntry l xRot
 EntityTrackerEntry m headYaw
 EntityTrackerEntry t isMoving
 EntityTrackerEntry z trackedPlayers
-EntityTropicalFish dD ()I getVariant
+EntityTropicalFish dH ()I getVariant
 EntityTropicalFish r (I)V setVariant
 EntityTropicalFish$Variant a KOB
 EntityTropicalFish$Variant b SUNSTREAK
@@ -2032,6 +2117,7 @@ EntityVillager bI tradingPlayer
 EntityVillager bJ trades
 EntityVillager bN riches
 EntityVillager bP careerId
+EntityVillager bQ careerLevel
 EntityVillager bT inventory
 EntityVillager d (I)V setProfession
 EntityVillager dK ()V populateTrades
@@ -2229,6 +2315,7 @@ EnumItemRarity d EPIC
 EnumItemSlot a MAINHAND
 EnumItemSlot b OFFHAND
 EnumItemSlot c FEET
+EnumItemSlot d ()Ljava/lang/String; getSlotName
 EnumItemSlot d LEGS
 EnumItemSlot e CHEST
 EnumItemSlot f HEAD
@@ -2375,6 +2462,7 @@ IBlockData a (LWorld;LBlockPosition;LIBlockData;Z)V remove
 IBlockData c ()LBlock; getBlock
 IBlockData d ()LMaterial; getMaterial
 IBlockData f ()Z isAir
+IBlockData h (LIBlockAccess;LBlockPosition;)LVoxelShape; getCollisionShape
 IBlockData l ()Z isOccluding
 IBlockData m ()Z isPowerSource
 IBlockData n ()Z isComplexRedstone
@@ -2386,6 +2474,7 @@ IChatBaseComponent a (LIChatBaseComponent;)LIChatBaseComponent; addSibling
 IChatBaseComponent b ()LChatModifier; getChatModifier
 IChatBaseComponent d ()Ljava/lang/String; getText
 IChunkAccess a (J)V setLastSaved
+IChunkAccess a (LBlockPosition;LIBlockData;Z)LIBlockData; setType
 IChunkAccess c ()[LChunkSection; getSections
 IChunkAccess d ()LChunkCoordIntPair; getPos
 IChunkAccess g ()[LBiomeBase; getBiomeIndex
@@ -2615,6 +2704,8 @@ ItemStack v ()Z canEnchant
 ItemStack w ()Z hasEnchantments
 ItemStack z ()I getRepairCost
 ItemWorldMap a (LItemStack;LWorld;)LWorldMap; getSavedMap
+ItemWorldMap a (LWorld;IIBZZ)LItemStack; createFilledMapView
+ItemWorldMap a (LWorld;LItemStack;)V applySepiaFilter
 Items A DIAMOND_PICKAXE
 Items B DIAMOND_AXE
 Items C STICK
@@ -3423,6 +3514,7 @@ PlayerList b (LEntityPlayer;)V savePlayerFile
 PlayerList b (Lcom/mojang/authlib/GameProfile;)V removeOp
 PlayerList c ()Lnet/minecraft/server/MinecraftServer; getServer
 PlayerList c (LEntityPlayer;)V onPlayerJoin
+PlayerList d (LEntityPlayer;)V updateChunks
 PlayerList e ()V tick
 PlayerList e (LEntityPlayer;)V disconnect
 PlayerList e (Lcom/mojang/authlib/GameProfile;)Z isWhitelisted
@@ -4455,6 +4547,7 @@ TileEntityCommand c ()LCommandBlockListenerAbstract; getCommandBlock
 TileEntityCommand$Type a SEQUENCE
 TileEntityCommand$Type b AUTO
 TileEntityCommand$Type c REDSTONE
+TileEntityConduit j target
 TileEntityDispenser a (LItemStack;)I addItem
 TileEntityDispenser e items
 TileEntityDispenser l ()Ljava/lang/String; getContainerName
@@ -4550,6 +4643,7 @@ Vector3f b y
 Vector3f c ()F getY
 Vector3f c z
 Vector3f d ()F getZ
+VoxelShape b ()Z isEmpty
 WeightedRandomEnchant b enchantment
 WeightedRandomEnchant c level
 WhiteList a (Lcom/mojang/authlib/GameProfile;)Z isWhitelisted
@@ -4584,6 +4678,7 @@ World a (LVec3D;LVec3D;LFluidCollisionOption;ZZ)LMovingObjectPosition; rayTrace
 World a (Ljava/util/function/BooleanSupplier;)V doTick
 World a (ZZ)V setSpawnFlags
 World aa ()I getHeight
+World b (IIZ)Z setForceLoaded
 World b (ILBlockPosition;I)V triggerEffect
 World b (J)V setDayTime
 World b (LBlockPosition;LBlock;)V applyPhysics
@@ -4594,6 +4689,7 @@ World c (LBlockPosition;LEnumDirection;)I getBlockFacePower
 World d (LEntity;)Z strikeLightning
 World d tileEntityListUnload
 World e (LEntity;)V kill
+World f (II)Z isForceLoaded
 World f (LEntity;)V removeEntity
 World f entityList
 World g (LBlockPosition;)Z setAir
@@ -4658,6 +4754,7 @@ WorldData t ()LWorldType; getType
 WorldData u levelName
 WorldData x ()LEnumDifficulty; getDifficulty
 WorldData y ()Z isDifficultyLocked
+WorldGenFactory b structureStartMap
 WorldGenFeatureOceanRuin$Temperature a WARM
 WorldGenFeatureOceanRuin$Temperature b COLD
 WorldGenMineshaft$Type a NORMAL
@@ -4683,6 +4780,7 @@ WorldGenVillagePieces$Material d SPRUCE
 WorldGenerator a (LGeneratorAccess;LChunkGenerator;Ljava/util/Random;LBlockPosition;LWorldGenFeatureConfiguration;)Z generate
 WorldManager b world
 WorldMap a (II)V flagDirty
+WorldMap a (LItemStack;LBlockPosition;Ljava/lang/String;LMapIcon$Type;)V decorateMap
 WorldMap a centerX
 WorldMap b centerZ
 WorldMap c map
@@ -4699,6 +4797,8 @@ WorldNBTStorage e sessionId
 WorldProvider f ()Z isNether
 WorldProvider j ()LWorldBorder; getWorldBorder
 WorldProvider n ()LChunkGenerator; getChunkGenerator
+WorldProvider o ()Z isOverworld
+WorldProvider p ()Z canRespawn
 WorldProvider q ()LDimensionManager; getDimensionManager
 WorldServer A ()LEntityTracker; getTracker
 WorldServer B ()LPlayerChunkMap; getPlayerChunkMap

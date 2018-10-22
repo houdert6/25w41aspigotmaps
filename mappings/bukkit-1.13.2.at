@@ -39,6 +39,7 @@ public net/minecraft/server/Chunk/heightMap
 public net/minecraft/server/Chunk/tileEntities
 public net/minecraft/server/Chunk/world
 public net/minecraft/server/ChunkProviderServer/chunkGenerator
+public net/minecraft/server/ChunkProviderServer/chunkLoader
 public net/minecraft/server/ChunkProviderServer/chunks
 public net/minecraft/server/ChunkProviderServer/saveChunk(Lnet/minecraft/server/IChunkAccess;)V
 public net/minecraft/server/ChunkProviderServer/unloadQueue
@@ -61,6 +62,7 @@ public net/minecraft/server/Entity/glowing
 public net/minecraft/server/Entity/inWater
 public net/minecraft/server/Entity/passengers
 public net/minecraft/server/Entity/setFlag(IZ)V
+public net/minecraft/server/EntityAnimal/breedCause
 public net/minecraft/server/EntityAreaEffectCloud/durationOnUse
 public net/minecraft/server/EntityAreaEffectCloud/radiusOnUse
 public net/minecraft/server/EntityAreaEffectCloud/radiusPerTick
@@ -113,6 +115,7 @@ public net/minecraft/server/EntityInsentient/lootTableKey
 public net/minecraft/server/EntityInsentient/lootTableSeed
 public net/minecraft/server/EntityInsentient/persistent
 public net/minecraft/server/EntityItem/pickupDelay
+public net/minecraft/server/EntityItemFrame/setItem(Lnet/minecraft/server/ItemStack;Z)V
 public net/minecraft/server/EntityLiving/HEALTH
 public net/minecraft/server/EntityLiving/effects
 public net/minecraft/server/EntityLiving/hurtTimestamp
@@ -141,6 +144,7 @@ public net/minecraft/server/EntityTippedArrow/setColor(I)V
 public net/minecraft/server/EntityTracker/trackedEntities
 public net/minecraft/server/EntityTrackerEntry/trackedPlayers
 public net/minecraft/server/EntityVillager/careerId
+public net/minecraft/server/EntityVillager/careerLevel
 public net/minecraft/server/EntityVillager/inventory
 public net/minecraft/server/EntityVillager/populateTrades()V
 public net/minecraft/server/EntityVillager/riches
@@ -228,6 +232,7 @@ public net/minecraft/server/World/allowAnimals
 public net/minecraft/server/World/allowMonsters
 public net/minecraft/server/World/worldData
 public net/minecraft/server/World/worldMaps
+public net/minecraft/server/WorldGenFactory/structureStartMap
 
 public-final net/minecraft/server/ContainerEnchantTable/world
 public-final net/minecraft/server/CraftingManager/recipes
@@ -243,5 +248,5 @@ private+synchronized net/minecraft/server/RegionFile/getOffset(II)I
 public-final net/minecraft/server/World/worldProvider
 public-final net/minecraft/server/WorldServer/tracker
 
-public-final com/mojang/brigadier/suggestion/SuggestionsBuilder/start
 public-final com/mojang/brigadier/suggestion/SuggestionsBuilder/remaining
+public-final com/mojang/brigadier/suggestion/SuggestionsBuilder/start
