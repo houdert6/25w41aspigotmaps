@@ -54,6 +54,7 @@ public net/minecraft/server/DataConverterSpawnEgg/ID_MAPPING
 public net/minecraft/server/DedicatedServer/propertyManager
 public net/minecraft/server/DedicatedServer/remoteControlCommandListener
 public net/minecraft/server/DimensionManager/<init>(ILjava/lang/String;Ljava/lang/String;Ljava/util/function/Supplier;)V
+public net/minecraft/server/EnderDragonBattle/bossBattle
 public net/minecraft/server/Entity/fireTicks
 public net/minecraft/server/Entity/getFlag(I)Z
 public net/minecraft/server/Entity/getMaxFireTicks()I
@@ -139,6 +140,7 @@ public net/minecraft/server/EntityProjectile/shooterId
 public net/minecraft/server/EntityShulker/COLOR
 public net/minecraft/server/EntitySlime/setSize(IZ)V
 public net/minecraft/server/EntitySpectralArrow/duration
+public net/minecraft/server/EntityThrownTrident/trident
 public net/minecraft/server/EntityTippedArrow/effects
 public net/minecraft/server/EntityTippedArrow/setColor(I)V
 public net/minecraft/server/EntityTracker/trackedEntities
@@ -149,6 +151,7 @@ public net/minecraft/server/EntityVillager/inventory
 public net/minecraft/server/EntityVillager/populateTrades()V
 public net/minecraft/server/EntityVillager/riches
 public net/minecraft/server/EntityVillager/trades
+public net/minecraft/server/EntityWither/bossBattle
 public net/minecraft/server/EnumChatFormat/character
 public net/minecraft/server/Explosion/source
 public net/minecraft/server/FoodMetaData/exhaustionLevel
@@ -185,12 +188,15 @@ public net/minecraft/server/MobSpawnerAbstract/requiredPlayerRange
 public net/minecraft/server/MobSpawnerAbstract/spawnCount
 public net/minecraft/server/MobSpawnerAbstract/spawnDelay
 public net/minecraft/server/MobSpawnerAbstract/spawnRange
+public net/minecraft/server/MojangsonParser/parseArray()Lnet/minecraft/server/NBTBase;
+public net/minecraft/server/MojangsonParser/parseLiteral(Ljava/lang/String;)Lnet/minecraft/server/NBTBase;
 public net/minecraft/server/NetworkManager/channel
 public net/minecraft/server/PacketHandshakingInSetProtocol/hostname
 public net/minecraft/server/PacketHandshakingInSetProtocol/port
 public net/minecraft/server/PacketPlayInCustomPayload/data
 public net/minecraft/server/PacketPlayInCustomPayload/tag
 public net/minecraft/server/PacketPlayInResourcePackStatus/status
+public net/minecraft/server/PacketPlayInSettings/viewDistance
 public net/minecraft/server/PacketPlayOutBlockChange/block
 public net/minecraft/server/PacketPlayOutPlayerListHeaderFooter/footer
 public net/minecraft/server/PacketPlayOutPlayerListHeaderFooter/header
@@ -213,6 +219,7 @@ public net/minecraft/server/TileEntityBeacon/levels
 public net/minecraft/server/TileEntityBeacon/primaryEffect
 public net/minecraft/server/TileEntityBeacon/secondaryEffect
 public net/minecraft/server/TileEntityBed/color
+public net/minecraft/server/TileEntityEndGateway/age
 public net/minecraft/server/TileEntityEndGateway/exactTeleport
 public net/minecraft/server/TileEntityEndGateway/exitPortal
 public net/minecraft/server/TileEntitySign/isEditable

@@ -150,6 +150,7 @@ Block a (LIBlockData;LWorld;LBlockPosition;LEntityHuman;)V attack
 Block a (LIBlockData;LWorld;LBlockPosition;LEntityHuman;LEnumHand;LEnumDirection;FFF)Z interact
 Block a (LIBlockData;LWorld;LBlockPosition;LIBlockData;)V onPlace
 Block a (LIBlockData;LWorld;LBlockPosition;LIBlockData;Z)V remove
+Block a (LIBlockData;LWorld;LBlockPosition;LVec3D;LVec3D;)LMovingObjectPosition; rayTrace
 Block a (LItem;)LBlock; asBlock
 Block a (LWorld;LBlockPosition;I)V dropExperience
 Block a (LWorld;LBlockPosition;LEntity;)V stepOn
@@ -159,6 +160,7 @@ Block a (LWorld;LBlockPosition;LIBlockData;LEntityLiving;LItemStack;)V postPlace
 Block b (LGeneratorAccess;LBlockPosition;LIBlockData;)V postBreak
 Block b frictionFactor
 Block c blockData
+Block d (LIBlockData;)Z isCollidable
 Block e REGISTRY_ID
 Block g strength
 Block h durability
@@ -1001,6 +1003,9 @@ BossBattle a title
 BossBattle c color
 BossBattle d style
 BossBattle k ()F getProgress
+BossBattle n ()Z isDarkenSky
+BossBattle o ()Z isPlayMusic
+BossBattle p ()Z isCreateFog
 BossBattle$BarColor a PINK
 BossBattle$BarColor b BLUE
 BossBattle$BarColor c RED
@@ -1013,6 +1018,10 @@ BossBattle$BarStyle b NOTCHED_6
 BossBattle$BarStyle c NOTCHED_10
 BossBattle$BarStyle d NOTCHED_12
 BossBattle$BarStyle e NOTCHED_20
+BossBattleCustom a ()LMinecraftKey; getKey
+BossBattleCustomData a (LBossBattleCustom;)V remove
+BossBattleCustomData a (LMinecraftKey;LIChatBaseComponent;)LBossBattleCustom; register
+BossBattleCustomData b ()Ljava/util/Collection; getBattles
 BossBattleServer a (F)V setProgress
 BossBattleServer a (LEntityPlayer;)V addPlayer
 BossBattleServer a (LPacketPlayOutBoss$Action;)V sendUpdate
@@ -1266,6 +1275,7 @@ DamageSource u DRYOUT
 DamageSource v translationIndex
 DataConverterMaterialId a ID_MAPPING
 DataConverterSpawnEgg a ID_MAPPING
+DataConverterTypes b PLAYER
 DataConverterTypes k ITEM_STACK
 DataConverterTypes o ENTITY
 DataPaletteBlock a (IIILjava/lang/Object;)V setBlock
@@ -1349,6 +1359,7 @@ Enchantments w ARROW_DAMAGE
 Enchantments x ARROW_KNOCKBACK
 Enchantments y ARROW_FIRE
 Enchantments z ARROW_INFINITE
+EnderDragonBattle c bossBattle
 EnderDragonBattle$LoadState a UNKNOWN
 EnderDragonBattle$LoadState b NOT_LOADED
 EnderDragonBattle$LoadState c LOADED
@@ -1595,6 +1606,7 @@ EntityEnderDragon a PHASE
 EntityEnderDragon bC children
 EntityEnderDragon bP currentEnderCrystal
 EntityEnderDragon dr ()LDragonControllerManager; getDragonControllerManager
+EntityEnderDragon ds ()LEnderDragonBattle; getEnderDragonBattle
 EntityEnderDragon e (LDamageSource;F)Z dealDamage
 EntityEnderSignal a targetX
 EntityEnderSignal b targetY
@@ -1972,6 +1984,7 @@ EntityTameableAnimal dC ()LPathfinderGoalSit; getGoalSit
 EntityTameableAnimal dy ()Z isTamed
 EntityTameableAnimal t (Z)V setTamed
 EntityTameableAnimal u (Z)V setSitting
+EntityThrownTrident aw trident
 EntityTippedArrow aw effects
 EntityTippedArrow ax hasColor
 EntityTippedArrow c (I)V setColor
@@ -2123,6 +2136,7 @@ EntityVillager d (I)V setProfession
 EntityVillager dK ()V populateTrades
 EntityVillager dy ()I getProfession
 EntityVillager dz ()Z isInLove
+EntityWither bL bossBattle
 EntityWitherSkull a (Z)V setCharged
 EntityWitherSkull l ()Z isCharged
 EntityWolf a (LEnumColor;)V setCollarColor
@@ -2131,6 +2145,8 @@ EntityWolf dJ ()Z isAngry
 EntityWolf dK ()LEnumColor; getCollarColor
 EntityWolf v (Z)V setAngry
 EntityZombie a (LDamageSource;F)Z damageEntity
+EntityZombie bJ drownedConversionTime
+EntityZombie dG ()Z isDrownConverting
 EntityZombie u (Z)V setBaby
 EntityZombieVillager a (I)V setProfession
 EntityZombieVillager bC conversionTime
@@ -2370,9 +2386,11 @@ Explosion g posZ
 Explosion h source
 Explosion i size
 Explosion k blocks
+Fluid f ()F getHeight
 FluidCollisionOption a NEVER
 FluidCollisionOption b SOURCE_ONLY
 FluidCollisionOption c ALWAYS
+FluidCollisionOption d predicate
 FluidTypeFlowing a FALLING
 FluidTypeFlowing b LEVEL
 FoodMetaData a ()I getFoodLevel
@@ -2449,6 +2467,7 @@ IAsyncTaskHandler av ()Z isMainThread
 IAttribute a ()Ljava/lang/String; getName
 IAttribute b ()D getDefault
 IBlockAccess a_ (LBlockPosition;)LIBlockData; getType
+IBlockAccess b (LBlockPosition;)LFluid; getFluid
 IBlockAccess f (LBlockPosition;)LTileEntity; getTileEntity
 IBlockData a (LEntityHuman;LIBlockAccess;LBlockPosition;)F getDamage
 IBlockData a (LEnumDirection;LIBlockData;LGeneratorAccess;LBlockPosition;LBlockPosition;)LIBlockData; updateState
@@ -3217,6 +3236,9 @@ MobSpawnerAbstract k maxNearbyEntities
 MobSpawnerAbstract l requiredPlayerRange
 MobSpawnerAbstract m spawnRange
 MojangsonParser a (Ljava/lang/String;)LNBTTagCompound; parse
+MojangsonParser b (Ljava/lang/String;)LNBTBase; parseLiteral
+MojangsonParser h ()LNBTBase; parseArray
+MovingObjectPosition a ()LBlockPosition; getBlockPosition
 MovingObjectPosition a type
 MovingObjectPosition b direction
 MovingObjectPosition c pos
@@ -3229,10 +3251,16 @@ NBTBase a (B)LNBTBase; createTag
 NBTBase a (Ljava/io/DataInput;ILNBTReadLimiter;)V load
 NBTBase a (Ljava/io/DataOutput;)V write
 NBTBase b ()LNBTBase; clone
+NBTBase b_ ()Ljava/lang/String; asString
 NBTBase isEmpty ()Z isEmpty
 NBTList b (ILNBTBase;)LNBTBase; set
 NBTList d (I)LNBTBase; get
+NBTNumber d ()J asLong
+NBTNumber e ()I asInt
+NBTNumber f ()S asShort
+NBTNumber g ()B asByte
 NBTNumber h ()D asDouble
+NBTNumber i ()F asFloat
 NBTTagByte f data
 NBTTagByteArray f data
 NBTTagCompound a (Ljava/lang/String;B)V setByte
@@ -3337,6 +3365,7 @@ PacketPlayInResourcePackStatus$EnumResourcePackStatus c FAILED_DOWNLOAD
 PacketPlayInResourcePackStatus$EnumResourcePackStatus d ACCEPTED
 PacketPlayInSetCreativeSlot a slot
 PacketPlayInSetCreativeSlot c ()LItemStack; getItemStack
+PacketPlayInSettings b viewDistance
 PacketPlayInSettings g ()LEnumMainHand; getMainHand
 PacketPlayInUseEntity b action
 PacketPlayInUseEntity$EnumEntityUseAction a INTERACT
@@ -3418,6 +3447,7 @@ PathfinderGoalBoat b GO_IN_BOAT_DIRECTION
 PathfinderGoalBreed a animal
 PathfinderGoalBreed c partner
 PathfinderGoalRandomStroll b (I)V setTimeBetweenMovement
+PathfinderGoalRemoveBlock g entity
 PathfinderGoalSelector a ()V doTick
 PathfinderGoalSit a (Z)V setSitting
 PathfinderGoalSit a entity
@@ -3604,10 +3634,12 @@ Scoreboard i (Ljava/lang/String;)LScoreboardTeam; getPlayerTeam
 Scoreboard j (LScoreboardObjective;)V unregisterObjective
 Scoreboard j (Ljava/lang/String;)I getSlotForName
 ScoreboardObjective a (LIChatBaseComponent;)V setDisplayName
+ScoreboardObjective a (LIScoreboardCriteria$EnumScoreboardHealthDisplay;)V setRenderType
 ScoreboardObjective b ()Ljava/lang/String; getName
 ScoreboardObjective c ()LIScoreboardCriteria; getCriteria
 ScoreboardObjective d ()LIChatBaseComponent; getDisplayName
 ScoreboardObjective d displayName
+ScoreboardObjective f ()LIScoreboardCriteria$EnumScoreboardHealthDisplay; getRenderType
 ScoreboardScore a ()V incrementScore
 ScoreboardScore a (I)V addScore
 ScoreboardScore b ()I getScore
@@ -4552,6 +4584,7 @@ TileEntityDispenser a (LItemStack;)I addItem
 TileEntityDispenser e items
 TileEntityDispenser l ()Ljava/lang/String; getContainerName
 TileEntityEnchantTable a (LIChatBaseComponent;)V setCustomName
+TileEntityEndGateway e age
 TileEntityEndGateway g exitPortal
 TileEntityEndGateway h exactTeleport
 TileEntityFurnace a (LIChatBaseComponent;)V setCustomName
@@ -4643,7 +4676,9 @@ Vector3f b y
 Vector3f c ()F getY
 Vector3f c z
 Vector3f d ()F getZ
+VoxelShape a (LVec3D;LVec3D;LBlockPosition;)LMovingObjectPosition; rayTrace
 VoxelShape b ()Z isEmpty
+VoxelShapes a (DDDDDD)LVoxelShape; create
 WeightedRandomEnchant b enchantment
 WeightedRandomEnchant c level
 WhiteList a (Lcom/mojang/authlib/GameProfile;)Z isWhitelisted
@@ -4875,6 +4910,7 @@ net/minecraft/server/MinecraftServer aL ()LTagRegistry; getTagRegistry
 net/minecraft/server/MinecraftServer aM ()LScoreboardServer; getScoreboard
 net/minecraft/server/MinecraftServer aN ()LLootTableRegistry; getLootTableRegistry
 net/minecraft/server/MinecraftServer aO ()LGameRules; getGameRules
+net/minecraft/server/MinecraftServer aP ()LBossBattleCustomData; getBossBattleCustomData
 net/minecraft/server/MinecraftServer aS ()Lorg/apache/logging/log4j/Logger; getLogger
 net/minecraft/server/MinecraftServer a_ (Ljava/lang/String;Ljava/lang/String;)V setResourcePack
 net/minecraft/server/MinecraftServer aa ()I getMaxBuildHeight
