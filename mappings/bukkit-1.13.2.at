@@ -191,6 +191,7 @@ public net/minecraft/server/MobSpawnerAbstract/spawnRange
 public net/minecraft/server/MojangsonParser/parseArray()Lnet/minecraft/server/NBTBase;
 public net/minecraft/server/MojangsonParser/parseLiteral(Ljava/lang/String;)Lnet/minecraft/server/NBTBase;
 public net/minecraft/server/NetworkManager/channel
+public net/minecraft/server/NetworkManager/socketAddress
 public net/minecraft/server/PacketHandshakingInSetProtocol/hostname
 public net/minecraft/server/PacketHandshakingInSetProtocol/port
 public net/minecraft/server/PacketPlayInCustomPayload/data
@@ -201,8 +202,11 @@ public net/minecraft/server/PacketPlayOutBlockChange/block
 public net/minecraft/server/PacketPlayOutPlayerListHeaderFooter/footer
 public net/minecraft/server/PacketPlayOutPlayerListHeaderFooter/header
 public net/minecraft/server/PacketPlayOutSpawnPosition/position
+public net/minecraft/server/PersistentCollection/worldMap
 public net/minecraft/server/PlayerAbilities/flySpeed
 public net/minecraft/server/PlayerAbilities/walkSpeed
+public net/minecraft/server/PlayerChunk/chunk
+public net/minecraft/server/PlayerChunk/players
 public net/minecraft/server/PlayerList/playerFileData
 public net/minecraft/server/PlayerList/players
 public net/minecraft/server/PlayerList/sendScoreboard(Lnet/minecraft/server/ScoreboardServer;Lnet/minecraft/server/EntityPlayer;)V
@@ -211,6 +215,7 @@ public net/minecraft/server/RecipeItemStack$StackProvider/<init>(Lnet/minecraft/
 public net/minecraft/server/RecipeItemStack/<init>(Ljava/util/stream/Stream;)V
 public net/minecraft/server/RecipeItemStack/buildChoices()V
 public net/minecraft/server/RecipeItemStack/choices
+public net/minecraft/server/RegionFileCache/cache
 public net/minecraft/server/ScoreboardObjective/displayName
 public net/minecraft/server/Slot/index
 public net/minecraft/server/TileEntityBanner/color
@@ -240,6 +245,8 @@ public net/minecraft/server/World/allowMonsters
 public net/minecraft/server/World/worldData
 public net/minecraft/server/World/worldMaps
 public net/minecraft/server/WorldGenFactory/structureStartMap
+public net/minecraft/server/WorldMap/humans
+public net/minecraft/server/WorldPersistentData/data
 
 public-final net/minecraft/server/ContainerEnchantTable/world
 public-final net/minecraft/server/CraftingManager/recipes
