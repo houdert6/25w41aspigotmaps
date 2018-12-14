@@ -6,7 +6,6 @@
 	"classMappings": "bukkit-1.13.2-cl.csrg",
 	"memberMappings": "bukkit-1.13.2-members.csrg",
 	"packageMappings": "package.srg",
-	"decompileCommand": "java -jar BuildData/bin/fernflower.jar -dgs=1 -hdc=0 -asc=1 -udv=0 {0} {1}",
 	"classMapCommand": "java -jar BuildData/bin/SpecialSource-2.jar map --only . --only net/minecraft --auto-synth -i {0} -m {1} -o {2}",
 	"memberMapCommand": "java -jar BuildData/bin/SpecialSource-2.jar map --only . --only net/minecraft -i {0} -m {1} -o {2}",
 	"finalMapCommand": "java -jar BuildData/bin/SpecialSource.jar --only . --only net/minecraft --only com/mojang/brigadier --kill-lvt -i {0} --access-transformer {1} -m {2} -o {3}",
