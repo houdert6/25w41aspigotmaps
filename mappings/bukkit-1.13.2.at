@@ -19,12 +19,16 @@ public net/minecraft/server/EntityZombie/setSize(FF)V
 public net/minecraft/server/EntityGuardian/initAttributes()V
 public net/minecraft/server/EntityGuardianElder/initAttributes()V
 
+public net/minecraft/server/EntityMagmaCube/setSize(IZ)V
+public net/minecraft/server/EntitySlime/setSize(IZ)V
+
 public net/minecraft/server/AdvancementDataPlayer/data
 public net/minecraft/server/AdvancementDataWorld/DESERIALIZER
 public net/minecraft/server/AdvancementDataWorld/REGISTRY
 public net/minecraft/server/Advancements/advancements
 public net/minecraft/server/AttributeRanged/maximum
 public net/minecraft/server/Block/strength
+public net/minecraft/server/BlockDataAbstract/STATE_TO_VALUE
 public net/minecraft/server/BlockDispenser/REGISTRY
 public net/minecraft/server/BlockJukeBox/dropRecord(Lnet/minecraft/server/World;Lnet/minecraft/server/BlockPosition;)V
 public net/minecraft/server/BlockRedstoneWire/getPower(ILnet/minecraft/server/IBlockData;)I
@@ -138,7 +142,6 @@ public net/minecraft/server/EntityPotion/isLingering()Z
 public net/minecraft/server/EntityProjectile/shooter
 public net/minecraft/server/EntityProjectile/shooterId
 public net/minecraft/server/EntityShulker/COLOR
-public net/minecraft/server/EntitySlime/setSize(IZ)V
 public net/minecraft/server/EntitySpectralArrow/duration
 public net/minecraft/server/EntityThrownTrident/trident
 public net/minecraft/server/EntityTippedArrow/effects
@@ -152,6 +155,12 @@ public net/minecraft/server/EntityVillager/populateTrades()V
 public net/minecraft/server/EntityVillager/riches
 public net/minecraft/server/EntityVillager/trades
 public net/minecraft/server/EntityWither/bossBattle
+public net/minecraft/server/EntityZombie/DROWN_CONVERTING
+public net/minecraft/server/EntityZombie/drownedConversionTime
+public net/minecraft/server/EntityZombie/startDrownedConversion(I)V
+public net/minecraft/server/EntityZombieVillager/CONVERTING
+public net/minecraft/server/EntityZombieVillager/conversionTime
+public net/minecraft/server/EntityZombieVillager/startConversion(Ljava/util/UUID;I)V 
 public net/minecraft/server/EnumChatFormat/character
 public net/minecraft/server/Explosion/source
 public net/minecraft/server/FoodMetaData/exhaustionLevel

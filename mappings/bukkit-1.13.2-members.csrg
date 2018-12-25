@@ -18,6 +18,8 @@ AdvancementProgress f ()Ljava/lang/Iterable; getAwardedCriteria
 Advancements b advancements
 ArgumentAnchor$Anchor a FEET
 ArgumentAnchor$Anchor b EYES
+ArgumentBlock a ()Ljava/util/Map; getStateMap
+ArgumentBlock b ()LIBlockData; getBlockData
 AttributeInstance a ()LIAttribute; getAttribute
 AttributeInstance a (D)V setValue
 AttributeInstance e ()D getValue
@@ -38,6 +40,7 @@ BaseBlockPosition p ()I getY
 BaseBlockPosition q ()I getZ
 BiomeBase a (ILBiomeBase;)LBiomeBase; getBiome
 BiomeBase a (LEnumCreatureType;)Ljava/util/List; getMobs
+BiomeBase c (LBlockPosition;)F getAdjustedTemperature
 BiomeBase i ()F getHumidity
 BiomeBase m ()F getTemperature
 BiomeBase$EnumTemperature a OCEAN
@@ -201,6 +204,7 @@ BlockCobbleWall t UP
 BlockCocoa a AGE
 BlockCrops b (I)LIBlockData; setAge
 BlockCrops b AGE
+BlockDataAbstract b STATE_TO_VALUE
 BlockDaylightDetector a POWER
 BlockDiodeAbstract x (LIBlockData;)Z isDiode
 BlockDirectional a FACING
@@ -1749,6 +1753,7 @@ EntityHuman dF ()LNBTTagCompound; getShoulderEntityRight
 EntityHuman dI ()LItemCooldown; getCooldownTracker
 EntityHuman dK ()Z isCreativeAndOp
 EntityHuman di ()I getScore
+EntityHuman dj ()V removeCursedItems
 EntityHuman do ()Lcom/mojang/authlib/GameProfile; getProfile
 EntityHuman dq ()Z isDeeplySleeping
 EntityHuman ds ()LBlockPosition; getBed
@@ -1970,7 +1975,6 @@ EntityPlayer cw worldChangeInvuln
 EntityPlayer cy recipeBook
 EntityPlayer dL ()Z canPvP
 EntityPlayer dM ()V nextContainerCounter
-EntityPlayer dj ()V removeCursedItems
 EntityPlayer e (LEntity;)V setSpectatorTarget
 EntityPlayer g ping
 EntityPlayer h viewingCredits
@@ -2190,11 +2194,15 @@ EntityWolf bG DATA_HEALTH
 EntityWolf dJ ()Z isAngry
 EntityWolf dK ()LEnumColor; getCollarColor
 EntityWolf v (Z)V setAngry
+EntityZombie a (I)V startDrownedConversion
 EntityZombie a (LDamageSource;F)Z damageEntity
+EntityZombie bF DROWN_CONVERTING
 EntityZombie bJ drownedConversionTime
 EntityZombie dG ()Z isDrownConverting
 EntityZombie u (Z)V setBaby
 EntityZombieVillager a (I)V setProfession
+EntityZombieVillager a (Ljava/util/UUID;I)V startConversion
+EntityZombieVillager a CONVERTING
 EntityZombieVillager bC conversionTime
 EntityZombieVillager dF ()I getProfession
 EntityZombieVillager dI ()Z isConverting
@@ -2441,6 +2449,11 @@ FluidCollisionOption c ALWAYS
 FluidCollisionOption d predicate
 FluidTypeFlowing a FALLING
 FluidTypeFlowing b LEVEL
+FluidTypes a EMPTY
+FluidTypes b FLOWING_WATER
+FluidTypes c WATER
+FluidTypes d FLOWING_LAVA
+FluidTypes e LAVA
 FoodMetaData a ()I getFoodLevel
 FoodMetaData a (IF)V eat
 FoodMetaData a foodLevel
@@ -2532,12 +2545,14 @@ IBlockData a (LWorld;LBlockPosition;LIBlockData;Z)V remove
 IBlockData c ()LBlock; getBlock
 IBlockData d ()LMaterial; getMaterial
 IBlockData f ()Z isAir
+IBlockData g (LIBlockAccess;LBlockPosition;)LVoxelShape; getShape
 IBlockData h (LIBlockAccess;LBlockPosition;)LVoxelShape; getCollisionShape
 IBlockData l ()Z isOccluding
 IBlockData m ()Z isPowerSource
 IBlockData n ()Z isComplexRedstone
 IBlockData o ()LEnumPistonReaction; getPushReaction
 IBlockDataHolder a (LIBlockState;Ljava/lang/Comparable;)Ljava/lang/Object; set
+IBlockDataHolder b ()Lcom/google/common/collect/ImmutableMap; getStateMap
 IBlockDataHolder c (LIBlockState;)Ljava/lang/Comparable; get
 IChatBaseComponent a (LChatModifier;)LIChatBaseComponent; setChatModifier
 IChatBaseComponent a (LIChatBaseComponent;)LIChatBaseComponent; addSibling
@@ -2571,6 +2586,7 @@ IEntityAccess a (LEntity;LAxisAlignedBB;)Ljava/util/List; getEntities
 IEntityAccess a (LEntity;LAxisAlignedBB;Ljava/util/function/Predicate;)Ljava/util/List; getEntities
 IFluidContainer a (LGeneratorAccess;LBlockPosition;LIBlockData;LFluid;)Z place
 IFluidContainer a (LIBlockAccess;LBlockPosition;LIBlockData;LFluidType;)Z canPlace
+IFluidSource a (LGeneratorAccess;LBlockPosition;LIBlockData;)LFluidType; removeFluid
 IHopper F ()LWorld; getWorld
 IInventory T_ ()I getSize
 IInventory a (I)LItemStack; getItem
@@ -4764,6 +4780,7 @@ Vector3f b y
 Vector3f c ()F getY
 Vector3f c z
 Vector3f d ()F getZ
+VoxelShape a ()LAxisAlignedBB; getBoundingBox
 VoxelShape a (LVec3D;LVec3D;LBlockPosition;)LMovingObjectPosition; rayTrace
 VoxelShape b ()Z isEmpty
 VoxelShapes a (DDDDDD)LVoxelShape; create
