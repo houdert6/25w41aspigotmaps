@@ -1,4 +1,4 @@
-# (c) 2018 SpigotMC Pty. Ltd.
+# (c) 2019 SpigotMC Pty. Ltd.
 
 public net/minecraft/server/RecipeItemStack$Provider
 public net/minecraft/server/RecipeItemStack$StackProvider

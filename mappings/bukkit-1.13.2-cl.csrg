@@ -1,4 +1,4 @@
-# (c) 2018 SpigotMC Pty. Ltd.
+# (c) 2019 SpigotMC Pty. Ltd.
 a EnumChatFormat
 aa CriterionTriggerBrewedPotion
 aaa DataConverterPotionId
@@ -662,6 +662,7 @@ axr Explosion
 axt ForcedChunk
 axu GameRules
 axu$a GameRules$GameRuleValue
+axu$b GameRules$GameRuleDefinition
 axu$c GameRules$EnumGameRuleType
 axv EnumGamemode
 axx IMaterial
@@ -728,6 +729,8 @@ azy BiomeFrozenRiver
 azz BiomeMegaSpruceTaiga
 b CrashReport
 ba CriterionConditionValue
+ba$c CriterionConditionValue$FloatRange
+ba$d CriterionConditionValue$IntegerRange
 baa BiomeRedwoodTaigaHillsMutated
 bab BiomeMegaTaiga
 bac BiomeMegaTaigaHills
@@ -745,7 +748,6 @@ ban BiomeMesaPlateauMutated
 bao BiomeBigHills
 bap BiomeExtremeHillsEdge
 baq BiomeMushrooms
-bar BiomeMushroomIslandShore
 bar BiomeMushroomIslandShore
 bas BiomeHell
 bat BiomeOcean
@@ -1687,6 +1689,7 @@ eg ArgumentSerializerString
 ej EnumAxisCycle
 el BlockPosition
 el$a BlockPosition$MutableBlockPosition
+el$b BlockPosition$PooledBlockPosition
 em ISourceBlock
 en SourceBlock
 eo DispenseBehaviorItem
@@ -1993,6 +1996,7 @@ pa AutoRecipeFurnace
 pc MinecraftKey
 pe DispenseBehaviorProjectile
 pf DispenserRegistry
+pf$c DispenserRegistry$DispenseBehaviorMaybe
 ph ServerCommand
 pj DebugOutputStream
 pk EULA

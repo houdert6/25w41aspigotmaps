@@ -1,4 +1,4 @@
-# (c) 2018 SpigotMC Pty. Ltd.
+# (c) 2019 SpigotMC Pty. Ltd.
 Advancement f ()Ljava/util/Map; getCriteria
 Advancement h ()LMinecraftKey; getName
 AdvancementDataPlayer a (LAdvancement;Ljava/lang/String;)Z grantCriteria
