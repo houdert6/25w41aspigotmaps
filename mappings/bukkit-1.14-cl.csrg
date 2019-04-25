@@ -1776,6 +1776,7 @@ cki LightEngineBlock
 ckj LightEngineStorageBlock
 ckk LightEngineStorageArray
 ckl LightEngineGraph
+ckm NibbleArrayFlat
 ckn LightEngineLayer
 cko LightEngineLayerEventListener
 cko$a LightEngineLayerEventListener$Void

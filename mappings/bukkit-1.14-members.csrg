@@ -1252,7 +1252,6 @@ ChunkGenerator e ()I getGenerationDepth
 ChunkGenerator f ()I getSeaLevel
 ChunkMapDistance a ()V purgeTickets
 ChunkMapDistance a (I)V setEntityDistance
-ChunkMapDistance a LOGGER
 ChunkMapDistance c (LTicketType;LChunkCoordIntPair;ILjava/lang/Object;)V addTicket
 ChunkMapDistance d (LTicketType;LChunkCoordIntPair;ILjava/lang/Object;)V removeTicket
 ChunkMapDistance e tickets
@@ -1452,6 +1451,7 @@ Counter d DISTANCE
 Counter e TIME
 CraftingManager a (LIRecipe;)V addRecipe
 CraftingManager a (LRecipes;LIInventory;LWorld;)Ljava/util/Optional; craft
+CraftingManager a (Ljava/util/Map;)V initializeRecipeMap
 CraftingManager d recipes
 CriterionProgress d ()Ljava/util/Date; getDate
 CustomFunctionData e ()V tick
@@ -1522,7 +1522,6 @@ DedicatedServer a (Ljava/lang/String;LCommandListenerWrapper;)V issueCommand
 DedicatedServer aW ()V handleCommandQueue
 DedicatedServer aZ ()Z convertNames
 DedicatedServer ba ()J getMaxTickTime
-DedicatedServer i LOGGER
 DedicatedServer k serverCommandQueue
 DedicatedServer m remoteControlCommandListener
 DedicatedServer n remoteControlListener
@@ -1808,7 +1807,6 @@ Entity g (Z)V setSwimming
 Entity g id
 Entity h ()V tick
 Entity h (I)Z getFlag
-Entity h LOGGER
 Entity i (I)V setAirTicks
 Entity i (LEntity;)V collide
 Entity i (Z)V setInvisible
@@ -2044,8 +2042,8 @@ EntityHorseChestedAbstract r (Z)V setCarryingChest
 EntityHuman a (ILMerchantRecipeList;IIZ)V openTrade
 EntityHuman a (LBlockPosition;)Lcom/mojang/datafixers/util/Either; sleep
 EntityHuman a (LEntityHorseAbstract;LIInventory;)V openHorseInventory
-EntityHuman a (LIBlockAccess;LBlockPosition;Z)LBlockPosition; getBed
 EntityHuman a (LITileInventory;)Ljava/util/OptionalInt; openContainer
+EntityHuman a (LIWorldReader;LBlockPosition;Z)Ljava/util/Optional; getBed
 EntityHuman a (LItemStack;I)V enchantDone
 EntityHuman a (LItemStack;Z)LEntityItem; drop
 EntityHuman a (LTileEntitySign;)V openSign
@@ -2340,7 +2338,6 @@ EntityPlayer a (LContainer;)V updateInventory
 EntityPlayer a (LEntityPlayer;Z)V copyFrom
 EntityPlayer a (Ljava/lang/String;Ljava/lang/String;)V setResourcePack
 EntityPlayer b playerConnection
-EntityPlayer bU LOGGER
 EntityPlayer bV locale
 EntityPlayer bW removeQueue
 EntityPlayer bX advancementDataPlayer
@@ -2956,9 +2953,19 @@ HeightMap$Type f MOTION_BLOCKING_NO_LEAVES
 HeightMap$Use a WORLDGEN
 HeightMap$Use b LIVE_WORLD
 HeightMap$Use c CLIENT
+IAsyncTaskHandler a (Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture; executeFuture
 IAsyncTaskHandler aw ()Z isNotMainThread
+IAsyncTaskHandler ax ()Ljava/lang/Thread; getThread
 IAsyncTaskHandler bc ()Z isMainThread
+IAsyncTaskHandler bf ()V executeAll
+IAsyncTaskHandler c (Ljava/lang/Runnable;)Z canExecute
+IAsyncTaskHandler c (Ljava/util/function/BooleanSupplier;)V awaitTasks
 IAsyncTaskHandler d (Ljava/lang/Runnable;)Ljava/lang/Runnable; postToMainThread
+IAsyncTaskHandler f (Ljava/lang/Runnable;)V executeSync
+IAsyncTaskHandler h (Ljava/lang/Runnable;)V executeTask
+IAsyncTaskHandler p ()Z executeNext
+IAsyncTaskHandlerReentrant b depth
+IAsyncTaskHandlerReentrant bg ()Z isEntered
 IAttribute a ()Ljava/lang/String; getName
 IAttribute b ()D getDefault
 IBlockAccess I ()I getHeight
@@ -4222,7 +4229,6 @@ PlayerChunkMap a GOLDEN_TICKET
 PlayerChunkMap b (J)LPlayerChunk; getVisibleChunk
 PlayerChunkMap b (LEntity;)V removeEntity
 PlayerChunkMap b (LEntity;LPacket;)V broadcastIncludingSelf
-PlayerChunkMap d LOGGER
 PlayerChunkMap e updatingChunks
 PlayerChunkMap f visibleChunks
 PlayerChunkMap i world
@@ -4254,7 +4260,6 @@ PlayerConnection b (LIChatBaseComponent;)V disconnect
 PlayerConnection b player
 PlayerConnection c ()V syncPosition
 PlayerConnection c (Ljava/lang/String;)V handleCommand
-PlayerConnection c LOGGER
 PlayerConnection d ()Z isExemptPlayer
 PlayerConnection d minecraftServer
 PlayerConnection f lastKeepAlive
@@ -6107,6 +6112,7 @@ net/minecraft/server/MinecraftServer au ()V invalidatePingSample
 net/minecraft/server/MinecraftServer au executorService
 net/minecraft/server/MinecraftServer b (Z)V setForceUpgrade
 net/minecraft/server/MinecraftServer c (I)V setIdleTimeout
+net/minecraft/server/MinecraftServer c (LTickTask;)Z canExecute
 net/minecraft/server/MinecraftServer d ()Z init
 net/minecraft/server/MinecraftServer d worldLoadListenerFactory
 net/minecraft/server/MinecraftServer e (Ljava/lang/String;)V info
@@ -6120,7 +6126,6 @@ net/minecraft/server/MinecraftServer h serverThread
 net/minecraft/server/MinecraftServer h_ ()Z isRunning
 net/minecraft/server/MinecraftServer i ()Z isHardcore
 net/minecraft/server/MinecraftServer i (Z)V setSpawnAnimals
-net/minecraft/server/MinecraftServer i LOGGER
 net/minecraft/server/MinecraftServer j (Z)V setSpawnNPCs
 net/minecraft/server/MinecraftServer j convertable
 net/minecraft/server/MinecraftServer k (Ljava/lang/String;)V setMotd
