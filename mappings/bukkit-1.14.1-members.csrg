@@ -1,4 +1,14 @@
 # (c) 2019 SpigotMC Pty. Ltd.
+Activity a CORE
+Activity b IDLE
+Activity c WORK
+Activity d PLAY
+Activity e REST
+Activity f MEET
+Activity g PANIC
+Activity h RAID
+Activity i PRE_RAID
+Activity j HIDE
 Advancement f ()Ljava/util/Map; getCriteria
 Advancement h ()LMinecraftKey; getName
 AdvancementDataPlayer a (LAdvancement;Ljava/lang/String;)Z grantCriteria
@@ -49,6 +59,16 @@ BaseBlockPosition p ()I getY
 BaseBlockPosition q ()I getZ
 Behavior$Status a STOPPED
 Behavior$Status b RUNNING
+BehaviorController a (LMemoryModuleType;)Z hasMemory
+BehaviorController a (LMemoryModuleType;Ljava/lang/Object;)V setMemory
+BehaviorController a (LMemoryModuleType;Ljava/util/Optional;)V setMemory
+BehaviorController a (LSchedule;)V setSchedule
+BehaviorController a memories
+BehaviorController b ()LSchedule; getSchedule
+BehaviorController b (LMemoryModuleType;)V removeMemory
+BehaviorController b sensors
+BehaviorController c (LMemoryModuleType;)Ljava/util/Optional; getMemory
+BehaviorController d schedule
 BehaviorGate$Execution a RUN_ONE
 BehaviorGate$Execution b TRY_ALL
 BehaviorGate$Order a ORDERED
@@ -180,12 +200,12 @@ Block b (LIBlockData;LWorld;LBlockPosition;)LITileInventory; getInventory
 Block b (LIBlockData;LWorld;LBlockPosition;LIBlockData;Z)V onPlace
 Block b (LIBlockData;LWorld;LBlockPosition;Ljava/util/Random;)V tick
 Block d (LIBlockData;LIBlockAccess;LBlockPosition;)Z isOccluding
-Block d frictionFactor
-Block e blockData
+Block e frictionFactor
+Block f blockData
 Block h ()Z isTileEntity
 Block h (LIBlockData;)Z isPowerSource
-Block h name
 Block i (LIBlockData;)LEnumPistonReaction; getPushReaction
+Block i name
 Block j ()F getDurability
 Block k (LIBlockData;)I getCombinedId
 Block m (LIBlockData;)Z isTicking
@@ -1184,6 +1204,7 @@ ChatModifier e (Ljava/lang/Boolean;)LChatModifier; setRandom
 ChatModifier f ()Z isRandom
 ChatModifier m ()LChatModifier; clone
 ChestLock b key
+Chunk c (Z)V setLoaded
 Chunk c sections
 Chunk f loaded
 Chunk g world
@@ -1259,14 +1280,13 @@ ChunkMapDistance h entitydistance
 ChunkMapDistance q currentTick
 ChunkProviderServer a (II)Z isLoaded
 ChunkProviderServer a (J)LPlayerChunk; getChunk
-ChunkProviderServer a (LBlockPosition;)V flagDirty
 ChunkProviderServer a (LEntity;LPacket;)V broadcastIncludingSelf
 ChunkProviderServer a (LEntityPlayer;)V movePlayer
 ChunkProviderServer a (LTicketType;LChunkCoordIntPair;ILjava/lang/Object;)V addTicket
 ChunkProviderServer a (Ljava/util/function/BooleanSupplier;)V tick
 ChunkProviderServer a (Z)V save
 ChunkProviderServer a playerChunkMap
-ChunkProviderServer b (IILChunkStatus;Z)Ljava/util/concurrent/CompletableFuture; getChunkFuture
+ChunkProviderServer b (LBlockPosition;)V flagDirty
 ChunkProviderServer b (LEntity;)V removeEntity
 ChunkProviderServer b (LEntity;LPacket;)V broadcast
 ChunkProviderServer b (LTicketType;LChunkCoordIntPair;ILjava/lang/Object;)V removeTicket
@@ -1283,13 +1303,13 @@ ChunkProviderServer h lightEngine
 ChunkProviderServer i serverThreadQueue
 ChunkProviderServer j worldPersistentData
 ChunkProviderServer k lastTickTime
-ChunkProviderServer l ()Z tickDistanceManager
 ChunkProviderServer l allowMonsters
-ChunkProviderServer m ()V tickChunks
+ChunkProviderServer m ()Z tickDistanceManager
 ChunkProviderServer m allowAnimals
+ChunkProviderServer n ()V tickChunks
 ChunkRegionLoader a (LNBTTagCompound;LChunk;)V loadEntities
-ChunkRegionLoader a (LWorld;LDefinedStructureManager;LVillagePlace;LChunkCoordIntPair;LNBTTagCompound;)LProtoChunk; loadChunk
-ChunkRegionLoader a (LWorld;LIChunkAccess;)LNBTTagCompound; saveChunk
+ChunkRegionLoader a (LWorldServer;LDefinedStructureManager;LVillagePlace;LChunkCoordIntPair;LNBTTagCompound;)LProtoChunk; loadChunk
+ChunkRegionLoader a (LWorldServer;LIChunkAccess;)LNBTTagCompound; saveChunk
 ChunkSection a (III)LIBlockData; getType
 ChunkSection a (IIILIBlockData;)LIBlockData; setType
 ChunkSection a (IIILIBlockData;Z)LIBlockData; setType
@@ -1386,6 +1406,7 @@ ContainerBeacon f containerProperties
 ContainerBrewingStand c brewingStand
 ContainerCartography c inventory
 ContainerCartography d containerAccess
+ContainerCartography f resultInventory
 ContainerChest c container
 ContainerDispenser c items
 ContainerEnchantTable c costs
@@ -1579,11 +1600,18 @@ DedicatedServerSettings a path
 DedicatedServerSettings b ()V save
 DedicatedServerSettings b properties
 DimensionManager a (LWorld;)LWorldProvider; getWorldProvider
+DimensionManager a (Ljava/lang/String;LDimensionManager;)LDimensionManager; register
 DimensionManager a OVERWORLD
 DimensionManager b ()I getDimensionID
 DimensionManager b NETHER
+DimensionManager c ()Ljava/lang/String; getSuffix
 DimensionManager c THE_END
 DimensionManager d ()Z hasSkyLight
+DimensionManager d id
+DimensionManager e suffix
+DimensionManager f folder
+DimensionManager g providerFactory
+DimensionManager h hasSkyLight
 DispenseBehaviorMaybe b dispensed
 DispenseBehaviorProjectile b ()F getPower
 DispenserRegistry a ()V init
@@ -1685,6 +1713,7 @@ Entity P ()Z hasCustomName
 Entity P inWater
 Entity R ()V decouple
 Entity S ()LEntityTypes; getEntityType
+Entity S inLava
 Entity T ()I getId
 Entity T noDamageTicks
 Entity U ()Ljava/util/Set; getScoreboardTags
@@ -1692,8 +1721,10 @@ Entity U justCreated
 Entity V ()V killEntity
 Entity V datawatcher
 Entity W ()LDataWatcher; getDataWatcher
+Entity X POSE
 Entity Y ()V die
 Entity Y inChunk
+Entity Z ()LEntityPose; getPose
 Entity Z chunkX
 Entity a (DDD)V enderTeleportTo
 Entity a (DDDFF)V setLocation
@@ -1752,6 +1783,7 @@ Entity b (DDDFF)V setPositionRotation
 Entity b (IZ)V setFlag
 Entity b (LDamageSource;)Z isInvulnerable
 Entity b (LEntityHuman;)V pickup
+Entity b (LEntityPose;)V setPose
 Entity b (LIChatBaseComponent;)V setCustomName
 Entity b (Ljava/lang/String;)Z removeScoreboardTag
 Entity b entityCount
@@ -1931,7 +1963,9 @@ EntityBoat$EnumStatus b UNDER_WATER
 EntityBoat$EnumStatus c UNDER_FLOWING_WATER
 EntityBoat$EnumStatus d ON_LAND
 EntityBoat$EnumStatus e IN_AIR
+EntityCat a (LEnumColor;)V setCollarColor
 EntityCat ef ()I getCatType
+EntityCat ei ()LEnumColor; getCollarColor
 EntityCat r (I)V setCatType
 EntityCat$PathfinderGoalTemptChance c chosenTarget
 EntityChicken bF eggLayTime
@@ -2002,6 +2036,14 @@ EntityFishingHook f owner
 EntityFishingHook$HookState a FLYING
 EntityFishingHook$HookState b HOOKED_IN_ENTITY
 EntityFishingHook$HookState c BOBBING
+EntityFox a (LEntityFox$Type;)V setFoxType
+EntityFox dV ()LEntityFox$Type; getFoxType
+EntityFox dW ()Z isSitting
+EntityFox ef ()Z isCrouching
+EntityFox ej ()V initializePathFinderGoals
+EntityFox r (Z)V setSitting
+EntityFox t (Z)V setCrouching
+EntityFox x (Z)V setSleeping
 EntityFox$Type a RED
 EntityFox$Type b SNOW
 EntityGhast dT ()I getPower
@@ -2300,6 +2342,8 @@ EntityMonsterPatrolling eb ()Z isPatrolLeader
 EntityMonsterPatrolling ef ()Z isPatrolling
 EntityMonsterPatrolling g (LBlockPosition;)V setPatrolTarget
 EntityMonsterPatrolling r (Z)V setPatrolLeader
+EntityMushroomCow a (LEntityMushroomCow$Type;)V setVariant
+EntityMushroomCow dV ()LEntityMushroomCow$Type; getVariant
 EntityMushroomCow$Type a RED
 EntityMushroomCow$Type b BROWN
 EntityOcelot dX ()Z isTrusting
@@ -2578,11 +2622,11 @@ EntityTypes z FALLING_BLOCK
 EntityVex dX ()Z isCharging
 EntityVex r (Z)V setCharging
 EntityVillager a (LVillagerData;)V setVillagerData
-EntityVillager ek ()Z isInLove
-EntityVillager em ()Z canBreed
-EntityVillager ev ()V populateTrades
-EntityVillagerAbstract bA tradingPlayer
-EntityVillagerAbstract bB inventory
+EntityVillager el ()Z canBreed
+EntityVillager eu ()V populateTrades
+EntityVillager t (I)V setExperience
+EntityVillagerAbstract bB tradingPlayer
+EntityVillagerAbstract bC inventory
 EntityVillagerAbstract bz trades
 EntityVillagerAbstract ed ()LInventorySubcontainer; getInventory
 EntityWither a (II)V setHeadTarget
@@ -2968,7 +3012,7 @@ IAsyncTaskHandlerReentrant b depth
 IAsyncTaskHandlerReentrant bg ()Z isEntered
 IAttribute a ()Ljava/lang/String; getName
 IAttribute b ()D getDefault
-IBlockAccess I ()I getHeight
+IBlockAccess I ()I getBuildHeight
 IBlockAccess a (LRayTrace;)LMovingObjectPositionBlock; rayTrace
 IBlockAccess a (LVec3D;LVec3D;LBlockPosition;LVoxelShape;LIBlockData;)LMovingObjectPositionBlock; rayTrace
 IBlockAccess b (LBlockPosition;)LFluid; getFluid
@@ -3052,8 +3096,9 @@ IInventory e ()V update
 ILightAccess k ()LIBlockAccess; getWorld
 IMaterial g ()LItem; getItem
 IMerchant a (LEntityHuman;LIChatBaseComponent;I)V openTrade
-IMerchant dW ()LEntityHuman; getTrader
-IMerchant dY ()LMerchantRecipeList; getOffers
+IMerchant dW ()I getExperience
+IMerchant dX ()LEntityHuman; getTrader
+IMerchant dZ ()LMerchantRecipeList; getOffers
 IMerchant e (LEntityHuman;)V setTradingPlayer
 IMerchant ee ()LWorld; getWorld
 IMinecraftServer A ()I getMaxPlayers
@@ -3788,12 +3833,14 @@ MemoryModuleType t NEAREST_HOSTILE
 MemoryModuleType u GOLEM_SPAWN_CONDITIONS
 MemoryModuleType v HIDING_PLACE
 MemoryModuleType w HEARD_BELL_TIME
+MemoryModuleType x CANT_REACH_WALK_TARGET_SINCE
 MemoryStatus a VALUE_PRESENT
 MemoryStatus b VALUE_ABSENT
 MemoryStatus c REGISTERED
-MerchantRecipe a (I)V increaseUses
+MerchantRecipe a (I)V increaseSpecialPrice
 MerchantRecipe a buyingItem1
 MerchantRecipe b ()LItemStack; getBuyItem1
+MerchantRecipe b (I)V setSpecialPrice
 MerchantRecipe b buyingItem2
 MerchantRecipe c ()LItemStack; getBuyItem2
 MerchantRecipe c sellingItem
@@ -3801,10 +3848,20 @@ MerchantRecipe d ()LItemStack; getSellingItem
 MerchantRecipe d uses
 MerchantRecipe e maxUses
 MerchantRecipe f rewardExp
+MerchantRecipe g ()I getUses
+MerchantRecipe g specialPrice
+MerchantRecipe h ()V resetUses
+MerchantRecipe h demand
+MerchantRecipe i ()I getMaxUses
 MerchantRecipe i priceMultiplier
 MerchantRecipe j ()V increaseUses
 MerchantRecipe j xp
+MerchantRecipe k ()V setSpecialPrice
+MerchantRecipe l ()I getSpecialPrice
+MerchantRecipe m ()F getPriceMultiplier
+MerchantRecipe n ()I getXp
 MerchantRecipe o ()Z isFullyUsed
+MerchantRecipe q ()Z isRewardExp
 MinecraftEncryption a (ILjava/lang/String;Ljava/security/Key;)Ljavax/crypto/Cipher; a
 MinecraftEncryption a (ILjava/security/Key;)Ljavax/crypto/Cipher; a
 MinecraftEncryption a (Ljava/lang/String;Ljava/security/PublicKey;Ljavax/crypto/SecretKey;)[B a
@@ -3862,6 +3919,7 @@ MobEffects x GLOWING
 MobEffects y LEVITATION
 MobEffects z LUCK
 MobSpawnerAbstract a (LEntityTypes;)V setMobName
+MobSpawnerAbstract a (LMobSpawnerData;)V setSpawnData
 MobSpawnerAbstract b spawnDelay
 MobSpawnerAbstract c mobs
 MobSpawnerAbstract d spawnData
@@ -3872,6 +3930,8 @@ MobSpawnerAbstract i spawnCount
 MobSpawnerAbstract k maxNearbyEntities
 MobSpawnerAbstract l requiredPlayerRange
 MobSpawnerAbstract m spawnRange
+MobSpawnerData b ()LNBTTagCompound; getEntity
+MobSpawnerData b entity
 MojangsonParser a (Ljava/lang/String;)LNBTTagCompound; parse
 MojangsonParser b (Ljava/lang/String;)LNBTBase; parseLiteral
 MojangsonParser h ()LNBTBase; parseArray
@@ -4196,7 +4256,9 @@ PlayerAbilities d canInstantlyBuild
 PlayerAbilities e mayBuild
 PlayerAbilities f flySpeed
 PlayerAbilities g walkSpeed
+PlayerChunk a (LChunkStatus;)Ljava/util/concurrent/CompletableFuture; getStatusFutureUnchecked
 PlayerChunk a UNLOADED_CHUNK_ACCESS
+PlayerChunk b (LChunkStatus;)Ljava/util/concurrent/CompletableFuture; getStatusFuture
 PlayerChunk b UNLOADED_CHUNK_ACCESS_FUTURE
 PlayerChunk c ()LChunk; getChunk
 PlayerChunk c UNLOADED_CHUNK
@@ -4205,24 +4267,33 @@ PlayerChunk e CHUNK_STATUSES
 PlayerChunk f ()Ljava/util/concurrent/CompletableFuture; getChunkSave
 PlayerChunk f CHUNK_STATES
 PlayerChunk g statusFutures
-PlayerChunk h tickingFuture
-PlayerChunk i entityTickingFuture
-PlayerChunk j chunkSave
-PlayerChunk n location
-PlayerChunk o dirtyBlocks
-PlayerChunk p dirtyCount
-PlayerChunk u lightEngine
-PlayerChunk w players
-PlayerChunk$State a BORDER
-PlayerChunk$State b TICKING
-PlayerChunk$State c ENTITY_TICKING
+PlayerChunk h fullChunkFuture
+PlayerChunk i ()I getTicketLevel
+PlayerChunk i tickingFuture
+PlayerChunk j entityTickingFuture
+PlayerChunk k ()Z hasBeenLoaded
+PlayerChunk k chunkSave
+PlayerChunk l oldTicketLevel
+PlayerChunk m ticketLevel
+PlayerChunk o location
+PlayerChunk p dirtyBlocks
+PlayerChunk q dirtyCount
+PlayerChunk v lightEngine
+PlayerChunk x players
+PlayerChunk y hasBeenLoaded
+PlayerChunk$State a INACCESSIBLE
+PlayerChunk$State b BORDER
+PlayerChunk$State c TICKING
+PlayerChunk$State d ENTITY_TICKING
+PlayerChunkMap A viewDistance
+PlayerChunkMap B entityDistance
 PlayerChunkMap a (II)V setViewDistance
 PlayerChunkMap a (J)LPlayerChunk; getUpdatingChunk
 PlayerChunkMap a (LEntity;)V addEntity
 PlayerChunkMap a (LEntity;LPacket;)V broadcast
 PlayerChunkMap a (LEntityPlayer;)V movePlayer
 PlayerChunkMap a (LEntityPlayer;LChunkCoordIntPair;[LPacket;ZZ)V sendChunk
-PlayerChunkMap a (LIChunkAccess;)V saveChunk
+PlayerChunkMap a (LIChunkAccess;)Z saveChunk
 PlayerChunkMap a (Ljava/util/function/BooleanSupplier;)V unloadChunks
 PlayerChunkMap a (Z)V save
 PlayerChunkMap a GOLDEN_TICKET
@@ -4230,7 +4301,10 @@ PlayerChunkMap b (J)LPlayerChunk; getVisibleChunk
 PlayerChunkMap b (LEntity;)V removeEntity
 PlayerChunkMap b (LEntity;LPacket;)V broadcastIncludingSelf
 PlayerChunkMap e updatingChunks
+PlayerChunkMap f (LChunkCoordIntPair;)LNBTTagCompound; readChunkData
 PlayerChunkMap f visibleChunks
+PlayerChunkMap g pendingUnload
+PlayerChunkMap h loadedChunks
 PlayerChunkMap i world
 PlayerChunkMap j lightEngine
 PlayerChunkMap k executor
@@ -4241,6 +4315,7 @@ PlayerChunkMap r mailboxWorldGen
 PlayerChunkMap s mailboxMain
 PlayerChunkMap t worldLoadListener
 PlayerChunkMap w definedStructureManager
+PlayerChunkMap y playerMap
 PlayerChunkMap z trackedEntities
 PlayerChunkMap$EntityTracker a (LEntityPlayer;)V clear
 PlayerChunkMap$EntityTracker a (LPacket;)V broadcast
@@ -4332,6 +4407,7 @@ PlayerList q ()I getViewDistance
 PlayerList q playerFileData
 PlayerList r hasWhitelist
 PlayerList s ()V shutdown
+PlayerList s viewDistance
 PlayerList t ()Ljava/util/List; getPlayers
 PlayerList u ()V reload
 PlayerListBox a ()V tick
@@ -4407,6 +4483,10 @@ ReputationType f GOLEM
 ResourcePackLoader$Position a TOP
 ResourcePackLoader$Position b BOTTOM
 ResourcePackSourceFolder b file
+Schedule a EMPTY
+Schedule b SIMPLE
+Schedule c VILLAGER_BABY
+Schedule d VILLAGER_DEFAULT
 Scoreboard a (I)LScoreboardObjective; getObjectiveForSlot
 Scoreboard a (ILScoreboardObjective;)V setDisplaySlot
 Scoreboard a (LIScoreboardCriteria;Ljava/lang/String;Ljava/util/function/Consumer;)V getObjectivesForCriteria
@@ -5563,7 +5643,7 @@ TileEntityBeacon k secondaryEffect
 TileEntityBeacon l customName
 TileEntityBeacon m chestLock
 TileEntityBeacon n containerProperties
-TileEntityBeacon r ()V applyEffects
+TileEntityBeacon s ()V applyEffects
 TileEntityBed a color
 TileEntityBrewingStand h items
 TileEntityBrewingStand i brewTime
@@ -5574,7 +5654,7 @@ TileEntityCampfire c ()LNonNullList; getItems
 TileEntityCampfire c cookingTotalTimes
 TileEntityChest c viewingCount
 TileEntityChest i items
-TileEntityChest r ()V onOpen
+TileEntityChest s ()V onOpen
 TileEntityCommand c ()LCommandBlockListenerAbstract; getCommandBlock
 TileEntityCommand$Type a SEQUENCE
 TileEntityCommand$Type b AUTO
@@ -5601,7 +5681,7 @@ TileEntityFurnace j burnTime
 TileEntityFurnace k ticksForCurrentFuel
 TileEntityFurnace l cookTime
 TileEntityFurnace m cookTimeTotal
-TileEntityFurnace r ()Z isBurning
+TileEntityFurnace s ()Z isBurning
 TileEntityHopper a (LIInventory;LIInventory;LItemStack;LEnumDirection;)LItemStack; addItem
 TileEntityHopper c (I)V setCooldown
 TileEntityHopper i items
@@ -5623,8 +5703,11 @@ TileEntityShulkerBox$AnimationPhase a CLOSED
 TileEntityShulkerBox$AnimationPhase b OPENING
 TileEntityShulkerBox$AnimationPhase c OPENED
 TileEntityShulkerBox$AnimationPhase d CLOSING
+TileEntitySign a (LEnumColor;)Z setColor
 TileEntitySign a lines
+TileEntitySign f ()LEnumColor; getColor
 TileEntitySign i isEditable
+TileEntitySign l color
 TileEntitySkull a (Lcom/mojang/authlib/GameProfile;)V setGameProfile
 TileEntitySkull a gameProfile
 TileEntitySkull g userCache
@@ -5647,7 +5730,7 @@ TileEntityStructure n showAir
 TileEntityStructure o showBoundingBox
 TileEntityStructure p integrity
 TileEntityStructure q seed
-TileEntityStructure u ()LBlockPropertyStructureMode; getUsageMode
+TileEntityStructure v ()LBlockPropertyStructureMode; getUsageMode
 TileEntityStructure$UpdateType a UPDATE_DATA
 TileEntityStructure$UpdateType b SAVE_AREA
 TileEntityStructure$UpdateType c LOAD_AREA
@@ -5725,6 +5808,13 @@ VillagerProfession l NITWIT
 VillagerProfession m SHEPHERD
 VillagerProfession n TOOLSMITH
 VillagerProfession o WEAPONSMITH
+VillagerType a DESERT
+VillagerType b JUNGLE
+VillagerType c PLAINS
+VillagerType d SAVANNA
+VillagerType e SNOW
+VillagerType f SWAMP
+VillagerType g TAIGA
 VirtualLevelReadable a (LHeightMap$Type;LBlockPosition;)LBlockPosition; getHighestBlockYAt
 VoxelShape a ()LAxisAlignedBB; getBoundingBox
 VoxelShape a (LVec3D;LVec3D;LBlockPosition;)LMovingObjectPositionBlock; rayTrace
@@ -5743,6 +5833,7 @@ World W ()I getHeight
 World Z ()LGameProfilerFiller; getMethodProfiler
 World a (I)LEntity; getEntity
 World a (LBlockPosition;LBlock;II)V playBlockAction
+World a (LBlockPosition;LEnumDirection;)Z isBlockFacePowered
 World a (LBlockPosition;LIBlockData;)Z setTypeUpdate
 World a (LBlockPosition;LIBlockData;LIBlockData;I)V notify
 World a (LBlockPosition;LTileEntity;)V setTileEntity
@@ -5755,17 +5846,21 @@ World a (LEntityHuman;LBlockPosition;LEnumDirection;)Z douseFire
 World a (ZZ)V setSpawnFlags
 World b (J)V setDayTime
 World b (LBlockPosition;LBlock;)V applyPhysics
-World b (LBlockPosition;LEnumDirection;)Z isBlockFacePowered
+World b (LBlockPosition;LEnumDirection;)I getBlockFacePower
 World c (LBlockPosition;LBlock;)V updateAdjacentComparators
-World c (LBlockPosition;LEnumDirection;)I getBlockFacePower
+World c serverThread
 World f tileEntityList
 World g tileEntityListTick
 World h tileEntityListPending
 World i tileEntityListUnload
 World j (LBlockPosition;)Z isValidLocation
-World k (LBlockPosition;)Z isInsideWorld
+World k (LBlockPosition;)Z isOutsideWorld
 World l (LBlockPosition;)LChunk; getChunkAtWorldCoords
+World l lastRainLevel
+World m rainLevel
 World n (LBlockPosition;)V removeTileEntity
+World n lastThunderLevel
+World o thunderLevel
 World o_ ()LBlockPosition; getSpawn
 World p ()Lnet/minecraft/server/MinecraftServer; getMinecraftServer
 World p (LBlockPosition;)I getBlockPower
@@ -5800,6 +5895,7 @@ WorldBorder r ()I getWarningDistance
 WorldChunkManager a (II)LBiomeBase; getBiome
 WorldChunkManager a (IIII)[LBiomeBase; getBiomeBlock
 WorldChunkManager a (LBlockPosition;)LBiomeBase; getBiome
+WorldData A thunderTime
 WorldData B ()LNBTTagCompound; getGeneratorOptions
 WorldData Q ()LNBTTagCompound; getCustomBossEvents
 WorldData a ()J getSeed
@@ -5807,6 +5903,7 @@ WorldData a (J)V setTime
 WorldData a (LBlockPosition;)V setSpawn
 WorldData a (LEnumDifficulty;)V setDifficulty
 WorldData a (LEnumGamemode;)V setGameType
+WorldData a (Ljava/lang/String;)V setName
 WorldData a (Z)V setThundering
 WorldData b (J)V setDayTime
 WorldData b (Z)V setStorm
@@ -5824,8 +5921,12 @@ WorldData r ()Z shouldGenerateMapFeatures
 WorldData s ()Z isHardcore
 WorldData t ()LWorldType; getType
 WorldData u levelName
+WorldData w clearWeatherTime
 WorldData x ()LEnumDifficulty; getDifficulty
+WorldData x raining
 WorldData y ()Z isDifficultyLocked
+WorldData y rainTime
+WorldData z thundering
 WorldGenFeatureDefinedStructurePoolTemplate$Matching a TERRAIN_MATCHING
 WorldGenFeatureDefinedStructurePoolTemplate$Matching b RIGID
 WorldGenFeatureOceanRuin$Temperature a WARM
@@ -5981,6 +6082,7 @@ WorldServer G nextTickListBlock
 WorldServer H nextTickListFluid
 WorldServer K ticking
 WorldServer L mobSpawnerTrader
+WorldServer a (IIZ)Z setForceLoaded
 WorldServer a (LChunk;)V unloadChunk
 WorldServer a (LEntity;)V entityJoinedWorld
 WorldServer a (LEntityLightning;)V strikeLightning
@@ -5990,7 +6092,6 @@ WorldServer a (Ljava/util/UUID;)LEntity; getEntity
 WorldServer a (Ljava/util/function/BooleanSupplier;)V doTick
 WorldServer a tickingEntities
 WorldServer ad ()V clearWeather
-WorldServer b (IIZ)Z setForceLoaded
 WorldServer b (LEntity;)V chunkCheck
 WorldServer b (LEntityPlayer;)V addPlayerPortal
 WorldServer b savingDisabled
@@ -6107,12 +6208,14 @@ net/minecraft/server/MinecraftServer aq ()Lcom/mojang/authlib/minecraft/Minecraf
 net/minecraft/server/MinecraftServer ar ()Lcom/mojang/authlib/GameProfileRepository; getGameProfileRepository
 net/minecraft/server/MinecraftServer ar forceUpgrade
 net/minecraft/server/MinecraftServer as ()LUserCache; getUserCache
+net/minecraft/server/MinecraftServer as eraseCache
 net/minecraft/server/MinecraftServer at ()LServerPing; getServerPing
 net/minecraft/server/MinecraftServer au ()V invalidatePingSample
 net/minecraft/server/MinecraftServer au executorService
 net/minecraft/server/MinecraftServer b (Z)V setForceUpgrade
 net/minecraft/server/MinecraftServer c (I)V setIdleTimeout
 net/minecraft/server/MinecraftServer c (LTickTask;)Z canExecute
+net/minecraft/server/MinecraftServer c (Z)V setEraseCache
 net/minecraft/server/MinecraftServer d ()Z init
 net/minecraft/server/MinecraftServer d worldLoadListenerFactory
 net/minecraft/server/MinecraftServer e (Ljava/lang/String;)V info

@@ -52,6 +52,9 @@ public net/minecraft/server/DataConverterMaterialId/ID_MAPPING
 public net/minecraft/server/DataConverterSpawnEgg/ID_MAPPING
 public net/minecraft/server/DedicatedServer/remoteControlCommandListener
 public net/minecraft/server/DimensionManager/<init>(ILjava/lang/String;Ljava/lang/String;Ljava/util/function/BiFunction;Z)V
+public net/minecraft/server/DimensionManager/folder
+public net/minecraft/server/DimensionManager/providerFactory
+public net/minecraft/server/DimensionManager/register(Ljava/lang/String;Lnet/minecraft/server/DimensionManager;)Lnet/minecraft/server/DimensionManager;
 public net/minecraft/server/EnderDragonBattle/bossBattle
 public net/minecraft/server/Entity/fireTicks
 public net/minecraft/server/Entity/getFlag(I)Z
@@ -93,6 +96,8 @@ public net/minecraft/server/EntityFallingBlock/hurtEntities
 public net/minecraft/server/EntityFireworks/FIREWORK_ITEM
 public net/minecraft/server/EntityFireworks/expectedLifespan
 public net/minecraft/server/EntityFish/isFromBucket()Z
+public net/minecraft/server/EntityFox/setFoxType(Lnet/minecraft/server/EntityFox$Type;)V
+public net/minecraft/server/EntityFox/setSleeping(Z)V
 public net/minecraft/server/EntityGuardian/goalRandomStroll
 public net/minecraft/server/EntityHanging/blockPosition
 public net/minecraft/server/EntityHorseAbstract/attributeJumpStrength
@@ -122,6 +127,7 @@ public net/minecraft/server/EntityLlama/setStrength(I)V
 public net/minecraft/server/EntityMinecartCommandBlock/COMMAND
 public net/minecraft/server/EntityMinecartContainer/lootTable
 public net/minecraft/server/EntityMinecartContainer/lootTableSeed
+public net/minecraft/server/EntityMushroomCow/setVariant(Lnet/minecraft/server/EntityMushroomCow$Type;)V 
 public net/minecraft/server/EntityPigZombie/angerLevel
 public net/minecraft/server/EntityPlayer/invulnerableTicks
 public net/minecraft/server/EntityPlayer/lastSentExp
@@ -179,8 +185,10 @@ public net/minecraft/server/MobSpawnerAbstract/getMobName()Lnet/minecraft/server
 public net/minecraft/server/MobSpawnerAbstract/maxNearbyEntities
 public net/minecraft/server/MobSpawnerAbstract/maxSpawnDelay
 public net/minecraft/server/MobSpawnerAbstract/minSpawnDelay
+public net/minecraft/server/MobSpawnerAbstract/mobs
 public net/minecraft/server/MobSpawnerAbstract/requiredPlayerRange
 public net/minecraft/server/MobSpawnerAbstract/spawnCount
+public net/minecraft/server/MobSpawnerAbstract/spawnData
 public net/minecraft/server/MobSpawnerAbstract/spawnDelay
 public net/minecraft/server/MobSpawnerAbstract/spawnRange
 public net/minecraft/server/MojangsonParser/parseArray()Lnet/minecraft/server/NBTBase;
@@ -202,7 +210,7 @@ public net/minecraft/server/PlayerAbilities/walkSpeed
 public net/minecraft/server/PlayerChunk/players
 public net/minecraft/server/PlayerChunkMap$EntityTracker/trackedPlayers
 public net/minecraft/server/PlayerChunkMap/chunkGenerator
-public net/minecraft/server/PlayerChunkMap/saveChunk(Lnet/minecraft/server/IChunkAccess;)V
+public net/minecraft/server/PlayerChunkMap/saveChunk(Lnet/minecraft/server/IChunkAccess;)Z
 public net/minecraft/server/PlayerChunkMap/trackedEntities
 public net/minecraft/server/PlayerChunkMap/unloadQueue
 public net/minecraft/server/PlayerChunkMap/updatingChunks

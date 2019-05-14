@@ -999,8 +999,6 @@ it/unimi/dsi/fastutil/longs/AbstractLong2DoubleSortedMap
 it/unimi/dsi/fastutil/longs/AbstractLong2FloatFunction
 it/unimi/dsi/fastutil/longs/AbstractLong2FloatMap
 it/unimi/dsi/fastutil/longs/AbstractLong2FloatSortedMap
-it/unimi/dsi/fastutil/longs/AbstractLong2LongFunction
-it/unimi/dsi/fastutil/longs/AbstractLong2LongMap
 it/unimi/dsi/fastutil/longs/AbstractLong2LongSortedMap
 it/unimi/dsi/fastutil/longs/AbstractLong2ReferenceFunction
 it/unimi/dsi/fastutil/longs/AbstractLong2ReferenceMap
@@ -1077,13 +1075,8 @@ it/unimi/dsi/fastutil/longs/Long2IntOpenCustomHashMap
 it/unimi/dsi/fastutil/longs/Long2IntRBTreeMap
 it/unimi/dsi/fastutil/longs/Long2LongAVLTreeMap
 it/unimi/dsi/fastutil/longs/Long2LongArrayMap
-it/unimi/dsi/fastutil/longs/Long2LongFunction
-it/unimi/dsi/fastutil/longs/Long2LongFunctions
 it/unimi/dsi/fastutil/longs/Long2LongLinkedOpenHashMap
-it/unimi/dsi/fastutil/longs/Long2LongMap
-it/unimi/dsi/fastutil/longs/Long2LongMaps
 it/unimi/dsi/fastutil/longs/Long2LongOpenCustomHashMap
-it/unimi/dsi/fastutil/longs/Long2LongOpenHashMap
 it/unimi/dsi/fastutil/longs/Long2LongRBTreeMap
 it/unimi/dsi/fastutil/longs/Long2LongSortedMap
 it/unimi/dsi/fastutil/longs/Long2LongSortedMaps
