@@ -57,6 +57,7 @@ BaseBlockPosition e ZERO
 BaseBlockPosition o ()I getX
 BaseBlockPosition p ()I getY
 BaseBlockPosition q ()I getZ
+Behavior a (LWorldServer;LEntityLiving;)Z shouldExecute
 Behavior$Status a STOPPED
 Behavior$Status b RUNNING
 BehaviorController a (LMemoryModuleType;)Z hasMemory
@@ -287,6 +288,7 @@ BlockJukeBox a HAS_RECORD
 BlockLadder a FACING
 BlockLeaves a DISTANCE
 BlockLeaves b PERSISTENT
+BlockLectern a (LWorld;LBlockPosition;LIBlockData;Z)V setHasBook
 BlockLever a POWERED
 BlockMinecartDetector c SHAPE
 BlockMinecartDetector d POWERED
@@ -1179,7 +1181,7 @@ ChatClickable$EnumClickAction b OPEN_FILE
 ChatClickable$EnumClickAction c RUN_COMMAND
 ChatClickable$EnumClickAction d SUGGEST_COMMAND
 ChatClickable$EnumClickAction e CHANGE_PAGE
-ChatComponentUtils a (LCommandListenerWrapper;LIChatBaseComponent;LEntity;)LIChatBaseComponent; filterForDisplay
+ChatComponentUtils a (LCommandListenerWrapper;LIChatBaseComponent;LEntity;I)LIChatBaseComponent; filterForDisplay
 ChatHoverable$EnumHoverAction a SHOW_TEXT
 ChatHoverable$EnumHoverAction b SHOW_ITEM
 ChatHoverable$EnumHoverAction c SHOW_ENTITY
@@ -1303,10 +1305,14 @@ ChunkProviderServer h lightEngine
 ChunkProviderServer i serverThreadQueue
 ChunkProviderServer j worldPersistentData
 ChunkProviderServer k lastTickTime
+ChunkProviderServer l ()V clearCache
 ChunkProviderServer l allowMonsters
 ChunkProviderServer m ()Z tickDistanceManager
 ChunkProviderServer m allowAnimals
 ChunkProviderServer n ()V tickChunks
+ChunkProviderServer n cachePos
+ChunkProviderServer o cacheStatus
+ChunkProviderServer p cacheChunk
 ChunkRegionLoader a (LNBTTagCompound;LChunk;)V loadEntities
 ChunkRegionLoader a (LWorldServer;LDefinedStructureManager;LVillagePlace;LChunkCoordIntPair;LNBTTagCompound;)LProtoChunk; loadChunk
 ChunkRegionLoader a (LWorldServer;LIChunkAccess;)LNBTTagCompound; saveChunk
@@ -1435,6 +1441,7 @@ ContainerStonecutter h containerProperty
 ContainerStonecutter i world
 ContainerWorkbench c craftInventory
 ContainerWorkbench d resultInventory
+ContainerWorkbench e containerAccess
 Containers a GENERIC_9X1
 Containers b GENERIC_9X2
 Containers c GENERIC_9X3
@@ -1843,8 +1850,9 @@ Entity i (I)V setAirTicks
 Entity i (LEntity;)V collide
 Entity i (Z)V setInvisible
 Entity j ()V stopRiding
-Entity j (DDD)V setMot
+Entity j (DDD)V enderTeleportAndLoad
 Entity k ()Z isInRain
+Entity k (DDD)V setMot
 Entity k (F)V setHeadRotation
 Entity k attachedToPlayer
 Entity l (Z)V setInvulnerable
@@ -2126,8 +2134,8 @@ EntityHuman ec ()Z isCreativeAndOp
 EntityHuman f (LEntity;)V attack
 EntityHuman h (LNBTTagCompound;)V setShoulderEntityLeft
 EntityHuman i (LNBTTagCompound;)V setShoulderEntityRight
-EntityHuman k (DDD)V checkMovement
 EntityHuman k (LNBTTagCompound;)V spawnEntityFromShoulder
+EntityHuman l (DDD)V checkMovement
 EntityHuman q (I)V setScore
 EntityHuman r ()V updateAbilities
 EntityHuman r (F)V applyExhaustion
@@ -2276,6 +2284,7 @@ EntityLiving cy ()Z removeAllEffects
 EntityLiving cz ()Ljava/util/Collection; getEffects
 EntityLiving d (LDamageSource;F)V damageEntity0
 EntityLiving d (LEntityHuman;)I getExpValue
+EntityLiving d (LEntityLiving;)V shieldBlock
 EntityLiving d (LMobEffectList;)Z removeEffect
 EntityLiving d HEALTH
 EntityLiving db ()V doTick
@@ -2351,6 +2360,7 @@ EntityOcelot r (Z)V setTrusting
 EntityPainting e art
 EntityPanda a (LEntityPanda$Gene;)V setMainGene
 EntityPanda b (LEntityPanda$Gene;)V setHiddenGene
+EntityPanda bQ PICKUP_PREDICATE
 EntityPanda ef ()LEntityPanda$Gene; getMainGene
 EntityPanda eg ()LEntityPanda$Gene; getHiddenGene
 EntityPanda$Gene a NORMAL
@@ -2630,7 +2640,7 @@ EntityVillagerAbstract bC inventory
 EntityVillagerAbstract bz trades
 EntityVillagerAbstract ed ()LInventorySubcontainer; getInventory
 EntityWither a (II)V setHeadTarget
-EntityWither bJ bossBattle
+EntityWither bI bossBattle
 EntityWither r (I)I getHeadTarget
 EntityWitherSkull a (Z)V setCharged
 EntityWitherSkull l ()Z isCharged
@@ -2988,6 +2998,11 @@ GenericAttributes h ATTACK_SPEED
 GenericAttributes i ARMOR
 GenericAttributes j ARMOR_TOUGHNESS
 GenericAttributes k LUCK
+GlobalPos a ()LDimensionManager; getDimensionManager
+GlobalPos a (LDimensionManager;LBlockPosition;)LGlobalPos; create
+GlobalPos a dimensionManager
+GlobalPos b ()LBlockPosition; getBlockPosition
+GlobalPos b blockPosition
 HeightMap$Type a WORLD_SURFACE_WG
 HeightMap$Type b WORLD_SURFACE
 HeightMap$Type c OCEAN_FLOOR_WG
@@ -3704,6 +3719,7 @@ LootItemFunctionCopyName$Source a THIS
 LootItemFunctionCopyName$Source b KILLER
 LootItemFunctionCopyName$Source c KILLER_PLAYER
 LootItemFunctionCopyName$Source d BLOCK_ENTITY
+LootTable a ()LLootContextParameterSet; getLootContextParameterSet
 LootTable a (LIInventory;LLootTableInfo;)V fillInventory
 LootTable a (LLootTableInfo;)Ljava/util/List; populateLoot
 LootTable a (LLootTableInfo;Ljava/util/function/Consumer;)V populateLootDirect
@@ -3810,6 +3826,7 @@ MathHelper a (III)I clamp
 MathHelper a (Ljava/util/Random;II)I nextInt
 MathHelper b (F)F cos
 MathHelper c (D)I floor
+MemoryModuleType a ()Ljava/util/Optional; getSerializer
 MemoryModuleType a DUMMY
 MemoryModuleType b HOME
 MemoryModuleType c JOB_SITE
@@ -4258,9 +4275,10 @@ PlayerAbilities f flySpeed
 PlayerAbilities g walkSpeed
 PlayerChunk a (LChunkStatus;)Ljava/util/concurrent/CompletableFuture; getStatusFutureUnchecked
 PlayerChunk a UNLOADED_CHUNK_ACCESS
-PlayerChunk b (LChunkStatus;)Ljava/util/concurrent/CompletableFuture; getStatusFuture
+PlayerChunk b (I)LChunkStatus; getChunkStatus
 PlayerChunk b UNLOADED_CHUNK_ACCESS_FUTURE
 PlayerChunk c ()LChunk; getChunk
+PlayerChunk c (I)LPlayerChunk$State; getChunkState
 PlayerChunk c UNLOADED_CHUNK
 PlayerChunk d UNLOADED_CHUNK_FUTURE
 PlayerChunk e CHUNK_STATUSES
@@ -4281,12 +4299,13 @@ PlayerChunk q dirtyCount
 PlayerChunk v lightEngine
 PlayerChunk x players
 PlayerChunk y hasBeenLoaded
+PlayerChunk$State a (LPlayerChunk$State;)Z isAtLeast
 PlayerChunk$State a INACCESSIBLE
 PlayerChunk$State b BORDER
 PlayerChunk$State c TICKING
 PlayerChunk$State d ENTITY_TICKING
-PlayerChunkMap A viewDistance
-PlayerChunkMap B entityDistance
+PlayerChunkMap B viewDistance
+PlayerChunkMap C entityDistance
 PlayerChunkMap a (II)V setViewDistance
 PlayerChunkMap a (J)LPlayerChunk; getUpdatingChunk
 PlayerChunkMap a (LEntity;)V addEntity
@@ -4301,8 +4320,8 @@ PlayerChunkMap b (J)LPlayerChunk; getVisibleChunk
 PlayerChunkMap b (LEntity;)V removeEntity
 PlayerChunkMap b (LEntity;LPacket;)V broadcastIncludingSelf
 PlayerChunkMap e updatingChunks
-PlayerChunkMap f (LChunkCoordIntPair;)LNBTTagCompound; readChunkData
 PlayerChunkMap f visibleChunks
+PlayerChunkMap g (LChunkCoordIntPair;)LNBTTagCompound; readChunkData
 PlayerChunkMap g pendingUnload
 PlayerChunkMap h loadedChunks
 PlayerChunkMap i world
@@ -4413,7 +4432,49 @@ PlayerList u ()V reload
 PlayerListBox a ()V tick
 PortalTravelAgent c world
 PotionUtil a (LItemStack;)Ljava/util/List; getEffects
+Potions A STRONG_HEALING
+Potions B HARMING
+Potions C STRONG_HARMING
+Potions D POISON
+Potions E LONG_POISON
+Potions F STRONG_POISON
+Potions G REGENERATION
+Potions H LONG_REGENERATION
+Potions I STRONG_REGENERATION
+Potions J STRENGTH
+Potions K LONG_STRENGTH
+Potions L STRONG_STRENGTH
+Potions M WEAKNESS
+Potions N LONG_WEAKNESS
+Potions O LUCK
+Potions P SLOW_FALLING
+Potions Q LONG_SLOW_FALLING
 Potions a EMPTY
+Potions b WATER
+Potions c MUNDANE
+Potions d THICK
+Potions e AWKWARD
+Potions f NIGHT_VISION
+Potions g LONG_NIGHT_VISION
+Potions h INVISIBILITY
+Potions i LONG_INVISIBILITY
+Potions j LEAPING
+Potions k LONG_LEAPING
+Potions l STRONG_LEAPING
+Potions m FIRE_RESISTANCE
+Potions n LONG_FIRE_RESISTANCE
+Potions o SWIFTNESS
+Potions p LONG_SWIFTNESS
+Potions q STRONG_SWIFTNESS
+Potions r SLOWNESS
+Potions s LONG_SLOWNESS
+Potions t STRONG_SLOWNESS
+Potions u TURTLE_MASTER
+Potions v LONG_TURTLE_MASTER
+Potions w STRONG_TURTLE_MASTER
+Potions x WATER_BREATHING
+Potions y LONG_WATER_BREATHING
+Potions z HEALING
 PropertyManager a (Ljava/lang/String;I)I getInt
 PropertyManager a (Ljava/lang/String;J)J getLong
 PropertyManager a (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; getString
@@ -5608,14 +5669,14 @@ TickListPriority g EXTREMELY_LOW
 TickListServer d nextTickListHash
 TickListServer e nextTickList
 Ticket a ()LTicketType; getTicketType
-Ticket c ()J getCreationTick
 TicketType a START
 TicketType b DRAGON
 TicketType c PLAYER
 TicketType d FORCED
 TicketType e LIGHT
 TicketType f PORTAL
-TicketType g UNKNOWN
+TicketType g POST_TELEPORT
+TicketType h UNKNOWN
 TileEntity a ()LPacketPlayOutTileEntityData; getUpdatePacket
 TileEntity a (LBlockPosition;)V setPosition
 TileEntity a (LNBTTagCompound;)V load
@@ -5626,10 +5687,10 @@ TileEntity c (LNBTTagCompound;)LTileEntity; create
 TileEntity d world
 TileEntity e ()V update
 TileEntity e position
-TileEntity i ()Z hasWorld
-TileEntity j ()LBlockPosition; getPosition
-TileEntity k ()LIBlockData; getBlock
-TileEntity l ()Z isRemoved
+TileEntity j ()Z hasWorld
+TileEntity k ()LBlockPosition; getPosition
+TileEntity l ()LIBlockData; getBlock
+TileEntity m ()Z isRemoved
 TileEntity o ()V invalidateBlockCache
 TileEntity p ()Z isFilteredNBT
 TileEntity w ()LWorld; getWorld
@@ -5650,12 +5711,12 @@ TileEntityBrewingStand i brewTime
 TileEntityBrewingStand l fuelLevel
 TileEntityCampfire a items
 TileEntityCampfire b cookingTimes
-TileEntityCampfire c ()LNonNullList; getItems
 TileEntityCampfire c cookingTotalTimes
+TileEntityCampfire d ()LNonNullList; getItems
 TileEntityChest c viewingCount
+TileEntityChest h ()V onOpen
 TileEntityChest i items
-TileEntityChest s ()V onOpen
-TileEntityCommand c ()LCommandBlockListenerAbstract; getCommandBlock
+TileEntityCommand d ()LCommandBlockListenerAbstract; getCommandBlock
 TileEntityCommand$Type a SEQUENCE
 TileEntityCommand$Type b AUTO
 TileEntityCommand$Type c REDSTONE
@@ -5686,18 +5747,21 @@ TileEntityHopper a (LIInventory;LIInventory;LItemStack;LEnumDirection;)LItemStac
 TileEntityHopper c (I)V setCooldown
 TileEntityHopper i items
 TileEntityJukeBox a (LItemStack;)V setRecord
-TileEntityJukeBox c ()LItemStack; getRecord
+TileEntityJukeBox d ()LItemStack; getRecord
 TileEntityLectern a (I)V setPage
+TileEntityLectern a (LItemStack;)V setBook
 TileEntityLectern a inventory
 TileEntityLectern b containerProperties
 TileEntityLectern c book
-TileEntityLectern g ()I getPage
+TileEntityLectern f ()LItemStack; getBook
+TileEntityLectern g ()Z hasBook
 TileEntityLectern g page
+TileEntityLectern h ()I getPage
 TileEntityLectern h maxPage
 TileEntityLootable a (LMinecraftKey;J)V setLootTable
 TileEntityLootable g lootTable
 TileEntityLootable h lootTableSeed
-TileEntityMobSpawner c ()LMobSpawnerAbstract; getSpawner
+TileEntityMobSpawner d ()LMobSpawnerAbstract; getSpawner
 TileEntityShulkerBox b contents
 TileEntityShulkerBox$AnimationPhase a CLOSED
 TileEntityShulkerBox$AnimationPhase b OPENING
@@ -5705,7 +5769,7 @@ TileEntityShulkerBox$AnimationPhase c OPENED
 TileEntityShulkerBox$AnimationPhase d CLOSING
 TileEntitySign a (LEnumColor;)Z setColor
 TileEntitySign a lines
-TileEntitySign f ()LEnumColor; getColor
+TileEntitySign g ()LEnumColor; getColor
 TileEntitySign i isEditable
 TileEntitySign l color
 TileEntitySkull a (Lcom/mojang/authlib/GameProfile;)V setGameProfile
@@ -5717,8 +5781,8 @@ TileEntityStructure a (LEntityLiving;)V setAuthor
 TileEntityStructure a (Ljava/lang/String;)V setStructureName
 TileEntityStructure a structureName
 TileEntityStructure b author
-TileEntityStructure c ()Ljava/lang/String; getStructureName
 TileEntityStructure c metadata
+TileEntityStructure d ()Ljava/lang/String; getStructureName
 TileEntityStructure g relativePosition
 TileEntityStructure h size
 TileEntityStructure i mirror

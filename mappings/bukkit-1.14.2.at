@@ -47,6 +47,7 @@ public net/minecraft/server/CommandListenerWrapper/base
 public net/minecraft/server/ContainerAnvil/levelCost
 public net/minecraft/server/ContainerAnvil/renameText
 public net/minecraft/server/ContainerDispenser/items
+public net/minecraft/server/ContainerWorkbench/containerAccess
 public net/minecraft/server/CraftingManager/initializeRecipeMap(Ljava/util/Map;)V
 public net/minecraft/server/DataConverterMaterialId/ID_MAPPING
 public net/minecraft/server/DataConverterSpawnEgg/ID_MAPPING
@@ -150,6 +151,7 @@ public net/minecraft/server/EntityZombie/drownedConversionTime
 public net/minecraft/server/EntityZombie/startDrownedConversion(I)V
 public net/minecraft/server/EntityZombieVillager/CONVERTING
 public net/minecraft/server/EntityZombieVillager/conversionTime
+public net/minecraft/server/EntityZombieVillager/conversionPlayer
 public net/minecraft/server/EntityZombieVillager/startConversion(Ljava/util/UUID;I)V 
 public net/minecraft/server/EnumChatFormat/character
 public net/minecraft/server/Explosion/source
@@ -207,6 +209,7 @@ public net/minecraft/server/PacketPlayOutPlayerListHeaderFooter/header
 public net/minecraft/server/PacketPlayOutSpawnPosition/position
 public net/minecraft/server/PlayerAbilities/flySpeed
 public net/minecraft/server/PlayerAbilities/walkSpeed
+public net/minecraft/server/PlayerChunk/oldTicketLevel
 public net/minecraft/server/PlayerChunk/players
 public net/minecraft/server/PlayerChunkMap$EntityTracker/trackedPlayers
 public net/minecraft/server/PlayerChunkMap/chunkGenerator
