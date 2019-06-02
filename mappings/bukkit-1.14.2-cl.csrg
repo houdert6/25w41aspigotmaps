@@ -1319,6 +1319,7 @@ bvo ShapeDetectorBlock
 bvp ShapeDetector
 bvp$a ShapeDetector$BlockLoader
 bvp$b ShapeDetector$ShapeDetectorCollection
+bvp$c ShapeDetector$Shape
 bvq ShapeDetectorBuilder
 bvs MaterialPredicate
 bvt BlockPredicate

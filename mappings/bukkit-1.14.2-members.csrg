@@ -1867,6 +1867,7 @@ Entity p locX
 Entity q locY
 Entity r locZ
 Entity s yaw
+Entity t ()Z isSpectator
 Entity t pitch
 Entity u lastYaw
 Entity u_ ()V initDatawatcher
@@ -2139,7 +2140,6 @@ EntityHuman q (I)V setScore
 EntityHuman r ()V updateAbilities
 EntityHuman r (F)V applyExhaustion
 EntityHuman r (I)V addScore
-EntityHuman t ()Z isSpectator
 EntityHuman t_ ()V closeInventory
 EntityHuman u ()Z isCreative
 EntityHuman$EnumBedResult a NOT_POSSIBLE_HERE
@@ -4318,6 +4318,7 @@ PlayerChunkMap a GOLDEN_TICKET
 PlayerChunkMap b (J)LPlayerChunk; getVisibleChunk
 PlayerChunkMap b (LEntity;)V removeEntity
 PlayerChunkMap b (LEntity;LPacket;)V broadcastIncludingSelf
+PlayerChunkMap d (LChunkCoordIntPair;)Z isOutsideOfRange
 PlayerChunkMap e updatingChunks
 PlayerChunkMap f visibleChunks
 PlayerChunkMap g (LChunkCoordIntPair;)LNBTTagCompound; readChunkData
@@ -4640,6 +4641,9 @@ ServerPing a (LServerPing$ServerPingPlayerSample;)V setPlayerSample
 ServerPing a (Ljava/lang/String;)V setFavicon
 ServerPing c ()LServerPing$ServerData; getServerData
 ServerPing$ServerData b ()I getProtocolVersion
+ShapeDetector$Shape a position
+ShapeDetector$Shape b velocity
+ShapeDetector$Shape c yaw
 ShapeDetector$ShapeDetectorCollection b ()LEnumDirection; getFacing
 ShapeDetectorBlock d ()LBlockPosition; getPosition
 ShapedRecipes a width
