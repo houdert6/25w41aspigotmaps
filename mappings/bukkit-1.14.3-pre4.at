@@ -48,7 +48,6 @@ public net/minecraft/server/ContainerAnvil/levelCost
 public net/minecraft/server/ContainerAnvil/renameText
 public net/minecraft/server/ContainerDispenser/items
 public net/minecraft/server/ContainerWorkbench/containerAccess
-public net/minecraft/server/CraftingManager/initializeRecipeMap(Ljava/util/Map;)V
 public net/minecraft/server/DataConverterMaterialId/ID_MAPPING
 public net/minecraft/server/DataConverterSpawnEgg/ID_MAPPING
 public net/minecraft/server/DedicatedServer/remoteControlCommandListener
@@ -85,6 +84,7 @@ public net/minecraft/server/EntityArmorStand/setSmall(Z)V
 public net/minecraft/server/EntityArrow/despawnCounter
 public net/minecraft/server/EntityArrow/inGround
 public net/minecraft/server/EntityArrow/knockbackStrength
+public net/minecraft/server/EntityCreeper/explode()V
 public net/minecraft/server/EntityCreeper/explosionRadius
 public net/minecraft/server/EntityCreeper/maxFuseTicks
 public net/minecraft/server/EntityEnderSignal/despawnTimer

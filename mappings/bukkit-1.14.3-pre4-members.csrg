@@ -16,8 +16,8 @@ AdvancementDataPlayer b (LAdvancement;)LAdvancementProgress; getProgress
 AdvancementDataPlayer b (LAdvancement;Ljava/lang/String;)Z revokeCritera
 AdvancementDataPlayer f data
 AdvancementDataPlayer j player
-AdvancementDataWorld d DESERIALIZER
-AdvancementDataWorld e REGISTRY
+AdvancementDataWorld b DESERIALIZER
+AdvancementDataWorld c REGISTRY
 AdvancementFrameType a TASK
 AdvancementFrameType b CHALLENGE
 AdvancementFrameType c GOAL
@@ -1273,12 +1273,11 @@ ChunkGenerator d settings
 ChunkGenerator e ()I getGenerationDepth
 ChunkGenerator f ()I getSeaLevel
 ChunkMapDistance a ()V purgeTickets
-ChunkMapDistance a (I)V setEntityDistance
 ChunkMapDistance c (LTicketType;LChunkCoordIntPair;ILjava/lang/Object;)V addTicket
 ChunkMapDistance d (LTicketType;LChunkCoordIntPair;ILjava/lang/Object;)V removeTicket
-ChunkMapDistance e tickets
-ChunkMapDistance h entitydistance
-ChunkMapDistance q currentTick
+ChunkMapDistance d tickets
+ChunkMapDistance n currentTick
+ChunkProviderServer a (I)V setViewDistance
 ChunkProviderServer a (II)Z isLoaded
 ChunkProviderServer a (J)LPlayerChunk; getChunk
 ChunkProviderServer a (LEntity;LPacket;)V broadcastIncludingSelf
@@ -1288,13 +1287,12 @@ ChunkProviderServer a (Ljava/util/function/BooleanSupplier;)V tick
 ChunkProviderServer a (Z)V save
 ChunkProviderServer a playerChunkMap
 ChunkProviderServer b (LBlockPosition;)V flagDirty
-ChunkProviderServer b (LEntity;)V removeEntity
 ChunkProviderServer b (LEntity;LPacket;)V broadcast
 ChunkProviderServer b (LTicketType;LChunkCoordIntPair;ILjava/lang/Object;)V removeTicket
-ChunkProviderServer c (II)V setViewDistance
 ChunkProviderServer c (IILChunkStatus;Z)Ljava/util/concurrent/CompletableFuture; getChunkFutureMainThread
-ChunkProviderServer c (LEntity;)V addEntity
+ChunkProviderServer c (LEntity;)V removeEntity
 ChunkProviderServer d ()Z runTasks
+ChunkProviderServer d (LEntity;)V addEntity
 ChunkProviderServer d chunkMapDistance
 ChunkProviderServer e chunkGenerator
 ChunkProviderServer f world
@@ -1343,7 +1341,7 @@ ChunkStatus l HEIGHTMAPS
 ChunkStatus m FULL
 ChunkStatus$Type a PROTOCHUNK
 ChunkStatus$Type b LEVELCHUNK
-Clearable M_ ()V clear
+Clearable L_ ()V clear
 CombatTracker a (LDamageSource;FF)V trackDamage
 CombatTracker b ()LIChatBaseComponent; getDeathMessage
 CommandAdvancement$Action a GRANT
@@ -1438,6 +1436,7 @@ ContainerStonecutter f inventory
 ContainerStonecutter g containerAccess
 ContainerStonecutter h containerProperty
 ContainerStonecutter i world
+ContainerStonecutter n resultInventory
 ContainerWorkbench c craftInventory
 ContainerWorkbench d resultInventory
 ContainerWorkbench e containerAccess
@@ -1476,10 +1475,8 @@ Counter b DEFAULT
 Counter c DIVIDE_BY_TEN
 Counter d DISTANCE
 Counter e TIME
-CraftingManager a (LIRecipe;)V addRecipe
 CraftingManager a (LRecipes;LIInventory;LWorld;)Ljava/util/Optional; craft
-CraftingManager a (Ljava/util/Map;)V initializeRecipeMap
-CraftingManager d recipes
+CraftingManager c recipes
 CriterionProgress d ()Ljava/util/Date; getDate
 CustomFunctionData e ()V tick
 CustomFunctionData f server
@@ -1549,11 +1546,12 @@ DedicatedServer a (Ljava/lang/String;LCommandListenerWrapper;)V issueCommand
 DedicatedServer aW ()V handleCommandQueue
 DedicatedServer aZ ()Z convertNames
 DedicatedServer ba ()J getMaxTickTime
-DedicatedServer k serverCommandQueue
-DedicatedServer m remoteControlCommandListener
-DedicatedServer n remoteControlListener
+DedicatedServer j serverCommandQueue
+DedicatedServer k remoteStatusListener
+DedicatedServer l remoteControlCommandListener
+DedicatedServer m remoteControlListener
+DedicatedServer n propertyManager
 DedicatedServer o (Z)V setHasWhitelist
-DedicatedServer o propertyManager
 DedicatedServerProperties A resourcePackHash
 DedicatedServerProperties B resourcePackSha1
 DedicatedServerProperties C hardcore
@@ -1745,42 +1743,41 @@ Entity a (LEnumMoveType;LVec3D;)V move
 Entity a (LWorld;)V spawnIn
 Entity a (Ljava/lang/String;)Z addScoreboardTag
 Entity aD invulnerable
-Entity aF ()V velocityChanged
-Entity aG ()Z isInteractable
-Entity aH ()Z isCollidable
+Entity aG ()V velocityChanged
+Entity aH ()Z isInteractable
+Entity aI ()Z isCollidable
 Entity aI size
-Entity aJ ()Ljava/lang/String; getSaveID
 Entity aJ headHeight
-Entity aK ()Z isAlive
-Entity aL ()Z inBlock
-Entity aM ()V passengerTick
-Entity aQ ()V ejectPassengers
-Entity aS ()LVec3D; getLookDirection
-Entity aV ()V doPortalTick
-Entity aZ ()Ljava/lang/Iterable; getArmorItems
+Entity aK ()Ljava/lang/String; getSaveID
+Entity aL ()Z isAlive
+Entity aM ()Z inBlock
+Entity aN ()V passengerTick
+Entity aR ()V ejectPassengers
+Entity aT ()LVec3D; getLookDirection
+Entity aW ()V doPortalTick
 Entity aa ()V entityBaseTick
 Entity aa chunkY
 Entity ab chunkZ
 Entity ac ()V burnFromLava
-Entity ad ()V extinguish
-Entity ag ()V recalcPosition
+Entity ae ()V extinguish
 Entity ag impulse
-Entity ah ()LSoundEffect; getSoundSwim
+Entity ah ()V recalcPosition
 Entity ah portalCooldown
-Entity ai ()LSoundEffect; getSoundSplash
-Entity aj ()LSoundEffect; getSoundSplashHighSpeed
-Entity ak ()V checkBlockCollisions
+Entity ai ()LSoundEffect; getSoundSwim
+Entity aj ()LSoundEffect; getSoundSplash
+Entity ak ()LSoundEffect; getSoundSplashHighSpeed
 Entity ak dimension
-Entity am ()Z isSilent
-Entity an ()Z isNoGravity
-Entity ao ()Z playStepSound
+Entity al ()V checkBlockCollisions
+Entity an ()Z isSilent
+Entity ao ()Z isNoGravity
 Entity ao uniqueID
-Entity aq ()Z isFireProof
+Entity ap ()Z playStepSound
 Entity aq glowing
-Entity ar ()Z isInWater
+Entity ar ()Z isFireProof
 Entity ar passengers
-Entity as ()Z isInWaterOrRain
+Entity as ()Z isInWater
 Entity as vehicle
+Entity at ()Z isInWaterOrRain
 Entity at mot
 Entity au boundingBox
 Entity ax fireTicks
@@ -1793,46 +1790,47 @@ Entity b (LEntityPose;)V setPose
 Entity b (LIChatBaseComponent;)V setCustomName
 Entity b (Ljava/lang/String;)Z removeScoreboardTag
 Entity b entityCount
-Entity bA ()Ljava/util/UUID; getUniqueID
-Entity bB ()Ljava/lang/String; getUniqueIDString
-Entity bC ()Ljava/lang/String; getName
-Entity bF ()Z getCustomNameVisible
-Entity bH ()LEnumDirection; getDirection
-Entity bI ()LEnumDirection; getAdjustedDirection
-Entity bK ()LAxisAlignedBB; getBoundingBox
-Entity bM ()F getHeadHeight
-Entity bN ()LBlockPosition; getChunkCoordinates
-Entity bP ()LWorld; getWorld
-Entity bQ ()Lnet/minecraft/server/MinecraftServer; getMinecraftServer
-Entity bU ()LEntity; getRidingPassenger
-Entity bV ()Ljava/util/List; getPassengers
-Entity bW ()Ljava/util/Collection; getAllPassengers
-Entity bX ()Z hasSinglePlayerPassenger
-Entity bY ()LEntity; getRootVehicle
-Entity bb ()Z isBurning
-Entity bc ()Z isPassenger
-Entity bd ()Z isVehicle
-Entity bf ()Z isSneaking
-Entity bh ()Z isSprinting
-Entity bi ()Z isSwimming
-Entity bm ()Z isInvisible
-Entity bn ()LScoreboardTeamBase; getScoreboardTeam
-Entity bp ()I getAirTicks
-Entity bq ()F getHeadRotation
-Entity bs ()Z isInvulnerable
-Entity bt ()Z canPortal
-Entity bw ()LVec3D; getPortalOffset
-Entity bx ()LEnumDirection; getPortalDirection
-Entity by ()Z isIgnoreBlockTrigger
+Entity bB ()Ljava/util/UUID; getUniqueID
+Entity bC ()Ljava/lang/String; getUniqueIDString
+Entity bD ()Ljava/lang/String; getName
+Entity bG ()Z getCustomNameVisible
+Entity bI ()LEnumDirection; getDirection
+Entity bJ ()LEnumDirection; getAdjustedDirection
+Entity bL ()LAxisAlignedBB; getBoundingBox
+Entity bN ()F getHeadHeight
+Entity bO ()LBlockPosition; getChunkCoordinates
+Entity bQ ()LWorld; getWorld
+Entity bR ()Lnet/minecraft/server/MinecraftServer; getMinecraftServer
+Entity bV ()LEntity; getRidingPassenger
+Entity bW ()Ljava/util/List; getPassengers
+Entity bX ()Ljava/util/Collection; getAllPassengers
+Entity bY ()Z hasSinglePlayerPassenger
+Entity bZ ()LEntity; getRootVehicle
+Entity ba ()Ljava/lang/Iterable; getArmorItems
+Entity bc ()Z isBurning
+Entity bd ()Z isPassenger
+Entity be ()Z isVehicle
+Entity bg ()Z isSneaking
+Entity bi ()Z isSprinting
+Entity bj ()Z isSwimming
+Entity bn ()Z isInvisible
+Entity bo ()LScoreboardTeamBase; getScoreboardTeam
+Entity bq ()I getAirTicks
+Entity br ()F getHeadRotation
+Entity bt ()Z isInvulnerable
+Entity bu ()Z canPortal
+Entity bx ()LVec3D; getPortalOffset
+Entity by ()LEnumDirection; getPortalDirection
+Entity bz ()Z isIgnoreBlockTrigger
 Entity c (DDD)V setPosition
 Entity c (Z)V setSilent
-Entity ca ()LEntity; getVehicle
-Entity cb ()LSoundCategory; getSoundCategory
-Entity cc ()I getMaxFireTicks
-Entity cd ()LCommandListenerWrapper; getCommandListener
-Entity cf ()F getWidth
-Entity cg ()F getHeight
-Entity ci ()LVec3D; getMot
+Entity cb ()LEntity; getVehicle
+Entity cc ()LSoundCategory; getSoundCategory
+Entity cd ()I getMaxFireTicks
+Entity ce ()LCommandListenerWrapper; getCommandListener
+Entity cg ()F getWidth
+Entity ch ()F getHeight
+Entity cj ()LVec3D; getMot
 Entity d ()LIChatBaseComponent; getScoreboardDisplayName
 Entity d (LVec3D;)V setMot
 Entity d (Z)V setNoGravity
@@ -1840,16 +1838,16 @@ Entity e (LNBTTagCompound;)LNBTTagCompound; save
 Entity e (Z)V setSneaking
 Entity f (I)V setOnFire
 Entity f (Z)V setSprinting
-Entity g (I)V burn
 Entity g (Z)V setSwimming
 Entity g id
 Entity h ()V tick
-Entity h (I)Z getFlag
-Entity i (I)V setAirTicks
+Entity h (I)V burn
+Entity i (I)Z getFlag
 Entity i (LEntity;)V collide
 Entity i (Z)V setInvisible
 Entity j ()V stopRiding
 Entity j (DDD)V enderTeleportAndLoad
+Entity j (I)V setAirTicks
 Entity k ()Z isInRain
 Entity k (DDD)V setMot
 Entity k (F)V setHeadRotation
@@ -1886,10 +1884,10 @@ EntityAnimal a (LEntityAnimal;)Z mate
 EntityAnimal bA breedCause
 EntityAnimal bz loveTicks
 EntityAnimal d (LEntityHuman;)I getExpValue
-EntityAnimal eb ()LEntityPlayer; getBreedCause
-EntityAnimal ec ()Z isInLove
-EntityAnimal ed ()V resetLove
-EntityAnimal q (I)V setLoveTicks
+EntityAnimal ec ()LEntityPlayer; getBreedCause
+EntityAnimal ed ()Z isInLove
+EntityAnimal ee ()V resetLove
+EntityAnimal r (I)V setLoveTicks
 EntityAreaEffectCloud a (F)V setRadius
 EntityAreaEffectCloud a (I)V setColor
 EntityAreaEffectCloud a (LEntityLiving;)V setSource
@@ -1972,20 +1970,22 @@ EntityBoat$EnumStatus c UNDER_FLOWING_WATER
 EntityBoat$EnumStatus d ON_LAND
 EntityBoat$EnumStatus e IN_AIR
 EntityCat a (LEnumColor;)V setCollarColor
-EntityCat ef ()I getCatType
-EntityCat ei ()LEnumColor; getCollarColor
-EntityCat r (I)V setCatType
+EntityCat eg ()I getCatType
+EntityCat ej ()LEnumColor; getCollarColor
+EntityCat s (I)V setCatType
 EntityCat$PathfinderGoalTemptChance c chosenTarget
-EntityChicken bF eggLayTime
-EntityChicken dV ()Z isChickenJockey
+EntityChicken bE eggLayTime
+EntityChicken dW ()Z isChickenJockey
 EntityComplexPart b owner
 EntityCreeper bA fuseTicks
 EntityCreeper bB maxFuseTicks
 EntityCreeper bC explosionRadius
 EntityCreeper c POWERED
 EntityCreeper dX ()Z isIgnited
+EntityCreeper dY ()V ignite
 EntityCreeper dZ ()Z canCauseHeadDrop
 EntityCreeper ea ()V setCausedHeadDrop
+EntityCreeper eb ()V explode
 EntityCreeper ed ()V createEffectCloud
 EntityCreeper l ()Z isPowered
 EntityDamageSource c (LEntityLiving;)LIChatBaseComponent; getLocalizedDeathMessage
@@ -1998,8 +1998,8 @@ EntityEnderCrystal i ()Z isShowingBottom
 EntityEnderDragon b PHASE
 EntityEnderDragon bM currentEnderCrystal
 EntityEnderDragon bz children
-EntityEnderDragon dU ()LDragonControllerManager; getDragonControllerManager
-EntityEnderDragon dV ()LEnderDragonBattle; getEnderDragonBattle
+EntityEnderDragon dV ()LDragonControllerManager; getDragonControllerManager
+EntityEnderDragon dW ()LEnderDragonBattle; getEnderDragonBattle
 EntityEnderDragon e (LDamageSource;F)Z dealDamage
 EntityEnderSignal c targetX
 EntityEnderSignal d targetY
@@ -2034,8 +2034,8 @@ EntityFireworks f expectedLifespan
 EntityFireworks g ridingEntity
 EntityFireworks k ()V explode
 EntityFish b FROM_BUCKET
-EntityFish dW ()LSoundEffect; getSoundFlop
-EntityFish dX ()Z isFromBucket
+EntityFish dX ()LSoundEffect; getSoundFlop
+EntityFish dY ()Z isFromBucket
 EntityFish r (Z)V setFromBucket
 EntityFishingHook b hooked
 EntityFishingHook d isInGround
@@ -2045,16 +2045,16 @@ EntityFishingHook$HookState a FLYING
 EntityFishingHook$HookState b HOOKED_IN_ENTITY
 EntityFishingHook$HookState c BOBBING
 EntityFox a (LEntityFox$Type;)V setFoxType
-EntityFox dV ()LEntityFox$Type; getFoxType
-EntityFox dW ()Z isSitting
-EntityFox ef ()Z isCrouching
-EntityFox ej ()V initializePathFinderGoals
+EntityFox dW ()LEntityFox$Type; getFoxType
+EntityFox dX ()Z isSitting
+EntityFox eg ()Z isCrouching
+EntityFox ek ()V initializePathFinderGoals
 EntityFox r (Z)V setSitting
 EntityFox t (Z)V setCrouching
 EntityFox x (Z)V setSleeping
 EntityFox$Type a RED
 EntityFox$Type b SNOW
-EntityGhast dT ()I getPower
+EntityGhast dU ()I getPower
 EntityGhast$PathfinderGoalGhastAttackTarget b ghast
 EntityGuardian bC goalRandomStroll
 EntityGuardian dX ()LSoundEffect; getSoundFlop
@@ -2068,28 +2068,28 @@ EntityHanging k ()I getHangingWidth
 EntityHanging l ()I getHangingHeight
 EntityHanging m ()V playPlaceSound
 EntityHanging n ()LBlockPosition; getBlockPosition
-EntityHorse dY ()I getVariant
-EntityHorse u (I)V setVariant
+EntityHorse dZ ()I getVariant
+EntityHorse v (I)V setVariant
 EntityHorseAbstract b (Ljava/util/UUID;)V setOwnerUUID
-EntityHorseAbstract bE inventoryChest
-EntityHorseAbstract bG jumpPower
-EntityHorseAbstract bQ canSlide
+EntityHorseAbstract bD inventoryChest
+EntityHorseAbstract bF jumpPower
+EntityHorseAbstract bP canSlide
 EntityHorseAbstract bz attributeJumpStrength
-EntityHorseAbstract dW ()I getChestSlots
-EntityHorseAbstract dX ()LSoundEffect; getSoundAngry
-EntityHorseAbstract ef ()Z isTamed
-EntityHorseAbstract eg ()Ljava/util/UUID; getOwnerUUID
-EntityHorseAbstract ek ()Z hasReproduced
-EntityHorseAbstract el ()I getTemper
-EntityHorseAbstract em ()V loadChest
-EntityHorseAbstract eo ()D getJumpStrength
-EntityHorseAbstract er ()I getMaxDomestication
-EntityHorseAbstract s (I)V setTemper
+EntityHorseAbstract dX ()I getChestSlots
+EntityHorseAbstract dY ()LSoundEffect; getSoundAngry
+EntityHorseAbstract eg ()Z isTamed
+EntityHorseAbstract eh ()Ljava/util/UUID; getOwnerUUID
+EntityHorseAbstract el ()Z hasReproduced
+EntityHorseAbstract em ()I getTemper
+EntityHorseAbstract en ()V loadChest
+EntityHorseAbstract ep ()D getJumpStrength
+EntityHorseAbstract es ()I getMaxDomestication
 EntityHorseAbstract s (Z)V setTamed
+EntityHorseAbstract t (I)V setTemper
 EntityHorseAbstract x (Z)V setStanding
-EntityHorseChestedAbstract dV ()Z isCarryingChest
+EntityHorseChestedAbstract dW ()Z isCarryingChest
 EntityHorseChestedAbstract r (Z)V setCarryingChest
-EntityHuman a (ILMerchantRecipeList;IIZ)V openTrade
+EntityHuman a (ILMerchantRecipeList;IIZZ)V openTrade
 EntityHuman a (LBlockPosition;)Lcom/mojang/datafixers/util/Either; sleep
 EntityHuman a (LEntityHorseAbstract;LIInventory;)V openHorseInventory
 EntityHuman a (LITileInventory;)Ljava/util/OptionalInt; openContainer
@@ -2115,31 +2115,31 @@ EntityHuman c (I)V levelDown
 EntityHuman c (LIBlockData;)Z hasBlock
 EntityHuman c (Ljava/lang/String;)Ljava/util/UUID; getOfflineUUID
 EntityHuman d (I)V giveExp
-EntityHuman dC ()I getScore
-EntityHuman dD ()V removeCursedItems
-EntityHuman dH ()Lcom/mojang/authlib/GameProfile; getProfile
-EntityHuman dI ()Z isDeeplySleeping
-EntityHuman dK ()LBlockPosition; getBed
-EntityHuman dL ()Z isRespawnForced
-EntityHuman dN ()I getExpToLevel
-EntityHuman dO ()LFoodMetaData; getFoodData
-EntityHuman dR ()LInventoryEnderChest; getEnderChest
-EntityHuman dS ()V releaseShoulderEntities
-EntityHuman dT ()LScoreboard; getScoreboard
-EntityHuman dW ()LNBTTagCompound; getShoulderEntityLeft
-EntityHuman dX ()LNBTTagCompound; getShoulderEntityRight
+EntityHuman dD ()I getScore
+EntityHuman dE ()V removeCursedItems
+EntityHuman dI ()Lcom/mojang/authlib/GameProfile; getProfile
+EntityHuman dJ ()Z isDeeplySleeping
+EntityHuman dL ()LBlockPosition; getBed
+EntityHuman dM ()Z isRespawnForced
+EntityHuman dO ()I getExpToLevel
+EntityHuman dP ()LFoodMetaData; getFoodData
+EntityHuman dS ()LInventoryEnderChest; getEnderChest
+EntityHuman dT ()V releaseShoulderEntities
+EntityHuman dU ()LScoreboard; getScoreboard
+EntityHuman dX ()LNBTTagCompound; getShoulderEntityLeft
+EntityHuman dY ()LNBTTagCompound; getShoulderEntityRight
 EntityHuman e sleepTicks
-EntityHuman ea ()LItemCooldown; getCooldownTracker
-EntityHuman ec ()Z isCreativeAndOp
+EntityHuman eb ()LItemCooldown; getCooldownTracker
+EntityHuman ed ()Z isCreativeAndOp
 EntityHuman f (LEntity;)V attack
 EntityHuman h (LNBTTagCompound;)V setShoulderEntityLeft
 EntityHuman i (LNBTTagCompound;)V setShoulderEntityRight
 EntityHuman k (LNBTTagCompound;)V spawnEntityFromShoulder
 EntityHuman l (DDD)V checkMovement
-EntityHuman q (I)V setScore
 EntityHuman r ()V updateAbilities
 EntityHuman r (F)V applyExhaustion
-EntityHuman r (I)V addScore
+EntityHuman r (I)V setScore
+EntityHuman s (I)V addScore
 EntityHuman t_ ()V closeInventory
 EntityHuman u ()Z isCreative
 EntityHuman$EnumBedResult a NOT_POSSIBLE_HERE
@@ -2179,13 +2179,13 @@ EntityInsentient by dropChanceArmor
 EntityInsentient c (D)Z isTypeNotPersistent
 EntityInsentient d (LEntityHuman;)I getExpValue
 EntityInsentient d goalTarget
-EntityInsentient dE ()V setPersistent
-EntityInsentient dF ()Z canPickupLoot
-EntityInsentient dG ()Z isPersistent
-EntityInsentient dN ()Z isLeashed
-EntityInsentient dO ()LEntity; getLeashHolder
-EntityInsentient dP ()Z isNoAI
-EntityInsentient dQ ()Z isLeftHanded
+EntityInsentient dF ()V setPersistent
+EntityInsentient dG ()Z canPickupLoot
+EntityInsentient dH ()Z isPersistent
+EntityInsentient dO ()Z isLeashed
+EntityInsentient dP ()LEntity; getLeashHolder
+EntityInsentient dQ ()Z isNoAI
+EntityInsentient dR ()Z isLeftHanded
 EntityInsentient g (LEntityLiving;)V setGoalTarget
 EntityInsentient g lookController
 EntityInsentient n ()V initPathfinder
@@ -2198,7 +2198,7 @@ EntityInsentient u ()LNavigationAbstract; getNavigation
 EntityInsentient v ()LEntitySenses; getEntitySenses
 EntityInsentient w ()LEntityLiving; getGoalTarget
 EntityInsentient z ()V blockEaten
-EntityIronGolem dW ()Z isPlayerCreated
+EntityIronGolem dX ()Z isPlayerCreated
 EntityIronGolem s (Z)V setPlayerCreated
 EntityItem a (I)V setPickupDelay
 EntityItem ar owner
@@ -2258,46 +2258,46 @@ EntityLiving bz lastDamager
 EntityLiving c (F)V setHealth
 EntityLiving c (LDamageSource;F)F applyMagicModifier
 EntityLiving c (LMobEffect;)Z addEffect
-EntityLiving cC ()F getHealth
-EntityLiving cG ()LSoundEffect; getSoundDeath
-EntityLiving cI ()I getArmorStrength
-EntityLiving cJ ()LCombatTracker; getCombatTracker
-EntityLiving cK ()LEntityLiving; getKillingEntity
-EntityLiving cL ()F getMaxHealth
-EntityLiving cM ()I getArrowCount
-EntityLiving cO ()LAttributeMapBase; getAttributeMap
-EntityLiving cP ()LEnumMonsterType; getMonsterType
-EntityLiving cQ ()LItemStack; getItemInMainHand
-EntityLiving cR ()LItemStack; getItemInOffHand
-EntityLiving cT ()F getSoundVolume
-EntityLiving cV ()Z isFrozen
-EntityLiving cX ()V jump
-EntityLiving cj ()LBehaviorController; getBehaviorController
-EntityLiving ck ()V initAttributes
-EntityLiving co ()Z isDropExperience
-EntityLiving cp ()Z alwaysGivesExp
-EntityLiving cq ()Ljava/util/Random; getRandom
-EntityLiving cr ()LEntityLiving; getLastDamager
-EntityLiving cw ()V tickPotionEffects
-EntityLiving cy ()Z removeAllEffects
-EntityLiving cz ()Ljava/util/Collection; getEffects
+EntityLiving cA ()Ljava/util/Collection; getEffects
+EntityLiving cD ()F getHealth
+EntityLiving cH ()LSoundEffect; getSoundDeath
+EntityLiving cJ ()I getArmorStrength
+EntityLiving cK ()LCombatTracker; getCombatTracker
+EntityLiving cL ()LEntityLiving; getKillingEntity
+EntityLiving cM ()F getMaxHealth
+EntityLiving cN ()I getArrowCount
+EntityLiving cP ()LAttributeMapBase; getAttributeMap
+EntityLiving cQ ()LEnumMonsterType; getMonsterType
+EntityLiving cR ()LItemStack; getItemInMainHand
+EntityLiving cS ()LItemStack; getItemInOffHand
+EntityLiving cU ()F getSoundVolume
+EntityLiving cW ()Z isFrozen
+EntityLiving cY ()V jump
+EntityLiving ck ()LBehaviorController; getBehaviorController
+EntityLiving cl ()V initAttributes
+EntityLiving cp ()Z isDropExperience
+EntityLiving cq ()Z alwaysGivesExp
+EntityLiving cr ()Ljava/util/Random; getRandom
+EntityLiving cs ()LEntityLiving; getLastDamager
+EntityLiving cx ()V tickPotionEffects
+EntityLiving cz ()Z removeAllEffects
 EntityLiving d (LDamageSource;F)V damageEntity0
 EntityLiving d (LEntityHuman;)I getExpValue
 EntityLiving d (LEntityLiving;)V shieldBlock
 EntityLiving d (LMobEffectList;)Z removeEffect
 EntityLiving d HEALTH
-EntityLiving db ()V doTick
-EntityLiving dc ()V collideNearby
-EntityLiving dd ()Z isRiptiding
-EntityLiving df ()F getAbsorptionHearts
-EntityLiving dh ()LEnumMainHand; getMainHand
-EntityLiving di ()Z isHandRaised
-EntityLiving dj ()LEnumHand; getRaisedHand
-EntityLiving do ()V clearActiveItem
-EntityLiving dq ()Z isBlocking
-EntityLiving dr ()Z isGliding
-EntityLiving dv ()Ljava/util/Optional; getBedPosition
-EntityLiving dx ()Z isSleeping
+EntityLiving dc ()V doTick
+EntityLiving dd ()V collideNearby
+EntityLiving de ()Z isRiptiding
+EntityLiving dg ()F getAbsorptionHearts
+EntityLiving di ()LEnumMainHand; getMainHand
+EntityLiving dj ()Z isHandRaised
+EntityLiving dk ()LEnumHand; getRaisedHand
+EntityLiving dp ()V clearActiveItem
+EntityLiving dr ()Z isBlocking
+EntityLiving ds ()Z isGliding
+EntityLiving dw ()Ljava/util/Optional; getBedPosition
+EntityLiving dy ()Z isSleeping
 EntityLiving e ()V enterCombat
 EntityLiving e (LDamageSource;)LSoundEffect; getSoundHurt
 EntityLiving f ()V exitCombat
@@ -2305,22 +2305,22 @@ EntityLiving g (LDamageSource;)Z applyBlockingModifier
 EntityLiving k ()V movementTick
 EntityLiving m (F)V damageArmor
 EntityLiving n (F)V damageShield
-EntityLiving n (I)LSoundEffect; getSoundFall
-EntityLiving o (I)V setArrowCount
+EntityLiving o (I)LSoundEffect; getSoundFall
+EntityLiving p (I)V setArrowCount
 EntityLiving q (F)V setAbsorptionHearts
 EntityLiving v_ ()Z isBaby
 EntityLiving w_ ()Z isClimbing
-EntityLlama eC ()I getStrength
-EntityLlama eD ()I getVariant
-EntityLlama u (I)V setVariant
-EntityLlama v (I)V setStrength
+EntityLlama eD ()I getStrength
+EntityLlama eE ()I getVariant
+EntityLlama v (I)V setVariant
+EntityLlama w (I)V setStrength
 EntityLlamaSpit b shooter
 EntityMinecartAbstract a (F)V setDamage
 EntityMinecartAbstract b (LIBlockData;)V setDisplayBlock
 EntityMinecartAbstract f ()D getMaxSpeed
 EntityMinecartAbstract k ()V decelerate
-EntityMinecartAbstract k (I)V setDisplayBlockOffset
 EntityMinecartAbstract l ()F getDamage
+EntityMinecartAbstract l (I)V setDisplayBlockOffset
 EntityMinecartAbstract m ()I getType
 EntityMinecartAbstract o ()LEntityMinecartAbstract$EnumMinecartType; getMinecartType
 EntityMinecartAbstract p ()LIBlockData; getDisplayBlock
@@ -2338,7 +2338,7 @@ EntityMinecartContainer a (LMinecraftKey;J)V setLootTable
 EntityMinecartContainer b items
 EntityMinecartContainer d lootTable
 EntityMinecartContainer e lootTableSeed
-EntityMinecartHopper l (I)V setCooldown
+EntityMinecartHopper m (I)V setCooldown
 EntityMinecartHopper n (Z)V setEnabled
 EntityMinecartHopper v ()Z isEnabled
 EntityMonster a (LDamageSource;F)Z damageEntity
@@ -2351,17 +2351,17 @@ EntityMonsterPatrolling ef ()Z isPatrolling
 EntityMonsterPatrolling g (LBlockPosition;)V setPatrolTarget
 EntityMonsterPatrolling r (Z)V setPatrolLeader
 EntityMushroomCow a (LEntityMushroomCow$Type;)V setVariant
-EntityMushroomCow dV ()LEntityMushroomCow$Type; getVariant
+EntityMushroomCow dW ()LEntityMushroomCow$Type; getVariant
 EntityMushroomCow$Type a RED
 EntityMushroomCow$Type b BROWN
-EntityOcelot dX ()Z isTrusting
+EntityOcelot dY ()Z isTrusting
 EntityOcelot r (Z)V setTrusting
 EntityPainting e art
 EntityPanda a (LEntityPanda$Gene;)V setMainGene
 EntityPanda b (LEntityPanda$Gene;)V setHiddenGene
-EntityPanda bQ PICKUP_PREDICATE
-EntityPanda ef ()LEntityPanda$Gene; getMainGene
-EntityPanda eg ()LEntityPanda$Gene; getHiddenGene
+EntityPanda bP PICKUP_PREDICATE
+EntityPanda eg ()LEntityPanda$Gene; getMainGene
+EntityPanda eh ()LEntityPanda$Gene; getHiddenGene
 EntityPanda$Gene a NORMAL
 EntityPanda$Gene b LAZY
 EntityPanda$Gene c ()Z isRecessive
@@ -2370,13 +2370,13 @@ EntityPanda$Gene d PLAYFUL
 EntityPanda$Gene e BROWN
 EntityPanda$Gene f WEAK
 EntityPanda$Gene g AGGRESSIVE
-EntityParrot ef ()I getVariant
-EntityParrot r (I)V setVariant
+EntityParrot eg ()I getVariant
+EntityParrot s (I)V setVariant
 EntityPhantom a (I)V setSize
 EntityPhantom l ()I getSize
 EntityPhantom$AttackPhase a CIRCLE
 EntityPhantom$AttackPhase b SWOOP
-EntityPig dV ()Z hasSaddle
+EntityPig dW ()Z hasSaddle
 EntityPig r (Z)V setSaddle
 EntityPigZombie bA soundDelay
 EntityPigZombie bB hurtBy
@@ -2413,8 +2413,8 @@ EntityPlayer cq recipeBook
 EntityPlayer cw containerCounter
 EntityPlayer d playerInteractManager
 EntityPlayer e (LEntity;)V setSpectatorTarget
-EntityPlayer ed ()Z canPvP
-EntityPlayer ee ()V nextContainerCounter
+EntityPlayer ee ()Z canPvP
+EntityPlayer ef ()V nextContainerCounter
 EntityPlayer f ping
 EntityPlayer g viewingCredits
 EntityPlayer i ()V playerTick
@@ -2433,6 +2433,7 @@ EntityPose f SNEAKING
 EntityPose g DYING
 EntityPositionTypes$Surface a ON_GROUND
 EntityPositionTypes$Surface b IN_WATER
+EntityPositionTypes$Surface c NO_RESTRICTIONS
 EntityPotion b (LItemStack;)V setItem
 EntityPotion f ()LItemStack; getItem
 EntityPotion i ()V splash
@@ -2448,17 +2449,17 @@ EntityProjectile m ()LEntityLiving; getShooter
 EntityProjectileThrowable b (LItemStack;)V setItem
 EntityProjectileThrowable k ()LItemStack; getItem
 EntityPufferFish b (I)V setPuffState
-EntityPufferFish dX ()I getPuffState
-EntityRabbit dW ()LSoundEffect; getSoundJump
-EntityRabbit dX ()I getRabbitType
-EntityRabbit r (I)V setRabbitType
+EntityPufferFish dY ()I getPuffState
+EntityRabbit dX ()LSoundEffect; getSoundJump
+EntityRabbit dY ()I getRabbitType
+EntityRabbit s (I)V setRabbitType
 EntityRabbit$PathfinderGoalEatCarrots g entity
 EntitySelector b (LCommandListenerWrapper;)Ljava/util/List; getEntities
 EntitySelector m checkPermissions
 EntitySheep b (LEnumColor;)V setColor
-EntitySheep dV ()V shear
-EntitySheep dW ()LEnumColor; getColor
-EntitySheep dX ()Z isSheared
+EntitySheep dW ()V shear
+EntitySheep dX ()LEnumColor; getColor
+EntitySheep dY ()Z isSheared
 EntitySheep r (Z)V setSheared
 EntityShulker bz COLOR
 EntityShulkerBullet b shooter
@@ -2468,9 +2469,9 @@ EntitySilverfish$PathfinderGoalSilverfishWakeOthers a silverfish
 EntitySize a width
 EntitySize b height
 EntitySlime a (IZ)V setSize
-EntitySlime dX ()LSoundEffect; getSoundSquish
-EntitySlime dY ()LSoundEffect; getSoundJump
-EntitySlime dZ ()I getSize
+EntitySlime dY ()LSoundEffect; getSoundSquish
+EntitySlime dZ ()LSoundEffect; getSoundJump
+EntitySlime ea ()I getSize
 EntitySnowman l ()Z hasPumpkin
 EntitySnowman r (Z)V setHasPumpkin
 EntitySpectralArrow ar duration
@@ -2484,11 +2485,11 @@ EntityTNTPrimed l ()V explode
 EntityTameableAnimal A_ ()Ljava/util/UUID; getOwnerUUID
 EntityTameableAnimal b (Ljava/util/UUID;)V setOwnerUUID
 EntityTameableAnimal bB goalSit
-EntityTameableAnimal dV ()Z isTamed
-EntityTameableAnimal dX ()Z isSitting
-EntityTameableAnimal dY ()LEntityLiving; getOwner
-EntityTameableAnimal dZ ()LPathfinderGoalSit; getGoalSit
+EntityTameableAnimal dW ()Z isTamed
+EntityTameableAnimal dY ()Z isSitting
+EntityTameableAnimal dZ ()LEntityLiving; getOwner
 EntityTameableAnimal e (LEntityHuman;)V tame
+EntityTameableAnimal ea ()LPathfinderGoalSit; getGoalSit
 EntityTameableAnimal s (Z)V setTamed
 EntityTameableAnimal t (Z)V setSitting
 EntityThrownTrident at trident
@@ -2506,8 +2507,8 @@ EntityTrackerEntry i zLoc
 EntityTrackerEntry j yRot
 EntityTrackerEntry k xRot
 EntityTrackerEntry l headYaw
-EntityTropicalFish ee ()I getVariant
-EntityTropicalFish t (I)V setVariant
+EntityTropicalFish ef ()I getVariant
+EntityTropicalFish u (I)V setVariant
 EntityTropicalFish$Variant a KOB
 EntityTropicalFish$Variant b SUNSTREAK
 EntityTropicalFish$Variant c SNOOPER
@@ -2631,36 +2632,36 @@ EntityTypes z FALLING_BLOCK
 EntityVex dX ()Z isCharging
 EntityVex r (Z)V setCharging
 EntityVillager a (LVillagerData;)V setVillagerData
-EntityVillager el ()Z canBreed
-EntityVillager eu ()V populateTrades
+EntityVillager en ()Z canBreed
+EntityVillager ez ()V populateTrades
 EntityVillager t (I)V setExperience
 EntityVillagerAbstract bB tradingPlayer
 EntityVillagerAbstract bC inventory
 EntityVillagerAbstract bz trades
-EntityVillagerAbstract ed ()LInventorySubcontainer; getInventory
+EntityVillagerAbstract ef ()LInventorySubcontainer; getInventory
 EntityWither a (II)V setHeadTarget
 EntityWither bI bossBattle
-EntityWither r (I)I getHeadTarget
+EntityWither s (I)I getHeadTarget
 EntityWitherSkull a (Z)V setCharged
 EntityWitherSkull l ()Z isCharged
 EntityWolf a (LEnumColor;)V setCollarColor
-EntityWolf bE DATA_HEALTH
-EntityWolf eg ()Z isAngry
-EntityWolf eh ()LEnumColor; getCollarColor
+EntityWolf bD DATA_HEALTH
+EntityWolf eh ()Z isAngry
+EntityWolf ei ()LEnumColor; getCollarColor
 EntityWolf u (Z)V setAngry
 EntityZombie a (I)V startDrownedConversion
 EntityZombie a (LDamageSource;F)Z damageEntity
 EntityZombie bB DROWN_CONVERTING
 EntityZombie bG drownedConversionTime
 EntityZombie dX ()LSoundEffect; getSoundStep
-EntityZombie ee ()Z isDrownConverting
+EntityZombie ed ()Z isDrownConverting
 EntityZombie t (Z)V setBaby
 EntityZombieVillager a (LVillagerData;)V setVillagerData
 EntityZombieVillager a (Ljava/util/UUID;I)V startConversion
 EntityZombieVillager b CONVERTING
 EntityZombieVillager bA conversionPlayer
 EntityZombieVillager bz conversionTime
-EntityZombieVillager ed ()Z isConverting
+EntityZombieVillager ef ()Z isConverting
 EntityZombieVillager eg ()I getConversionProgress
 EntityZombieVillager eh ()LVillagerData; getVillagerData
 EntityZombieVillager g (LNBTTagCompound;)V setOffers
@@ -2916,7 +2917,7 @@ Fluid a (LIBlockAccess;LBlockPosition;)F getHeight
 Fluid c ()LFluidType; getType
 Fluid d ()Z isSource
 Fluid e ()Z isEmpty
-Fluid h ()LIBlockData; getBlockData
+Fluid i ()LIBlockData; getBlockData
 FluidTypeFlowing a FALLING
 FluidTypeFlowing b LEVEL
 FluidTypes a EMPTY
@@ -2939,19 +2940,35 @@ GameProfileSerializer a (LNBTTagCompound;Lcom/mojang/authlib/GameProfile;)LNBTTa
 GameProfilerFiller a (Ljava/lang/String;)V enter
 GameProfilerFiller b (Ljava/lang/String;)V exitEnter
 GameProfilerFiller c ()V exit
-GameRules a (Ljava/lang/String;)Ljava/lang/String; get
-GameRules a (Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/server/MinecraftServer;)V set
-GameRules b ()Ljava/util/TreeMap; getGameRules
-GameRules b (Ljava/lang/String;)Z getBoolean
-GameRules f (Ljava/lang/String;)LGameRules$GameRuleValue; get
-GameRules$EnumGameRuleType a ANY_VALUE
-GameRules$EnumGameRuleType b BOOLEAN_VALUE
-GameRules$EnumGameRuleType c NUMERICAL_VALUE
-GameRules$GameRuleValue a ()Ljava/lang/String; getValue
-GameRules$GameRuleValue a (Ljava/lang/String;Lnet/minecraft/server/MinecraftServer;)V setValue
-GameRules$GameRuleValue b ()Z getBooleanValue
+GameRules a (LGameRules$GameRuleKey;)LGameRules$GameRuleValue; get
+GameRules a DO_FIRE_TICK
+GameRules b (LGameRules$GameRuleKey;)Z getBoolean
+GameRules b MOB_GRIEFING
+GameRules c (LGameRules$GameRuleKey;)I getInt
+GameRules c KEEP_INVENTORY
+GameRules d DO_MOB_SPAWNING
+GameRules e DO_MOB_LOOT
+GameRules f DO_TILE_DROPS
+GameRules g DO_ENTITY_DROPS
+GameRules h COMMAND_BLOCK_OUTPUT
+GameRules i NATURAL_REGENERATION
+GameRules j DO_DAYLIGHT_CYCLE
+GameRules k LOG_ADMIN_COMMANDS
+GameRules l SHOW_DEATH_MESSAGES
+GameRules m RANDOM_TICK_SPEED
+GameRules n SEND_COMMAND_FEEDBACK
+GameRules o REDUCED_DEBUG_INFO
+GameRules p SPECTATORS_GENERATE_CHUNKS
+GameRules q SPAWN_RADIUS
+GameRules r DISABLE_ELYTRA_MOVEMENT_CHECK
+GameRules s MAX_ENTITY_CRAMMING
+GameRules t DO_WEATHER_CYCLE
+GameRules u DO_LIMITED_CRAFTING
+GameRules v MAX_COMMAND_CHAIN_LENGTH
+GameRules w ANNOUNCE_ADVANCEMENTS
+GameRules$GameRuleValue a (Ljava/lang/String;)V setValue
+GameRules$GameRuleValue b ()Ljava/lang/String; getValue
 GameRules$GameRuleValue c ()I getIntValue
-GameRules$GameRuleValue e ()LGameRules$EnumGameRuleType; getType
 GenLayerCleaner a INSTANCE
 GenLayerDeepOcean a INSTANCE
 GenLayerDesert a INSTANCE
@@ -3097,8 +3114,8 @@ IFluidSource b (LGeneratorAccess;LBlockPosition;LIBlockData;)LFluidType; removeF
 IHopper w ()LWorld; getWorld
 IIBlockAccess a (LEnumSkyBlock;LBlockPosition;)I getBrightness
 IIBlockAccess c (LBlockPosition;)LBiomeBase; getBiome
-IInventory K_ ()I getMaxStackSize
-IInventory N_ ()I getSize
+IInventory J_ ()I getMaxStackSize
+IInventory M_ ()I getSize
 IInventory a (I)LItemStack; getItem
 IInventory a (II)LItemStack; splitStack
 IInventory a (ILItemStack;)V setItem
@@ -3110,11 +3127,11 @@ IInventory e ()V update
 ILightAccess k ()LIBlockAccess; getWorld
 IMaterial g ()LItem; getItem
 IMerchant a (LEntityHuman;LIChatBaseComponent;I)V openTrade
-IMerchant dW ()I getExperience
-IMerchant dX ()LEntityHuman; getTrader
-IMerchant dZ ()LMerchantRecipeList; getOffers
+IMerchant dX ()I getExperience
+IMerchant dY ()LEntityHuman; getTrader
 IMerchant e (LEntityHuman;)V setTradingPlayer
-IMerchant ee ()LWorld; getWorld
+IMerchant ea ()LMerchantRecipeList; getOffers
+IMerchant eg ()LWorld; getWorld
 IMinecraftServer A ()I getMaxPlayers
 IMinecraftServer B ()[Ljava/lang/String; getPlayers
 IMinecraftServer D ()Z isDebugging
@@ -3137,8 +3154,8 @@ IPosition a ()D getX
 IPosition b ()D getY
 IPosition c ()D getZ
 IProjectile c (DDDFF)V shoot
-IRecipe Q_ ()Z isComplex
-IRecipe R_ ()LRecipeSerializer; getRecipeSerializer
+IRecipe P_ ()Z isComplex
+IRecipe Q_ ()LRecipeSerializer; getRecipeSerializer
 IRecipe f ()LMinecraftKey; getKey
 IRegistry A CHUNK_STATUS
 IRegistry B STRUCTURE_FEATURE
@@ -3200,7 +3217,7 @@ IScoreboardCriteria$EnumScoreboardHealthDisplay b HEARTS
 ISource h ()LWorld; getWorld
 ISourceBlock d ()LBlockPosition; getBlockPosition
 ISourceBlock g ()LTileEntity; getTileEntity
-ITickable U_ ()V tick
+ITickable T_ ()V tick
 ITileEntity a (LIBlockAccess;)LTileEntity; createTile
 ITileInventory d ()LIChatBaseComponent; getScoreboardDisplayName
 IWorldInventory a (ILItemStack;LEnumDirection;)Z canPlaceItemThroughFace
@@ -3846,10 +3863,12 @@ MemoryModuleType q NEAREST_BED
 MemoryModuleType r HURT_BY
 MemoryModuleType s HURT_BY_ENTITY
 MemoryModuleType t NEAREST_HOSTILE
-MemoryModuleType u GOLEM_SPAWN_CONDITIONS
-MemoryModuleType v HIDING_PLACE
-MemoryModuleType w HEARD_BELL_TIME
-MemoryModuleType x CANT_REACH_WALK_TARGET_SINCE
+MemoryModuleType u HIDING_PLACE
+MemoryModuleType v HEARD_BELL_TIME
+MemoryModuleType w CANT_REACH_WALK_TARGET_SINCE
+MemoryModuleType x GOLEM_LAST_SEEN_TIME
+MemoryModuleType y LAST_SLEPT
+MemoryModuleType z LAST_WORKED_AT_POI
 MemoryStatus a VALUE_PRESENT
 MemoryStatus b VALUE_ABSENT
 MemoryStatus c REGISTERED
@@ -4276,20 +4295,20 @@ PlayerChunk a (LChunkStatus;)Ljava/util/concurrent/CompletableFuture; getStatusF
 PlayerChunk a UNLOADED_CHUNK_ACCESS
 PlayerChunk b (I)LChunkStatus; getChunkStatus
 PlayerChunk b UNLOADED_CHUNK_ACCESS_FUTURE
-PlayerChunk c ()LChunk; getChunk
 PlayerChunk c (I)LPlayerChunk$State; getChunkState
 PlayerChunk c UNLOADED_CHUNK
+PlayerChunk d ()LChunk; getChunk
 PlayerChunk d UNLOADED_CHUNK_FUTURE
 PlayerChunk e CHUNK_STATUSES
-PlayerChunk f ()Ljava/util/concurrent/CompletableFuture; getChunkSave
 PlayerChunk f CHUNK_STATES
+PlayerChunk g ()Ljava/util/concurrent/CompletableFuture; getChunkSave
 PlayerChunk g statusFutures
 PlayerChunk h fullChunkFuture
-PlayerChunk i ()I getTicketLevel
 PlayerChunk i tickingFuture
+PlayerChunk j ()I getTicketLevel
 PlayerChunk j entityTickingFuture
-PlayerChunk k ()Z hasBeenLoaded
 PlayerChunk k chunkSave
+PlayerChunk l ()Z hasBeenLoaded
 PlayerChunk l oldTicketLevel
 PlayerChunk m ticketLevel
 PlayerChunk o location
@@ -4304,8 +4323,7 @@ PlayerChunk$State b BORDER
 PlayerChunk$State c TICKING
 PlayerChunk$State d ENTITY_TICKING
 PlayerChunkMap B viewDistance
-PlayerChunkMap C entityDistance
-PlayerChunkMap a (II)V setViewDistance
+PlayerChunkMap a (I)V setViewDistance
 PlayerChunkMap a (J)LPlayerChunk; getUpdatingChunk
 PlayerChunkMap a (LEntity;)V addEntity
 PlayerChunkMap a (LEntity;LPacket;)V broadcast
@@ -4540,7 +4558,6 @@ ReputationType b MINOR_NEGATIVE
 ReputationType c MINOR_POSITIVE
 ReputationType d MAJOR_POSITIVE
 ReputationType e TRADING
-ReputationType f GOLEM
 ResourcePackLoader$Position a TOP
 ResourcePackLoader$Position b BOTTOM
 ResourcePackSourceFolder b file
@@ -5962,9 +5979,8 @@ WorldBorder r ()I getWarningDistance
 WorldChunkManager a (II)LBiomeBase; getBiome
 WorldChunkManager a (IIII)[LBiomeBase; getBiomeBlock
 WorldChunkManager a (LBlockPosition;)LBiomeBase; getBiome
-WorldData A thunderTime
-WorldData B ()LNBTTagCompound; getGeneratorOptions
-WorldData Q ()LNBTTagCompound; getCustomBossEvents
+WorldData A ()LNBTTagCompound; getGeneratorOptions
+WorldData P ()LNBTTagCompound; getCustomBossEvents
 WorldData a ()J getSeed
 WorldData a (J)V setTime
 WorldData a (LBlockPosition;)V setSpawn
@@ -5978,22 +5994,23 @@ WorldData e ()J getTime
 WorldData e (I)V setThunderDuration
 WorldData f ()J getDayTime
 WorldData f (I)V setWeatherDuration
-WorldData j ()Ljava/lang/String; getName
-WorldData m ()Z isThundering
-WorldData n ()I getThunderDuration
-WorldData o ()Z hasStorm
-WorldData p ()I getWeatherDuration
-WorldData q ()LEnumGamemode; getGameType
-WorldData r ()Z shouldGenerateMapFeatures
-WorldData s ()Z isHardcore
-WorldData t ()LWorldType; getType
-WorldData u levelName
-WorldData w clearWeatherTime
-WorldData x ()LEnumDifficulty; getDifficulty
-WorldData x raining
-WorldData y ()Z isDifficultyLocked
-WorldData y rainTime
-WorldData z thundering
+WorldData i ()Ljava/lang/String; getName
+WorldData l ()Z isThundering
+WorldData m ()I getThunderDuration
+WorldData n ()Z hasStorm
+WorldData o ()I getWeatherDuration
+WorldData p ()LEnumGamemode; getGameType
+WorldData q ()Z shouldGenerateMapFeatures
+WorldData r ()Z isHardcore
+WorldData s ()LWorldType; getType
+WorldData t levelName
+WorldData v clearWeatherTime
+WorldData w ()LEnumDifficulty; getDifficulty
+WorldData w raining
+WorldData x ()Z isDifficultyLocked
+WorldData x rainTime
+WorldData y thundering
+WorldData z thunderTime
 WorldGenFeatureDefinedStructurePoolTemplate$Matching a TERRAIN_MATCHING
 WorldGenFeatureDefinedStructurePoolTemplate$Matching b RIGID
 WorldGenFeatureOceanRuin$Temperature a WARM
@@ -6203,37 +6220,38 @@ WorldType i NORMAL_1_1
 WorldType k name
 WorldType m version
 net/minecraft/server/MinecraftServer A ()I getMaxPlayers
+net/minecraft/server/MinecraftServer A spawnAnimals
 net/minecraft/server/MinecraftServer B ()[Ljava/lang/String; getPlayers
-net/minecraft/server/MinecraftServer B spawnAnimals
-net/minecraft/server/MinecraftServer C spawnNPCs
+net/minecraft/server/MinecraftServer B spawnNPCs
+net/minecraft/server/MinecraftServer C pvpMode
 net/minecraft/server/MinecraftServer D ()Z isDebugging
-net/minecraft/server/MinecraftServer D pvpMode
-net/minecraft/server/MinecraftServer E allowFlight
+net/minecraft/server/MinecraftServer D allowFlight
+net/minecraft/server/MinecraftServer E motd
 net/minecraft/server/MinecraftServer F ()Ljava/security/KeyPair; getKeyPair
-net/minecraft/server/MinecraftServer F motd
 net/minecraft/server/MinecraftServer G ()I getPort
 net/minecraft/server/MinecraftServer H ()Ljava/lang/String; getSinglePlayerName
 net/minecraft/server/MinecraftServer I ()Z isEmbeddedServer
 net/minecraft/server/MinecraftServer J ()Ljava/lang/String; getWorld
 net/minecraft/server/MinecraftServer L ()Z getSpawnMonsters
+net/minecraft/server/MinecraftServer L demoMode
 net/minecraft/server/MinecraftServer M ()Z isDemoMode
-net/minecraft/server/MinecraftServer M demoMode
+net/minecraft/server/MinecraftServer M bonusChest
 net/minecraft/server/MinecraftServer N ()LConvertable; getConvertable
-net/minecraft/server/MinecraftServer N bonusChest
 net/minecraft/server/MinecraftServer O ()Ljava/lang/String; getResourcePack
 net/minecraft/server/MinecraftServer P ()Ljava/lang/String; getResourcePackHash
-net/minecraft/server/MinecraftServer Q hasTicked
-net/minecraft/server/MinecraftServer R lastOverloadTime
+net/minecraft/server/MinecraftServer P hasTicked
+net/minecraft/server/MinecraftServer Q lastOverloadTime
 net/minecraft/server/MinecraftServer S ()Z getOnlineMode
 net/minecraft/server/MinecraftServer U ()Z getSpawnAnimals
+net/minecraft/server/MinecraftServer U yggdrasilAuthenticationService
 net/minecraft/server/MinecraftServer V ()Z getSpawnNPCs
-net/minecraft/server/MinecraftServer V yggdrasilAuthenticationService
-net/minecraft/server/MinecraftServer W minecraftSessionService
+net/minecraft/server/MinecraftServer V minecraftSessionService
+net/minecraft/server/MinecraftServer W gameProfileRepository
 net/minecraft/server/MinecraftServer X ()Z getPVP
-net/minecraft/server/MinecraftServer X gameProfileRepository
+net/minecraft/server/MinecraftServer X userCache
 net/minecraft/server/MinecraftServer Y ()Z getAllowFlight
-net/minecraft/server/MinecraftServer Y userCache
 net/minecraft/server/MinecraftServer Z ()Z getEnableCommandBlock
+net/minecraft/server/MinecraftServer Z nextTick
 net/minecraft/server/MinecraftServer a (I)V setPort
 net/minecraft/server/MinecraftServer a (LDimensionManager;)LWorldServer; getWorldServer
 net/minecraft/server/MinecraftServer a (LEnumGamemode;)V setGamemode
@@ -6260,25 +6278,24 @@ net/minecraft/server/MinecraftServer aS ()LGameProfiler; getMethodProfiler
 net/minecraft/server/MinecraftServer aU ()Lorg/apache/logging/log4j/Logger; getLogger
 net/minecraft/server/MinecraftServer aV ()Z canSleepForTick
 net/minecraft/server/MinecraftServer aa ()Ljava/lang/String; getMotd
-net/minecraft/server/MinecraftServer aa nextTick
 net/minecraft/server/MinecraftServer ab ()I getMaxBuildHeight
 net/minecraft/server/MinecraftServer ac ()Z isStopped
 net/minecraft/server/MinecraftServer ad ()LPlayerList; getPlayerList
+net/minecraft/server/MinecraftServer ae resourcePackRepository
 net/minecraft/server/MinecraftServer af ()LServerConnection; getServerConnection
-net/minecraft/server/MinecraftServer af resourcePackRepository
-net/minecraft/server/MinecraftServer ag resourcePackFolder
-net/minecraft/server/MinecraftServer ah commandDispatcher
+net/minecraft/server/MinecraftServer af resourcePackFolder
+net/minecraft/server/MinecraftServer ag commandDispatcher
 net/minecraft/server/MinecraftServer am ()I getSpawnProtection
 net/minecraft/server/MinecraftServer an ()Z getForceGamemode
 net/minecraft/server/MinecraftServer ap ()I getIdleTimeout
 net/minecraft/server/MinecraftServer aq ()Lcom/mojang/authlib/minecraft/MinecraftSessionService; getMinecraftSessionService
+net/minecraft/server/MinecraftServer aq forceUpgrade
 net/minecraft/server/MinecraftServer ar ()Lcom/mojang/authlib/GameProfileRepository; getGameProfileRepository
-net/minecraft/server/MinecraftServer ar forceUpgrade
+net/minecraft/server/MinecraftServer ar eraseCache
 net/minecraft/server/MinecraftServer as ()LUserCache; getUserCache
-net/minecraft/server/MinecraftServer as eraseCache
 net/minecraft/server/MinecraftServer at ()LServerPing; getServerPing
+net/minecraft/server/MinecraftServer at executorService
 net/minecraft/server/MinecraftServer au ()V invalidatePingSample
-net/minecraft/server/MinecraftServer au executorService
 net/minecraft/server/MinecraftServer b (Z)V setForceUpgrade
 net/minecraft/server/MinecraftServer c (I)V setIdleTimeout
 net/minecraft/server/MinecraftServer c (LTickTask;)Z canExecute
@@ -6291,38 +6308,38 @@ net/minecraft/server/MinecraftServer f ()Z getGenerateStructures
 net/minecraft/server/MinecraftServer f (Ljava/lang/String;)V warning
 net/minecraft/server/MinecraftServer g ()LEnumGamemode; getGamemode
 net/minecraft/server/MinecraftServer g (Z)V setOnlineMode
+net/minecraft/server/MinecraftServer g serverThread
 net/minecraft/server/MinecraftServer h ()LEnumDifficulty; getDifficulty
-net/minecraft/server/MinecraftServer h serverThread
 net/minecraft/server/MinecraftServer h_ ()Z isRunning
 net/minecraft/server/MinecraftServer i ()Z isHardcore
 net/minecraft/server/MinecraftServer i (Z)V setSpawnAnimals
+net/minecraft/server/MinecraftServer i convertable
 net/minecraft/server/MinecraftServer j (Z)V setSpawnNPCs
-net/minecraft/server/MinecraftServer j convertable
+net/minecraft/server/MinecraftServer j snooper
 net/minecraft/server/MinecraftServer k (Ljava/lang/String;)V setMotd
 net/minecraft/server/MinecraftServer k (Z)V setPVP
-net/minecraft/server/MinecraftServer k snooper
+net/minecraft/server/MinecraftServer k universe
 net/minecraft/server/MinecraftServer l ()V stop
 net/minecraft/server/MinecraftServer l (Z)V setAllowFlight
-net/minecraft/server/MinecraftServer l universe
+net/minecraft/server/MinecraftServer l tickables
 net/minecraft/server/MinecraftServer m ()Ljava/lang/String; getServerIp
 net/minecraft/server/MinecraftServer m (Z)V setForceGamemode
-net/minecraft/server/MinecraftServer m tickables
-net/minecraft/server/MinecraftServer n methodProfiler
+net/minecraft/server/MinecraftServer m methodProfiler
+net/minecraft/server/MinecraftServer n serverConnection
 net/minecraft/server/MinecraftServer o ()V sleepForTick
-net/minecraft/server/MinecraftServer o serverConnection
-net/minecraft/server/MinecraftServer p serverPing
-net/minecraft/server/MinecraftServer r dataConverterManager
-net/minecraft/server/MinecraftServer s serverIp
+net/minecraft/server/MinecraftServer o serverPing
+net/minecraft/server/MinecraftServer q dataConverterManager
+net/minecraft/server/MinecraftServer r serverIp
+net/minecraft/server/MinecraftServer s serverPort
 net/minecraft/server/MinecraftServer t ()V exit
-net/minecraft/server/MinecraftServer t serverPort
+net/minecraft/server/MinecraftServer t worldServer
 net/minecraft/server/MinecraftServer u ()Z getAllowNether
-net/minecraft/server/MinecraftServer u worldServer
+net/minecraft/server/MinecraftServer u playerList
 net/minecraft/server/MinecraftServer v ()V startServerThread
-net/minecraft/server/MinecraftServer v playerList
-net/minecraft/server/MinecraftServer w isRunning
+net/minecraft/server/MinecraftServer v isRunning
+net/minecraft/server/MinecraftServer w isStopped
 net/minecraft/server/MinecraftServer x ()Ljava/lang/Iterable; getWorlds
-net/minecraft/server/MinecraftServer x isStopped
+net/minecraft/server/MinecraftServer x ticks
 net/minecraft/server/MinecraftServer y ()Ljava/lang/String; getVersion
-net/minecraft/server/MinecraftServer y ticks
+net/minecraft/server/MinecraftServer y onlineMode
 net/minecraft/server/MinecraftServer z ()I getPlayerCount
-net/minecraft/server/MinecraftServer z onlineMode
