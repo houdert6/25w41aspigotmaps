@@ -158,6 +158,7 @@ public net/minecraft/server/Explosion/source
 public net/minecraft/server/FoodMetaData/exhaustionLevel
 public net/minecraft/server/FoodMetaData/foodLevel
 public net/minecraft/server/FoodMetaData/saturationLevel
+public net/minecraft/server/GameRules$GameRuleValue/onChange(Lnet/minecraft/server/MinecraftServer;)V
 public net/minecraft/server/InventoryCrafting/container
 public net/minecraft/server/InventoryLargeChest/left
 public net/minecraft/server/InventoryLargeChest/right
@@ -212,6 +213,7 @@ public net/minecraft/server/PlayerAbilities/walkSpeed
 public net/minecraft/server/PlayerChunk/oldTicketLevel
 public net/minecraft/server/PlayerChunk/players
 public net/minecraft/server/PlayerChunkMap$EntityTracker/trackedPlayers
+public net/minecraft/server/PlayerChunkMap/chunkDistanceManager
 public net/minecraft/server/PlayerChunkMap/chunkGenerator
 public net/minecraft/server/PlayerChunkMap/saveChunk(Lnet/minecraft/server/IChunkAccess;)Z
 public net/minecraft/server/PlayerChunkMap/trackedEntities
@@ -231,6 +233,7 @@ public net/minecraft/server/RecipeItemStack/choices
 public net/minecraft/server/RegionFileCache/cache
 public net/minecraft/server/ScoreboardObjective/displayName
 public net/minecraft/server/Slot/index
+public net/minecraft/server/Ticket/identifier
 public net/minecraft/server/TileEntityBanner/color
 public net/minecraft/server/TileEntityBanner/patterns
 public net/minecraft/server/TileEntityBeacon/chestLock
@@ -291,4 +294,5 @@ public-final net/minecraft/server/MinecraftServer/commandDispatcher
 public-final net/minecraft/server/MinecraftServer/convertable
 private-final net/minecraft/server/MinecraftServer/serverConnection
 public-final net/minecraft/server/MinecraftServer/universe
+public-final net/minecraft/server/TicketType/loadPeriod
 public-final net/minecraft/server/World/worldProvider
