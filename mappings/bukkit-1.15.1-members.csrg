@@ -6229,6 +6229,8 @@ WeightedRandomEnchant b enchantment
 WeightedRandomEnchant c level
 WhiteList a (Lcom/mojang/authlib/GameProfile;)Z isWhitelisted
 World D ()LScoreboard; getScoreboard
+World J ()Z isDay
+World K ()Z isNight
 World L ()V tickBlockEntities
 World R ()J getTime
 World S ()J getDayTime
