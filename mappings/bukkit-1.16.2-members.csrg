@@ -81,7 +81,9 @@ BaseBlockPosition a (DDDZ)D distanceSquared
 BaseBlockPosition b (LEnumDirection;I)LBaseBlockPosition; shift
 BaseBlockPosition d ZERO
 BaseBlockPosition l (I)LBaseBlockPosition; down
+BaseBlockPosition m (I)LBaseBlockPosition; up
 BaseBlockPosition n ()LBaseBlockPosition; down
+BaseBlockPosition o ()LBaseBlockPosition; up
 BaseBlockPosition u ()I getX
 BaseBlockPosition v ()I getY
 BaseBlockPosition w ()I getZ
@@ -106,14 +108,9 @@ BehaviorGate$Execution a RUN_ONE
 BehaviorGate$Execution b TRY_ALL
 BehaviorGate$Order a ORDERED
 BehaviorGate$Order b SHUFFLED
-BiomeBase a (LEnumCreatureType;)Ljava/util/List; getMobs
-BiomeBase b (LBlockPosition;)F getAdjustedTemperature
-BiomeBase l ()F getHumidity
-BiomeBase p ()F getTemperature
-BiomeBase$EnumTemperature a OCEAN
-BiomeBase$EnumTemperature b COLD
-BiomeBase$EnumTemperature c MEDIUM
-BiomeBase$EnumTemperature d WARM
+BehaviorWork a (LWorldServer;LEntityVillager;)V doWork
+BiomeBase a (LBlockPosition;)F getAdjustedTemperature
+BiomeBase i ()F getHumidity
 BiomeBase$Geography a NONE
 BiomeBase$Geography b TAIGA
 BiomeBase$Geography c EXTREME_HILLS
@@ -134,200 +131,296 @@ BiomeBase$Geography q NETHER
 BiomeBase$Precipitation a NONE
 BiomeBase$Precipitation b RAIN
 BiomeBase$Precipitation c SNOW
-BiomeDecoratorGroups F NORMAL_TREE
-BiomeDecoratorGroups G NORMAL_TREE_BEES_0002
-BiomeDecoratorGroups H NORMAL_TREE_BEES_002
-BiomeDecoratorGroups I NORMAL_TREE_BEES_005
-BiomeDecoratorGroups J JUNGLE_TREE
-BiomeDecoratorGroups K JUNGLE_TREE_NOVINE
-BiomeDecoratorGroups L PINE_TREE
-BiomeDecoratorGroups M SPRUCE_TREE
-BiomeDecoratorGroups N ACACIA_TREE
-BiomeDecoratorGroups O BIRCH_TREE
-BiomeDecoratorGroups P BIRCH_TREE_BEES_0002
-BiomeDecoratorGroups Q BIRCH_TREE_BEES_002
-BiomeDecoratorGroups R BIRCH_TREE_BEES_005
-BiomeDecoratorGroups S TALL_BIRCH_TREE_BEES_0002
-BiomeDecoratorGroups T SWAMP_TREE
-BiomeDecoratorGroups U FANCY_TREE
-BiomeDecoratorGroups V FANCY_TREE_BEES_0002
-BiomeDecoratorGroups W FANCY_TREE_BEES_002
-BiomeDecoratorGroups X FANCY_TREE_BEES_005
-BiomeDecoratorGroups Y JUNGLE_BUSH
-BiomeDecoratorGroups Z DARK_OAK_TREE
-BiomeDecoratorGroups aW HUGE_RED_MUSHROOM
-BiomeDecoratorGroups aX HUGE_BROWN_MUSHROOM
-BiomeDecoratorGroups aa MEGA_SPRUCE_TREE
-BiomeDecoratorGroups ab MEGA_PINE_TREE
-BiomeDecoratorGroups ac MEGA_JUNGLE_TREE
-BiomeDecoratorGroups bA REDSTONE_ORE
-BiomeDecoratorGroups bB DIAMOND_ORE
-BiomeDecoratorGroups bC LAPIS_ORE
-BiomeDecoratorGroups bD STONE
-BiomeDecoratorGroups bE EMERALD_ORE
-BiomeDecoratorGroups bF INFESTED_STONE
-BiomeDecoratorGroups bG SAND
-BiomeDecoratorGroups bH CLAY
-BiomeDecoratorGroups bI GRASS_BLOCK
-BiomeDecoratorGroups bJ MOSSY_COBBLESTONE
-BiomeDecoratorGroups bK LARGE_FERN
-BiomeDecoratorGroups bL TALL_GRASS
-BiomeDecoratorGroups bM LILAC
-BiomeDecoratorGroups bN ROSE_BUSH
-BiomeDecoratorGroups bO PEONY
-BiomeDecoratorGroups bP BROWN_MUSHROOM
-BiomeDecoratorGroups bQ RED_MUSHROOM
-BiomeDecoratorGroups bR SEAGRASS
-BiomeDecoratorGroups bS PACKED_ICE
-BiomeDecoratorGroups bT BLUE_ICE
-BiomeDecoratorGroups bU LILY_OF_THE_VALLEY
-BiomeDecoratorGroups bV BLUE_ORCHID
-BiomeDecoratorGroups bW POPPY
-BiomeDecoratorGroups bX DANDELION
-BiomeDecoratorGroups bY DEAD_BUSH
-BiomeDecoratorGroups bZ MELON
-BiomeDecoratorGroups bb GRASS
-BiomeDecoratorGroups bc FERN
-BiomeDecoratorGroups bd PODZOL
-BiomeDecoratorGroups be OAK_LOG
-BiomeDecoratorGroups bf OAK_LEAVES
-BiomeDecoratorGroups bg JUNGLE_LOG
-BiomeDecoratorGroups bh JUNGLE_LEAVES
-BiomeDecoratorGroups bi SPRUCE_LOG
-BiomeDecoratorGroups bj SPRUCE_LEAVES
-BiomeDecoratorGroups bk ACACIA_LOG
-BiomeDecoratorGroups bl ACACIA_LEAVES
-BiomeDecoratorGroups bm BIRCH_LOG
-BiomeDecoratorGroups bn BIRCH_LEAVES
-BiomeDecoratorGroups bo DARK_OAK_LOG
-BiomeDecoratorGroups bp DARK_OAK_LEAVES
-BiomeDecoratorGroups bq WATER
-BiomeDecoratorGroups br LAVA
-BiomeDecoratorGroups bs DIRT
-BiomeDecoratorGroups bt GRAVEL
-BiomeDecoratorGroups bu GRANITE
-BiomeDecoratorGroups bv DIORITE
-BiomeDecoratorGroups bw ANDESITE
-BiomeDecoratorGroups bx COAL_ORE
-BiomeDecoratorGroups by IRON_ORE
-BiomeDecoratorGroups bz GOLD_ORE
-BiomeDecoratorGroups ca PUMPKIN
-BiomeDecoratorGroups cb SWEET_BERRY_BUSH
-BiomeDecoratorGroups cc FIRE
-BiomeDecoratorGroups cd SOUL_FIRE
-BiomeDecoratorGroups ce NETHERRACK
-BiomeDecoratorGroups cf SOUL_SOIL
-BiomeDecoratorGroups cg CRIMSON_ROOTS
-BiomeDecoratorGroups ch LILY_PAD
-BiomeDecoratorGroups ci SNOW
-BiomeDecoratorGroups cj JACK_O_LANTERN
-BiomeDecoratorGroups ck SUNFLOWER
-BiomeDecoratorGroups cl CACTUS
-BiomeDecoratorGroups cm SUGAR_CANE
-BiomeDecoratorGroups cn RED_MUSHROOM_BLOCK
-BiomeDecoratorGroups co BROWN_MUSHROOM_BLOCK
-BiomeDecoratorGroups cp MUSHROOM_STEM
-BiomeDecoratorGroups cq NETHER_GOLD_ORE
-BiomeDecoratorGroups cr NETHER_QUARTZ_ORE
-BiomeDecoratorGroups cs WARPED_STEM
-BiomeDecoratorGroups ct WARPED_WART_BLOCK
-BiomeDecoratorGroups cu NETHER_WART_BLOCK
-BiomeDecoratorGroups cv CRIMSON_STEM
-BiomeDecoratorGroups cw SHROOMLIGHT
+BiomeBase$TemperatureModifier a NONE
+BiomeBase$TemperatureModifier b FROZEN
+BiomeDecoratorGroups A SEAGRASS_DEEP_WARM
+BiomeDecoratorGroups B SEA_PICKLE
+BiomeDecoratorGroups C ICE_SPIKE
+BiomeDecoratorGroups D ICE_PATCH
+BiomeDecoratorGroups E FOREST_ROCK
+BiomeDecoratorGroups F SEAGRASS_SIMPLE
+BiomeDecoratorGroups G ICEBERG_PACKED
+BiomeDecoratorGroups H ICEBERG_BLUE
+BiomeDecoratorGroups I KELP_COLD
+BiomeDecoratorGroups J KELP_WARM
+BiomeDecoratorGroups K BLUE_ICE
+BiomeDecoratorGroups L BAMBOO_LIGHT
+BiomeDecoratorGroups M BAMBOO
+BiomeDecoratorGroups N VINES
+BiomeDecoratorGroups O LAKE_WATER
+BiomeDecoratorGroups P LAKE_LAVA
+BiomeDecoratorGroups Q DISK_CLAY
+BiomeDecoratorGroups R DISK_GRAVEL
+BiomeDecoratorGroups S DISK_SAND
+BiomeDecoratorGroups T FREEZE_TOP_LAYER
+BiomeDecoratorGroups U BONUS_CHEST
+BiomeDecoratorGroups V VOID_START_PLATFORM
+BiomeDecoratorGroups W MONSTER_ROOM
+BiomeDecoratorGroups X DESERT_WELL
+BiomeDecoratorGroups Y FOSSIL
+BiomeDecoratorGroups Z SPRING_LAVA_DOUBLE
+BiomeDecoratorGroups a END_SPIKE
+BiomeDecoratorGroups aA PATCH_GRASS_TAIGA
+BiomeDecoratorGroups aB PATCH_GRASS_JUNGLE
+BiomeDecoratorGroups aC PATCH_DEAD_BUSH_2
+BiomeDecoratorGroups aD PATCH_DEAD_BUSH
+BiomeDecoratorGroups aE PATCH_DEAD_BUSH_BADLANDS
+BiomeDecoratorGroups aF PATCH_MELON
+BiomeDecoratorGroups aG PATCH_BERRY_SPARSE
+BiomeDecoratorGroups aH PATCH_BERRY_DECORATED
+BiomeDecoratorGroups aI PATCH_WATERLILLY
+BiomeDecoratorGroups aJ PATCH_TALL_GRASS_2
+BiomeDecoratorGroups aK PATCH_TALL_GRASS
+BiomeDecoratorGroups aL PATCH_LARGE_FERN
+BiomeDecoratorGroups aM PATCH_CACTUS
+BiomeDecoratorGroups aN PATCH_CACTUS_DESERT
+BiomeDecoratorGroups aO PATCH_CACTUS_DECORATED
+BiomeDecoratorGroups aP PATCH_SUGAR_CANE_SWAMP
+BiomeDecoratorGroups aQ PATCH_SUGAR_CANE_DESERT
+BiomeDecoratorGroups aR PATCH_SUGAR_CANE_BADLANDS
+BiomeDecoratorGroups aS PATCH_SUGAR_CANE
+BiomeDecoratorGroups aT BROWN_MUSHROOM_NETHER
+BiomeDecoratorGroups aU RED_MUSHROOM_NETHER
+BiomeDecoratorGroups aV BROWN_MUSHROOM_NORMAL
+BiomeDecoratorGroups aW RED_MUSHROOM_NORMAL
+BiomeDecoratorGroups aX BROWN_MUSHROOM_TAIGA
+BiomeDecoratorGroups aY RED_MUSHROOM_TAIGA
+BiomeDecoratorGroups aZ BROWN_MUSHROOM_GIANT
+BiomeDecoratorGroups aa SPRING_LAVA
+BiomeDecoratorGroups ab SPRING_DELTA
+BiomeDecoratorGroups ac SPRING_CLOSED
+BiomeDecoratorGroups ad SPRING_CLOSED_DOUBLE
+BiomeDecoratorGroups ae SPRING_OPEN
+BiomeDecoratorGroups af SPRING_WATER
+BiomeDecoratorGroups ag PILE_HAY
+BiomeDecoratorGroups ah PILE_MELON
+BiomeDecoratorGroups ai PILE_SNOW
+BiomeDecoratorGroups aj PILE_ICE
+BiomeDecoratorGroups ak PILE_PUMPKIN
+BiomeDecoratorGroups al PATCH_FIRE
+BiomeDecoratorGroups am PATCH_SOUL_FIRE
+BiomeDecoratorGroups an PATCH_BROWN_MUSHROOM
+BiomeDecoratorGroups ao PATCH_RED_MUSHROOM
+BiomeDecoratorGroups ap PATCH_CRIMSON_ROOTS
+BiomeDecoratorGroups aq PATCH_SUNFLOWER
+BiomeDecoratorGroups ar PATCH_PUMPKIN
+BiomeDecoratorGroups as PATCH_TAIGA_GRASS
+BiomeDecoratorGroups at PATCH_BERRY_BUSH
+BiomeDecoratorGroups au PATCH_GRASS_PLAIN
+BiomeDecoratorGroups av PATCH_GRASS_FOREST
+BiomeDecoratorGroups aw PATCH_GRASS_BADLANDS
+BiomeDecoratorGroups ax PATCH_GRASS_SAVANNA
+BiomeDecoratorGroups ay PATCH_GRASS_NORMAL
+BiomeDecoratorGroups az PATCH_GRASS_TAIGA_2
+BiomeDecoratorGroups b END_GATEWAY
+BiomeDecoratorGroups bA ORE_DEBRIS_SMALL
+BiomeDecoratorGroups bB CRIMSON_FUNGI
+BiomeDecoratorGroups bC CRIMSON_FUNGI_PLANTED
+BiomeDecoratorGroups bD WARPED_FUNGI
+BiomeDecoratorGroups bE WARPED_FUNGI_PLANTED
+BiomeDecoratorGroups bF HUGE_BROWN_MUSHROOM
+BiomeDecoratorGroups bG HUGE_RED_MUSHROOM
+BiomeDecoratorGroups bH OAK
+BiomeDecoratorGroups bI DARK_OAK
+BiomeDecoratorGroups bJ BIRCH
+BiomeDecoratorGroups bK ACACIA
+BiomeDecoratorGroups bL SPRUCE
+BiomeDecoratorGroups bM PINE
+BiomeDecoratorGroups bN JUNGLE_TREE
+BiomeDecoratorGroups bO FANCY_OAK
+BiomeDecoratorGroups bP JUNGLE_TREE_NO_VINE
+BiomeDecoratorGroups bQ MEGA_JUNGLE_TREE
+BiomeDecoratorGroups bR MEGA_SPRUCE
+BiomeDecoratorGroups bS MEGA_PINE
+BiomeDecoratorGroups bT SUPER_BIRCH_BEES_0002
+BiomeDecoratorGroups bU SWAMP_TREE
+BiomeDecoratorGroups bV JUNGLE_BUSH
+BiomeDecoratorGroups bW OAK_BEES_0002
+BiomeDecoratorGroups bX OAK_BEES_002
+BiomeDecoratorGroups bY OAK_BEES_005
+BiomeDecoratorGroups bZ BIRCH_BEES_0002
+BiomeDecoratorGroups ba RED_MUSHROOM_GIANT
+BiomeDecoratorGroups bb BROWN_MUSHROOM_SWAMP
+BiomeDecoratorGroups bc RED_MUSHROOM_SWAMP
+BiomeDecoratorGroups bd ORE_MAGMA
+BiomeDecoratorGroups be ORE_SOUL_SAND
+BiomeDecoratorGroups bf ORE_GOLD_DELTAS
+BiomeDecoratorGroups bg ORE_QUARTZ_DELTAS
+BiomeDecoratorGroups bh ORE_GOLD_NETHER
+BiomeDecoratorGroups bi ORE_QUARTZ_NETHER
+BiomeDecoratorGroups bj ORE_GRAVEL_NETHER
+BiomeDecoratorGroups bk ORE_BLACKSTONE
+BiomeDecoratorGroups bl ORE_DIRT
+BiomeDecoratorGroups bm ORE_GRAVEL
+BiomeDecoratorGroups bn ORE_GRANITE
+BiomeDecoratorGroups bo ORE_DIORITE
+BiomeDecoratorGroups bp ORE_ANDESITE
+BiomeDecoratorGroups bq ORE_COAL
+BiomeDecoratorGroups br ORE_IRON
+BiomeDecoratorGroups bs ORE_GOLD_EXTRA
+BiomeDecoratorGroups bt ORE_GOLD
+BiomeDecoratorGroups bu ORE_REDSTONE
+BiomeDecoratorGroups bv ORE_DIAMOND
+BiomeDecoratorGroups bw ORE_LAPIS
+BiomeDecoratorGroups bx ORE_INFESTED
+BiomeDecoratorGroups by ORE_EMERALD
+BiomeDecoratorGroups bz ORE_DEBRIS_LARGE
+BiomeDecoratorGroups c END_GATEWAY_DELAYED
+BiomeDecoratorGroups cA TREES_WATER
+BiomeDecoratorGroups cB BIRCH_OTHER
+BiomeDecoratorGroups cC PLAIN_VEGETATION
+BiomeDecoratorGroups cD TREES_JUNGLE_EDGE
+BiomeDecoratorGroups cE TREES_GIANT_SPRUCE
+BiomeDecoratorGroups cF TREES_GIANT
+BiomeDecoratorGroups cG TREES_JUNGLE
+BiomeDecoratorGroups cH BAMBOO_VEGETATION
+BiomeDecoratorGroups cI MUSHROOM_FIELD_VEGETATION
+BiomeDecoratorGroups ca BIRCH_BEES_002
+BiomeDecoratorGroups cb BIRCH_BEES_005
+BiomeDecoratorGroups cc FANCY_OAK_BEES_0002
+BiomeDecoratorGroups cd FANCY_OAK_BEES_002
+BiomeDecoratorGroups ce FANCY_OAK_BEES_005
+BiomeDecoratorGroups cf OAK_BADLANDS
+BiomeDecoratorGroups cg SPRUCE_SNOWY
+BiomeDecoratorGroups ch FLOWER_WARM
+BiomeDecoratorGroups ci FLOWER_DEFAULT
+BiomeDecoratorGroups cj FLOWER_FOREST
+BiomeDecoratorGroups ck FLOWER_SWAMP
+BiomeDecoratorGroups cl FLOWER_PLAIN
+BiomeDecoratorGroups cm FLOWER_PLAIN_DECORATED
+BiomeDecoratorGroups cn FOREST_FLOWER_VEGETATION_COMMON
+BiomeDecoratorGroups co FOREST_FLOWER_VEGETATION
+BiomeDecoratorGroups cp DARK_FOREST_VEGETATION_BROWN
+BiomeDecoratorGroups cq DARK_FOREST_VEGETATION_RED
+BiomeDecoratorGroups cr WARM_OCEAN_VEGETATION
+BiomeDecoratorGroups cs FOREST_FLOWER_TREES
+BiomeDecoratorGroups ct TAIGA_VEGETATION
+BiomeDecoratorGroups cu TREES_SHATTERED_SAVANNA
+BiomeDecoratorGroups cv TREES_SAVANNA
+BiomeDecoratorGroups cw BIRCH_TALL
+BiomeDecoratorGroups cx TREES_BIRCH
+BiomeDecoratorGroups cy TREES_MOUNTAIN_EDGE
+BiomeDecoratorGroups cz TREES_MOUNTAIN
+BiomeDecoratorGroups d CHORUS_PLANT
+BiomeDecoratorGroups e END_ISLAND
+BiomeDecoratorGroups f END_ISLAND_DECORATED
+BiomeDecoratorGroups g DELTA
+BiomeDecoratorGroups h SMALL_BASALT_COLUMNS
+BiomeDecoratorGroups i LARGE_BASALT_COLUMNS
+BiomeDecoratorGroups j BASALT_BLOBS
+BiomeDecoratorGroups k BLACKSTONE_BLOBS
+BiomeDecoratorGroups l GLOWSTONE_EXTRA
+BiomeDecoratorGroups m GLOWSTONE
+BiomeDecoratorGroups n CRIMSON_FOREST_VEGETATION
+BiomeDecoratorGroups o WARPED_FOREST_VEGETATION
+BiomeDecoratorGroups p NETHER_SPROUTS
+BiomeDecoratorGroups q TWISTING_VINES
+BiomeDecoratorGroups r WEEPING_VINES
+BiomeDecoratorGroups s BASALT_PILLAR
+BiomeDecoratorGroups t SEAGRASS_COLD
+BiomeDecoratorGroups u SEAGRASS_DEEP_COLD
+BiomeDecoratorGroups v SEAGRASS_NORMAL
+BiomeDecoratorGroups w SEAGRASS_RIVER
+BiomeDecoratorGroups x SEAGRASS_DEEP
+BiomeDecoratorGroups y SEAGRASS_SWAMP
+BiomeDecoratorGroups z SEAGRASS_WARM
+BiomeFog$GrassColor a NONE
+BiomeFog$GrassColor b DARK_FOREST
+BiomeFog$GrassColor c SWAMP
 BiomeManager$Provider b (III)LBiomeBase; getBiome
-Biomes A STONE_SHORE
-Biomes B SNOWY_BEACH
-Biomes C BIRCH_FOREST
-Biomes D BIRCH_FOREST_HILLS
-Biomes E DARK_FOREST
-Biomes F SNOWY_TAIGA
-Biomes G SNOWY_TAIGA_HILLS
-Biomes H GIANT_TREE_TAIGA
-Biomes I GIANT_TREE_TAIGA_HILLS
-Biomes J WOODED_MOUNTAINS
-Biomes K SAVANNA
-Biomes L SAVANNA_PLATEAU
-Biomes M BADLANDS
-Biomes N WOODED_BADLANDS_PLATEAU
-Biomes O BADLANDS_PLATEAU
-Biomes P SMALL_END_ISLANDS
-Biomes Q END_MIDLANDS
-Biomes R END_HIGHLANDS
-Biomes S END_BARRENS
-Biomes T WARM_OCEAN
-Biomes U LUKEWARM_OCEAN
-Biomes V COLD_OCEAN
-Biomes W DEEP_WARM_OCEAN
-Biomes X DEEP_LUKEWARM_OCEAN
-Biomes Y DEEP_COLD_OCEAN
-Biomes Z DEEP_FROZEN_OCEAN
+Biomes A SNOWY_BEACH
+Biomes B BIRCH_FOREST
+Biomes C BIRCH_FOREST_HILLS
+Biomes D DARK_FOREST
+Biomes E SNOWY_TAIGA
+Biomes F SNOWY_TAIGA_HILLS
+Biomes G GIANT_TREE_TAIGA
+Biomes H GIANT_TREE_TAIGA_HILLS
+Biomes I WOODED_MOUNTAINS
+Biomes J SAVANNA
+Biomes K SAVANNA_PLATEAU
+Biomes L BADLANDS
+Biomes M WOODED_BADLANDS_PLATEAU
+Biomes N BADLANDS_PLATEAU
+Biomes O SMALL_END_ISLANDS
+Biomes P END_MIDLANDS
+Biomes Q END_HIGHLANDS
+Biomes R END_BARRENS
+Biomes S WARM_OCEAN
+Biomes T LUKEWARM_OCEAN
+Biomes U COLD_OCEAN
+Biomes V DEEP_WARM_OCEAN
+Biomes W DEEP_LUKEWARM_OCEAN
+Biomes X DEEP_COLD_OCEAN
+Biomes Y DEEP_FROZEN_OCEAN
+Biomes Z THE_VOID
 Biomes a OCEAN
-Biomes aA WARPED_FOREST
-Biomes aB BASALT_DELTAS
-Biomes aa THE_VOID
-Biomes ab SUNFLOWER_PLAINS
-Biomes ac DESERT_LAKES
-Biomes ad GRAVELLY_MOUNTAINS
-Biomes ae FLOWER_FOREST
-Biomes af TAIGA_MOUNTAINS
-Biomes ag SWAMP_HILLS
-Biomes ah ICE_SPIKES
-Biomes ai MODIFIED_JUNGLE
-Biomes aj MODIFIED_JUNGLE_EDGE
-Biomes ak TALL_BIRCH_FOREST
-Biomes al TALL_BIRCH_HILLS
-Biomes am DARK_FOREST_HILLS
-Biomes an SNOWY_TAIGA_MOUNTAINS
-Biomes ao GIANT_SPRUCE_TAIGA
-Biomes ap GIANT_SPRUCE_TAIGA_HILLS
-Biomes aq MODIFIED_GRAVELLY_MOUNTAINS
-Biomes ar SHATTERED_SAVANNA
-Biomes as SHATTERED_SAVANNA_PLATEAU
-Biomes at ERODED_BADLANDS
-Biomes au MODIFIED_WOODED_BADLANDS_PLATEAU
-Biomes av MODIFIED_BADLANDS_PLATEAU
-Biomes aw BAMBOO_JUNGLE
-Biomes ax BAMBOO_JUNGLE_HILLS
-Biomes ay SOUL_SAND_VALLEY
-Biomes az CRIMSON_FOREST
-Biomes c PLAINS
-Biomes d DESERT
-Biomes e MOUNTAINS
-Biomes f FOREST
-Biomes g TAIGA
-Biomes h SWAMP
-Biomes i RIVER
-Biomes j NETHER_WASTES
-Biomes k THE_END
-Biomes l FROZEN_OCEAN
-Biomes m FROZEN_RIVER
-Biomes n SNOWY_TUNDRA
-Biomes o SNOWY_MOUNTAINS
-Biomes p MUSHROOM_FIELDS
-Biomes q MUSHROOM_FIELD_SHORE
-Biomes r BEACH
-Biomes s DESERT_HILLS
-Biomes t WOODED_HILLS
-Biomes u TAIGA_HILLS
-Biomes v MOUNTAIN_EDGE
-Biomes w JUNGLE
-Biomes x JUNGLE_HILLS
-Biomes y JUNGLE_EDGE
-Biomes z DEEP_OCEAN
+Biomes aA BASALT_DELTAS
+Biomes aa SUNFLOWER_PLAINS
+Biomes ab DESERT_LAKES
+Biomes ac GRAVELLY_MOUNTAINS
+Biomes ad FLOWER_FOREST
+Biomes ae TAIGA_MOUNTAINS
+Biomes af SWAMP_HILLS
+Biomes ag ICE_SPIKES
+Biomes ah MODIFIED_JUNGLE
+Biomes ai MODIFIED_JUNGLE_EDGE
+Biomes aj TALL_BIRCH_FOREST
+Biomes ak TALL_BIRCH_HILLS
+Biomes al DARK_FOREST_HILLS
+Biomes am SNOWY_TAIGA_MOUNTAINS
+Biomes an GIANT_SPRUCE_TAIGA
+Biomes ao GIANT_SPRUCE_TAIGA_HILLS
+Biomes ap MODIFIED_GRAVELLY_MOUNTAINS
+Biomes aq SHATTERED_SAVANNA
+Biomes ar SHATTERED_SAVANNA_PLATEAU
+Biomes as ERODED_BADLANDS
+Biomes at MODIFIED_WOODED_BADLANDS_PLATEAU
+Biomes au MODIFIED_BADLANDS_PLATEAU
+Biomes av BAMBOO_JUNGLE
+Biomes aw BAMBOO_JUNGLE_HILLS
+Biomes ax SOUL_SAND_VALLEY
+Biomes ay CRIMSON_FOREST
+Biomes az WARPED_FOREST
+Biomes b PLAINS
+Biomes c DESERT
+Biomes d MOUNTAINS
+Biomes e FOREST
+Biomes f TAIGA
+Biomes g SWAMP
+Biomes h RIVER
+Biomes i NETHER_WASTES
+Biomes j THE_END
+Biomes k FROZEN_OCEAN
+Biomes l FROZEN_RIVER
+Biomes m SNOWY_TUNDRA
+Biomes n SNOWY_MOUNTAINS
+Biomes o MUSHROOM_FIELDS
+Biomes p MUSHROOM_FIELD_SHORE
+Biomes q BEACH
+Biomes r DESERT_HILLS
+Biomes s WOODED_HILLS
+Biomes t TAIGA_HILLS
+Biomes u MOUNTAIN_EDGE
+Biomes v JUNGLE
+Biomes w JUNGLE_HILLS
+Biomes x JUNGLE_EDGE
+Biomes y DEEP_OCEAN
+Biomes z STONE_SHORE
 Block a (I)LIBlockData; getByCombinedId
 Block a (LBlockActionContext;)LIBlockData; getPlacedState
 Block a (LGeneratorAccess;LBlockPosition;LIBlockData;)V postBreak
 Block a (LIBlockData;LWorld;LBlockPosition;LTileEntity;LEntity;LItemStack;)V dropItems
 Block a (LIBlockData;LWorldServer;LBlockPosition;LTileEntity;LEntity;LItemStack;)Ljava/util/List; getDrops
 Block a (LItem;)LBlock; asBlock
-Block a (LWorld;LBlockPosition;I)V dropExperience
 Block a (LWorld;LBlockPosition;LEntity;)V stepOn
 Block a (LWorld;LBlockPosition;LEntity;F)V fallOn
 Block a (LWorld;LBlockPosition;LExplosion;)V wasExploded
 Block a (LWorld;LBlockPosition;LIBlockData;LEntityLiving;LItemStack;)V postPlace
+Block a (LWorldServer;LBlockPosition;I)V dropExperience
 Block a_ (LIBlockData;)Z isTicking
-Block d blockData
-Block e name
+Block b blockData
+Block c name
 Block f ()F getDurability
 Block i (LIBlockData;)I getCombinedId
 Block j ()F getFrictionFactor
@@ -351,7 +444,7 @@ BlockBase a (LIBlockData;LWorld;LBlockPosition;LBlock;LBlockPosition;Z)V doPhysi
 BlockBase a (LIBlockData;LWorld;LBlockPosition;LEntityHuman;)V attack
 BlockBase a (LIBlockData;LWorld;LBlockPosition;LEntityHuman;LEnumHand;LMovingObjectPositionBlock;)LEnumInteractionResult; interact
 BlockBase a (LIBlockData;LWorld;LBlockPosition;LIBlockData;Z)V remove
-BlockBase a (LIBlockData;LWorld;LBlockPosition;LItemStack;)V dropNaturally
+BlockBase a (LIBlockData;LWorldServer;LBlockPosition;LItemStack;)V dropNaturally
 BlockBase a (LIBlockData;LWorldServer;LBlockPosition;Ljava/util/Random;)V tickAlways
 BlockBase as material
 BlockBase au durability
@@ -372,8 +465,8 @@ BlockBase$BlockData a (LIWorldReader;LBlockPosition;)Z canPlace
 BlockBase$BlockData a (LWorld;LBlockPosition;LBlock;LBlockPosition;Z)V doPhysics
 BlockBase$BlockData a (LWorld;LBlockPosition;LEntityHuman;)V attack
 BlockBase$BlockData a (LWorld;LBlockPosition;LIBlockData;Z)V onPlace
-BlockBase$BlockData a (LWorld;LBlockPosition;LItemStack;)V dropNaturally
 BlockBase$BlockData a (LWorld;LEntityHuman;LEnumHand;LMovingObjectPositionBlock;)LEnumInteractionResult; interact
+BlockBase$BlockData a (LWorldServer;LBlockPosition;LItemStack;)V dropNaturally
 BlockBase$BlockData b ()LBlock; getBlock
 BlockBase$BlockData b (LWorld;LBlockPosition;LIBlockData;Z)V remove
 BlockBase$BlockData c ()LMaterial; getMaterial
@@ -388,7 +481,7 @@ BlockBase$BlockData k (LIBlockAccess;LBlockPosition;)LVoxelShape; getCollisionSh
 BlockBase$BlockData m ()LFluid; getFluid
 BlockBase$BlockData n ()Z isTicking
 BlockBase$BlockData o ()LSoundEffectType; getStepSound
-BlockBase$BlockData q ()Z isAlwaysDestroyable
+BlockBase$BlockData q ()Z isRequiresSpecialTool
 BlockBase$EnumRandomOffset a NONE
 BlockBase$EnumRandomOffset b XZ
 BlockBase$EnumRandomOffset c XYZ
@@ -417,11 +510,11 @@ BlockCrops h (LIBlockData;)Z isRipe
 BlockDaylightDetector a POWER
 BlockDiodeAbstract l (LIBlockData;)Z isDiode
 BlockDirectional a FACING
-BlockDispenser a (LWorld;LBlockPosition;)V dispense
+BlockDispenser a (LWorldServer;LBlockPosition;)V dispense
 BlockDispenser a FACING
 BlockDispenser b TRIGGERED
 BlockDispenser c REGISTRY
-BlockDoor a (LWorld;LBlockPosition;Z)V setDoor
+BlockDoor a (LWorld;LIBlockData;LBlockPosition;Z)V setDoor
 BlockDoor a FACING
 BlockDoor b OPEN
 BlockDoor c HINGE
@@ -437,17 +530,17 @@ BlockFenceGate b POWERED
 BlockFenceGate c IN_WALL
 BlockFire a (LWorld;LBlockPosition;ILjava/util/Random;I)V trySpread
 BlockFire b (LIBlockAccess;LBlockPosition;)LIBlockData; getPlacedState
+BlockFire b AGE
+BlockFire c NORTH
+BlockFire d EAST
 BlockFire e (LIBlockAccess;LBlockPosition;)Z canBurn
-BlockFire g AGE
-BlockFire h (LIBlockData;)I getBurnChance
-BlockFire h NORTH
-BlockFire i EAST
-BlockFire j SOUTH
-BlockFire k WEST
-BlockFire l (LIBlockData;)I getFlameChance
-BlockFire o UPPER
-BlockFire q flameChances
-BlockFire r burnChances
+BlockFire e SOUTH
+BlockFire f WEST
+BlockFire g UPPER
+BlockFire l (LIBlockData;)I getBurnChance
+BlockFire m (LIBlockData;)I getFlameChance
+BlockFire r flameChances
+BlockFire s burnChances
 BlockFloorSign c ROTATION
 BlockFluids a (LGeneratorAccess;LBlockPosition;)V fizz
 BlockFluids a LEVEL
@@ -476,14 +569,12 @@ BlockPiston i sticky
 BlockPistonExtension b TYPE
 BlockPistonExtension c SHORT
 BlockPortal a AXIS
-BlockPortal$Shape e ()V createPortal
-BlockPortal$Shape f position
-BlockPortal$Shape g height
-BlockPortal$Shape h width
+BlockPortalShape b ()V createPortal
+BlockPortalShape f position
+BlockPortalShape g height
+BlockPortalShape h width
 BlockPosition a ()J asLong
 BlockPosition a (LEnumDirection;)LBlockPosition; shift
-BlockPosition b ()LBlockPosition; up
-BlockPosition b (I)LBlockPosition; up
 BlockPosition b ZERO
 BlockPosition d ()LBlockPosition; north
 BlockPosition d (I)LBlockPosition; north
@@ -598,7 +689,7 @@ BlockRedstoneWire e POWER
 BlockReed a AGE
 BlockRepeater a LOCKED
 BlockRepeater d DELAY
-BlockRotatable a AXIS
+BlockRotatable e AXIS
 BlockSapling a (LWorldServer;LBlockPosition;LIBlockData;Ljava/util/Random;)V grow
 BlockSapling a STAGE
 BlockShulkerBox c color
@@ -642,13 +733,16 @@ BlockTripwire g WEST
 BlockTripwireHook a FACING
 BlockTripwireHook b POWERED
 BlockTripwireHook c ATTACHED
+BlockUtil$Rectangle a origin
+BlockUtil$Rectangle b side1
+BlockUtil$Rectangle c side2
 BlockVine a (LEnumDirection;)LBlockStateBoolean; getDirection
 BlockVine a UP
 BlockVine b NORTH
 BlockVine c EAST
 BlockVine d SOUTH
 BlockVine e WEST
-BlockVine m (LIBlockData;)Z canSpread
+BlockVine n (LIBlockData;)Z canSpread
 BlockWallSign c FACING
 Blocks A WATER
 Blocks B LAVA
@@ -1462,9 +1556,9 @@ ChatHoverable$EnumHoverAction a SHOW_TEXT
 ChatHoverable$EnumHoverAction b SHOW_ITEM
 ChatHoverable$EnumHoverAction c SHOW_ENTITY
 ChatMessage g key
-ChatMessage h ()Ljava/lang/String; getKey
 ChatMessage h args
-ChatMessage i ()[Ljava/lang/Object; getArgs
+ChatMessage i ()Ljava/lang/String; getKey
+ChatMessage j ()[Ljava/lang/Object; getArgs
 ChatMessageType a CHAT
 ChatMessageType b SYSTEM
 ChatMessageType c GAME_INFO
@@ -1544,15 +1638,15 @@ ChunkCoordIntPair i ()I getRegionZ
 ChunkGenerator a (IILHeightMap$Type;)I getBaseHeight
 ChunkGenerator a (JLBiomeManager;LIChunkAccess;LWorldGenStage$Features;)V doCarving
 ChunkGenerator a (LBiomeBase;LStructureManager;LEnumCreatureType;LBlockPosition;)Ljava/util/List; getMobsFor
-ChunkGenerator a (LGeneratorAccess;LStructureManager;LIChunkAccess;)V storeStructures
-ChunkGenerator a (LIChunkAccess;)V createBiomes
+ChunkGenerator a (LGeneratorAccess;LStructureManager;LIChunkAccess;)V buildNoise
+ChunkGenerator a (LGeneratorAccessSeed;LStructureManager;LIChunkAccess;)V storeStructures
+ChunkGenerator a (LIRegistry;LIChunkAccess;)V createBiomes
+ChunkGenerator a (LIRegistryCustom;LStructureManager;LIChunkAccess;LDefinedStructureManager;J)V createStructures
 ChunkGenerator a (LRegionLimitedWorldAccess;)V addMobs
 ChunkGenerator a (LRegionLimitedWorldAccess;LIChunkAccess;)V buildBase
 ChunkGenerator a (LRegionLimitedWorldAccess;LStructureManager;)V addDecorations
-ChunkGenerator a (LStructureManager;LIChunkAccess;LDefinedStructureManager;J)V createStructures
 ChunkGenerator a (LWorldServer;LStructureGenerator;LBlockPosition;IZ)LBlockPosition; findNearestMapFeature
 ChunkGenerator b ()LStructureSettings; getSettings
-ChunkGenerator b (LGeneratorAccess;LStructureManager;LIChunkAccess;)V buildNoise
 ChunkGenerator c ()I getSpawnHeight
 ChunkGenerator d ()LWorldChunkManager; getWorldChunkManager
 ChunkGenerator d structureSettings
@@ -1634,7 +1728,7 @@ ChunkStatus l HEIGHTMAPS
 ChunkStatus m FULL
 ChunkStatus$Type a PROTOCHUNK
 ChunkStatus$Type b LEVELCHUNK
-Clearable aa_ ()V clear
+Clearable Y_ ()V clear
 CombatTracker a (LDamageSource;FF)V trackDamage
 CombatTracker b ()LIChatBaseComponent; getDeathMessage
 CommandAdvancement$Action a GRANT
@@ -1705,7 +1799,7 @@ ContainerBeacon f containerProperties
 ContainerBrewingStand c brewingStand
 ContainerCartography c inventory
 ContainerCartography d containerAccess
-ContainerCartography g resultInventory
+ContainerCartography f resultInventory
 ContainerChest c container
 ContainerDispenser c items
 ContainerEnchantTable c costs
@@ -1782,6 +1876,7 @@ Counter b DEFAULT
 Counter c DIVIDE_BY_TEN
 Counter d DISTANCE
 Counter e TIME
+CraftingManager a (LMinecraftKey;)Ljava/util/Optional; getRecipe
 CraftingManager a (LRecipes;LIInventory;LWorld;)Ljava/util/Optional; craft
 CraftingManager c recipes
 CriterionProgress d ()Ljava/util/Date; getDate
@@ -1884,9 +1979,9 @@ DataWatcher d entries
 DataWatcher e lock
 DedicatedPlayerList b ()LDedicatedServer; getServer
 DedicatedServer a (Ljava/lang/String;LCommandListenerWrapper;)V issueCommand
-DedicatedServer aZ ()V handleCommandQueue
-DedicatedServer bc ()Z convertNames
-DedicatedServer bd ()J getMaxTickTime
+DedicatedServer ba ()V handleCommandQueue
+DedicatedServer bd ()Z convertNames
+DedicatedServer be ()J getMaxTickTime
 DedicatedServer j (Z)V setHasWhitelist
 DedicatedServer l serverCommandQueue
 DedicatedServer m remoteStatusListener
@@ -1901,20 +1996,21 @@ DedicatedServerProperties E spawnProtection
 DedicatedServerProperties F opPermissionLevel
 DedicatedServerProperties G functionPermissionLevel
 DedicatedServerProperties H maxTickTime
-DedicatedServerProperties I viewDistance
-DedicatedServerProperties J maxPlayers
-DedicatedServerProperties K networkCompressionThreshold
-DedicatedServerProperties L broadcastRconToOps
-DedicatedServerProperties M broadcastConsoleToOps
-DedicatedServerProperties N maxWorldSize
-DedicatedServerProperties O syncChunkWrites
-DedicatedServerProperties P enableJmxMonitoring
-DedicatedServerProperties Q enableStatus
-DedicatedServerProperties R entityBroadcastRangePercentage
-DedicatedServerProperties S playerIdleTimeout
-DedicatedServerProperties T whiteList
-DedicatedServerProperties U generatorSettings
-DedicatedServerProperties a (Ljava/nio/file/Path;)LDedicatedServerProperties; load
+DedicatedServerProperties I rateLimit
+DedicatedServerProperties J viewDistance
+DedicatedServerProperties K maxPlayers
+DedicatedServerProperties L networkCompressionThreshold
+DedicatedServerProperties M broadcastRconToOps
+DedicatedServerProperties N broadcastConsoleToOps
+DedicatedServerProperties O maxWorldSize
+DedicatedServerProperties P syncChunkWrites
+DedicatedServerProperties Q enableJmxMonitoring
+DedicatedServerProperties R enableStatus
+DedicatedServerProperties S entityBroadcastRangePercentage
+DedicatedServerProperties T playerIdleTimeout
+DedicatedServerProperties U whiteList
+DedicatedServerProperties V generatorSettings
+DedicatedServerProperties a (LIRegistryCustom;Ljava/nio/file/Path;)LDedicatedServerProperties; load
 DedicatedServerProperties a onlineMode
 DedicatedServerProperties b preventProxyConnections
 DedicatedServerProperties c serverIp
@@ -1946,42 +2042,47 @@ DedicatedServerSettings a (Ljava/util/function/UnaryOperator;)LDedicatedServerSe
 DedicatedServerSettings a path
 DedicatedServerSettings b ()V save
 DedicatedServerSettings b properties
-DimensionManager c ()Ljava/lang/String; getSuffix
-DimensionManager c OVERWORLD
-DimensionManager d ()Z hasSkyLight
-DimensionManager d THE_NETHER
-DimensionManager e ()Z hasCeiling
-DimensionManager e THE_END
-DimensionManager f ()Z isNether
-DimensionManager f OVERWORLD_IMPL
-DimensionManager g ()Z isNatural
-DimensionManager g THE_NETHER_IMPL
-DimensionManager h THE_END_IMPL
-DimensionManager i ()Z isPiglinSafe
-DimensionManager j ()Z isBedWorks
-DimensionManager k ()Z isRespawnAnchorWorks
-DimensionManager l ()Z hasRaids
-DimensionManager l fixedTime
-DimensionManager m ()I getLogicalHeight
-DimensionManager m hasSkyLight
-DimensionManager m hasSkylight
-DimensionManager n ()Z isCreateDragonBattle
-DimensionManager n hasCeiling
-DimensionManager o ()LGenLayerZoomer; getGenLayerZoomer
-DimensionManager o ultraWarm
-DimensionManager p ()Z isFixedTime
-DimensionManager p natural
-DimensionManager q shrunk
-DimensionManager r createDragonBattle
-DimensionManager s piglinSafe
-DimensionManager t bedWorks
-DimensionManager u respawnAnchorWorks
-DimensionManager v hasRaids
-DimensionManager w logicalHeight
-DimensionManager x biomeZoomer
-DimensionManager x genLayerZoomer
-DimensionManager y infiniburn
-DimensionManager z ambientLight
+DimensionManager A biomeZoomer
+DimensionManager A genLayerZoomer
+DimensionManager B infiniburn
+DimensionManager C effects
+DimensionManager D ambientLight
+DimensionManager a ()Ljava/lang/String; getSuffix
+DimensionManager a OVERWORLD_KEY
+DimensionManager b ()Z hasSkyLight
+DimensionManager b THE_NETHER_KEY
+DimensionManager c ()Z hasCeiling
+DimensionManager c THE_END_KEY
+DimensionManager d ()Z isNether
+DimensionManager e ()Z isNatural
+DimensionManager f ()D getCoordinateScale
+DimensionManager f OVERWORLD
+DimensionManager g ()Z isPiglinSafe
+DimensionManager g THE_NETHER
+DimensionManager h ()Z isBedWorks
+DimensionManager h THE_END
+DimensionManager i ()Z isRespawnAnchorWorks
+DimensionManager i OVERWORLD_IMPL
+DimensionManager j ()Z hasRaids
+DimensionManager j THE_NETHER_IMPL
+DimensionManager k ()I getLogicalHeight
+DimensionManager k THE_END_IMPL
+DimensionManager l ()Z isCreateDragonBattle
+DimensionManager m ()LGenLayerZoomer; getGenLayerZoomer
+DimensionManager n ()Z isFixedTime
+DimensionManager o fixedTime
+DimensionManager p hasSkyLight
+DimensionManager p hasSkylight
+DimensionManager q hasCeiling
+DimensionManager r ultraWarm
+DimensionManager s natural
+DimensionManager t coordinateScale
+DimensionManager u createDragonBattle
+DimensionManager v piglinSafe
+DimensionManager w bedWorks
+DimensionManager x respawnAnchorWorks
+DimensionManager y hasRaids
+DimensionManager z logicalHeight
 DispenseBehaviorMaybe b dispensed
 DispenseBehaviorProjectile b ()F getPower
 DispenserRegistry a ()V init
@@ -2078,12 +2179,14 @@ Enchantments x ARROW_DAMAGE
 Enchantments y ARROW_KNOCKBACK
 Enchantments z ARROW_FIRE
 EnderDragonBattle a (LEnumDragonRespawn;)V setRespawnPhase
+EnderDragonBattle a (Z)V generateExitPortal
 EnderDragonBattle c bossBattle
 EnderDragonBattle d ()Z isPreviouslyKilled
 EnderDragonBattle d world
 EnderDragonBattle e ()V initiateRespawn
 EnderDragonBattle e gateways
 EnderDragonBattle f ()V resetCrystals
+EnderDragonBattle j ()LShapeDetector$ShapeDetectorCollection; getExitPortalShape
 EnderDragonBattle k dragonKilled
 EnderDragonBattle l previouslyKilled
 EnderDragonBattle m dragonUUID
@@ -2094,83 +2197,83 @@ Entity H noclip
 Entity J random
 Entity K ticksLived
 Entity L inWater
-Entity P inLava
-Entity Q ()Z hasCustomName
-Entity Q noDamageTicks
-Entity R justCreated
-Entity S datawatcher
-Entity T ()V decouple
-Entity U ()LEntityTypes; getEntityType
-Entity U POSE
-Entity V ()I getId
-Entity V inChunk
-Entity W ()Ljava/util/Set; getScoreboardTags
-Entity W chunkX
-Entity X ()V killEntity
-Entity X chunkY
-Entity Y ()LDataWatcher; getDataWatcher
-Entity Y chunkZ
+Entity P noDamageTicks
+Entity Q justCreated
+Entity R ()Z hasCustomName
+Entity R datawatcher
+Entity T POSE
+Entity U ()V decouple
+Entity U inChunk
+Entity V chunkX
+Entity W ()LEntityTypes; getEntityType
+Entity W chunkY
+Entity X ()I getId
+Entity X chunkZ
+Entity Y ()Ljava/util/Set; getScoreboardTags
+Entity Z ()V killEntity
+Entity Z impulse
 Entity a (DDD)V enderTeleportTo
 Entity a (DDDFF)V setLocation
 Entity a (FF)V setYawPitch
 Entity a (LBlockPosition;FF)V setPositionRotation
 Entity a (LCrashReportSystemDetails;)V appendEntityCrashDetails
 Entity a (LDamageSource;F)Z damageEntity
-Entity a (LEntityLightning;)V onLightningStrike
 Entity a (LEntityPose;LEntitySize;)F getHeadHeight
 Entity a (LEnumItemSlot;LItemStack;)V setEquipment
 Entity a (LEnumMoveType;LVec3D;)V move
 Entity a (LIChatBaseComponent;)V setCustomName
 Entity a (LNBTTagCompound;)V loadData
 Entity a (LSoundEffect;FF)V playSound
+Entity a (LWorldServer;LEntityLightning;)V onLightningStrike
 Entity a (Ljava/lang/String;)Z addScoreboardTag
-Entity aA ()Z isInWater
-Entity aB ()Z isInWaterOrRain
-Entity aC invulnerable
-Entity aH size
-Entity aI headHeight
-Entity aP ()V velocityChanged
-Entity aQ ()Z isInteractable
-Entity aR ()Z isCollidable
-Entity aT ()Ljava/lang/String; getSaveID
-Entity aU ()Z isAlive
-Entity aV ()Z inBlock
-Entity aW ()V passengerTick
+Entity aA ()Z isNoGravity
+Entity aB ()Z playStepSound
+Entity aC ()Z isFireProof
+Entity aC size
+Entity aD ()Z isInWater
+Entity aD headHeight
+Entity aE ()Z isInWaterOrRain
+Entity aR ()V velocityChanged
+Entity aS ()Z isInteractable
+Entity aT ()Z isCollidable
+Entity aV ()Ljava/lang/String; getSaveID
+Entity aW ()Z isAlive
+Entity aX ()Z inBlock
+Entity aZ ()V passengerTick
 Entity a_ ()Z isSpectator
 Entity a_ (LEntityHuman;)V pickup
 Entity a_ (LWorld;)V spawnIn
-Entity aa ()V die
-Entity ab ()LEntityPose; getPose
-Entity ad ()V entityBaseTick
-Entity ad impulse
-Entity ae portalCooldown
-Entity af ()V burnFromLava
-Entity af inPortal
-Entity ag ()I getFireTicks
-Entity ag portalTicks
-Entity ah ()V extinguish
-Entity aj ()Z isOnGround
-Entity ak uniqueID
-Entity al ()F getBlockJumpFactor
-Entity am ()F getBlockSpeedFactor
-Entity am glowing
-Entity an passengers
-Entity ao vehicle
-Entity ap ()V recalcPosition
-Entity ap loc
-Entity aq ()LSoundEffect; getSoundSwim
-Entity aq locBlock
-Entity ar ()LSoundEffect; getSoundSplash
-Entity ar mot
-Entity as ()LSoundEffect; getSoundSplashHighSpeed
-Entity as boundingBox
-Entity at ()V checkBlockCollisions
-Entity av ()Z isSilent
-Entity av fireTicks
-Entity aw ()Z isNoGravity
-Entity aw AIR_TICKS
-Entity ax ()Z playStepSound
-Entity az ()Z isFireProof
+Entity aa ()LDataWatcher; getDataWatcher
+Entity aa inPortal
+Entity ab portalTicks
+Entity ac ()V die
+Entity ad ()LEntityPose; getPose
+Entity ad uniqueID
+Entity af ()V entityBaseTick
+Entity af glowing
+Entity ag ()V resetPortalCooldown
+Entity ag passengers
+Entity ah vehicle
+Entity ai loc
+Entity aj ()V burnFromLava
+Entity aj locBlock
+Entity ak ()I getFireTicks
+Entity ak mot
+Entity al ()V extinguish
+Entity al boundingBox
+Entity an ()Z isOnGround
+Entity ao fireTicks
+Entity ap ()F getBlockJumpFactor
+Entity ap AIR_TICKS
+Entity aq ()F getBlockSpeedFactor
+Entity at ()V recalcPosition
+Entity au ()LSoundEffect; getSoundSwim
+Entity av ()LSoundEffect; getSoundSplash
+Entity aw ()LSoundEffect; getSoundSplashHighSpeed
+Entity aw portalCooldown
+Entity ax ()V checkBlockCollisions
+Entity ax invulnerable
+Entity az ()Z isSilent
 Entity b (DDD)V teleportAndSync
 Entity b (DDDFF)V setPositionRotation
 Entity b (IZ)V setFlag
@@ -2179,14 +2282,13 @@ Entity b (LEntityPose;)V setPose
 Entity b (LNBTTagCompound;)V saveData
 Entity b (Ljava/lang/String;)Z removeScoreboardTag
 Entity b entityCount
-Entity bB ()Z isInvisible
-Entity bC ()LScoreboardTeamBase; getScoreboardTeam
-Entity bE ()I getAirTicks
-Entity bG ()F getHeadRotation
-Entity bI ()Z isInvulnerable
-Entity bK ()Z canPortal
-Entity bN ()LVec3D; getPortalOffset
-Entity bO ()LEnumDirection; getPortalDirection
+Entity bA ()Z isSwimming
+Entity bE ()Z isInvisible
+Entity bF ()LScoreboardTeamBase; getScoreboardTeam
+Entity bH ()I getAirTicks
+Entity bJ ()F getHeadRotation
+Entity bL ()Z isInvulnerable
+Entity bN ()Z canPortal
 Entity bP ()Z isIgnoreBlockTrigger
 Entity bR ()Ljava/util/UUID; getUniqueID
 Entity bS ()Ljava/lang/String; getUniqueIDString
@@ -2194,17 +2296,17 @@ Entity bT ()Ljava/lang/String; getName
 Entity bW ()Z getCustomNameVisible
 Entity bY ()LEnumDirection; getDirection
 Entity bZ ()LEnumDirection; getAdjustedDirection
-Entity ba ()V ejectPassengers
-Entity bd ()LVec3D; getLookDirection
-Entity bg ()V doPortalTick
-Entity bh ()I getDefaultPortalCooldown
-Entity bk ()Ljava/lang/Iterable; getArmorItems
-Entity bm ()Z isBurning
-Entity bn ()Z isPassenger
-Entity bo ()Z isVehicle
-Entity bq ()Z isSneaking
-Entity bw ()Z isSprinting
-Entity bx ()Z isSwimming
+Entity bd ()V ejectPassengers
+Entity bg ()LVec3D; getLookDirection
+Entity bj ()V doPortalTick
+Entity bk ()I getDefaultPortalCooldown
+Entity bn ()Ljava/lang/Iterable; getArmorItems
+Entity bp ()Z isBurning
+Entity bq ()Z isPassenger
+Entity br ()Z isVehicle
+Entity bt ()Z isSneaking
+Entity bz ()Z isSprinting
+Entity c (Z)V setOnGround
 Entity cA ()LBlockPosition; getChunkCoordinates
 Entity cB ()LVec3D; getMot
 Entity cC ()D locX
@@ -2233,10 +2335,10 @@ Entity d (DDD)V setPosition
 Entity d (Z)V setSilent
 Entity e ()V initDatawatcher
 Entity e (LNBTTagCompound;)LNBTTagCompound; save
-Entity e (LVec3D;)V setMot
 Entity e (Z)V setNoGravity
 Entity f (I)V setOnFire
 Entity f (LNBTTagCompound;)V load
+Entity f (LVec3D;)V setMot
 Entity f (Z)V setSneaking
 Entity g (I)V setFireTicks
 Entity g (Z)V setSprinting
@@ -2249,18 +2351,18 @@ Entity i (LEntity;)V collide
 Entity j ()V tick
 Entity j (I)V setAirTicks
 Entity j (Z)V setInvisible
-Entity k (F)V setHeadRotation
 Entity k attachedToPlayer
 Entity l ()V stopRiding
-Entity l (DDD)V enderTeleportAndLoad
 Entity l world
-Entity m (DDD)V setMot
+Entity m (DDD)V enderTeleportAndLoad
+Entity m (F)V setHeadRotation
 Entity m (LEntity;)Z startRiding
 Entity m (Z)V setInvulnerable
 Entity m lastX
-Entity n (DDD)V setPositionRaw
+Entity n (DDD)V setMot
 Entity n (Z)V setCustomNameVisible
 Entity n lastY
+Entity o (DDD)V setPositionRaw
 Entity o (LEntity;)V addPassenger
 Entity o lastZ
 Entity p (LEntity;)V removePassenger
@@ -2272,38 +2374,38 @@ Entity t onGround
 Entity u positionChanged
 Entity w velocityChanged
 Entity x (LEntity;)Z isSameVehicle
+Entity x_ ()V updateSize
 Entity y dead
-Entity y_ ()V updateSize
-Entity z_ ()LEnumPistonReaction; getPushReaction
+Entity y_ ()LEnumPistonReaction; getPushReaction
 EntityAgeable a (I)V setAge
 EntityAgeable a (IZ)V setAge
-EntityAgeable a (LEntityAgeable;)LEntityAgeable; createChild
+EntityAgeable a (LWorldServer;LEntityAgeable;)LEntityAgeable; createChild
 EntityAgeable c_ (I)V setAgeRaw
 EntityAgeable f ()Z canBreed
 EntityAgeable i ()I getAge
 EntityAnimal a (LDamageSource;F)Z damageEntity
 EntityAnimal a (LEntityAnimal;)Z mate
-EntityAnimal bv loveTicks
-EntityAnimal bw breedCause
+EntityAnimal bo loveTicks
+EntityAnimal bp breedCause
 EntityAnimal d (LEntityHuman;)I getExpValue
-EntityAnimal eS ()LEntityPlayer; getBreedCause
-EntityAnimal eT ()Z isInLove
-EntityAnimal eU ()V resetLove
+EntityAnimal eR ()LEntityPlayer; getBreedCause
+EntityAnimal eS ()Z isInLove
+EntityAnimal eT ()V resetLove
 EntityAnimal s (I)V setLoveTicks
 EntityAreaEffectCloud a (F)V setRadius
 EntityAreaEffectCloud a (I)V setColor
 EntityAreaEffectCloud a (LEntityLiving;)V setSource
 EntityAreaEffectCloud a (LMobEffect;)V addEffect
 EntityAreaEffectCloud a (LParticleParam;)V setParticle
-EntityAreaEffectCloud an effects
-EntityAreaEffectCloud ao affectedEntities
-EntityAreaEffectCloud ap duration
-EntityAreaEffectCloud aq waitTime
-EntityAreaEffectCloud ar reapplicationDelay
-EntityAreaEffectCloud as hasColor
-EntityAreaEffectCloud at durationOnUse
-EntityAreaEffectCloud au radiusOnUse
-EntityAreaEffectCloud av radiusPerTick
+EntityAreaEffectCloud ag effects
+EntityAreaEffectCloud ah affectedEntities
+EntityAreaEffectCloud ai duration
+EntityAreaEffectCloud aj waitTime
+EntityAreaEffectCloud ak reapplicationDelay
+EntityAreaEffectCloud al hasColor
+EntityAreaEffectCloud am durationOnUse
+EntityAreaEffectCloud an radiusOnUse
+EntityAreaEffectCloud ao radiusPerTick
 EntityAreaEffectCloud b (F)V setRadiusOnUse
 EntityAreaEffectCloud b (I)V setDuration
 EntityAreaEffectCloud c (F)V setRadiusPerTick
@@ -2318,15 +2420,15 @@ EntityAreaEffectCloud t ()LEntityLiving; getSource
 EntityArmorStand a (LVector3f;)V setHeadPose
 EntityArmorStand a (Z)V setSmall
 EntityArmorStand b (LVector3f;)V setBodyPose
-EntityArmorStand bB headPose
-EntityArmorStand bC bodyPose
-EntityArmorStand bD leftArmPose
-EntityArmorStand bE rightArmPose
-EntityArmorStand bF leftLegPose
-EntityArmorStand bG rightLegPose
-EntityArmorStand bx handItems
-EntityArmorStand by armorItems
-EntityArmorStand bz armorStandInvisible
+EntityArmorStand bA leftLegPose
+EntityArmorStand bB rightLegPose
+EntityArmorStand bs handItems
+EntityArmorStand bt armorItems
+EntityArmorStand bu armorStandInvisible
+EntityArmorStand bw headPose
+EntityArmorStand bx bodyPose
+EntityArmorStand by leftArmPose
+EntityArmorStand bz rightArmPose
 EntityArmorStand c (LVector3f;)V setLeftArmPose
 EntityArmorStand d (LVector3f;)V setRightArmPose
 EntityArmorStand e (LVector3f;)V setLeftLegPose
@@ -2340,9 +2442,9 @@ EntityArmorStand q (Z)V setBasePlate
 EntityArmorStand r (Z)V setMarker
 EntityArrow a (I)V setKnockbackStrength
 EntityArrow a (Z)V setCritical
-EntityArrow ao despawnCounter
-EntityArrow ap damage
-EntityArrow aq knockbackStrength
+EntityArrow ah despawnCounter
+EntityArrow ai damage
+EntityArrow aj knockbackStrength
 EntityArrow b (B)V setPierceLevel
 EntityArrow b inGround
 EntityArrow d fromPlayer
@@ -2358,21 +2460,21 @@ EntityArrow r ()B getPierceLevel
 EntityArrow$PickupStatus a DISALLOWED
 EntityArrow$PickupStatus b ALLOWED
 EntityArrow$PickupStatus c CREATIVE_ONLY
-EntityBat eJ ()Z isAsleep
+EntityBat eI ()Z isAsleep
 EntityBat t (Z)V setAsleep
-EntityBee bC ticksSincePollination
-EntityBee bD cannotEnterHiveTicks
-EntityBee bE numCropsGrownSincePollination
-EntityBee bH flowerPos
-EntityBee bI hivePos
-EntityBee eL ()LBlockPosition; getFlowerPos
-EntityBee eM ()Z hasFlowerPos
-EntityBee eV ()Z hasHivePos
-EntityBee eW ()LBlockPosition; getHivePos
-EntityBee eY ()Z hasNectar
-EntityBee eZ ()Z hasStung
-EntityBee fd ()Z canPollinate
-EntityBee fh ()I getNumCropsGrownSincePollination
+EntityBee bA flowerPos
+EntityBee bB hivePos
+EntityBee bv ticksSincePollination
+EntityBee bw cannotEnterHiveTicks
+EntityBee bx numCropsGrownSincePollination
+EntityBee eK ()LBlockPosition; getFlowerPos
+EntityBee eL ()Z hasFlowerPos
+EntityBee eU ()Z hasHivePos
+EntityBee eV ()LBlockPosition; getHivePos
+EntityBee eX ()Z hasNectar
+EntityBee eY ()Z hasStung
+EntityBee fc ()Z canPollinate
+EntityBee fg ()I getNumCropsGrownSincePollination
 EntityBee g (LBlockPosition;)V setFlowerPos
 EntityBee t (I)V setCannotEnterHiveTicks
 EntityBee t (Z)V setHasNectar
@@ -2393,32 +2495,32 @@ EntityBoat$EnumStatus c UNDER_FLOWING_WATER
 EntityBoat$EnumStatus d ON_LAND
 EntityBoat$EnumStatus e IN_AIR
 EntityCat a (LEnumColor;)V setCollarColor
-EntityCat eW ()I getCatType
-EntityCat eZ ()LEnumColor; getCollarColor
+EntityCat eV ()I getCatType
+EntityCat eY ()LEnumColor; getCollarColor
 EntityCat t (I)V setCatType
 EntityCat$PathfinderGoalTemptChance c chosenTarget
-EntityChicken bA eggLayTime
-EntityChicken bB chickenJockey
-EntityChicken eM ()Z isChickenJockey
+EntityChicken bt eggLayTime
+EntityChicken bu chickenJockey
+EntityChicken eL ()Z isChickenJockey
 EntityChicken t (Z)V setChickenJockey
 EntityComplexPart b owner
-EntityCreeper T_ ()Z isPowered
-EntityCreeper bw fuseTicks
-EntityCreeper bx maxFuseTicks
-EntityCreeper by explosionRadius
+EntityCreeper S_ ()Z isPowered
+EntityCreeper bp fuseTicks
+EntityCreeper bq maxFuseTicks
+EntityCreeper br explosionRadius
 EntityCreeper c POWERED
-EntityCreeper eM ()Z isIgnited
-EntityCreeper eN ()V ignite
-EntityCreeper eO ()Z canCauseHeadDrop
-EntityCreeper eP ()V setCausedHeadDrop
-EntityCreeper eQ ()V explode
-EntityCreeper eT ()V createEffectCloud
+EntityCreeper eL ()Z isIgnited
+EntityCreeper eM ()V ignite
+EntityCreeper eN ()Z canCauseHeadDrop
+EntityCreeper eO ()V setCausedHeadDrop
+EntityCreeper eP ()V explode
+EntityCreeper eS ()V createEffectCloud
 EntityDamageSource a (LEntityLiving;)LIChatBaseComponent; getLocalizedDeathMessage
 EntityDamageSource k ()LEntity; getEntity
 EntityDamageSourceIndirect x owner
 EntityDolphin b (I)V setMoistness
-EntityDolphin eL ()Z gotFish
-EntityDolphin eM ()I getMoistness
+EntityDolphin eK ()Z gotFish
+EntityDolphin eL ()I getMoistness
 EntityDolphin g (LBlockPosition;)V setTreasurePos
 EntityDolphin m ()LBlockPosition; getTreasurePos
 EntityDolphin t (Z)V setGotFish
@@ -2429,11 +2531,11 @@ EntityEnderCrystal a (Z)V setShowingBottom
 EntityEnderCrystal g ()LBlockPosition; getBeamTarget
 EntityEnderCrystal h ()Z isShowingBottom
 EntityEnderDragon b PHASE
-EntityEnderDragon bB currentEnderCrystal
-EntityEnderDragon bE children
-EntityEnderDragon bz deathAnimationTicks
-EntityEnderDragon eL ()LDragonControllerManager; getDragonControllerManager
-EntityEnderDragon eM ()LEnderDragonBattle; getEnderDragonBattle
+EntityEnderDragon bs deathAnimationTicks
+EntityEnderDragon bu currentEnderCrystal
+EntityEnderDragon bx children
+EntityEnderDragon eK ()LDragonControllerManager; getDragonControllerManager
+EntityEnderDragon eL ()LEnderDragonBattle; getEnderDragonBattle
 EntityEnderDragon f (LDamageSource;F)Z dealDamage
 EntityEnderSignal c targetX
 EntityEnderSignal d targetY
@@ -2441,18 +2543,18 @@ EntityEnderSignal e targetZ
 EntityEnderSignal f despawnTimer
 EntityEnderSignal g shouldDropItem
 EntityEnderman c (LIBlockData;)V setCarried
-EntityEnderman eN ()LIBlockData; getCarried
+EntityEnderman eM ()LIBlockData; getCarried
 EntityEnderman$PathfinderGoalEndermanPickupBlock a enderman
-EntityEndermite eL ()Z isPlayerSpawned
+EntityEndermite eK ()Z isPlayerSpawned
 EntityEndermite t (Z)V setPlayerSpawned
 EntityEvokerFangs g ()LEntityLiving; getOwner
 EntityExperienceOrb a (I)I getOrbValue
-EntityExperienceOrb an targetTime
+EntityExperienceOrb ag targetTime
 EntityExperienceOrb f value
 EntityExperienceOrb g targetPlayer
-EntityFallingBlock an hurtEntities
-EntityFallingBlock ao fallHurtMax
-EntityFallingBlock ap fallHurtAmount
+EntityFallingBlock ag hurtEntities
+EntityFallingBlock ah fallHurtMax
+EntityFallingBlock ai fallHurtAmount
 EntityFallingBlock b ticksLived
 EntityFallingBlock c dropItem
 EntityFallingBlock d tileEntityData
@@ -2472,10 +2574,10 @@ EntityFireworks h ()Z isShotAtAngle
 EntityFireworks i ()V explode
 EntityFireworks k ()Z hasExplosions
 EntityFish b FROM_BUCKET
-EntityFish eN ()LSoundEffect; getSoundFlop
-EntityFish eO ()Z isFromBucket
+EntityFish eM ()LSoundEffect; getSoundFlop
+EntityFish eN ()Z isFromBucket
 EntityFish t (Z)V setFromBucket
-EntityFishingHook as hooked
+EntityFishingHook al hooked
 EntityFishingHook h ()V reel
 EntityFishingHook i ()LEntityHuman; getOwner
 EntityFishingHook$HookState a FLYING
@@ -2485,21 +2587,21 @@ EntityFishingHook$WaterPosition a ABOVE_WATER
 EntityFishingHook$WaterPosition b INSIDE_WATER
 EntityFishingHook$WaterPosition c INVALID
 EntityFox a (LEntityFox$Type;)V setFoxType
-EntityFox bv ()Z isCrouching
-EntityFox bx FIRST_TRUSTED_PLAYER
-EntityFox by SECOND_TRUSTED_PLAYER
-EntityFox eM ()LEntityFox$Type; getFoxType
-EntityFox eN ()Z isSitting
-EntityFox fa ()V initializePathFinderGoals
+EntityFox bq FIRST_TRUSTED_PLAYER
+EntityFox br SECOND_TRUSTED_PLAYER
+EntityFox by ()Z isCrouching
+EntityFox eL ()LEntityFox$Type; getFoxType
+EntityFox eM ()Z isSitting
+EntityFox eZ ()V initializePathFinderGoals
 EntityFox t (Z)V setSitting
 EntityFox v (Z)V setCrouching
 EntityFox z (Z)V setSleeping
 EntityFox$Type a RED
 EntityFox$Type b SNOW
-EntityGhast eJ ()I getPower
+EntityGhast eI ()I getPower
 EntityGhast$PathfinderGoalGhastAttackTarget b ghast
 EntityGuardian c goalRandomStroll
-EntityGuardian eM ()LSoundEffect; getSoundFlop
+EntityGuardian eL ()LSoundEffect; getSoundFlop
 EntityHanging a (LDamageSource;F)Z damageEntity
 EntityHanging a (LEnumDirection;)V setDirection
 EntityHanging c blockPosition
@@ -2510,28 +2612,33 @@ EntityHanging i ()I getHangingWidth
 EntityHanging k ()I getHangingHeight
 EntityHanging m ()V playPlaceSound
 EntityHanging n ()LBlockPosition; getBlockPosition
+EntityHoglin bs conversionTicks
+EntityHoglin bt cannotBeHunted
+EntityHoglin eN ()Z isConverting
+EntityHoglin eV ()Z isImmuneToZombification
+EntityHoglin t (Z)V setImmuneToZombification
 EntityHorse a (LHorseColor;LHorseStyle;)V setVariant
-EntityHorse eN ()LHorseColor; getColor
-EntityHorse eP ()LHorseStyle; getStyle
-EntityHorse eV ()I getVariantRaw
+EntityHorse eM ()LHorseColor; getColor
+EntityHorse eO ()LHorseStyle; getStyle
+EntityHorse eU ()I getVariantRaw
 EntityHorse w (I)V setVariantRaw
 EntityHorseAbstract b (Ljava/util/UUID;)V setOwnerUUID
-EntityHorseAbstract bA jumpPower
-EntityHorseAbstract bL canSlide
-EntityHorseAbstract by inventoryChest
-EntityHorseAbstract eO ()I getChestSlots
-EntityHorseAbstract eX ()Z isTamed
-EntityHorseAbstract eY ()Ljava/util/UUID; getOwnerUUID
-EntityHorseAbstract fc ()Z hasReproduced
-EntityHorseAbstract fd ()I getTemper
-EntityHorseAbstract fe ()V loadChest
-EntityHorseAbstract fg ()D getJumpStrength
-EntityHorseAbstract fi ()LSoundEffect; getSoundAngry
-EntityHorseAbstract fk ()I getMaxDomestication
+EntityHorseAbstract bE canSlide
+EntityHorseAbstract br inventoryChest
+EntityHorseAbstract bt jumpPower
+EntityHorseAbstract eN ()I getChestSlots
+EntityHorseAbstract eW ()Z isTamed
+EntityHorseAbstract eX ()Ljava/util/UUID; getOwnerUUID
+EntityHorseAbstract fb ()Z hasReproduced
+EntityHorseAbstract fc ()I getTemper
+EntityHorseAbstract fd ()V loadChest
+EntityHorseAbstract ff ()D getJumpStrength
+EntityHorseAbstract fh ()LSoundEffect; getSoundAngry
+EntityHorseAbstract fj ()I getMaxDomestication
 EntityHorseAbstract u (I)V setTemper
 EntityHorseAbstract u (Z)V setTamed
 EntityHorseAbstract y (Z)V setStanding
-EntityHorseChestedAbstract eN ()Z isCarryingChest
+EntityHorseChestedAbstract eM ()Z isCarryingChest
 EntityHorseChestedAbstract t (Z)V setCarryingChest
 EntityHuman a (ILMerchantRecipeList;IIZZ)V openTrade
 EntityHuman a (LBlockPosition;)Lcom/mojang/datafixers/util/Either; sleep
@@ -2541,22 +2648,22 @@ EntityHuman a (LItemStack;I)V enchantDone
 EntityHuman a (LItemStack;LEnumHand;)V openBook
 EntityHuman a (LItemStack;Z)LEntityItem; drop
 EntityHuman a (LTileEntitySign;)V openSign
-EntityHuman a (LWorldServer;LBlockPosition;ZZ)Ljava/util/Optional; getBed
+EntityHuman a (LWorldServer;LBlockPosition;FZZ)Ljava/util/Optional; getBed
 EntityHuman a (Ljava/util/Collection;)I discoverRecipes
 EntityHuman a (Z)Z dropItem
 EntityHuman a (ZZ)V wakeup
 EntityHuman b (Ljava/util/Collection;)I undiscoverRecipes
-EntityHuman bJ abilities
-EntityHuman bK expLevel
-EntityHuman bL expTotal
-EntityHuman bM exp
-EntityHuman bP hookedFish
+EntityHuman bC abilities
+EntityHuman bD expLevel
+EntityHuman bE expTotal
+EntityHuman bF exp
+EntityHuman bI hookedFish
 EntityHuman b_ ()Z isCreative
-EntityHuman bt inventory
-EntityHuman bu enderChest
-EntityHuman bv defaultContainer
-EntityHuman bw activeContainer
-EntityHuman bx foodData
+EntityHuman bm inventory
+EntityHuman bn enderChest
+EntityHuman bo defaultContainer
+EntityHuman bp activeContainer
+EntityHuman bq foodData
 EntityHuman c (I)V levelDown
 EntityHuman c (Ljava/lang/String;)Ljava/util/UUID; getOfflineUUID
 EntityHuman d (I)V giveExp
@@ -2569,11 +2676,11 @@ EntityHuman eH ()LFoodMetaData; getFoodData
 EntityHuman eK ()LInventoryEnderChest; getEnderChest
 EntityHuman eL ()V releaseShoulderEntities
 EntityHuman eM ()LScoreboard; getScoreboard
-EntityHuman eP ()LNBTTagCompound; getShoulderEntityLeft
-EntityHuman eQ ()LNBTTagCompound; getShoulderEntityRight
-EntityHuman eS ()V resetAttackCooldown
-EntityHuman eT ()LItemCooldown; getCooldownTracker
-EntityHuman eV ()Z isCreativeAndOp
+EntityHuman eO ()LNBTTagCompound; getShoulderEntityLeft
+EntityHuman eP ()LNBTTagCompound; getShoulderEntityRight
+EntityHuman eR ()V resetAttackCooldown
+EntityHuman eS ()LItemCooldown; getCooldownTracker
+EntityHuman eU ()Z isCreativeAndOp
 EntityHuman eu ()I getScore
 EntityHuman ev ()V removeCursedItems
 EntityHuman ez ()Lcom/mojang/authlib/GameProfile; getProfile
@@ -2583,12 +2690,12 @@ EntityHuman h (LNBTTagCompound;)V setShoulderEntityLeft
 EntityHuman i (LNBTTagCompound;)V setShoulderEntityRight
 EntityHuman k (LNBTTagCompound;)V spawnEntityFromShoulder
 EntityHuman m ()V closeInventory
-EntityHuman o (DDD)V checkMovement
-EntityHuman q (F)V applyExhaustion
-EntityHuman r (F)F getAttackCooldown
+EntityHuman p (DDD)V checkMovement
 EntityHuman s (I)V setScore
 EntityHuman t ()V updateAbilities
+EntityHuman t (F)V applyExhaustion
 EntityHuman t (I)V addScore
+EntityHuman u (F)F getAttackCooldown
 EntityHuman$EnumBedResult a NOT_POSSIBLE_HERE
 EntityHuman$EnumBedResult b NOT_POSSIBLE_NOW
 EntityHuman$EnumBedResult c TOO_FAR_AWAY
@@ -2596,8 +2703,8 @@ EntityHuman$EnumBedResult d OBSTRUCTED
 EntityHuman$EnumBedResult e OTHER_PROBLEM
 EntityHuman$EnumBedResult f NOT_SAFE
 EntityIllagerWizard a (LEntityIllagerWizard$Spell;)V setSpell
-EntityIllagerWizard eN ()LSoundEffect; getSoundCastSpell
-EntityIllagerWizard eY ()LEntityIllagerWizard$Spell; getSpell
+EntityIllagerWizard eM ()LSoundEffect; getSoundCastSpell
+EntityIllagerWizard eX ()LEntityIllagerWizard$Spell; getSpell
 EntityIllagerWizard$Spell a NONE
 EntityIllagerWizard$Spell b SUMMON_VEX
 EntityIllagerWizard$Spell c FANGS
@@ -2611,35 +2718,36 @@ EntityInsentient I ()LSoundEffect; getSoundAmbient
 EntityInsentient J ()LMinecraftKey; getDefaultLootTable
 EntityInsentient K ()Z isSpecialPersistence
 EntityInsentient N ()V mobTick
-EntityInsentient a (LGeneratorAccess;LDifficultyDamageScaler;LEnumMobSpawn;LGroupDataEntity;LNBTTagCompound;)LGroupDataEntity; prepare
+EntityInsentient a (LWorldAccess;LDifficultyDamageScaler;LEnumMobSpawn;LGroupDataEntity;LNBTTagCompound;)LGroupDataEntity; prepare
+EntityInsentient a (Z)V setBaby
 EntityInsentient a (ZZ)V unleash
 EntityInsentient b (LEntity;Z)V setLeashHolder
-EntityInsentient bB lootTableKey
-EntityInsentient bC lootTableSeed
-EntityInsentient bD leashHolder
-EntityInsentient bo moveController
-EntityInsentient bq navigation
-EntityInsentient br goalSelector
-EntityInsentient bs targetSelector
-EntityInsentient bt dropChanceHand
-EntityInsentient bu dropChanceArmor
-EntityInsentient by canPickUpLoot
-EntityInsentient bz persistent
+EntityInsentient bh moveController
+EntityInsentient bj navigation
+EntityInsentient bk goalSelector
+EntityInsentient bl targetSelector
+EntityInsentient bm dropChanceHand
+EntityInsentient bn dropChanceArmor
+EntityInsentient br canPickUpLoot
+EntityInsentient bs persistent
+EntityInsentient bu lootTableKey
+EntityInsentient bv lootTableSeed
+EntityInsentient bw leashHolder
 EntityInsentient d (LEntityHuman;)I getExpValue
 EntityInsentient d goalTarget
-EntityInsentient eC ()Z isLeashed
-EntityInsentient eD ()LEntity; getLeashHolder
-EntityInsentient eE ()Z isNoAI
-EntityInsentient eF ()Z isLeftHanded
-EntityInsentient eG ()Z isAggressive
-EntityInsentient er ()I getMaxSpawnGroup
-EntityInsentient et ()V setPersistent
-EntityInsentient eu ()Z canPickupLoot
-EntityInsentient ev ()Z isPersistent
+EntityInsentient eB ()Z isLeashed
+EntityInsentient eC ()LEntity; getLeashHolder
+EntityInsentient eD ()Z isNoAI
+EntityInsentient eE ()Z isLeftHanded
+EntityInsentient eF ()Z isAggressive
+EntityInsentient eq ()I getMaxSpawnGroup
+EntityInsentient es ()V setPersistent
+EntityInsentient et ()Z canPickupLoot
+EntityInsentient eu ()Z isPersistent
 EntityInsentient g lookController
 EntityInsentient h (D)Z isTypeNotPersistent
+EntityInsentient h (LEntityLiving;)V setGoalTarget
 EntityInsentient h (LItemStack;)Z canPickup
-EntityInsentient i (LEntityLiving;)V setGoalTarget
 EntityInsentient o ()V initPathfinder
 EntityInsentient p (Z)V setCanPickupLoot
 EntityInsentient q (Z)V setNoAI
@@ -2650,14 +2758,14 @@ EntityInsentient u ()LControllerMove; getControllerMove
 EntityInsentient v ()LControllerJump; getControllerJump
 EntityInsentient x ()LNavigationAbstract; getNavigation
 EntityInsentient z ()LEntitySenses; getEntitySenses
-EntityIronGolem eO ()Z isPlayerCreated
+EntityIronGolem eN ()Z isPlayerCreated
 EntityIronGolem u (Z)V setPlayerCreated
 EntityIronGolem$CrackLevel a NONE
 EntityIronGolem$CrackLevel b LOW
 EntityIronGolem$CrackLevel c MEDIUM
 EntityIronGolem$CrackLevel d HIGH
 EntityItem a (I)V setPickupDelay
-EntityItem an owner
+EntityItem ag owner
 EntityItem b (LItemStack;)V setItemStack
 EntityItem b (Ljava/util/UUID;)V setOwner
 EntityItem c (Ljava/util/UUID;)V setThrower
@@ -2673,6 +2781,7 @@ EntityItem x ()V mergeNearby
 EntityItemFrame a (I)V setRotation
 EntityItemFrame a (IZ)V setRotation
 EntityItemFrame a (LItemStack;Z)V setItem
+EntityItemFrame ah fixed
 EntityItemFrame b (LItemStack;)V setItem
 EntityItemFrame f ITEM
 EntityItemFrame o ()LItemStack; getItem
@@ -2693,29 +2802,29 @@ EntityLiving a (LEnumHand;)V swingHand
 EntityLiving a (LEnumHand;Z)V swingHand
 EntityLiving a (LEnumItemSlot;LItemStack;)V setSlot
 EntityLiving a (LMobEffectList;)Z hasEffect
-EntityLiving aE maxNoDamageTicks
-EntityLiving aM killer
-EntityLiving aN lastDamageByPlayerTime
-EntityLiving aO killed
-EntityLiving aP ticksFarFromPlayer
-EntityLiving aW lastDamage
-EntityLiving aX jumping
-EntityLiving au hurtTicks
-EntityLiving av hurtDuration
-EntityLiving ax deathTicks
+EntityLiving aF killer
+EntityLiving aG lastDamageByPlayerTime
+EntityLiving aH killed
+EntityLiving aI ticksFarFromPlayer
+EntityLiving aP lastDamage
+EntityLiving aQ jumping
+EntityLiving an hurtTicks
+EntityLiving ao hurtDuration
+EntityLiving aq deathTicks
+EntityLiving ax maxNoDamageTicks
 EntityLiving b (F)V heal
 EntityLiving b (LBlockPosition;)V entitySleep
 EntityLiving b (LDamageSource;F)V damageArmor
 EntityLiving b (LEnumItemSlot;)LItemStack; getEquipment
 EntityLiving b (LMobEffectList;)LMobEffect; getEffect
-EntityLiving bC jumpTicks
-EntityLiving bj activeItem
-EntityLiving br attributeMap
-EntityLiving bs combatTracker
-EntityLiving bt effects
-EntityLiving bw updateEffects
-EntityLiving bx lastDamager
-EntityLiving by hurtTimestamp
+EntityLiving bc activeItem
+EntityLiving bk attributeMap
+EntityLiving bl combatTracker
+EntityLiving bm effects
+EntityLiving bp updateEffects
+EntityLiving bq lastDamager
+EntityLiving br hurtTimestamp
+EntityLiving bv jumpTicks
 EntityLiving c (F)V setHealth
 EntityLiving c (LDamageSource;F)F applyArmorModifier
 EntityLiving c (LEnumItemSlot;)V broadcastItemBreak
@@ -2728,6 +2837,7 @@ EntityLiving cY ()LEntityLiving; getLastDamager
 EntityLiving c_ ()Z isClimbing
 EntityLiving d (LDamageSource;F)F applyMagicModifier
 EntityLiving d (LEntityHuman;)I getExpValue
+EntityLiving d (LEntityLiving;)V shieldBlock
 EntityLiving d (LEnumHand;)V broadcastItemBreak
 EntityLiving d (LMobEffectList;)Z removeEffect
 EntityLiving dA ()LAttributeMapBase; getAttributeMap
@@ -2761,7 +2871,6 @@ EntityLiving dw ()F getMaxHealth
 EntityLiving dx ()I getArrowCount
 EntityLiving e (LDamageSource;)LSoundEffect; getSoundHurt
 EntityLiving e (LDamageSource;F)V damageEntity0
-EntityLiving e (LEntityLiving;)V shieldBlock
 EntityLiving e HEALTH
 EntityLiving ea ()V releaseActiveItem
 EntityLiving eb ()V clearActiveItem
@@ -2774,14 +2883,14 @@ EntityLiving g ()V enterCombat
 EntityLiving g (LDamageSource;)Z applyBlockingModifier
 EntityLiving h ()V exitCombat
 EntityLiving k ()V movementTick
-EntityLiving m (F)V damageShield
 EntityLiving o (I)LSoundEffect; getSoundFall
 EntityLiving o (Z)V setJumping
-EntityLiving p (F)V setAbsorptionHearts
+EntityLiving p (F)V damageShield
 EntityLiving p (I)V setArrowCount
-EntityLiving x_ ()Z isBaby
-EntityLlama fw ()I getStrength
-EntityLlama fy ()I getVariant
+EntityLiving s (F)V setAbsorptionHearts
+EntityLiving w_ ()Z isBaby
+EntityLlama fv ()I getStrength
+EntityLlama fx ()I getVariant
 EntityLlama w (I)V setVariant
 EntityLlama x (I)V setStrength
 EntityMinecartAbstract a (F)V setDamage
@@ -2814,29 +2923,29 @@ EntityMonster a (LDamageSource;F)Z damageEntity
 EntityMonsterPatrolling b patrolTarget
 EntityMonsterPatrolling c patrolLeader
 EntityMonsterPatrolling d patrolling
-EntityMonsterPatrolling eP ()LBlockPosition; getPatrolTarget
-EntityMonsterPatrolling eT ()Z isPatrolLeader
-EntityMonsterPatrolling eW ()Z isPatrolling
+EntityMonsterPatrolling eO ()LBlockPosition; getPatrolTarget
+EntityMonsterPatrolling eS ()Z isPatrolLeader
+EntityMonsterPatrolling eV ()Z isPatrolling
 EntityMonsterPatrolling g (LBlockPosition;)V setPatrolTarget
 EntityMonsterPatrolling t (Z)V setPatrolLeader
 EntityMushroomCow a (LEntityMushroomCow$Type;)V setVariant
-EntityMushroomCow eM ()LEntityMushroomCow$Type; getVariant
+EntityMushroomCow eL ()LEntityMushroomCow$Type; getVariant
 EntityMushroomCow$Type a RED
 EntityMushroomCow$Type b BROWN
-EntityOcelot eN ()Z isTrusting
+EntityOcelot eM ()Z isTrusting
 EntityOcelot t (Z)V setTrusting
 EntityPainting e art
 EntityPanda a (LEntityPanda$Gene;)V setMainGene
 EntityPanda b (LEntityPanda$Gene;)V setHiddenGene
-EntityPanda bN PICKUP_PREDICATE
-EntityPanda eG ()Z isAggressive
-EntityPanda eW ()LEntityPanda$Gene; getMainGene
-EntityPanda eX ()LEntityPanda$Gene; getHiddenGene
-EntityPanda fa ()LEntityPanda$Gene; getActiveGene
-EntityPanda fb ()Z isLazy
-EntityPanda fc ()Z isWorried
-EntityPanda fd ()Z isPlayful
-EntityPanda ff ()Z isWeak
+EntityPanda bG PICKUP_PREDICATE
+EntityPanda eF ()Z isAggressive
+EntityPanda eV ()LEntityPanda$Gene; getMainGene
+EntityPanda eW ()LEntityPanda$Gene; getHiddenGene
+EntityPanda eZ ()LEntityPanda$Gene; getActiveGene
+EntityPanda fa ()Z isLazy
+EntityPanda fb ()Z isWorried
+EntityPanda fc ()Z isPlayful
+EntityPanda fe ()Z isWeak
 EntityPanda$Gene a NORMAL
 EntityPanda$Gene b LAZY
 EntityPanda$Gene c ()Z isRecessive
@@ -2845,67 +2954,75 @@ EntityPanda$Gene d PLAYFUL
 EntityPanda$Gene e BROWN
 EntityPanda$Gene f WEAK
 EntityPanda$Gene g AGGRESSIVE
-EntityParrot eX ()I getVariant
+EntityParrot eW ()I getVariant
 EntityParrot t (I)V setVariant
 EntityPhantom a (I)V setSize
 EntityPhantom m ()I getSize
 EntityPhantom$AttackPhase a CIRCLE
 EntityPhantom$AttackPhase b SWOOP
-EntityPig by saddleStorage
-EntityPiglin$ArmPose a ATTACKING_WITH_MELEE_WEAPON
-EntityPiglin$ArmPose b CROSSBOW_HOLD
-EntityPiglin$ArmPose c CROSSBOW_CHARGE
-EntityPiglin$ArmPose d ADMIRING_ITEM
-EntityPiglin$ArmPose e DANCING
-EntityPiglin$ArmPose f DEFAULT
-EntityPillager bv inventory
-EntityPillager eX ()LInventorySubcontainer; getInventory
+EntityPig br saddleStorage
+EntityPiglin bv cannotHunt
+EntityPiglinAbstract c conversionTicks
+EntityPiglinAbstract eK ()Z isImmuneToZombification
+EntityPiglinAbstract eL ()Z isConverting
+EntityPiglinAbstract t (Z)V setImmuneToZombification
+EntityPiglinArmPose a ATTACKING_WITH_MELEE_WEAPON
+EntityPiglinArmPose b CROSSBOW_HOLD
+EntityPiglinArmPose c CROSSBOW_CHARGE
+EntityPiglinArmPose d ADMIRING_ITEM
+EntityPiglinArmPose e DANCING
+EntityPiglinArmPose f DEFAULT
+EntityPillager bo inventory
+EntityPillager eW ()LInventorySubcontainer; getInventory
 EntityPlayer A ()LServerStatisticManager; getStatisticManager
+EntityPlayer B ()LRecipeBookServer; getRecipeBook
 EntityPlayer D ()LEntity; getSpecatorTarget
 EntityPlayer G ()LIChatBaseComponent; getPlayerListName
 EntityPlayer J ()LAdvancementDataPlayer; getAdvancementData
 EntityPlayer K ()LBlockPosition; getSpawn
-EntityPlayer L ()LResourceKey; getSpawnDimension
-EntityPlayer M ()Z isSpawnForced
+EntityPlayer L ()F getSpawnAngle
+EntityPlayer M ()LResourceKey; getSpawnDimension
+EntityPlayer N ()Z isSpawnForced
 EntityPlayer a (LContainer;)V updateInventory
 EntityPlayer a (LEntityPlayer;Z)V copyFrom
-EntityPlayer a (LResourceKey;LBlockPosition;ZZ)V setRespawnPosition
+EntityPlayer a (LResourceKey;LBlockPosition;FZZ)V setRespawnPosition
 EntityPlayer a (Ljava/lang/String;Ljava/lang/String;)V setResourcePack
 EntityPlayer b playerConnection
-EntityPlayer bR removeQueue
-EntityPlayer bS advancementDataPlayer
-EntityPlayer bT serverStatisticManager
-EntityPlayer bU lastHealthScored
-EntityPlayer bV lastFoodScored
-EntityPlayer bW lastAirScored
-EntityPlayer bX lastArmorScored
-EntityPlayer bY lastExpLevelScored
-EntityPlayer bZ lastExpTotalScored
-EntityPlayer c (LWorldServer;)V triggerDimensionAdvancements
+EntityPlayer bK removeQueue
+EntityPlayer bL advancementDataPlayer
+EntityPlayer bM serverStatisticManager
+EntityPlayer bN lastHealthScored
+EntityPlayer bO lastFoodScored
+EntityPlayer bP lastAirScored
+EntityPlayer bQ lastArmorScored
+EntityPlayer bR lastExpLevelScored
+EntityPlayer bS lastExpTotalScored
+EntityPlayer bT lastHealthSent
+EntityPlayer bU lastFoodSent
+EntityPlayer bV lastSentSaturationZero
+EntityPlayer bW lastSentExp
+EntityPlayer bX invulnerableTicks
 EntityPlayer c server
-EntityPlayer ca lastHealthSent
-EntityPlayer cb lastFoodSent
-EntityPlayer cc lastSentSaturationZero
-EntityPlayer cd lastSentExp
-EntityPlayer ce invulnerableTicks
-EntityPlayer ci spectatedEntity
-EntityPlayer cj worldChangeInvuln
-EntityPlayer cl recipeBook
-EntityPlayer cr spawnDimension
-EntityPlayer cs spawn
-EntityPlayer ct spawnForced
-EntityPlayer cu containerCounter
+EntityPlayer cb spectatedEntity
+EntityPlayer cc worldChangeInvuln
+EntityPlayer ce recipeBook
+EntityPlayer ck spawnDimension
+EntityPlayer cl spawn
+EntityPlayer cm spawnForced
+EntityPlayer cn spawnAngle
+EntityPlayer co containerCounter
+EntityPlayer d (LWorldServer;)V triggerDimensionAdvancements
 EntityPlayer d playerInteractManager
 EntityPlayer e (LEntity;)V setSpectatorTarget
-EntityPlayer eX ()Z canPvP
-EntityPlayer eY ()V nextContainerCounter
+EntityPlayer eW ()Z canPvP
+EntityPlayer eX ()V nextContainerCounter
 EntityPlayer f ()V syncInventory
 EntityPlayer f ping
 EntityPlayer g viewingCredits
 EntityPlayer n ()V broadcastCarriedItem
 EntityPlayer r ()V triggerHealthUpdate
 EntityPlayer u ()LWorldServer; getWorldServer
-EntityPlayer w_ ()V playerTick
+EntityPlayer v_ ()V playerTick
 EntityPlayer x ()LEnumChatVisibility; getChatFlags
 EntityPlayer z ()V resetIdleTimer
 EntityPose a STANDING
@@ -2925,36 +3042,36 @@ EntityProjectileThrowable b (LItemStack;)V setItem
 EntityProjectileThrowable h ()LItem; getDefaultItem
 EntityProjectileThrowable i ()LItemStack; getItem
 EntityPufferFish b (I)V setPuffState
-EntityPufferFish eO ()I getPuffState
-EntityRabbit eN ()LSoundEffect; getSoundJump
-EntityRabbit eO ()I getRabbitType
+EntityPufferFish eN ()I getPuffState
+EntityRabbit eM ()LSoundEffect; getSoundJump
+EntityRabbit eN ()I getRabbitType
 EntityRabbit t (I)V setRabbitType
 EntityRabbit$PathfinderGoalEatCarrots g entity
-EntityRaider bw canJoinRaid
-EntityRaider fa ()Z isCanJoinRaid
+EntityRaider bp canJoinRaid
+EntityRaider eZ ()Z isCanJoinRaid
 EntityRaider w (Z)V setCanJoinRaid
 EntitySelector b (LCommandListenerWrapper;)Ljava/util/List; getEntities
 EntitySelector m checkPermissions
 EntitySheep b (LEnumColor;)V setColor
-EntitySheep eM ()LEnumColor; getColor
-EntitySheep eN ()Z isSheared
+EntitySheep eL ()LEnumColor; getColor
+EntitySheep eM ()Z isSheared
 EntitySheep t (Z)V setSheared
-EntityShulker bv COLOR
+EntityShulker bo COLOR
 EntityShulkerBullet b target
 EntityShulkerBullet c dir
 EntitySilverfish$PathfinderGoalSilverfishWakeOthers a silverfish
 EntitySize a width
 EntitySize b height
 EntitySlime a (IZ)V setSize
-EntitySlime eO ()LSoundEffect; getSoundSquish
-EntitySlime eP ()LSoundEffect; getSoundJump
-EntitySlime eQ ()I getSize
-EntitySnowman eL ()Z hasPumpkin
+EntitySlime eN ()LSoundEffect; getSoundSquish
+EntitySlime eO ()LSoundEffect; getSoundJump
+EntitySlime eP ()I getSize
+EntitySnowman eK ()Z hasPumpkin
 EntitySnowman t (Z)V setHasPumpkin
 EntitySpectralArrow f duration
-EntityStrider$GroupData$Rider a NO_RIDER
-EntityStrider$GroupData$Rider b BABY_RIDER
-EntityStrider$GroupData$Rider c PIGLIN_RIDER
+EntityStrider bt saddleStorage
+EntityStrider eK ()Z isShivering
+EntityStrider t (Z)V setShivering
 EntityTNTPrimed a (I)V setFuseTicks
 EntityTNTPrimed b FUSE_TICKS
 EntityTNTPrimed c source
@@ -2962,21 +3079,21 @@ EntityTNTPrimed d fuseTicks
 EntityTNTPrimed g ()LEntityLiving; getSource
 EntityTNTPrimed i ()I getFuseTicks
 EntityTNTPrimed k ()V explode
-EntityTameableAnimal B_ ()Ljava/util/UUID; getOwnerUUID
+EntityTameableAnimal A_ ()Ljava/util/UUID; getOwnerUUID
 EntityTameableAnimal b (Ljava/util/UUID;)V setOwnerUUID
-EntityTameableAnimal bx willSit
-EntityTameableAnimal eL ()Z isTamed
-EntityTameableAnimal eN ()Z isSitting
-EntityTameableAnimal eO ()LEntityLiving; getOwner
-EntityTameableAnimal eP ()Z isWillSit
+EntityTameableAnimal bq willSit
+EntityTameableAnimal eK ()Z isTamed
+EntityTameableAnimal eM ()Z isSitting
+EntityTameableAnimal eN ()LEntityLiving; getOwner
+EntityTameableAnimal eO ()Z isWillSit
 EntityTameableAnimal f (LEntityHuman;)V tame
 EntityTameableAnimal u (Z)V setTamed
 EntityTameableAnimal v (Z)V setSitting
 EntityTameableAnimal w (Z)V setWillSit
-EntityThrownTrident ao trident
+EntityThrownTrident ah trident
 EntityTippedArrow a (LMobEffect;)V addEffect
-EntityTippedArrow an effects
-EntityTippedArrow ao hasColor
+EntityTippedArrow ag effects
+EntityTippedArrow ah hasColor
 EntityTippedArrow c (I)V setColor
 EntityTippedArrow f COLOR
 EntityTippedArrow g potionRegistry
@@ -2990,7 +3107,7 @@ EntityTrackerEntry j yRot
 EntityTrackerEntry k xRot
 EntityTrackerEntry l headYaw
 EntityTrackerEntry n tickCounter
-EntityTropicalFish eV ()I getVariant
+EntityTropicalFish eU ()I getVariant
 EntityTropicalFish v (I)V setVariant
 EntityTropicalFish$Variant a KOB
 EntityTropicalFish$Variant b SUNSTREAK
@@ -3004,9 +3121,9 @@ EntityTropicalFish$Variant i GLITTER
 EntityTropicalFish$Variant j BLOCKFISH
 EntityTropicalFish$Variant k BETTY
 EntityTropicalFish$Variant l CLAYFISH
-EntityTurtle eL ()Z hasEgg
-EntityTurtle eO ()LBlockPosition; getHomePos
-EntityTurtle eP ()LBlockPosition; getTravelPos
+EntityTurtle eK ()Z hasEgg
+EntityTurtle eN ()LBlockPosition; getHomePos
+EntityTurtle eO ()LBlockPosition; getTravelPos
 EntityTurtle g (LBlockPosition;)V setHomePos
 EntityTurtle h (LBlockPosition;)V setTravelPos
 EntityTurtle t (Z)V setHasEgg
@@ -3037,35 +3154,35 @@ EntityTypes X HOPPER_MINECART
 EntityTypes Y SPAWNER_MINECART
 EntityTypes Z TNT_MINECART
 EntityTypes a (LEntityTypes;)LMinecraftKey; getName
-EntityTypes a (LWorld;LItemStack;LEntityHuman;LBlockPosition;LEnumMobSpawn;ZZ)LEntity; spawnCreature
-EntityTypes a (LWorld;LNBTTagCompound;LIChatBaseComponent;LEntityHuman;LBlockPosition;LEnumMobSpawn;ZZ)LEntity; spawnCreature
+EntityTypes a (LWorldServer;LItemStack;LEntityHuman;LBlockPosition;LEnumMobSpawn;ZZ)LEntity; spawnCreature
+EntityTypes a (LWorldServer;LNBTTagCompound;LIChatBaseComponent;LEntityHuman;LBlockPosition;LEnumMobSpawn;ZZ)LEntity; spawnCreature
 EntityTypes a AREA_EFFECT_CLOUD
-EntityTypes aA SPECTRAL_ARROW
-EntityTypes aB SPIDER
-EntityTypes aC SQUID
-EntityTypes aD STRAY
-EntityTypes aE STRIDER
-EntityTypes aF EGG
-EntityTypes aG ENDER_PEARL
-EntityTypes aH EXPERIENCE_BOTTLE
-EntityTypes aI POTION
-EntityTypes aJ TRIDENT
-EntityTypes aK TRADER_LLAMA
-EntityTypes aL TROPICAL_FISH
-EntityTypes aM TURTLE
-EntityTypes aN VEX
-EntityTypes aO VILLAGER
-EntityTypes aP VINDICATOR
-EntityTypes aQ WANDERING_TRADER
-EntityTypes aR WITCH
-EntityTypes aS WITHER
-EntityTypes aT WITHER_SKELETON
-EntityTypes aU WITHER_SKULL
-EntityTypes aV WOLF
-EntityTypes aW ZOGLIN
-EntityTypes aX ZOMBIE
-EntityTypes aY ZOMBIE_HORSE
-EntityTypes aZ ZOMBIE_VILLAGER
+EntityTypes aA SNOWBALL
+EntityTypes aB SPECTRAL_ARROW
+EntityTypes aC SPIDER
+EntityTypes aD SQUID
+EntityTypes aE STRAY
+EntityTypes aF STRIDER
+EntityTypes aG EGG
+EntityTypes aH ENDER_PEARL
+EntityTypes aI EXPERIENCE_BOTTLE
+EntityTypes aJ POTION
+EntityTypes aK TRIDENT
+EntityTypes aL TRADER_LLAMA
+EntityTypes aM TROPICAL_FISH
+EntityTypes aN TURTLE
+EntityTypes aO VEX
+EntityTypes aP VILLAGER
+EntityTypes aQ VINDICATOR
+EntityTypes aR WANDERING_TRADER
+EntityTypes aS WITCH
+EntityTypes aT WITHER
+EntityTypes aU WITHER_SKELETON
+EntityTypes aV WITHER_SKULL
+EntityTypes aW WOLF
+EntityTypes aX ZOGLIN
+EntityTypes aY ZOMBIE
+EntityTypes aZ ZOMBIE_HORSE
 EntityTypes aa MULE
 EntityTypes ab MOOSHROOM
 EntityTypes ac OCELOT
@@ -3075,28 +3192,29 @@ EntityTypes af PARROT
 EntityTypes ag PHANTOM
 EntityTypes ah PIG
 EntityTypes ai PIGLIN
-EntityTypes aj PILLAGER
-EntityTypes ak POLAR_BEAR
-EntityTypes al TNT
-EntityTypes am PUFFERFISH
-EntityTypes an RABBIT
-EntityTypes ao RAVAGER
-EntityTypes ap SALMON
-EntityTypes aq SHEEP
-EntityTypes ar SHULKER
-EntityTypes as SHULKER_BULLET
-EntityTypes at SILVERFISH
-EntityTypes au SKELETON
-EntityTypes av SKELETON_HORSE
-EntityTypes aw SLIME
-EntityTypes ax SMALL_FIREBALL
-EntityTypes ay SNOW_GOLEM
-EntityTypes az SNOWBALL
-EntityTypes b (LWorld;LNBTTagCompound;LIChatBaseComponent;LEntityHuman;LBlockPosition;LEnumMobSpawn;ZZ)LEntity; createCreature
+EntityTypes aj PIGLIN_BRUTE
+EntityTypes ak PILLAGER
+EntityTypes al POLAR_BEAR
+EntityTypes am TNT
+EntityTypes an PUFFERFISH
+EntityTypes ao RABBIT
+EntityTypes ap RAVAGER
+EntityTypes aq SALMON
+EntityTypes ar SHEEP
+EntityTypes as SHULKER
+EntityTypes at SHULKER_BULLET
+EntityTypes au SILVERFISH
+EntityTypes av SKELETON
+EntityTypes aw SKELETON_HORSE
+EntityTypes ax SLIME
+EntityTypes ay SMALL_FIREBALL
+EntityTypes az SNOW_GOLEM
+EntityTypes b (LWorldServer;LNBTTagCompound;LIChatBaseComponent;LEntityHuman;LBlockPosition;LEnumMobSpawn;ZZ)LEntity; createCreature
 EntityTypes b ARMOR_STAND
-EntityTypes ba ZOMBIFIED_PIGLIN
-EntityTypes bb PLAYER
-EntityTypes bc FISHING_BOBBER
+EntityTypes ba ZOMBIE_VILLAGER
+EntityTypes bb ZOMBIFIED_PIGLIN
+EntityTypes bc PLAYER
+EntityTypes bd FISHING_BOBBER
 EntityTypes c ARROW
 EntityTypes d BAT
 EntityTypes e BEE
@@ -3126,41 +3244,41 @@ EntityTypes y EXPERIENCE_ORB
 EntityTypes z EYE_OF_ENDER
 EntityTypes$Builder a (I)LEntityTypes$Builder; trackingRange
 EntityTypes$Builder b (I)LEntityTypes$Builder; updateInterval
-EntityVex eN ()Z isCharging
+EntityVex eM ()Z isCharging
 EntityVex t (Z)V setCharging
 EntityVillager a (LVillagerData;)V setVillagerData
 EntityVillager fi ()Z canPlant
-EntityVillager ft ()V populateTrades
+EntityVillager fu ()V populateTrades
 EntityVillager u (I)V setExperience
-EntityVillagerAbstract bv trades
-EntityVillagerAbstract bx tradingPlayer
-EntityVillagerAbstract by inventory
+EntityVillagerAbstract bo trades
+EntityVillagerAbstract bq tradingPlayer
+EntityVillagerAbstract br inventory
 EntityVillagerAbstract eU ()LInventorySubcontainer; getInventory
 EntityWither a (II)V setHeadTarget
-EntityWither bE bossBattle
-EntityWither eM ()I getInvul
+EntityWither bx bossBattle
+EntityWither eL ()I getInvul
 EntityWither m ()V beginSpawnSequence
 EntityWither s (I)V setInvul
 EntityWither t (I)I getHeadTarget
 EntityWitherSkull a (Z)V setCharged
 EntityWitherSkull k ()Z isCharged
 EntityWolf a (LEnumColor;)V setCollarColor
-EntityWolf eY ()LEnumColor; getCollarColor
+EntityWolf eX ()LEnumColor; getCollarColor
 EntityZombie a (I)V startDrownedConversion
 EntityZombie a (LDamageSource;F)Z damageEntity
 EntityZombie a (Z)V setBaby
-EntityZombie bB drownedConversionTime
-EntityZombie bw DROWN_CONVERTING
-EntityZombie eM ()LSoundEffect; getSoundStep
-EntityZombie eU ()Z isDrownConverting
+EntityZombie bp DROWN_CONVERTING
+EntityZombie bu drownedConversionTime
+EntityZombie eL ()LSoundEffect; getSoundStep
+EntityZombie eT ()Z isDrownConverting
 EntityZombieVillager a (LVillagerData;)V setVillagerData
 EntityZombieVillager a (Ljava/util/UUID;I)V startConversion
 EntityZombieVillager b CONVERTING
-EntityZombieVillager bv conversionPlayer
+EntityZombieVillager bo conversionPlayer
 EntityZombieVillager d conversionTime
-EntityZombieVillager eX ()Z isConverting
-EntityZombieVillager eY ()LVillagerData; getVillagerData
-EntityZombieVillager fa ()I getConversionProgress
+EntityZombieVillager eW ()Z isConverting
+EntityZombieVillager eX ()LVillagerData; getVillagerData
+EntityZombieVillager eZ ()I getConversionProgress
 EntityZombieVillager g (LNBTTagCompound;)V setOffers
 EnumAnimation a NONE
 EnumAnimation b EAT
@@ -3227,6 +3345,9 @@ EnumBlockRotation a NONE
 EnumBlockRotation b CLOCKWISE_90
 EnumBlockRotation c CLOCKWISE_180
 EnumBlockRotation d COUNTERCLOCKWISE_90
+EnumBlockSupport a FULL
+EnumBlockSupport b CENTER
+EnumBlockSupport c RIGID
 EnumChatFormat a BLACK
 EnumChatFormat b DARK_BLUE
 EnumChatFormat c ()Z isFormat
@@ -3405,19 +3526,18 @@ ExpirableListEntry b ()Ljava/lang/String; getSource
 ExpirableListEntry c ()Ljava/util/Date; getExpires
 ExpirableListEntry d ()Ljava/lang/String; getReason
 Explosion d ()LEntityLiving; getSource
-Explosion d world
 Explosion e ()V clearBlocks
-Explosion e posX
+Explosion e world
 Explosion f ()Ljava/util/List; getBlocks
-Explosion f posY
-Explosion g posZ
-Explosion h source
-Explosion i size
-Explosion l blocks
+Explosion f posX
+Explosion g posY
+Explosion h posZ
+Explosion i source
+Explosion j size
+Explosion m blocks
 Explosion$Effect a NONE
 Explosion$Effect b BREAK
 Explosion$Effect c DESTROY
-ExplosionDamageCalculatorBlock a INSTANCE
 Fluid a ()LFluidType; getType
 Fluid a (LIBlockAccess;LBlockPosition;)F getHeight
 Fluid b ()Z isSource
@@ -3517,9 +3637,25 @@ GenLayerZoom b FUZZY
 GenLayerZoomVoronoi a INSTANCE
 GenLayerZoomVoronoiFixed a INSTANCE
 GenLayerZoomerBiome a INSTANCE
-GeneratorAccess E ()LIChunkProvider; getChunkProvider
-GeneratorAccess F ()LTickList; getFluidTickList
-GeneratorAccess G ()LTickList; getBlockTickList
+GenLayers$Type a NONE
+GenLayers$Type b TAIGA
+GenLayers$Type c EXTREME_HILLS
+GenLayers$Type d JUNGLE
+GenLayers$Type e MESA
+GenLayers$Type f BADLANDS_PLATEAU
+GenLayers$Type g PLAINS
+GenLayers$Type h SAVANNA
+GenLayers$Type i ICY
+GenLayers$Type j BEACH
+GenLayers$Type k FOREST
+GenLayers$Type l OCEAN
+GenLayers$Type m DESERT
+GenLayers$Type n RIVER
+GenLayers$Type o SWAMP
+GenLayers$Type p MUSHROOM
+GeneratorAccess G ()LIChunkProvider; getChunkProvider
+GeneratorAccess H ()LTickList; getFluidTickList
+GeneratorAccess I ()LTickList; getBlockTickList
 GeneratorAccess a (LBlockPosition;LBlock;)V update
 GeneratorAccess a (LEntityHuman;LBlockPosition;LSoundEffect;LSoundCategory;FF)V playSound
 GeneratorAccess a (LParticleParam;DDDDDD)V addParticle
@@ -3527,16 +3663,15 @@ GeneratorAccess ac ()LEnumDifficulty; getDifficulty
 GeneratorAccess ad ()I getHeight
 GeneratorAccess c (ILBlockPosition;I)V triggerEffect
 GeneratorAccess d (LBlockPosition;)LDifficultyDamageScaler; getDamageScaler
-GeneratorAccess n ()LWorld; getMinecraftWorld
-GeneratorAccess u_ ()LWorldData; getWorldData
-GeneratorAccess v_ ()Ljava/util/Random; getRandom
-GeneratorAccessSeed B ()J getSeed
-GeneratorSettings b ()J getSeed
-GeneratorSettings c ()Z shouldGenerateMapFeatures
-GeneratorSettings e seed
-GeneratorSettings f ()LChunkGenerator; getChunkGenerator
-GeneratorSettings h ()Z isDebugWorld
-GeneratorSettings i ()Z isFlatWorld
+GeneratorAccess h ()LWorldData; getWorldData
+GeneratorAccess u_ ()Ljava/util/Random; getRandom
+GeneratorAccessSeed C ()J getSeed
+GeneratorSettings a ()J getSeed
+GeneratorSettings b ()Z shouldGenerateMapFeatures
+GeneratorSettings c seed
+GeneratorSettings e ()LChunkGenerator; getChunkGenerator
+GeneratorSettings g ()Z isDebugWorld
+GeneratorSettings h ()Z isFlatWorld
 GenericAttributes a MAX_HEALTH
 GenericAttributes b FOLLOW_RANGE
 GenericAttributes c KNOCKBACK_RESISTANCE
@@ -3577,19 +3712,19 @@ HorseStyle c WHITE_FIELD
 HorseStyle d WHITE_DOTS
 HorseStyle e BLACK_DOTS
 IAsyncTaskHandler a (Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture; executeFuture
-IAsyncTaskHandler at ()Z isNotMainThread
-IAsyncTaskHandler au ()Ljava/lang/Thread; getThread
-IAsyncTaskHandler bf ()Z isMainThread
-IAsyncTaskHandler bj ()V executeAll
+IAsyncTaskHandler au ()Z isNotMainThread
+IAsyncTaskHandler av ()Ljava/lang/Thread; getThread
+IAsyncTaskHandler bg ()Z isMainThread
+IAsyncTaskHandler bk ()V executeAll
 IAsyncTaskHandler c (Ljava/lang/Runnable;)V executeTask
 IAsyncTaskHandler c (Ljava/util/function/BooleanSupplier;)V awaitTasks
 IAsyncTaskHandler d (Ljava/lang/Runnable;)Z canExecute
 IAsyncTaskHandler e (Ljava/lang/Runnable;)Ljava/lang/Runnable; postToMainThread
 IAsyncTaskHandler g (Ljava/lang/Runnable;)V executeSync
-IAsyncTaskHandler x ()Z executeNext
+IAsyncTaskHandler y ()Z executeNext
 IAsyncTaskHandlerReentrant b depth
-IAsyncTaskHandlerReentrant bl ()Z isEntered
-IBlockAccess I ()I getBuildHeight
+IAsyncTaskHandlerReentrant bm ()Z isEntered
+IBlockAccess K ()I getBuildHeight
 IBlockAccess a (LRayTrace;)LMovingObjectPositionBlock; rayTrace
 IBlockAccess a (LVec3D;LVec3D;LBlockPosition;LVoxelShape;LIBlockData;)LMovingObjectPositionBlock; rayTrace
 IBlockAccess b (LBlockPosition;)LFluid; getFluid
@@ -3632,8 +3767,8 @@ IChunkProvider e ()Ljava/lang/String; getName
 IChunkProvider l ()LLightEngine; getLightEngine
 ICollisionAccess a_ (LEntity;LAxisAlignedBB;)Z getCubes
 ICollisionAccess f ()LWorldBorder; getWorldBorder
-ICollisionAccess j (LEntity;)Z getCubes
-ICommandListener S_ ()Z shouldBroadcastCommands
+ICollisionAccess k (LEntity;)Z getCubes
+ICommandListener R_ ()Z shouldBroadcastCommands
 ICommandListener a ()Z shouldSendSuccess
 ICommandListener a (LIChatBaseComponent;Ljava/util/UUID;)V sendMessage
 ICommandListener a_ DUMMY
@@ -3649,27 +3784,27 @@ IEntityAccess a (DDDD)Z isPlayerNearby
 IEntityAccess a (LEntity;D)LEntityHuman; findNearbyPlayer
 IEntityAccess a (LEntity;LAxisAlignedBB;)Ljava/util/List; getEntities
 IEntityAccess a (LEntity;LAxisAlignedBB;Ljava/util/function/Predicate;)Ljava/util/List; getEntities
-IEntityAccess w ()Ljava/util/List; getPlayers
+IEntityAccess x ()Ljava/util/List; getPlayers
 IEntityAngerable A ()LEntityLiving; getGoalTarget
-IEntityAngerable F_ ()I getAnger
-IEntityAngerable G_ ()Ljava/util/UUID; getAngerTarget
-IEntityAngerable H_ ()V anger
-IEntityAngerable I_ ()Z isAngry
-IEntityAngerable K_ ()V pacify
+IEntityAngerable E_ ()I getAnger
+IEntityAngerable F_ ()Ljava/util/UUID; getAngerTarget
+IEntityAngerable G_ ()V anger
+IEntityAngerable H_ ()Z isAngry
+IEntityAngerable J_ ()V pacify
 IEntityAngerable a (LEntityLiving;)V setLastDamager
 IEntityAngerable a (Ljava/util/UUID;)V setAngerTarget
 IEntityAngerable a_ (I)V setAnger
-IEntityAngerable i (LEntityLiving;)V setGoalTarget
+IEntityAngerable h (LEntityLiving;)V setGoalTarget
 IFluidContainer a (LGeneratorAccess;LBlockPosition;LIBlockData;LFluid;)Z place
 IFluidContainer a (LIBlockAccess;LBlockPosition;LIBlockData;LFluidType;)Z canPlace
 IFluidSource b (LGeneratorAccess;LBlockPosition;LIBlockData;)LFluidType; removeFluid
 IHopper v ()LWorld; getWorld
-IInventory X_ ()I getMaxStackSize
-IInventory Z_ ()V update
+IInventory V_ ()I getMaxStackSize
+IInventory X_ ()V update
+IInventory Z_ ()I getSize
 IInventory a (I)LItemStack; getItem
 IInventory a (II)LItemStack; splitStack
 IInventory a (ILItemStack;)V setItem
-IInventory ab_ ()I getSize
 IInventory b (I)LItemStack; splitWithoutUpdate
 IInventory b_ (LEntityHuman;)V closeContainer
 IInventory c ()Z isEmpty
@@ -3677,26 +3812,26 @@ IInventory c_ (LEntityHuman;)V startOpen
 ILightAccess m ()LIBlockAccess; getWorld
 IMaterial h ()LItem; getItem
 IMerchant a (LEntityHuman;LIChatBaseComponent;I)V openTrade
-IMerchant eM ()I getExperience
-IMerchant eN ()LEntityHuman; getTrader
-IMerchant eP ()LMerchantRecipeList; getOffers
-IMerchant eQ ()Z isRegularVillager
-IMerchant eR ()LSoundEffect; getTradeSound
+IMerchant eL ()I getExperience
+IMerchant eM ()LEntityHuman; getTrader
+IMerchant eO ()LMerchantRecipeList; getOffers
+IMerchant eP ()Z isRegularVillager
+IMerchant eQ ()LSoundEffect; getTradeSound
 IMerchant eV ()LWorld; getWorld
 IMerchant f (LEntityHuman;)V setTradingPlayer
 IMerchant t (I)V setForcedExperience
-IMinecraftServer G ()Ljava/lang/String; getVersion
-IMinecraftServer H ()I getPlayerCount
-IMinecraftServer I ()I getMaxPlayers
-IMinecraftServer J ()[Ljava/lang/String; getPlayers
+IMinecraftServer H ()Ljava/lang/String; getVersion
+IMinecraftServer I ()I getPlayerCount
+IMinecraftServer J ()I getMaxPlayers
+IMinecraftServer K ()[Ljava/lang/String; getPlayers
 IMinecraftServer a (Ljava/lang/String;)Ljava/lang/String; executeRemoteCommand
 IMinecraftServer g_ ()LDedicatedServerProperties; getDedicatedServerProperties
 IMinecraftServer j_ ()Ljava/lang/String; getPlugins
 IMinecraftServer k_ ()Ljava/lang/String; getWorld
 INamable a ()Ljava/lang/String; getName
-INamableTileEntity P ()LIChatBaseComponent; getDisplayName
-INamableTileEntity Q ()Z hasCustomName
-INamableTileEntity R ()LIChatBaseComponent; getCustomName
+INamableTileEntity Q ()LIChatBaseComponent; getDisplayName
+INamableTileEntity R ()Z hasCustomName
+INamableTileEntity S ()LIChatBaseComponent; getCustomName
 INamableTileEntity d ()LIChatBaseComponent; getScoreboardDisplayName
 IOWorker$Priority a HIGH
 IOWorker$Priority b LOW
@@ -3707,61 +3842,60 @@ IProjectile b (LEntity;)V setShooter
 IProjectile b shooter
 IProjectile c (DDDFF)V shoot
 IProjectile v ()LEntity; getShooter
-IRecipe ah_ ()Z isComplex
-IRecipe ai_ ()LRecipeSerializer; getRecipeSerializer
+IRecipe af_ ()Z isComplex
+IRecipe ag_ ()LRecipeSerializer; getRecipeSerializer
 IRecipe c ()LItemStack; getResult
 IRecipe f ()LMinecraftKey; getKey
+IRegistry N SOUND_EVENT
+IRegistry O FLUID
+IRegistry P MOB_EFFECT
+IRegistry Q BLOCK
+IRegistry R ENCHANTMENT
+IRegistry S ENTITY_TYPE
+IRegistry T ITEM
+IRegistry U POTION
+IRegistry V PARTICLE_TYPE
+IRegistry W BLOCK_ENTITY_TYPE
+IRegistry X MOTIVE
+IRegistry Y CUSTOM_STAT
+IRegistry Z CHUNK_STATUS
 IRegistry a (LMinecraftKey;)Ljava/lang/Object; get
-IRegistry aA BIOME_SOURCE
-IRegistry aB CHUNK_GENERATOR
-IRegistry aC BLOCK_ENTITY_TYPE
-IRegistry aD MOTIVE
-IRegistry aE CUSTOM_STAT
-IRegistry aF CHUNK_STATUS
+IRegistry aA SURFACE_BUILDER
+IRegistry aC CARVER
+IRegistry aE FEATURE
 IRegistry aG STRUCTURE_FEATURE
-IRegistry aH STRUCTURE_PIECE
-IRegistry aI RULE_TEST
-IRegistry aJ POS_RULE_TEST
-IRegistry aK STRUCTURE_PROCESSOR
-IRegistry aL STRUCTURE_POOL_ELEMENT
-IRegistry aM MENU
-IRegistry aN RECIPE_TYPE
-IRegistry aO RECIPE_SERIALIZER
-IRegistry aP ATTRIBUTE
-IRegistry aQ STATS
-IRegistry aR VILLAGER_TYPE
-IRegistry aS VILLAGER_PROFESSION
-IRegistry aT POINT_OF_INTEREST_TYPE
-IRegistry aU MEMORY_MODULE_TYPE
-IRegistry aV SENSOR_TYPE
-IRegistry aW SCHEDULE
-IRegistry aX ACTIVITY
-IRegistry ag SOUND_EVENT
-IRegistry ah FLUID
-IRegistry ai MOB_EFFECT
-IRegistry aj BLOCK
-IRegistry ak ENCHANTMENT
-IRegistry al ENTITY_TYPE
-IRegistry am ITEM
-IRegistry an POTION
-IRegistry ao CARVER
-IRegistry ap SURFACE_BUILDER
-IRegistry aq FEATURE
-IRegistry ar DECORATOR
-IRegistry as BIOME
-IRegistry at BLOCK_STATE_PROVIDER_TYPE
-IRegistry au BLOCK_PLACER_TYPE
-IRegistry av FOLIAGE_PLACER_TYPE
-IRegistry aw TRUNK_PLACER_TYPE
-IRegistry ax TREE_DECORATOR_TYPE
-IRegistry ay FEATURE_SIZE_TYPE
-IRegistry az PARTICLE_TYPE
-IRegistry b ()Ljava/util/Set; keySet
+IRegistry aI STRUCTURE_PIECE
+IRegistry aK DECORATOR
+IRegistry aV BLOCK_STATE_PROVIDER_TYPE
+IRegistry aW BLOCK_PLACER_TYPE
+IRegistry aX FOLIAGE_PLACER_TYPE
+IRegistry aY TRUNK_PLACER_TYPE
+IRegistry aZ TREE_DECORATOR_TYPE
+IRegistry aa RULE_TEST
+IRegistry ab POS_RULE_TEST
+IRegistry ac MENU
+IRegistry ad RECIPE_TYPE
+IRegistry ae RECIPE_SERIALIZER
+IRegistry af ATTRIBUTE
+IRegistry ag STATS
+IRegistry ah VILLAGER_TYPE
+IRegistry ai VILLAGER_PROFESSION
+IRegistry aj POINT_OF_INTEREST_TYPE
+IRegistry ak MEMORY_MODULE_TYPE
+IRegistry al SENSOR_TYPE
+IRegistry am SCHEDULE
+IRegistry an ACTIVITY
 IRegistry b (LMinecraftKey;)Ljava/util/Optional; getOptional
 IRegistry b (Ljava/lang/Object;)LMinecraftKey; getKey
+IRegistry ba FEATURE_SIZE_TYPE
+IRegistry bb BIOME_SOURCE
+IRegistry bc CHUNK_GENERATOR
+IRegistry bd STRUCTURE_PROCESSOR
+IRegistry be STRUCTURE_POOL_ELEMENT
+IRegistry c ()Ljava/util/Set; keySet
 IResourceManager$Empty a INSTANCE
-ISaddleable M_ ()Z canSaddle
-ISaddleable N_ ()Z hasSaddle
+ISaddleable L_ ()Z canSaddle
+ISaddleable M_ ()Z hasSaddle
 ISaddleable a (LSoundCategory;)V saddle
 IScoreboardCriteria a criteria
 IScoreboardCriteria b DUMMY
@@ -3779,13 +3913,18 @@ IScoreboardCriteria k XP
 IScoreboardCriteria l LEVEL
 IScoreboardCriteria$EnumScoreboardHealthDisplay a INTEGER
 IScoreboardCriteria$EnumScoreboardHealthDisplay b HEARTS
-IShearable L_ ()Z canShear
+IShearable K_ ()Z canShear
 IShearable a (LSoundCategory;)V shear
-ISource h ()LWorld; getWorld
 ISourceBlock d ()LBlockPosition; getBlockPosition
 ISourceBlock e ()LIBlockData; getBlockData
 ISourceBlock g ()LTileEntity; getTileEntity
-ITickable al_ ()V tick
+ISourceBlock h ()LWorldServer; getWorld
+ITagRegistry a ()LTags; getBlockTags
+ITagRegistry b ()LTags; getItemTags
+ITagRegistry c ()LTags; getFluidTags
+ITagRegistry d ()LTags; getEntityTags
+ITagRegistry e ()V bind
+ITickable aj_ ()V tick
 ITileEntity a (LIBlockAccess;)LTileEntity; createTile
 ITileInventory d ()LIChatBaseComponent; getScoreboardDisplayName
 IWorldDataServer a (J)V setTime
@@ -3793,11 +3932,11 @@ IWorldDataServer a (LEnumGamemode;)V setGameType
 IWorldDataServer a (Z)V setThundering
 IWorldDataServer b (J)V setDayTime
 IWorldDataServer e (I)V setThunderDuration
-IWorldDataServer f ()Ljava/lang/String; getName
 IWorldDataServer f (I)V setWeatherDuration
-IWorldDataServer i ()I getThunderDuration
-IWorldDataServer k ()I getWeatherDuration
-IWorldDataServer l ()LEnumGamemode; getGameType
+IWorldDataServer g ()Ljava/lang/String; getName
+IWorldDataServer j ()I getThunderDuration
+IWorldDataServer l ()I getWeatherDuration
+IWorldDataServer m ()LEnumGamemode; getGameType
 IWorldInventory a (ILItemStack;LEnumDirection;)Z canPlaceItemThroughFace
 IWorldInventory a (LEnumDirection;)[I getSlotsForFace
 IWorldInventory b (ILItemStack;LEnumDirection;)Z canTakeItemThroughFace
@@ -3811,7 +3950,7 @@ IWorldReader a (LBlockPosition;LBlockPosition;)Z areChunksLoadedBetween
 IWorldReader a (LHeightMap$Type;LBlockPosition;)LBlockPosition; getHighestBlockYAt
 IWorldReader b (II)Z isChunkLoaded
 IWorldReader d (LAxisAlignedBB;)Z containsLiquid
-IWorldReader m ()LDimensionManager; getDimensionManager
+IWorldReader k ()LDimensionManager; getDimensionManager
 IWorldReader t_ ()I getSeaLevel
 IWorldReader v (LBlockPosition;)LBiomeBase; getBiome
 IWorldReader w (LBlockPosition;)Z isEmpty
@@ -3838,7 +3977,7 @@ InventoryMerchant b itemsInSlots
 InventoryMerchant c recipe
 InventoryMerchant d selectedIndex
 InventoryMerchant g ()LMerchantRecipe; getRecipe
-InventorySubcontainer Z_ ()V update
+InventorySubcontainer X_ ()V update
 InventorySubcontainer b items
 InventoryUtils a (LWorld;DDDLIInventory;)V dropInventory
 InventoryUtils a (LWorld;DDDLItemStack;)V dropItem
@@ -3866,12 +4005,12 @@ Item s ()Z isFood
 Item t ()LFoodInfo; getFoodInfo
 ItemActionContext a ()LBlockPosition; getClickPosition
 ItemActionContext g ()Z isSneaking
-ItemActionContext i ()LEnumDirection; getClickedFace
-ItemActionContext j ()LVec3D; getPos
-ItemActionContext l ()LItemStack; getItemStack
-ItemActionContext m ()LEntityHuman; getEntity
-ItemActionContext n ()LEnumHand; getHand
-ItemActionContext o ()LWorld; getWorld
+ItemActionContext j ()LEnumDirection; getClickedFace
+ItemActionContext k ()LVec3D; getPos
+ItemActionContext m ()LItemStack; getItemStack
+ItemActionContext n ()LEntityHuman; getEntity
+ItemActionContext o ()LEnumHand; getHand
+ItemActionContext p ()LWorld; getWorld
 ItemBlock d ()Z isCheckCollisions
 ItemBlock e ()LBlock; getBlock
 ItemBlockWallable a wallBlock
@@ -3923,64 +4062,71 @@ ItemStack r ()LIChatBaseComponent; getName
 ItemStack t ()Z hasName
 ItemStack w ()Z canEnchant
 ItemStack x ()Z hasEnchantments
+ItemStack$HideFlags a ENCHANTMENTS
+ItemStack$HideFlags b MODIFIERS
+ItemStack$HideFlags c UNBREAKABLE
+ItemStack$HideFlags d CAN_DESTROY
+ItemStack$HideFlags e CAN_PLACE
+ItemStack$HideFlags f ADDITIONAL
+ItemStack$HideFlags g DYE
 ItemWorldMap a (LWorld;IIBZZ)LItemStack; createFilledMapView
 ItemWorldMap a (LWorldServer;LItemStack;)V applySepiaFilter
 ItemWorldMap b (LItemStack;LWorld;)LWorldMap; getSavedMap
 Items a AIR
 Items jY TURTLE_HELMET
 Items jZ SCUTE
-Items kA DIAMOND_AXE
-Items kB STICK
-Items kC BOWL
-Items kD MUSHROOM_STEW
-Items kE GOLDEN_SWORD
-Items kF GOLDEN_SHOVEL
-Items kG GOLDEN_PICKAXE
-Items kH GOLDEN_AXE
-Items kI NETHERITE_SWORD
-Items kJ NETHERITE_SHOVEL
-Items kK NETHERITE_PICKAXE
-Items kL NETHERITE_AXE
-Items kM STRING
-Items kN FEATHER
-Items kO GUNPOWDER
-Items kP WOODEN_HOE
-Items kQ STONE_HOE
-Items kR IRON_HOE
-Items kS DIAMOND_HOE
-Items kT GOLDEN_HOE
-Items kU NETHERITE_HOE
+Items kA IRON_SWORD
+Items kB IRON_SHOVEL
+Items kC IRON_PICKAXE
+Items kD IRON_AXE
+Items kE IRON_HOE
+Items kF DIAMOND_SWORD
+Items kG DIAMOND_SHOVEL
+Items kH DIAMOND_PICKAXE
+Items kI DIAMOND_AXE
+Items kJ DIAMOND_HOE
+Items kK NETHERITE_SWORD
+Items kL NETHERITE_SHOVEL
+Items kM NETHERITE_PICKAXE
+Items kN NETHERITE_AXE
+Items kO NETHERITE_HOE
+Items kP STICK
+Items kQ BOWL
+Items kR MUSHROOM_STEW
+Items kS STRING
+Items kT FEATHER
+Items kU GUNPOWDER
 Items kV WHEAT_SEEDS
 Items kW WHEAT
 Items kX BREAD
 Items kY LEATHER_HELMET
 Items kZ LEATHER_CHESTPLATE
-Items ka IRON_SHOVEL
-Items kb IRON_PICKAXE
-Items kc IRON_AXE
-Items kd FLINT_AND_STEEL
-Items ke APPLE
-Items kf BOW
-Items kg ARROW
-Items kh COAL
-Items ki CHARCOAL
-Items kj DIAMOND
-Items kk IRON_INGOT
-Items kl GOLD_INGOT
-Items km NETHERITE_INGOT
-Items kn NETHERITE_SCRAP
-Items ko IRON_SWORD
-Items kp WOODEN_SWORD
-Items kq WOODEN_SHOVEL
-Items kr WOODEN_PICKAXE
-Items ks WOODEN_AXE
-Items kt STONE_SWORD
-Items ku STONE_SHOVEL
-Items kv STONE_PICKAXE
-Items kw STONE_AXE
-Items kx DIAMOND_SWORD
-Items ky DIAMOND_SHOVEL
-Items kz DIAMOND_PICKAXE
+Items ka FLINT_AND_STEEL
+Items kb APPLE
+Items kc BOW
+Items kd ARROW
+Items ke COAL
+Items kf CHARCOAL
+Items kg DIAMOND
+Items kh IRON_INGOT
+Items ki GOLD_INGOT
+Items kj NETHERITE_INGOT
+Items kk NETHERITE_SCRAP
+Items kl WOODEN_SWORD
+Items km WOODEN_SHOVEL
+Items kn WOODEN_PICKAXE
+Items ko WOODEN_AXE
+Items kp WOODEN_HOE
+Items kq STONE_SWORD
+Items kr STONE_SHOVEL
+Items ks STONE_PICKAXE
+Items kt STONE_AXE
+Items ku STONE_HOE
+Items kv GOLDEN_SWORD
+Items kw GOLDEN_SHOVEL
+Items kx GOLDEN_PICKAXE
+Items ky GOLDEN_AXE
+Items kz GOLDEN_HOE
 Items lA GOLDEN_APPLE
 Items lB ENCHANTED_GOLDEN_APPLE
 Items lC OAK_SIGN
@@ -4034,16 +4180,16 @@ Items lx PORKCHOP
 Items ly COOKED_PORKCHOP
 Items lz PAINTING
 Items mA PINK_DYE
-Items mB LIME_DYE
-Items mC YELLOW_DYE
-Items mD LIGHT_BLUE_DYE
-Items mE MAGENTA_DYE
-Items mF ORANGE_DYE
-Items mG BONE_MEAL
-Items mH BLUE_DYE
-Items mI BROWN_DYE
+Items mB GRAY_DYE
+Items mC LIGHT_GRAY_DYE
+Items mD CYAN_DYE
+Items mE PURPLE_DYE
+Items mF BLUE_DYE
+Items mG BROWN_DYE
+Items mH GREEN_DYE
+Items mI RED_DYE
 Items mJ BLACK_DYE
-Items mK WHITE_DYE
+Items mK BONE_MEAL
 Items mL BONE
 Items mM SUGAR
 Items mO WHITE_BED
@@ -4075,14 +4221,14 @@ Items mo PUFFERFISH
 Items mp COOKED_COD
 Items mq COOKED_SALMON
 Items mr INK_SAC
-Items ms RED_DYE
-Items mt GREEN_DYE
-Items mu COCOA_BEANS
-Items mv LAPIS_LAZULI
-Items mw PURPLE_DYE
-Items mx CYAN_DYE
-Items my LIGHT_GRAY_DYE
-Items mz GRAY_DYE
+Items ms COCOA_BEANS
+Items mt LAPIS_LAZULI
+Items mu WHITE_DYE
+Items mv ORANGE_DYE
+Items mw MAGENTA_DYE
+Items mx LIGHT_BLUE_DYE
+Items my YELLOW_DYE
+Items mz LIME_DYE
 Items nA MAGMA_CREAM
 Items nD ENDER_EYE
 Items nE GLISTERING_MELON_SLICE
@@ -4133,31 +4279,31 @@ Items nw GLASS_BOTTLE
 Items nx SPIDER_EYE
 Items ny FERMENTED_SPIDER_EYE
 Items nz BLAZE_POWDER
-Items oA STRIDER_SPAWN_EGG
-Items oB TRADER_LLAMA_SPAWN_EGG
-Items oC TROPICAL_FISH_SPAWN_EGG
-Items oD TURTLE_SPAWN_EGG
-Items oE VEX_SPAWN_EGG
-Items oF VILLAGER_SPAWN_EGG
-Items oG VINDICATOR_SPAWN_EGG
-Items oH WANDERING_TRADER_SPAWN_EGG
-Items oI WITCH_SPAWN_EGG
-Items oJ WITHER_SKELETON_SPAWN_EGG
-Items oK WOLF_SPAWN_EGG
-Items oL ZOGLIN_SPAWN_EGG
-Items oM ZOMBIE_SPAWN_EGG
-Items oN ZOMBIE_HORSE_SPAWN_EGG
-Items oO ZOMBIE_VILLAGER_SPAWN_EGG
-Items oP ZOMBIFIED_PIGLIN_SPAWN_EGG
-Items oQ EXPERIENCE_BOTTLE
-Items oR FIRE_CHARGE
-Items oS WRITABLE_BOOK
-Items oT WRITTEN_BOOK
-Items oU EMERALD
-Items oV ITEM_FRAME
-Items oX CARROT
-Items oY POTATO
-Items oZ BAKED_POTATO
+Items oA STRAY_SPAWN_EGG
+Items oB STRIDER_SPAWN_EGG
+Items oC TRADER_LLAMA_SPAWN_EGG
+Items oD TROPICAL_FISH_SPAWN_EGG
+Items oE TURTLE_SPAWN_EGG
+Items oF VEX_SPAWN_EGG
+Items oG VILLAGER_SPAWN_EGG
+Items oH VINDICATOR_SPAWN_EGG
+Items oI WANDERING_TRADER_SPAWN_EGG
+Items oJ WITCH_SPAWN_EGG
+Items oK WITHER_SKELETON_SPAWN_EGG
+Items oL WOLF_SPAWN_EGG
+Items oM ZOGLIN_SPAWN_EGG
+Items oN ZOMBIE_SPAWN_EGG
+Items oO ZOMBIE_HORSE_SPAWN_EGG
+Items oP ZOMBIE_VILLAGER_SPAWN_EGG
+Items oQ ZOMBIFIED_PIGLIN_SPAWN_EGG
+Items oR EXPERIENCE_BOTTLE
+Items oS FIRE_CHARGE
+Items oT WRITABLE_BOOK
+Items oU WRITTEN_BOOK
+Items oV EMERALD
+Items oW ITEM_FRAME
+Items oY CARROT
+Items oZ POTATO
 Items oa HUSK_SPAWN_EGG
 Items ob LLAMA_SPAWN_EGG
 Items oc MAGMA_CUBE_SPAWN_EGG
@@ -4169,125 +4315,126 @@ Items oh PARROT_SPAWN_EGG
 Items oi PHANTOM_SPAWN_EGG
 Items oj PIG_SPAWN_EGG
 Items ok PIGLIN_SPAWN_EGG
-Items ol PILLAGER_SPAWN_EGG
-Items om POLAR_BEAR_SPAWN_EGG
-Items on PUFFERFISH_SPAWN_EGG
-Items oo RABBIT_SPAWN_EGG
-Items op RAVAGER_SPAWN_EGG
-Items oq SALMON_SPAWN_EGG
-Items or SHEEP_SPAWN_EGG
-Items os SHULKER_SPAWN_EGG
-Items ot SILVERFISH_SPAWN_EGG
-Items ou SKELETON_SPAWN_EGG
-Items ov SKELETON_HORSE_SPAWN_EGG
-Items ow SLIME_SPAWN_EGG
-Items ox SPIDER_SPAWN_EGG
-Items oy SQUID_SPAWN_EGG
-Items oz STRAY_SPAWN_EGG
-Items pA RABBIT_HIDE
-Items pB ARMOR_STAND
-Items pC IRON_HORSE_ARMOR
-Items pD GOLDEN_HORSE_ARMOR
-Items pE DIAMOND_HORSE_ARMOR
-Items pF LEATHER_HORSE_ARMOR
-Items pG LEAD
-Items pH NAME_TAG
-Items pI COMMAND_BLOCK_MINECART
-Items pJ MUTTON
-Items pK COOKED_MUTTON
-Items pL WHITE_BANNER
-Items pM ORANGE_BANNER
-Items pN MAGENTA_BANNER
-Items pO LIGHT_BLUE_BANNER
-Items pP YELLOW_BANNER
-Items pQ LIME_BANNER
-Items pR PINK_BANNER
-Items pS GRAY_BANNER
-Items pT LIGHT_GRAY_BANNER
-Items pU CYAN_BANNER
-Items pV PURPLE_BANNER
-Items pW BLUE_BANNER
-Items pX BROWN_BANNER
-Items pY GREEN_BANNER
-Items pZ RED_BANNER
-Items pa POISONOUS_POTATO
-Items pb MAP
-Items pc GOLDEN_CARROT
-Items pd SKELETON_SKULL
-Items pe WITHER_SKELETON_SKULL
-Items pf PLAYER_HEAD
-Items pg ZOMBIE_HEAD
-Items ph CREEPER_HEAD
-Items pi DRAGON_HEAD
-Items pj CARROT_ON_A_STICK
-Items pk WARPED_FUNGUS_ON_A_STICK
-Items pl NETHER_STAR
-Items pm PUMPKIN_PIE
-Items pn FIREWORK_ROCKET
-Items po FIREWORK_STAR
-Items pp ENCHANTED_BOOK
-Items pq NETHER_BRICK
-Items pr QUARTZ
-Items ps TNT_MINECART
-Items pt HOPPER_MINECART
-Items pu PRISMARINE_SHARD
-Items pv PRISMARINE_CRYSTALS
-Items pw RABBIT
-Items px COOKED_RABBIT
-Items py RABBIT_STEW
-Items pz RABBIT_FOOT
-Items qA MUSIC_DISC_BLOCKS
-Items qB MUSIC_DISC_CHIRP
-Items qC MUSIC_DISC_FAR
-Items qD MUSIC_DISC_MALL
-Items qE MUSIC_DISC_MELLOHI
-Items qF MUSIC_DISC_STAL
-Items qG MUSIC_DISC_STRAD
-Items qH MUSIC_DISC_WARD
-Items qI MUSIC_DISC_11
-Items qJ MUSIC_DISC_WAIT
-Items qK MUSIC_DISC_PIGSTEP
-Items qL TRIDENT
-Items qM PHANTOM_MEMBRANE
-Items qN NAUTILUS_SHELL
-Items qO HEART_OF_THE_SEA
-Items qP CROSSBOW
-Items qQ SUSPICIOUS_STEW
-Items qS FLOWER_BANNER_PATTERN
-Items qT CREEPER_BANNER_PATTERN
-Items qU SKULL_BANNER_PATTERN
-Items qV MOJANG_BANNER_PATTERN
-Items qW GLOBE_BANNER_PATTERN
-Items qX PIGLIN_BANNER_PATTERN
-Items qa BLACK_BANNER
-Items qb END_CRYSTAL
-Items qc CHORUS_FRUIT
-Items qd POPPED_CHORUS_FRUIT
-Items qe BEETROOT
-Items qf BEETROOT_SEEDS
-Items qg BEETROOT_SOUP
-Items qh DRAGON_BREATH
-Items qi SPLASH_POTION
-Items qj SPECTRAL_ARROW
-Items qk TIPPED_ARROW
-Items ql LINGERING_POTION
-Items qm SHIELD
-Items qn ELYTRA
-Items qo SPRUCE_BOAT
-Items qp BIRCH_BOAT
-Items qq JUNGLE_BOAT
-Items qr ACACIA_BOAT
-Items qs DARK_OAK_BOAT
-Items qt TOTEM_OF_UNDYING
-Items qu SHULKER_SHELL
-Items qv IRON_NUGGET
-Items qw KNOWLEDGE_BOOK
-Items qx DEBUG_STICK
-Items qy MUSIC_DISC_13
-Items qz MUSIC_DISC_CAT
-Items rl SWEET_BERRIES
-Items rp HONEYCOMB
-Items rs HONEY_BOTTLE
+Items ol PIGLIN_BRUTE_SPAWN_EGG
+Items om PILLAGER_SPAWN_EGG
+Items on POLAR_BEAR_SPAWN_EGG
+Items oo PUFFERFISH_SPAWN_EGG
+Items op RABBIT_SPAWN_EGG
+Items oq RAVAGER_SPAWN_EGG
+Items or SALMON_SPAWN_EGG
+Items os SHEEP_SPAWN_EGG
+Items ot SHULKER_SPAWN_EGG
+Items ou SILVERFISH_SPAWN_EGG
+Items ov SKELETON_SPAWN_EGG
+Items ow SKELETON_HORSE_SPAWN_EGG
+Items ox SLIME_SPAWN_EGG
+Items oy SPIDER_SPAWN_EGG
+Items oz SQUID_SPAWN_EGG
+Items pA RABBIT_FOOT
+Items pB RABBIT_HIDE
+Items pC ARMOR_STAND
+Items pD IRON_HORSE_ARMOR
+Items pE GOLDEN_HORSE_ARMOR
+Items pF DIAMOND_HORSE_ARMOR
+Items pG LEATHER_HORSE_ARMOR
+Items pH LEAD
+Items pI NAME_TAG
+Items pJ COMMAND_BLOCK_MINECART
+Items pK MUTTON
+Items pL COOKED_MUTTON
+Items pM WHITE_BANNER
+Items pN ORANGE_BANNER
+Items pO MAGENTA_BANNER
+Items pP LIGHT_BLUE_BANNER
+Items pQ YELLOW_BANNER
+Items pR LIME_BANNER
+Items pS PINK_BANNER
+Items pT GRAY_BANNER
+Items pU LIGHT_GRAY_BANNER
+Items pV CYAN_BANNER
+Items pW PURPLE_BANNER
+Items pX BLUE_BANNER
+Items pY BROWN_BANNER
+Items pZ GREEN_BANNER
+Items pa BAKED_POTATO
+Items pb POISONOUS_POTATO
+Items pc MAP
+Items pd GOLDEN_CARROT
+Items pe SKELETON_SKULL
+Items pf WITHER_SKELETON_SKULL
+Items pg PLAYER_HEAD
+Items ph ZOMBIE_HEAD
+Items pi CREEPER_HEAD
+Items pj DRAGON_HEAD
+Items pk CARROT_ON_A_STICK
+Items pl WARPED_FUNGUS_ON_A_STICK
+Items pm NETHER_STAR
+Items pn PUMPKIN_PIE
+Items po FIREWORK_ROCKET
+Items pp FIREWORK_STAR
+Items pq ENCHANTED_BOOK
+Items pr NETHER_BRICK
+Items ps QUARTZ
+Items pt TNT_MINECART
+Items pu HOPPER_MINECART
+Items pv PRISMARINE_SHARD
+Items pw PRISMARINE_CRYSTALS
+Items px RABBIT
+Items py COOKED_RABBIT
+Items pz RABBIT_STEW
+Items qA MUSIC_DISC_CAT
+Items qB MUSIC_DISC_BLOCKS
+Items qC MUSIC_DISC_CHIRP
+Items qD MUSIC_DISC_FAR
+Items qE MUSIC_DISC_MALL
+Items qF MUSIC_DISC_MELLOHI
+Items qG MUSIC_DISC_STAL
+Items qH MUSIC_DISC_STRAD
+Items qI MUSIC_DISC_WARD
+Items qJ MUSIC_DISC_11
+Items qK MUSIC_DISC_WAIT
+Items qL MUSIC_DISC_PIGSTEP
+Items qM TRIDENT
+Items qN PHANTOM_MEMBRANE
+Items qO NAUTILUS_SHELL
+Items qP HEART_OF_THE_SEA
+Items qQ CROSSBOW
+Items qR SUSPICIOUS_STEW
+Items qT FLOWER_BANNER_PATTERN
+Items qU CREEPER_BANNER_PATTERN
+Items qV SKULL_BANNER_PATTERN
+Items qW MOJANG_BANNER_PATTERN
+Items qX GLOBE_BANNER_PATTERN
+Items qY PIGLIN_BANNER_PATTERN
+Items qa RED_BANNER
+Items qb BLACK_BANNER
+Items qc END_CRYSTAL
+Items qd CHORUS_FRUIT
+Items qe POPPED_CHORUS_FRUIT
+Items qf BEETROOT
+Items qg BEETROOT_SEEDS
+Items qh BEETROOT_SOUP
+Items qi DRAGON_BREATH
+Items qj SPLASH_POTION
+Items qk SPECTRAL_ARROW
+Items ql TIPPED_ARROW
+Items qm LINGERING_POTION
+Items qn SHIELD
+Items qo ELYTRA
+Items qp SPRUCE_BOAT
+Items qq BIRCH_BOAT
+Items qr JUNGLE_BOAT
+Items qs ACACIA_BOAT
+Items qt DARK_OAK_BOAT
+Items qu TOTEM_OF_UNDYING
+Items qv SHULKER_SHELL
+Items qw IRON_NUGGET
+Items qx KNOWLEDGE_BOOK
+Items qy DEBUG_STICK
+Items qz MUSIC_DISC_13
+Items rm SWEET_BERRIES
+Items rq HONEYCOMB
+Items rt HONEY_BOTTLE
 JsonList a ()[Ljava/lang/String; getEntries
 JsonList a (LJsonListEntry;)V add
 JsonList b (Ljava/lang/Object;)LJsonListEntry; get
@@ -4299,7 +4446,7 @@ JsonListEntry f ()Z hasExpired
 JsonListEntry g ()Ljava/lang/Object; getKey
 LayerIsland a INSTANCE
 LightEngineLayerEventListener$Void a INSTANCE
-LightEngineThreaded A_ ()V queueUpdate
+LightEngineThreaded z_ ()V queueUpdate
 LightEngineThreaded$Update a PRE_UPDATE
 LightEngineThreaded$Update b POST_UPDATE
 LoginListener a networkManager
@@ -4336,11 +4483,11 @@ LootContextParameters b LAST_DAMAGE_PLAYER
 LootContextParameters c DAMAGE_SOURCE
 LootContextParameters d KILLER_ENTITY
 LootContextParameters e DIRECT_KILLER_ENTITY
-LootContextParameters f POSITION
-LootContextParameters h BLOCK_STATE
-LootContextParameters i BLOCK_ENTITY
-LootContextParameters j TOOL
-LootContextParameters k EXPLOSION_RADIUS
+LootContextParameters f ORIGIN
+LootContextParameters g BLOCK_STATE
+LootContextParameters h BLOCK_ENTITY
+LootContextParameters i TOOL
+LootContextParameters j EXPLOSION_RADIUS
 LootEntryAbstract$Serializer a (Lcom/google/gson/JsonObject;LLootEntryAbstract;Lcom/google/gson/JsonSerializationContext;)V serializeType
 LootEntryAbstract$Serializer b (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;[LLootItemCondition;)LLootEntryAbstract; deserializeType
 LootItemFunctionCopyNBT$Action a REPLACE
@@ -4412,24 +4559,25 @@ MapIcon$Type w BANNER_BROWN
 MapIcon$Type x BANNER_GREEN
 MapIcon$Type y BANNER_RED
 MapIcon$Type z BANNER_BLACK
-Material A BAMBOO
-Material B CLOTH
-Material C TNT
-Material D LEAVES
-Material E SHATTERABLE
-Material F ICE
-Material G CACTUS
-Material H STONE
-Material I ORE
-Material J SNOW_BLOCK
-Material K HEAVY
-Material L BANNER
-Material M PISTON
-Material N CORAL
-Material O PUMPKIN
-Material P DRAGON_EGG
-Material Q CAKE
-Material U canBurn
+Material A BAMBOO_SAPLING
+Material B BAMBOO
+Material C CLOTH
+Material D TNT
+Material E LEAVES
+Material F SHATTERABLE
+Material G ICE
+Material H CACTUS
+Material I STONE
+Material J ORE
+Material K SNOW_BLOCK
+Material L HEAVY
+Material M BANNER
+Material N PISTON
+Material O CORAL
+Material P PUMPKIN
+Material Q DRAGON_EGG
+Material R CAKE
+Material V canBurn
 Material a ()Z isLiquid
 Material a AIR
 Material b ()Z isBuildable
@@ -4443,25 +4591,24 @@ Material e PLANT
 Material f WATER_PLANT
 Material g ()LEnumPistonReaction; getPushReaction
 Material g REPLACEABLE_PLANT
-Material h REPLACEABLE_WATER_PLANT
-Material i WATER
-Material j BUBBLE_COLUMN
-Material k LAVA
-Material l PACKED_ICE
-Material m FIRE
-Material n ORIENTABLE
-Material o WEB
-Material p BUILDABLE_GLASS
-Material q CLAY
-Material r EARTH
-Material s GRASS
-Material t SNOW_LAYER
-Material u SAND
-Material v SPONGE
-Material w SHULKER_SHELL
-Material x WOOD
-Material y NETHER_WOOD
-Material z BAMBOO_SAPLING
+Material i REPLACEABLE_WATER_PLANT
+Material j WATER
+Material k BUBBLE_COLUMN
+Material l LAVA
+Material m PACKED_ICE
+Material n FIRE
+Material o ORIENTABLE
+Material p WEB
+Material q BUILDABLE_GLASS
+Material r CLAY
+Material s EARTH
+Material t GRASS
+Material u SNOW_LAYER
+Material v SAND
+Material w SPONGE
+Material x SHULKER_SHELL
+Material y WOOD
+Material z NETHER_WOOD
 MaterialMapColor ai rgb
 MathHelper a (D)F sqrt
 MathHelper a (F)F sin
@@ -4473,7 +4620,7 @@ MemoryModuleType A NEAREST_HOSTILE
 MemoryModuleType B HIDING_PLACE
 MemoryModuleType C HEARD_BELL_TIME
 MemoryModuleType D CANT_REACH_WALK_TARGET_SINCE
-MemoryModuleType E GOLEM_LAST_SEEN_TIME
+MemoryModuleType E GOLEM_DETECTED_RECENTLY
 MemoryModuleType F LAST_SLEPT
 MemoryModuleType G LAST_WOKEN
 MemoryModuleType H LAST_WORKED_AT_POI
@@ -4483,27 +4630,28 @@ MemoryModuleType K NEAREST_VISIBLE_NEMSIS
 MemoryModuleType L ANGRY_AT
 MemoryModuleType M UNIVERSAL_ANGER
 MemoryModuleType N ADMIRING_ITEM
-MemoryModuleType O ADMIRING_DISABLED
-MemoryModuleType P HUNTED_RECENTLY
-MemoryModuleType Q CELEBRATE_LOCATION
-MemoryModuleType R DANCING
-MemoryModuleType S NEAREST_VISIBLE_HUNTABLE_HOGLIN
-MemoryModuleType T NEAREST_VISIBLE_BABY_HOGLIN
-MemoryModuleType U NEAREST_VISIBLE_BABY_PIGLIN
-MemoryModuleType V NEAREST_TARGETABLE_PLAYER_NOT_WEARING_GOLD
-MemoryModuleType W NEAREST_ADULT_PIGLINS
-MemoryModuleType X NEAREST_VISIBLE_ADULT_PIGLINS
-MemoryModuleType Y NEAREST_VISIBLE_ADULT_HOGLINS
-MemoryModuleType Z NEAREST_VISIBLE_ADULT_PIGLIN
+MemoryModuleType O TIME_TRYING_TO_REACH_ADMIRE_ITEM
+MemoryModuleType P DISABLE_WALK_TO_ADMIRE_ITEM
+MemoryModuleType Q ADMIRING_DISABLED
+MemoryModuleType R HUNTED_RECENTLY
+MemoryModuleType S CELEBRATE_LOCATION
+MemoryModuleType T DANCING
+MemoryModuleType U NEAREST_VISIBLE_HUNTABLE_HOGLIN
+MemoryModuleType V NEAREST_VISIBLE_BABY_HOGLIN
+MemoryModuleType W NEAREST_TARGETABLE_PLAYER_NOT_WEARING_GOLD
+MemoryModuleType X NEARBY_ADULT_PIGLINS
+MemoryModuleType Y NEAREST_VISIBLE_ADULT_PIGLINS
+MemoryModuleType Z NEAREST_VISIBLE_ADULT_HOGLINS
 MemoryModuleType a ()Ljava/util/Optional; getSerializer
 MemoryModuleType a DUMMY
-MemoryModuleType aa NEAREST_VISIBLE_ZOMBIFIED
-MemoryModuleType ab VISIBLE_ADULT_PIGLIN_COUNT
-MemoryModuleType ac VISIBLE_ADULT_HOGLIN_COUNT
-MemoryModuleType ad NEAREST_PLAYER_HOLDING_WANTED_ITEM
-MemoryModuleType ae ATE_RECENTLY
-MemoryModuleType af NEAREST_REPELLENT
-MemoryModuleType ag PACIFIED
+MemoryModuleType aa NEAREST_VISIBLE_ADULT_PIGLIN
+MemoryModuleType ab NEAREST_VISIBLE_ZOMBIFIED
+MemoryModuleType ac VISIBLE_ADULT_PIGLIN_COUNT
+MemoryModuleType ad VISIBLE_ADULT_HOGLIN_COUNT
+MemoryModuleType ae NEAREST_PLAYER_HOLDING_WANTED_ITEM
+MemoryModuleType af ATE_RECENTLY
+MemoryModuleType ag NEAREST_REPELLENT
+MemoryModuleType ah PACIFIED
 MemoryModuleType b HOME
 MemoryModuleType c JOB_SITE
 MemoryModuleType d POTENTIAL_JOB_SITE
@@ -4524,7 +4672,7 @@ MemoryModuleType r BREED_TARGET
 MemoryModuleType s RIDE_TARGET
 MemoryModuleType t PATH
 MemoryModuleType u INTERACTABLE_DOORS
-MemoryModuleType v OPENED_DOORS
+MemoryModuleType v DOORS_TO_CLOSE
 MemoryModuleType w NEAREST_BED
 MemoryModuleType x HURT_BY
 MemoryModuleType y HURT_BY_ENTITY
@@ -4715,15 +4863,15 @@ NetworkManager a (LIChatBaseComponent;)V close
 NetworkManager a (LPacket;)V sendPacket
 NetworkManager a (LPacket;Lio/netty/util/concurrent/GenericFutureListener;)V sendPacket
 NetworkManager a (LPacketListener;)V setPacketListener
-NetworkManager b ()Ljava/net/SocketAddress; getSocketAddress
-NetworkManager c ()Z isLocal
-NetworkManager g ()Z isConnected
+NetworkManager c ()Ljava/net/SocketAddress; getSocketAddress
+NetworkManager d ()Z isLocal
+NetworkManager h ()Z isConnected
 NetworkManager i packetQueue
 NetworkManager j channel
-NetworkManager k ()V stopReading
 NetworkManager k socketAddress
-NetworkManager l ()V handleDisconnection
+NetworkManager l ()V stopReading
 NetworkManager l packetListener
+NetworkManager m ()V handleDisconnection
 NibbleArray a ()[B asBytes
 OperatorBoolean a FALSE
 OperatorBoolean b NOT_OR
@@ -4777,8 +4925,6 @@ PacketPlayInFlying e pitch
 PacketPlayInFlying g hasPos
 PacketPlayInFlying h hasLook
 PacketPlayInHeldItemSlot a itemInHandIndex
-PacketPlayInRecipeDisplayed$Status a SHOWN
-PacketPlayInRecipeDisplayed$Status b SETTINGS
 PacketPlayInResourcePackStatus a status
 PacketPlayInResourcePackStatus$EnumResourcePackStatus a SUCCESSFULLY_LOADED
 PacketPlayInResourcePackStatus$EnumResourcePackStatus b DECLINED
@@ -4923,26 +5069,27 @@ PathMode c AIR
 PathType a BLOCKED
 PathType b OPEN
 PathType c WALKABLE
-PathType d TRAPDOOR
-PathType e FENCE
-PathType f LAVA
-PathType g WATER
-PathType h WATER_BORDER
-PathType i RAIL
-PathType j UNPASSABLE_RAIL
-PathType k DANGER_FIRE
-PathType l DAMAGE_FIRE
-PathType m DANGER_CACTUS
-PathType n DAMAGE_CACTUS
-PathType o DANGER_OTHER
-PathType p DAMAGE_OTHER
-PathType q DOOR_OPEN
-PathType r DOOR_WOOD_CLOSED
-PathType s DOOR_IRON_CLOSED
-PathType t BREACH
-PathType u LEAVES
-PathType v STICKY_HONEY
-PathType w COCOA
+PathType d WALKABLE_DOOR
+PathType e TRAPDOOR
+PathType f FENCE
+PathType g LAVA
+PathType h WATER
+PathType i WATER_BORDER
+PathType j RAIL
+PathType k UNPASSABLE_RAIL
+PathType l DANGER_FIRE
+PathType m DAMAGE_FIRE
+PathType n DANGER_CACTUS
+PathType o DAMAGE_CACTUS
+PathType p DANGER_OTHER
+PathType q DAMAGE_OTHER
+PathType r DOOR_OPEN
+PathType s DOOR_WOOD_CLOSED
+PathType t DOOR_IRON_CLOSED
+PathType u BREACH
+PathType v LEAVES
+PathType w STICKY_HONEY
+PathType x COCOA
 PathfinderGoal$Type a MOVE
 PathfinderGoal$Type b LOOK
 PathfinderGoal$Type c JUMP
@@ -4997,11 +5144,10 @@ PlayerChunk l ()Z hasBeenLoaded
 PlayerChunk l oldTicketLevel
 PlayerChunk m ticketLevel
 PlayerChunk o location
-PlayerChunk p dirtyBlocks
-PlayerChunk q dirtyCount
-PlayerChunk u lightEngine
-PlayerChunk w players
-PlayerChunk x hasBeenLoaded
+PlayerChunk q dirtyBlocks
+PlayerChunk t lightEngine
+PlayerChunk v players
+PlayerChunk w hasBeenLoaded
 PlayerChunk$State a (LPlayerChunk$State;)Z isAtLeast
 PlayerChunk$State a INACCESSIBLE
 PlayerChunk$State b BORDER
@@ -5190,8 +5336,8 @@ PointGroupS c P132
 PointGroupS d P231
 PointGroupS e P312
 PointGroupS f P321
-PortalTravelAgent a (LEntity;)Z createPortal
-PortalTravelAgent a (LEntity;F)Z findAndTeleport
+PortalTravelAgent a (LBlockPosition;LEnumDirection$EnumAxis;)Ljava/util/Optional; createPortal
+PortalTravelAgent a (LBlockPosition;Z)Ljava/util/Optional; findPortal
 PortalTravelAgent a world
 PotionUtil a (LItemStack;)Ljava/util/List; getEffects
 Potions A STRONG_HEALING
@@ -5241,11 +5387,11 @@ PropertyManager a (Ljava/lang/String;I)I getInt
 PropertyManager a (Ljava/lang/String;J)J getLong
 PropertyManager a (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; getString
 PropertyManager a (Ljava/lang/String;Z)Z getBoolean
-PropertyManager b (Ljava/nio/file/Path;)Ljava/util/Properties; loadPropertiesFile
-PropertyManager b (Ljava/util/Properties;)LPropertyManager; reload
+PropertyManager a (Ljava/nio/file/Path;)Ljava/util/Properties; loadPropertiesFile
+PropertyManager b (LIRegistryCustom;Ljava/util/Properties;)LPropertyManager; reload
+PropertyManager b (Ljava/nio/file/Path;)V savePropertiesFile
 PropertyManager b properties
-PropertyManager c (Ljava/nio/file/Path;)V savePropertiesFile
-PropertyManager$EditableProperty a (Ljava/lang/Object;)LPropertyManager; set
+PropertyManager$EditableProperty a (LIRegistryCustom;Ljava/lang/Object;)LPropertyManager; set
 Raid d ()Z isStopped
 Raid e ()Z isVictory
 Raid f ()Z isLoss
@@ -5292,7 +5438,14 @@ RayTrace$FluidCollisionOption a NONE
 RayTrace$FluidCollisionOption b SOURCE_ONLY
 RayTrace$FluidCollisionOption c ANY
 RayTrace$FluidCollisionOption d predicate
-RecipeBookServer i ()LNBTTagCompound; save
+RecipeBook a recipes
+RecipeBook b (LMinecraftKey;)Z hasDiscoveredRecipe
+RecipeBook b toBeDisplayed
+RecipeBookServer b ()LNBTTagCompound; save
+RecipeBookType a CRAFTING
+RecipeBookType b FURNACE
+RecipeBookType c BLAST_FURNACE
+RecipeBookType d SMOKER
 RecipeCooking b ()F getExperience
 RecipeCooking b key
 RecipeCooking c group
@@ -5314,11 +5467,11 @@ Recipes d SMOKING
 Recipes e CAMPFIRE_COOKING
 Recipes f STONECUTTING
 Recipes g SMITHING
-RegionFile c dataFile
+RegionFile a freeSectors
 RegionFile close ()V close
 RegionFile d (LChunkCoordIntPair;)Z chunkExists
+RegionFile d dataFile
 RegionFile f (LChunkCoordIntPair;)I getOffset
-RegionFile i freeSectors
 RegionFileCache a (LChunkCoordIntPair;)LNBTTagCompound; read
 RegionFileCache a (LChunkCoordIntPair;LNBTTagCompound;)V write
 RegionFileCache a cache
@@ -5326,6 +5479,7 @@ RegionFileCache b (LChunkCoordIntPair;)LRegionFile; getFile
 Registry a (I)Ljava/lang/Object; fromId
 RegistryBlockID a (I)Ljava/lang/Object; fromId
 RegistryBlockID a (Ljava/lang/Object;)I getId
+RegistryGeneration i WORLDGEN_BIOME
 RegistryID a (I)Ljava/lang/Object; fromId
 RegistryID a (Ljava/lang/Object;)I getId
 RemoteControlCommandListener c buffer
@@ -5345,17 +5499,22 @@ ResourcePackLoader$Position a TOP
 ResourcePackLoader$Position b BOTTOM
 ResourcePackSourceFolder b file
 SaddleStorage a (Z)V setSaddle
+SaddleStorage a boosting
 SaddleStorage b ()Z hasSaddle
-SaveData D ()LNBTTagCompound; getCustomBossEvents
+SaddleStorage b currentBoostTicks
+SaddleStorage c boostTicks
+SaddleStorage d dataWatcher
+SaddleStorage e dataWatcherBoostTicks
+SaveData A ()LGeneratorSettings; getGeneratorSettings
+SaveData E ()LNBTTagCompound; getCustomBossEvents
 SaveData a (LEnumDifficulty;)V setDifficulty
 SaveData a (LEnumGamemode;)V setGameType
 SaveData b (LNBTTagCompound;)V setCustomBossEvents
-SaveData f ()Ljava/lang/String; getName
-SaveData l ()LEnumGamemode; getGameType
-SaveData m ()Z isHardcore
-SaveData r ()LEnumDifficulty; getDifficulty
-SaveData s ()Z isDifficultyLocked
-SaveData z ()LGeneratorSettings; getGeneratorSettings
+SaveData g ()Ljava/lang/String; getName
+SaveData m ()LEnumGamemode; getGameType
+SaveData n ()Z isHardcore
+SaveData s ()LEnumDifficulty; getDifficulty
+SaveData t ()Z isDifficultyLocked
 SavedFile a ADVANCEMENTS
 SavedFile b STATS
 SavedFile c PLAYERDATA
@@ -5465,11 +5624,12 @@ ServerPing a (Ljava/lang/String;)V setFavicon
 ServerPing c ()LServerPing$ServerData; getServerData
 ServerPing$ServerData b ()I getProtocolVersion
 ServerStatisticManager a ()V save
-ShapeDetector$Shape a position
-ShapeDetector$Shape b velocity
-ShapeDetector$Shape c yaw
 ShapeDetector$ShapeDetectorCollection b ()LEnumDirection; getFacing
 ShapeDetectorBlock d ()LBlockPosition; getPosition
+ShapeDetectorShape a position
+ShapeDetectorShape b velocity
+ShapeDetectorShape c yaw
+ShapeDetectorShape d pitch
 ShapedRecipes a width
 ShapedRecipes b height
 ShapedRecipes c items
@@ -6060,32 +6220,32 @@ SoundEffects jx BLOCK_NOTE_BLOCK_PLING
 SoundEffects jy BLOCK_NOTE_BLOCK_SNARE
 SoundEffects jz BLOCK_NOTE_BLOCK_XYLOPHONE
 SoundEffects k AMBIENT_SOUL_SAND_VALLEY_ADDITIONS
-SoundEffects kA ENTITY_PARROT_IMITATE_WITHER
-SoundEffects kB ENTITY_PARROT_IMITATE_WITHER_SKELETON
-SoundEffects kC ENTITY_PARROT_IMITATE_ZOGLIN
-SoundEffects kD ENTITY_PARROT_IMITATE_ZOMBIE
-SoundEffects kE ENTITY_PARROT_IMITATE_ZOMBIE_VILLAGER
-SoundEffects kF ENTITY_PARROT_STEP
-SoundEffects kG ENTITY_PHANTOM_AMBIENT
-SoundEffects kH ENTITY_PHANTOM_BITE
-SoundEffects kI ENTITY_PHANTOM_DEATH
-SoundEffects kJ ENTITY_PHANTOM_FLAP
-SoundEffects kK ENTITY_PHANTOM_HURT
-SoundEffects kL ENTITY_PHANTOM_SWOOP
-SoundEffects kM ENTITY_PIG_AMBIENT
-SoundEffects kN ENTITY_PIG_DEATH
-SoundEffects kO ENTITY_PIG_HURT
-SoundEffects kP ENTITY_PIG_SADDLE
-SoundEffects kQ ENTITY_PIG_STEP
-SoundEffects kR ENTITY_PIGLIN_ADMIRING_ITEM
-SoundEffects kS ENTITY_PIGLIN_AMBIENT
-SoundEffects kT ENTITY_PIGLIN_ANGRY
-SoundEffects kU ENTITY_PIGLIN_CELEBRATE
-SoundEffects kV ENTITY_PIGLIN_DEATH
-SoundEffects kW ENTITY_PIGLIN_JEALOUS
-SoundEffects kX ENTITY_PIGLIN_HURT
-SoundEffects kY ENTITY_PIGLIN_RETREAT
-SoundEffects kZ ENTITY_PIGLIN_STEP
+SoundEffects kA ENTITY_PARROT_IMITATE_WITCH
+SoundEffects kB ENTITY_PARROT_IMITATE_WITHER
+SoundEffects kC ENTITY_PARROT_IMITATE_WITHER_SKELETON
+SoundEffects kD ENTITY_PARROT_IMITATE_ZOGLIN
+SoundEffects kE ENTITY_PARROT_IMITATE_ZOMBIE
+SoundEffects kF ENTITY_PARROT_IMITATE_ZOMBIE_VILLAGER
+SoundEffects kG ENTITY_PARROT_STEP
+SoundEffects kH ENTITY_PHANTOM_AMBIENT
+SoundEffects kI ENTITY_PHANTOM_BITE
+SoundEffects kJ ENTITY_PHANTOM_DEATH
+SoundEffects kK ENTITY_PHANTOM_FLAP
+SoundEffects kL ENTITY_PHANTOM_HURT
+SoundEffects kM ENTITY_PHANTOM_SWOOP
+SoundEffects kN ENTITY_PIG_AMBIENT
+SoundEffects kO ENTITY_PIG_DEATH
+SoundEffects kP ENTITY_PIG_HURT
+SoundEffects kQ ENTITY_PIG_SADDLE
+SoundEffects kR ENTITY_PIG_STEP
+SoundEffects kS ENTITY_PIGLIN_ADMIRING_ITEM
+SoundEffects kT ENTITY_PIGLIN_AMBIENT
+SoundEffects kU ENTITY_PIGLIN_ANGRY
+SoundEffects kV ENTITY_PIGLIN_CELEBRATE
+SoundEffects kW ENTITY_PIGLIN_DEATH
+SoundEffects kX ENTITY_PIGLIN_JEALOUS
+SoundEffects kY ENTITY_PIGLIN_HURT
+SoundEffects kZ ENTITY_PIGLIN_RETREAT
 SoundEffects ka ENTITY_PARROT_IMITATE_BLAZE
 SoundEffects kb ENTITY_PARROT_IMITATE_CREEPER
 SoundEffects kc ENTITY_PARROT_IMITATE_DROWNED
@@ -6101,386 +6261,393 @@ SoundEffects kl ENTITY_PARROT_IMITATE_ILLUSIONER
 SoundEffects km ENTITY_PARROT_IMITATE_MAGMA_CUBE
 SoundEffects kn ENTITY_PARROT_IMITATE_PHANTOM
 SoundEffects ko ENTITY_PARROT_IMITATE_PIGLIN
-SoundEffects kp ENTITY_PARROT_IMITATE_PILLAGER
-SoundEffects kq ENTITY_PARROT_IMITATE_RAVAGER
-SoundEffects kr ENTITY_PARROT_IMITATE_SHULKER
-SoundEffects ks ENTITY_PARROT_IMITATE_SILVERFISH
-SoundEffects kt ENTITY_PARROT_IMITATE_SKELETON
-SoundEffects ku ENTITY_PARROT_IMITATE_SLIME
-SoundEffects kv ENTITY_PARROT_IMITATE_SPIDER
-SoundEffects kw ENTITY_PARROT_IMITATE_STRAY
-SoundEffects kx ENTITY_PARROT_IMITATE_VEX
-SoundEffects ky ENTITY_PARROT_IMITATE_VINDICATOR
-SoundEffects kz ENTITY_PARROT_IMITATE_WITCH
+SoundEffects kp ENTITY_PARROT_IMITATE_PIGLIN_BRUTE
+SoundEffects kq ENTITY_PARROT_IMITATE_PILLAGER
+SoundEffects kr ENTITY_PARROT_IMITATE_RAVAGER
+SoundEffects ks ENTITY_PARROT_IMITATE_SHULKER
+SoundEffects kt ENTITY_PARROT_IMITATE_SILVERFISH
+SoundEffects ku ENTITY_PARROT_IMITATE_SKELETON
+SoundEffects kv ENTITY_PARROT_IMITATE_SLIME
+SoundEffects kw ENTITY_PARROT_IMITATE_SPIDER
+SoundEffects kx ENTITY_PARROT_IMITATE_STRAY
+SoundEffects ky ENTITY_PARROT_IMITATE_VEX
+SoundEffects kz ENTITY_PARROT_IMITATE_VINDICATOR
 SoundEffects l AMBIENT_SOUL_SAND_VALLEY_LOOP
-SoundEffects lA ENTITY_POLAR_BEAR_AMBIENT
-SoundEffects lB ENTITY_POLAR_BEAR_AMBIENT_BABY
-SoundEffects lC ENTITY_POLAR_BEAR_DEATH
-SoundEffects lD ENTITY_POLAR_BEAR_HURT
-SoundEffects lE ENTITY_POLAR_BEAR_STEP
-SoundEffects lF ENTITY_POLAR_BEAR_WARNING
-SoundEffects lG BLOCK_PORTAL_AMBIENT
-SoundEffects lH BLOCK_PORTAL_TRAVEL
-SoundEffects lI BLOCK_PORTAL_TRIGGER
-SoundEffects lJ ENTITY_PUFFER_FISH_AMBIENT
-SoundEffects lK ENTITY_PUFFER_FISH_BLOW_OUT
-SoundEffects lL ENTITY_PUFFER_FISH_BLOW_UP
-SoundEffects lM ENTITY_PUFFER_FISH_DEATH
-SoundEffects lN ENTITY_PUFFER_FISH_FLOP
-SoundEffects lO ENTITY_PUFFER_FISH_HURT
-SoundEffects lP ENTITY_PUFFER_FISH_STING
-SoundEffects lQ BLOCK_PUMPKIN_CARVE
-SoundEffects lR ENTITY_RABBIT_AMBIENT
-SoundEffects lS ENTITY_RABBIT_ATTACK
-SoundEffects lT ENTITY_RABBIT_DEATH
-SoundEffects lU ENTITY_RABBIT_HURT
-SoundEffects lV ENTITY_RABBIT_JUMP
-SoundEffects lW EVENT_RAID_HORN
-SoundEffects lX ENTITY_RAVAGER_AMBIENT
-SoundEffects lY ENTITY_RAVAGER_ATTACK
-SoundEffects lZ ENTITY_RAVAGER_CELEBRATE
-SoundEffects la ENTITY_PIGLIN_CONVERTED_TO_ZOMBIFIED
-SoundEffects lb ENTITY_PILLAGER_AMBIENT
-SoundEffects lc ENTITY_PILLAGER_CELEBRATE
-SoundEffects ld ENTITY_PILLAGER_DEATH
-SoundEffects le ENTITY_PILLAGER_HURT
-SoundEffects lf BLOCK_PISTON_CONTRACT
-SoundEffects lg BLOCK_PISTON_EXTEND
-SoundEffects lh ENTITY_PLAYER_ATTACK_CRIT
-SoundEffects li ENTITY_PLAYER_ATTACK_KNOCKBACK
-SoundEffects lj ENTITY_PLAYER_ATTACK_NODAMAGE
-SoundEffects lk ENTITY_PLAYER_ATTACK_STRONG
-SoundEffects ll ENTITY_PLAYER_ATTACK_SWEEP
-SoundEffects lm ENTITY_PLAYER_ATTACK_WEAK
-SoundEffects ln ENTITY_PLAYER_BIG_FALL
-SoundEffects lo ENTITY_PLAYER_BREATH
-SoundEffects lp ENTITY_PLAYER_BURP
-SoundEffects lq ENTITY_PLAYER_DEATH
-SoundEffects lr ENTITY_PLAYER_HURT
-SoundEffects ls ENTITY_PLAYER_HURT_DROWN
-SoundEffects lt ENTITY_PLAYER_HURT_ON_FIRE
-SoundEffects lu ENTITY_PLAYER_HURT_SWEET_BERRY_BUSH
-SoundEffects lv ENTITY_PLAYER_LEVELUP
-SoundEffects lw ENTITY_PLAYER_SMALL_FALL
-SoundEffects lx ENTITY_PLAYER_SPLASH
-SoundEffects ly ENTITY_PLAYER_SPLASH_HIGH_SPEED
-SoundEffects lz ENTITY_PLAYER_SWIM
+SoundEffects lA ENTITY_PLAYER_HURT_ON_FIRE
+SoundEffects lB ENTITY_PLAYER_HURT_SWEET_BERRY_BUSH
+SoundEffects lC ENTITY_PLAYER_LEVELUP
+SoundEffects lD ENTITY_PLAYER_SMALL_FALL
+SoundEffects lE ENTITY_PLAYER_SPLASH
+SoundEffects lF ENTITY_PLAYER_SPLASH_HIGH_SPEED
+SoundEffects lG ENTITY_PLAYER_SWIM
+SoundEffects lH ENTITY_POLAR_BEAR_AMBIENT
+SoundEffects lI ENTITY_POLAR_BEAR_AMBIENT_BABY
+SoundEffects lJ ENTITY_POLAR_BEAR_DEATH
+SoundEffects lK ENTITY_POLAR_BEAR_HURT
+SoundEffects lL ENTITY_POLAR_BEAR_STEP
+SoundEffects lM ENTITY_POLAR_BEAR_WARNING
+SoundEffects lN BLOCK_PORTAL_AMBIENT
+SoundEffects lO BLOCK_PORTAL_TRAVEL
+SoundEffects lP BLOCK_PORTAL_TRIGGER
+SoundEffects lQ ENTITY_PUFFER_FISH_AMBIENT
+SoundEffects lR ENTITY_PUFFER_FISH_BLOW_OUT
+SoundEffects lS ENTITY_PUFFER_FISH_BLOW_UP
+SoundEffects lT ENTITY_PUFFER_FISH_DEATH
+SoundEffects lU ENTITY_PUFFER_FISH_FLOP
+SoundEffects lV ENTITY_PUFFER_FISH_HURT
+SoundEffects lW ENTITY_PUFFER_FISH_STING
+SoundEffects lX BLOCK_PUMPKIN_CARVE
+SoundEffects lY ENTITY_RABBIT_AMBIENT
+SoundEffects lZ ENTITY_RABBIT_ATTACK
+SoundEffects la ENTITY_PIGLIN_STEP
+SoundEffects lb ENTITY_PIGLIN_CONVERTED_TO_ZOMBIFIED
+SoundEffects lc ENTITY_PIGLIN_BRUTE_AMBIENT
+SoundEffects ld ENTITY_PIGLIN_BRUTE_ANGRY
+SoundEffects le ENTITY_PIGLIN_BRUTE_DEATH
+SoundEffects lf ENTITY_PIGLIN_BRUTE_HURT
+SoundEffects lg ENTITY_PIGLIN_BRUTE_STEP
+SoundEffects lh ENTITY_PIGLIN_BRUTE_CONVERTED_TO_ZOMBIFIED
+SoundEffects li ENTITY_PILLAGER_AMBIENT
+SoundEffects lj ENTITY_PILLAGER_CELEBRATE
+SoundEffects lk ENTITY_PILLAGER_DEATH
+SoundEffects ll ENTITY_PILLAGER_HURT
+SoundEffects lm BLOCK_PISTON_CONTRACT
+SoundEffects ln BLOCK_PISTON_EXTEND
+SoundEffects lo ENTITY_PLAYER_ATTACK_CRIT
+SoundEffects lp ENTITY_PLAYER_ATTACK_KNOCKBACK
+SoundEffects lq ENTITY_PLAYER_ATTACK_NODAMAGE
+SoundEffects lr ENTITY_PLAYER_ATTACK_STRONG
+SoundEffects ls ENTITY_PLAYER_ATTACK_SWEEP
+SoundEffects lt ENTITY_PLAYER_ATTACK_WEAK
+SoundEffects lu ENTITY_PLAYER_BIG_FALL
+SoundEffects lv ENTITY_PLAYER_BREATH
+SoundEffects lw ENTITY_PLAYER_BURP
+SoundEffects lx ENTITY_PLAYER_DEATH
+SoundEffects ly ENTITY_PLAYER_HURT
+SoundEffects lz ENTITY_PLAYER_HURT_DROWN
 SoundEffects m AMBIENT_SOUL_SAND_VALLEY_MOOD
-SoundEffects mA BLOCK_SAND_HIT
-SoundEffects mB BLOCK_SAND_PLACE
-SoundEffects mC BLOCK_SAND_STEP
-SoundEffects mD BLOCK_SCAFFOLDING_BREAK
-SoundEffects mE BLOCK_SCAFFOLDING_FALL
-SoundEffects mF BLOCK_SCAFFOLDING_HIT
-SoundEffects mG BLOCK_SCAFFOLDING_PLACE
-SoundEffects mH BLOCK_SCAFFOLDING_STEP
-SoundEffects mI ENTITY_SHEEP_AMBIENT
-SoundEffects mJ ENTITY_SHEEP_DEATH
-SoundEffects mK ENTITY_SHEEP_HURT
-SoundEffects mL ENTITY_SHEEP_SHEAR
-SoundEffects mM ENTITY_SHEEP_STEP
-SoundEffects mN ITEM_SHIELD_BLOCK
-SoundEffects mO ITEM_SHIELD_BREAK
-SoundEffects mP BLOCK_SHROOMLIGHT_BREAK
-SoundEffects mQ BLOCK_SHROOMLIGHT_STEP
-SoundEffects mR BLOCK_SHROOMLIGHT_PLACE
-SoundEffects mS BLOCK_SHROOMLIGHT_HIT
-SoundEffects mT BLOCK_SHROOMLIGHT_FALL
-SoundEffects mU ITEM_SHOVEL_FLATTEN
-SoundEffects mV ENTITY_SHULKER_AMBIENT
-SoundEffects mW BLOCK_SHULKER_BOX_CLOSE
-SoundEffects mX BLOCK_SHULKER_BOX_OPEN
-SoundEffects mY ENTITY_SHULKER_BULLET_HIT
-SoundEffects mZ ENTITY_SHULKER_BULLET_HURT
-SoundEffects ma ENTITY_RAVAGER_DEATH
-SoundEffects mb ENTITY_RAVAGER_HURT
-SoundEffects mc ENTITY_RAVAGER_STEP
-SoundEffects md ENTITY_RAVAGER_STUNNED
-SoundEffects me ENTITY_RAVAGER_ROAR
-SoundEffects mf BLOCK_NETHER_GOLD_ORE_BREAK
-SoundEffects mg BLOCK_NETHER_GOLD_ORE_FALL
-SoundEffects mh BLOCK_NETHER_GOLD_ORE_HIT
-SoundEffects mi BLOCK_NETHER_GOLD_ORE_PLACE
-SoundEffects mj BLOCK_NETHER_GOLD_ORE_STEP
-SoundEffects mk BLOCK_NETHER_ORE_BREAK
-SoundEffects ml BLOCK_NETHER_ORE_FALL
-SoundEffects mm BLOCK_NETHER_ORE_HIT
-SoundEffects mn BLOCK_NETHER_ORE_PLACE
-SoundEffects mo BLOCK_NETHER_ORE_STEP
-SoundEffects mp BLOCK_REDSTONE_TORCH_BURNOUT
-SoundEffects mq BLOCK_RESPAWN_ANCHOR_AMBIENT
-SoundEffects mr BLOCK_RESPAWN_ANCHOR_CHARGE
-SoundEffects ms BLOCK_RESPAWN_ANCHOR_DEPLETE
-SoundEffects mt BLOCK_RESPAWN_ANCHOR_SET_SPAWN
-SoundEffects mu ENTITY_SALMON_AMBIENT
-SoundEffects mv ENTITY_SALMON_DEATH
-SoundEffects mw ENTITY_SALMON_FLOP
-SoundEffects mx ENTITY_SALMON_HURT
-SoundEffects my BLOCK_SAND_BREAK
-SoundEffects mz BLOCK_SAND_FALL
+SoundEffects mA BLOCK_RESPAWN_ANCHOR_SET_SPAWN
+SoundEffects mB ENTITY_SALMON_AMBIENT
+SoundEffects mC ENTITY_SALMON_DEATH
+SoundEffects mD ENTITY_SALMON_FLOP
+SoundEffects mE ENTITY_SALMON_HURT
+SoundEffects mF BLOCK_SAND_BREAK
+SoundEffects mG BLOCK_SAND_FALL
+SoundEffects mH BLOCK_SAND_HIT
+SoundEffects mI BLOCK_SAND_PLACE
+SoundEffects mJ BLOCK_SAND_STEP
+SoundEffects mK BLOCK_SCAFFOLDING_BREAK
+SoundEffects mL BLOCK_SCAFFOLDING_FALL
+SoundEffects mM BLOCK_SCAFFOLDING_HIT
+SoundEffects mN BLOCK_SCAFFOLDING_PLACE
+SoundEffects mO BLOCK_SCAFFOLDING_STEP
+SoundEffects mP ENTITY_SHEEP_AMBIENT
+SoundEffects mQ ENTITY_SHEEP_DEATH
+SoundEffects mR ENTITY_SHEEP_HURT
+SoundEffects mS ENTITY_SHEEP_SHEAR
+SoundEffects mT ENTITY_SHEEP_STEP
+SoundEffects mU ITEM_SHIELD_BLOCK
+SoundEffects mV ITEM_SHIELD_BREAK
+SoundEffects mW BLOCK_SHROOMLIGHT_BREAK
+SoundEffects mX BLOCK_SHROOMLIGHT_STEP
+SoundEffects mY BLOCK_SHROOMLIGHT_PLACE
+SoundEffects mZ BLOCK_SHROOMLIGHT_HIT
+SoundEffects ma ENTITY_RABBIT_DEATH
+SoundEffects mb ENTITY_RABBIT_HURT
+SoundEffects mc ENTITY_RABBIT_JUMP
+SoundEffects md EVENT_RAID_HORN
+SoundEffects me ENTITY_RAVAGER_AMBIENT
+SoundEffects mf ENTITY_RAVAGER_ATTACK
+SoundEffects mg ENTITY_RAVAGER_CELEBRATE
+SoundEffects mh ENTITY_RAVAGER_DEATH
+SoundEffects mi ENTITY_RAVAGER_HURT
+SoundEffects mj ENTITY_RAVAGER_STEP
+SoundEffects mk ENTITY_RAVAGER_STUNNED
+SoundEffects ml ENTITY_RAVAGER_ROAR
+SoundEffects mm BLOCK_NETHER_GOLD_ORE_BREAK
+SoundEffects mn BLOCK_NETHER_GOLD_ORE_FALL
+SoundEffects mo BLOCK_NETHER_GOLD_ORE_HIT
+SoundEffects mp BLOCK_NETHER_GOLD_ORE_PLACE
+SoundEffects mq BLOCK_NETHER_GOLD_ORE_STEP
+SoundEffects mr BLOCK_NETHER_ORE_BREAK
+SoundEffects ms BLOCK_NETHER_ORE_FALL
+SoundEffects mt BLOCK_NETHER_ORE_HIT
+SoundEffects mu BLOCK_NETHER_ORE_PLACE
+SoundEffects mv BLOCK_NETHER_ORE_STEP
+SoundEffects mw BLOCK_REDSTONE_TORCH_BURNOUT
+SoundEffects mx BLOCK_RESPAWN_ANCHOR_AMBIENT
+SoundEffects my BLOCK_RESPAWN_ANCHOR_CHARGE
+SoundEffects mz BLOCK_RESPAWN_ANCHOR_DEPLETE
 SoundEffects n AMBIENT_WARPED_FOREST_ADDITIONS
-SoundEffects nA ENTITY_SLIME_HURT
-SoundEffects nB ENTITY_SLIME_JUMP
-SoundEffects nC ENTITY_SLIME_SQUISH
-SoundEffects nD BLOCK_SLIME_BLOCK_BREAK
-SoundEffects nE BLOCK_SLIME_BLOCK_FALL
-SoundEffects nF BLOCK_SLIME_BLOCK_HIT
-SoundEffects nG BLOCK_SLIME_BLOCK_PLACE
-SoundEffects nH BLOCK_SLIME_BLOCK_STEP
-SoundEffects nI BLOCK_SOUL_SAND_BREAK
-SoundEffects nJ BLOCK_SOUL_SAND_STEP
-SoundEffects nK BLOCK_SOUL_SAND_PLACE
-SoundEffects nL BLOCK_SOUL_SAND_HIT
-SoundEffects nM BLOCK_SOUL_SAND_FALL
-SoundEffects nN BLOCK_SOUL_SOIL_BREAK
-SoundEffects nO BLOCK_SOUL_SOIL_STEP
-SoundEffects nP BLOCK_SOUL_SOIL_PLACE
-SoundEffects nQ BLOCK_SOUL_SOIL_HIT
-SoundEffects nR BLOCK_SOUL_SOIL_FALL
-SoundEffects nS PARTICLE_SOUL_ESCAPE
-SoundEffects nT ENTITY_STRIDER_AMBIENT
-SoundEffects nU ENTITY_STRIDER_HAPPY
-SoundEffects nV ENTITY_STRIDER_RETREAT
-SoundEffects nW ENTITY_STRIDER_DEATH
-SoundEffects nX ENTITY_STRIDER_HURT
-SoundEffects nY ENTITY_STRIDER_STEP
-SoundEffects nZ ENTITY_STRIDER_STEP_LAVA
-SoundEffects na ENTITY_SHULKER_CLOSE
-SoundEffects nb ENTITY_SHULKER_DEATH
-SoundEffects nc ENTITY_SHULKER_HURT
-SoundEffects nd ENTITY_SHULKER_HURT_CLOSED
-SoundEffects ne ENTITY_SHULKER_OPEN
-SoundEffects nf ENTITY_SHULKER_SHOOT
-SoundEffects ng ENTITY_SHULKER_TELEPORT
-SoundEffects nh ENTITY_SILVERFISH_AMBIENT
-SoundEffects ni ENTITY_SILVERFISH_DEATH
-SoundEffects nj ENTITY_SILVERFISH_HURT
-SoundEffects nk ENTITY_SILVERFISH_STEP
-SoundEffects nl ENTITY_SKELETON_AMBIENT
-SoundEffects nm ENTITY_SKELETON_DEATH
-SoundEffects nn ENTITY_SKELETON_HORSE_AMBIENT
-SoundEffects no ENTITY_SKELETON_HORSE_DEATH
-SoundEffects np ENTITY_SKELETON_HORSE_HURT
-SoundEffects nq ENTITY_SKELETON_HORSE_SWIM
-SoundEffects nr ENTITY_SKELETON_HORSE_AMBIENT_WATER
-SoundEffects ns ENTITY_SKELETON_HORSE_GALLOP_WATER
-SoundEffects nt ENTITY_SKELETON_HORSE_JUMP_WATER
-SoundEffects nu ENTITY_SKELETON_HORSE_STEP_WATER
-SoundEffects nv ENTITY_SKELETON_HURT
-SoundEffects nw ENTITY_SKELETON_SHOOT
-SoundEffects nx ENTITY_SKELETON_STEP
-SoundEffects ny ENTITY_SLIME_ATTACK
-SoundEffects nz ENTITY_SLIME_DEATH
+SoundEffects nA ENTITY_SKELETON_HORSE_JUMP_WATER
+SoundEffects nB ENTITY_SKELETON_HORSE_STEP_WATER
+SoundEffects nC ENTITY_SKELETON_HURT
+SoundEffects nD ENTITY_SKELETON_SHOOT
+SoundEffects nE ENTITY_SKELETON_STEP
+SoundEffects nF ENTITY_SLIME_ATTACK
+SoundEffects nG ENTITY_SLIME_DEATH
+SoundEffects nH ENTITY_SLIME_HURT
+SoundEffects nI ENTITY_SLIME_JUMP
+SoundEffects nJ ENTITY_SLIME_SQUISH
+SoundEffects nK BLOCK_SLIME_BLOCK_BREAK
+SoundEffects nL BLOCK_SLIME_BLOCK_FALL
+SoundEffects nM BLOCK_SLIME_BLOCK_HIT
+SoundEffects nN BLOCK_SLIME_BLOCK_PLACE
+SoundEffects nO BLOCK_SLIME_BLOCK_STEP
+SoundEffects nP BLOCK_SOUL_SAND_BREAK
+SoundEffects nQ BLOCK_SOUL_SAND_STEP
+SoundEffects nR BLOCK_SOUL_SAND_PLACE
+SoundEffects nS BLOCK_SOUL_SAND_HIT
+SoundEffects nT BLOCK_SOUL_SAND_FALL
+SoundEffects nU BLOCK_SOUL_SOIL_BREAK
+SoundEffects nV BLOCK_SOUL_SOIL_STEP
+SoundEffects nW BLOCK_SOUL_SOIL_PLACE
+SoundEffects nX BLOCK_SOUL_SOIL_HIT
+SoundEffects nY BLOCK_SOUL_SOIL_FALL
+SoundEffects nZ PARTICLE_SOUL_ESCAPE
+SoundEffects na BLOCK_SHROOMLIGHT_FALL
+SoundEffects nb ITEM_SHOVEL_FLATTEN
+SoundEffects nc ENTITY_SHULKER_AMBIENT
+SoundEffects nd BLOCK_SHULKER_BOX_CLOSE
+SoundEffects ne BLOCK_SHULKER_BOX_OPEN
+SoundEffects nf ENTITY_SHULKER_BULLET_HIT
+SoundEffects ng ENTITY_SHULKER_BULLET_HURT
+SoundEffects nh ENTITY_SHULKER_CLOSE
+SoundEffects ni ENTITY_SHULKER_DEATH
+SoundEffects nj ENTITY_SHULKER_HURT
+SoundEffects nk ENTITY_SHULKER_HURT_CLOSED
+SoundEffects nl ENTITY_SHULKER_OPEN
+SoundEffects nm ENTITY_SHULKER_SHOOT
+SoundEffects nn ENTITY_SHULKER_TELEPORT
+SoundEffects no ENTITY_SILVERFISH_AMBIENT
+SoundEffects np ENTITY_SILVERFISH_DEATH
+SoundEffects nq ENTITY_SILVERFISH_HURT
+SoundEffects nr ENTITY_SILVERFISH_STEP
+SoundEffects ns ENTITY_SKELETON_AMBIENT
+SoundEffects nt ENTITY_SKELETON_DEATH
+SoundEffects nu ENTITY_SKELETON_HORSE_AMBIENT
+SoundEffects nv ENTITY_SKELETON_HORSE_DEATH
+SoundEffects nw ENTITY_SKELETON_HORSE_HURT
+SoundEffects nx ENTITY_SKELETON_HORSE_SWIM
+SoundEffects ny ENTITY_SKELETON_HORSE_AMBIENT_WATER
+SoundEffects nz ENTITY_SKELETON_HORSE_GALLOP_WATER
 SoundEffects o AMBIENT_WARPED_FOREST_LOOP
-SoundEffects oA ENTITY_SQUID_DEATH
-SoundEffects oB ENTITY_SQUID_HURT
-SoundEffects oC ENTITY_SQUID_SQUIRT
-SoundEffects oD BLOCK_STONE_BREAK
-SoundEffects oE BLOCK_STONE_BUTTON_CLICK_OFF
-SoundEffects oF BLOCK_STONE_BUTTON_CLICK_ON
-SoundEffects oG BLOCK_STONE_FALL
-SoundEffects oH BLOCK_STONE_HIT
-SoundEffects oI BLOCK_STONE_PLACE
-SoundEffects oJ BLOCK_STONE_PRESSURE_PLATE_CLICK_OFF
-SoundEffects oK BLOCK_STONE_PRESSURE_PLATE_CLICK_ON
-SoundEffects oL BLOCK_STONE_STEP
-SoundEffects oM ENTITY_STRAY_AMBIENT
-SoundEffects oN ENTITY_STRAY_DEATH
-SoundEffects oO ENTITY_STRAY_HURT
-SoundEffects oP ENTITY_STRAY_STEP
-SoundEffects oQ BLOCK_SWEET_BERRY_BUSH_BREAK
-SoundEffects oR BLOCK_SWEET_BERRY_BUSH_PLACE
-SoundEffects oS ITEM_SWEET_BERRIES_PICK_FROM_BUSH
-SoundEffects oT ENCHANT_THORNS_HIT
-SoundEffects oU ENTITY_TNT_PRIMED
-SoundEffects oV ITEM_TOTEM_USE
-SoundEffects oW ITEM_TRIDENT_HIT
-SoundEffects oX ITEM_TRIDENT_HIT_GROUND
-SoundEffects oY ITEM_TRIDENT_RETURN
-SoundEffects oZ ITEM_TRIDENT_RIPTIDE_1
-SoundEffects oa ENTITY_STRIDER_EAT
-SoundEffects ob ENTITY_STRIDER_SADDLE
-SoundEffects oc ENTITY_SLIME_DEATH_SMALL
-SoundEffects od ENTITY_SLIME_HURT_SMALL
-SoundEffects oe ENTITY_SLIME_JUMP_SMALL
-SoundEffects of ENTITY_SLIME_SQUISH_SMALL
-SoundEffects og BLOCK_SMITHING_TABLE_USE
-SoundEffects oh BLOCK_SMOKER_SMOKE
-SoundEffects oi ENTITY_SNOWBALL_THROW
-SoundEffects oj BLOCK_SNOW_BREAK
-SoundEffects ok BLOCK_SNOW_FALL
-SoundEffects ol ENTITY_SNOW_GOLEM_AMBIENT
-SoundEffects om ENTITY_SNOW_GOLEM_DEATH
-SoundEffects on ENTITY_SNOW_GOLEM_HURT
-SoundEffects oo ENTITY_SNOW_GOLEM_SHOOT
-SoundEffects op ENTITY_SNOW_GOLEM_SHEAR
-SoundEffects oq BLOCK_SNOW_HIT
-SoundEffects or BLOCK_SNOW_PLACE
-SoundEffects os BLOCK_SNOW_STEP
-SoundEffects ot ENTITY_SPIDER_AMBIENT
-SoundEffects ou ENTITY_SPIDER_DEATH
-SoundEffects ov ENTITY_SPIDER_HURT
-SoundEffects ow ENTITY_SPIDER_STEP
-SoundEffects ox ENTITY_SPLASH_POTION_BREAK
-SoundEffects oy ENTITY_SPLASH_POTION_THROW
-SoundEffects oz ENTITY_SQUID_AMBIENT
+SoundEffects oA ENTITY_SPIDER_AMBIENT
+SoundEffects oB ENTITY_SPIDER_DEATH
+SoundEffects oC ENTITY_SPIDER_HURT
+SoundEffects oD ENTITY_SPIDER_STEP
+SoundEffects oE ENTITY_SPLASH_POTION_BREAK
+SoundEffects oF ENTITY_SPLASH_POTION_THROW
+SoundEffects oG ENTITY_SQUID_AMBIENT
+SoundEffects oH ENTITY_SQUID_DEATH
+SoundEffects oI ENTITY_SQUID_HURT
+SoundEffects oJ ENTITY_SQUID_SQUIRT
+SoundEffects oK BLOCK_STONE_BREAK
+SoundEffects oL BLOCK_STONE_BUTTON_CLICK_OFF
+SoundEffects oM BLOCK_STONE_BUTTON_CLICK_ON
+SoundEffects oN BLOCK_STONE_FALL
+SoundEffects oO BLOCK_STONE_HIT
+SoundEffects oP BLOCK_STONE_PLACE
+SoundEffects oQ BLOCK_STONE_PRESSURE_PLATE_CLICK_OFF
+SoundEffects oR BLOCK_STONE_PRESSURE_PLATE_CLICK_ON
+SoundEffects oS BLOCK_STONE_STEP
+SoundEffects oT ENTITY_STRAY_AMBIENT
+SoundEffects oU ENTITY_STRAY_DEATH
+SoundEffects oV ENTITY_STRAY_HURT
+SoundEffects oW ENTITY_STRAY_STEP
+SoundEffects oX BLOCK_SWEET_BERRY_BUSH_BREAK
+SoundEffects oY BLOCK_SWEET_BERRY_BUSH_PLACE
+SoundEffects oZ ITEM_SWEET_BERRIES_PICK_FROM_BUSH
+SoundEffects oa ENTITY_STRIDER_AMBIENT
+SoundEffects ob ENTITY_STRIDER_HAPPY
+SoundEffects oc ENTITY_STRIDER_RETREAT
+SoundEffects od ENTITY_STRIDER_DEATH
+SoundEffects oe ENTITY_STRIDER_HURT
+SoundEffects of ENTITY_STRIDER_STEP
+SoundEffects og ENTITY_STRIDER_STEP_LAVA
+SoundEffects oh ENTITY_STRIDER_EAT
+SoundEffects oi ENTITY_STRIDER_SADDLE
+SoundEffects oj ENTITY_SLIME_DEATH_SMALL
+SoundEffects ok ENTITY_SLIME_HURT_SMALL
+SoundEffects ol ENTITY_SLIME_JUMP_SMALL
+SoundEffects om ENTITY_SLIME_SQUISH_SMALL
+SoundEffects on BLOCK_SMITHING_TABLE_USE
+SoundEffects oo BLOCK_SMOKER_SMOKE
+SoundEffects op ENTITY_SNOWBALL_THROW
+SoundEffects oq BLOCK_SNOW_BREAK
+SoundEffects or BLOCK_SNOW_FALL
+SoundEffects os ENTITY_SNOW_GOLEM_AMBIENT
+SoundEffects ot ENTITY_SNOW_GOLEM_DEATH
+SoundEffects ou ENTITY_SNOW_GOLEM_HURT
+SoundEffects ov ENTITY_SNOW_GOLEM_SHOOT
+SoundEffects ow ENTITY_SNOW_GOLEM_SHEAR
+SoundEffects ox BLOCK_SNOW_HIT
+SoundEffects oy BLOCK_SNOW_PLACE
+SoundEffects oz BLOCK_SNOW_STEP
 SoundEffects p AMBIENT_WARPED_FOREST_MOOD
-SoundEffects pA UI_LOOM_TAKE_RESULT
-SoundEffects pB UI_CARTOGRAPHY_TABLE_TAKE_RESULT
-SoundEffects pC UI_STONECUTTER_TAKE_RESULT
-SoundEffects pD UI_STONECUTTER_SELECT_RECIPE
-SoundEffects pE UI_TOAST_CHALLENGE_COMPLETE
-SoundEffects pF UI_TOAST_IN
-SoundEffects pG UI_TOAST_OUT
-SoundEffects pH ENTITY_VEX_AMBIENT
-SoundEffects pI ENTITY_VEX_CHARGE
-SoundEffects pJ ENTITY_VEX_DEATH
-SoundEffects pK ENTITY_VEX_HURT
-SoundEffects pL ENTITY_VILLAGER_AMBIENT
-SoundEffects pM ENTITY_VILLAGER_CELEBRATE
-SoundEffects pN ENTITY_VILLAGER_DEATH
-SoundEffects pO ENTITY_VILLAGER_HURT
-SoundEffects pP ENTITY_VILLAGER_NO
-SoundEffects pQ ENTITY_VILLAGER_TRADE
-SoundEffects pR ENTITY_VILLAGER_YES
-SoundEffects pS ENTITY_VILLAGER_WORK_ARMORER
-SoundEffects pT ENTITY_VILLAGER_WORK_BUTCHER
-SoundEffects pU ENTITY_VILLAGER_WORK_CARTOGRAPHER
-SoundEffects pV ENTITY_VILLAGER_WORK_CLERIC
-SoundEffects pW ENTITY_VILLAGER_WORK_FARMER
-SoundEffects pX ENTITY_VILLAGER_WORK_FISHERMAN
-SoundEffects pY ENTITY_VILLAGER_WORK_FLETCHER
-SoundEffects pZ ENTITY_VILLAGER_WORK_LEATHERWORKER
-SoundEffects pa ITEM_TRIDENT_RIPTIDE_2
-SoundEffects pb ITEM_TRIDENT_RIPTIDE_3
-SoundEffects pc ITEM_TRIDENT_THROW
-SoundEffects pd ITEM_TRIDENT_THUNDER
-SoundEffects pe BLOCK_TRIPWIRE_ATTACH
-SoundEffects pf BLOCK_TRIPWIRE_CLICK_OFF
-SoundEffects pg BLOCK_TRIPWIRE_CLICK_ON
-SoundEffects ph BLOCK_TRIPWIRE_DETACH
-SoundEffects pi ENTITY_TROPICAL_FISH_AMBIENT
-SoundEffects pj ENTITY_TROPICAL_FISH_DEATH
-SoundEffects pk ENTITY_TROPICAL_FISH_FLOP
-SoundEffects pl ENTITY_TROPICAL_FISH_HURT
-SoundEffects pm ENTITY_TURTLE_AMBIENT_LAND
-SoundEffects pn ENTITY_TURTLE_DEATH
-SoundEffects po ENTITY_TURTLE_DEATH_BABY
-SoundEffects pp ENTITY_TURTLE_EGG_BREAK
-SoundEffects pq ENTITY_TURTLE_EGG_CRACK
-SoundEffects pr ENTITY_TURTLE_EGG_HATCH
-SoundEffects ps ENTITY_TURTLE_HURT
-SoundEffects pt ENTITY_TURTLE_HURT_BABY
-SoundEffects pu ENTITY_TURTLE_LAY_EGG
-SoundEffects pv ENTITY_TURTLE_SHAMBLE
-SoundEffects pw ENTITY_TURTLE_SHAMBLE_BABY
-SoundEffects px ENTITY_TURTLE_SWIM
-SoundEffects py UI_BUTTON_CLICK
-SoundEffects pz UI_LOOM_SELECT_PATTERN
+SoundEffects pA ENTITY_TURTLE_HURT_BABY
+SoundEffects pB ENTITY_TURTLE_LAY_EGG
+SoundEffects pC ENTITY_TURTLE_SHAMBLE
+SoundEffects pD ENTITY_TURTLE_SHAMBLE_BABY
+SoundEffects pE ENTITY_TURTLE_SWIM
+SoundEffects pF UI_BUTTON_CLICK
+SoundEffects pG UI_LOOM_SELECT_PATTERN
+SoundEffects pH UI_LOOM_TAKE_RESULT
+SoundEffects pI UI_CARTOGRAPHY_TABLE_TAKE_RESULT
+SoundEffects pJ UI_STONECUTTER_TAKE_RESULT
+SoundEffects pK UI_STONECUTTER_SELECT_RECIPE
+SoundEffects pL UI_TOAST_CHALLENGE_COMPLETE
+SoundEffects pM UI_TOAST_IN
+SoundEffects pN UI_TOAST_OUT
+SoundEffects pO ENTITY_VEX_AMBIENT
+SoundEffects pP ENTITY_VEX_CHARGE
+SoundEffects pQ ENTITY_VEX_DEATH
+SoundEffects pR ENTITY_VEX_HURT
+SoundEffects pS ENTITY_VILLAGER_AMBIENT
+SoundEffects pT ENTITY_VILLAGER_CELEBRATE
+SoundEffects pU ENTITY_VILLAGER_DEATH
+SoundEffects pV ENTITY_VILLAGER_HURT
+SoundEffects pW ENTITY_VILLAGER_NO
+SoundEffects pX ENTITY_VILLAGER_TRADE
+SoundEffects pY ENTITY_VILLAGER_YES
+SoundEffects pZ ENTITY_VILLAGER_WORK_ARMORER
+SoundEffects pa ENCHANT_THORNS_HIT
+SoundEffects pb ENTITY_TNT_PRIMED
+SoundEffects pc ITEM_TOTEM_USE
+SoundEffects pd ITEM_TRIDENT_HIT
+SoundEffects pe ITEM_TRIDENT_HIT_GROUND
+SoundEffects pf ITEM_TRIDENT_RETURN
+SoundEffects pg ITEM_TRIDENT_RIPTIDE_1
+SoundEffects ph ITEM_TRIDENT_RIPTIDE_2
+SoundEffects pi ITEM_TRIDENT_RIPTIDE_3
+SoundEffects pj ITEM_TRIDENT_THROW
+SoundEffects pk ITEM_TRIDENT_THUNDER
+SoundEffects pl BLOCK_TRIPWIRE_ATTACH
+SoundEffects pm BLOCK_TRIPWIRE_CLICK_OFF
+SoundEffects pn BLOCK_TRIPWIRE_CLICK_ON
+SoundEffects po BLOCK_TRIPWIRE_DETACH
+SoundEffects pp ENTITY_TROPICAL_FISH_AMBIENT
+SoundEffects pq ENTITY_TROPICAL_FISH_DEATH
+SoundEffects pr ENTITY_TROPICAL_FISH_FLOP
+SoundEffects ps ENTITY_TROPICAL_FISH_HURT
+SoundEffects pt ENTITY_TURTLE_AMBIENT_LAND
+SoundEffects pu ENTITY_TURTLE_DEATH
+SoundEffects pv ENTITY_TURTLE_DEATH_BABY
+SoundEffects pw ENTITY_TURTLE_EGG_BREAK
+SoundEffects px ENTITY_TURTLE_EGG_CRACK
+SoundEffects py ENTITY_TURTLE_EGG_HATCH
+SoundEffects pz ENTITY_TURTLE_HURT
 SoundEffects q AMBIENT_UNDERWATER_ENTER
-SoundEffects qA BLOCK_WET_GRASS_HIT
-SoundEffects qB BLOCK_WET_GRASS_PLACE
-SoundEffects qC BLOCK_WET_GRASS_STEP
-SoundEffects qD ENTITY_WITCH_AMBIENT
-SoundEffects qE ENTITY_WITCH_CELEBRATE
-SoundEffects qF ENTITY_WITCH_DEATH
-SoundEffects qG ENTITY_WITCH_DRINK
-SoundEffects qH ENTITY_WITCH_HURT
-SoundEffects qI ENTITY_WITCH_THROW
-SoundEffects qJ ENTITY_WITHER_AMBIENT
-SoundEffects qK ENTITY_WITHER_BREAK_BLOCK
-SoundEffects qL ENTITY_WITHER_DEATH
-SoundEffects qM ENTITY_WITHER_HURT
-SoundEffects qN ENTITY_WITHER_SHOOT
-SoundEffects qO ENTITY_WITHER_SKELETON_AMBIENT
-SoundEffects qP ENTITY_WITHER_SKELETON_DEATH
-SoundEffects qQ ENTITY_WITHER_SKELETON_HURT
-SoundEffects qR ENTITY_WITHER_SKELETON_STEP
-SoundEffects qS ENTITY_WITHER_SPAWN
-SoundEffects qT ENTITY_WOLF_AMBIENT
-SoundEffects qU ENTITY_WOLF_DEATH
-SoundEffects qV ENTITY_WOLF_GROWL
-SoundEffects qW ENTITY_WOLF_HOWL
-SoundEffects qX ENTITY_WOLF_HURT
-SoundEffects qY ENTITY_WOLF_PANT
-SoundEffects qZ ENTITY_WOLF_SHAKE
-SoundEffects qa ENTITY_VILLAGER_WORK_LIBRARIAN
-SoundEffects qb ENTITY_VILLAGER_WORK_MASON
-SoundEffects qc ENTITY_VILLAGER_WORK_SHEPHERD
-SoundEffects qd ENTITY_VILLAGER_WORK_TOOLSMITH
-SoundEffects qe ENTITY_VILLAGER_WORK_WEAPONSMITH
-SoundEffects qf ENTITY_VINDICATOR_AMBIENT
-SoundEffects qg ENTITY_VINDICATOR_CELEBRATE
-SoundEffects qh ENTITY_VINDICATOR_DEATH
-SoundEffects qi ENTITY_VINDICATOR_HURT
-SoundEffects qj BLOCK_VINE_STEP
-SoundEffects qk BLOCK_LILY_PAD_PLACE
-SoundEffects ql ENTITY_WANDERING_TRADER_AMBIENT
-SoundEffects qm ENTITY_WANDERING_TRADER_DEATH
-SoundEffects qn ENTITY_WANDERING_TRADER_DISAPPEARED
-SoundEffects qo ENTITY_WANDERING_TRADER_DRINK_MILK
-SoundEffects qp ENTITY_WANDERING_TRADER_DRINK_POTION
-SoundEffects qq ENTITY_WANDERING_TRADER_HURT
-SoundEffects qr ENTITY_WANDERING_TRADER_NO
-SoundEffects qs ENTITY_WANDERING_TRADER_REAPPEARED
-SoundEffects qt ENTITY_WANDERING_TRADER_TRADE
-SoundEffects qu ENTITY_WANDERING_TRADER_YES
-SoundEffects qv BLOCK_WATER_AMBIENT
-SoundEffects qw WEATHER_RAIN
-SoundEffects qx WEATHER_RAIN_ABOVE
-SoundEffects qy BLOCK_WET_GRASS_BREAK
-SoundEffects qz BLOCK_WET_GRASS_FALL
+SoundEffects qA ENTITY_WANDERING_TRADER_TRADE
+SoundEffects qB ENTITY_WANDERING_TRADER_YES
+SoundEffects qC BLOCK_WATER_AMBIENT
+SoundEffects qD WEATHER_RAIN
+SoundEffects qE WEATHER_RAIN_ABOVE
+SoundEffects qF BLOCK_WET_GRASS_BREAK
+SoundEffects qG BLOCK_WET_GRASS_FALL
+SoundEffects qH BLOCK_WET_GRASS_HIT
+SoundEffects qI BLOCK_WET_GRASS_PLACE
+SoundEffects qJ BLOCK_WET_GRASS_STEP
+SoundEffects qK ENTITY_WITCH_AMBIENT
+SoundEffects qL ENTITY_WITCH_CELEBRATE
+SoundEffects qM ENTITY_WITCH_DEATH
+SoundEffects qN ENTITY_WITCH_DRINK
+SoundEffects qO ENTITY_WITCH_HURT
+SoundEffects qP ENTITY_WITCH_THROW
+SoundEffects qQ ENTITY_WITHER_AMBIENT
+SoundEffects qR ENTITY_WITHER_BREAK_BLOCK
+SoundEffects qS ENTITY_WITHER_DEATH
+SoundEffects qT ENTITY_WITHER_HURT
+SoundEffects qU ENTITY_WITHER_SHOOT
+SoundEffects qV ENTITY_WITHER_SKELETON_AMBIENT
+SoundEffects qW ENTITY_WITHER_SKELETON_DEATH
+SoundEffects qX ENTITY_WITHER_SKELETON_HURT
+SoundEffects qY ENTITY_WITHER_SKELETON_STEP
+SoundEffects qZ ENTITY_WITHER_SPAWN
+SoundEffects qa ENTITY_VILLAGER_WORK_BUTCHER
+SoundEffects qb ENTITY_VILLAGER_WORK_CARTOGRAPHER
+SoundEffects qc ENTITY_VILLAGER_WORK_CLERIC
+SoundEffects qd ENTITY_VILLAGER_WORK_FARMER
+SoundEffects qe ENTITY_VILLAGER_WORK_FISHERMAN
+SoundEffects qf ENTITY_VILLAGER_WORK_FLETCHER
+SoundEffects qg ENTITY_VILLAGER_WORK_LEATHERWORKER
+SoundEffects qh ENTITY_VILLAGER_WORK_LIBRARIAN
+SoundEffects qi ENTITY_VILLAGER_WORK_MASON
+SoundEffects qj ENTITY_VILLAGER_WORK_SHEPHERD
+SoundEffects qk ENTITY_VILLAGER_WORK_TOOLSMITH
+SoundEffects ql ENTITY_VILLAGER_WORK_WEAPONSMITH
+SoundEffects qm ENTITY_VINDICATOR_AMBIENT
+SoundEffects qn ENTITY_VINDICATOR_CELEBRATE
+SoundEffects qo ENTITY_VINDICATOR_DEATH
+SoundEffects qp ENTITY_VINDICATOR_HURT
+SoundEffects qq BLOCK_VINE_STEP
+SoundEffects qr BLOCK_LILY_PAD_PLACE
+SoundEffects qs ENTITY_WANDERING_TRADER_AMBIENT
+SoundEffects qt ENTITY_WANDERING_TRADER_DEATH
+SoundEffects qu ENTITY_WANDERING_TRADER_DISAPPEARED
+SoundEffects qv ENTITY_WANDERING_TRADER_DRINK_MILK
+SoundEffects qw ENTITY_WANDERING_TRADER_DRINK_POTION
+SoundEffects qx ENTITY_WANDERING_TRADER_HURT
+SoundEffects qy ENTITY_WANDERING_TRADER_NO
+SoundEffects qz ENTITY_WANDERING_TRADER_REAPPEARED
 SoundEffects r AMBIENT_UNDERWATER_EXIT
-SoundEffects rA ENTITY_ZOMBIE_AMBIENT
-SoundEffects rB ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR
-SoundEffects rC ENTITY_ZOMBIE_ATTACK_IRON_DOOR
-SoundEffects rD ENTITY_ZOMBIE_BREAK_WOODEN_DOOR
-SoundEffects rE ENTITY_ZOMBIE_CONVERTED_TO_DROWNED
-SoundEffects rF ENTITY_ZOMBIE_DEATH
-SoundEffects rG ENTITY_ZOMBIE_DESTROY_EGG
-SoundEffects rH ENTITY_ZOMBIE_HORSE_AMBIENT
-SoundEffects rI ENTITY_ZOMBIE_HORSE_DEATH
-SoundEffects rJ ENTITY_ZOMBIE_HORSE_HURT
-SoundEffects rK ENTITY_ZOMBIE_HURT
-SoundEffects rL ENTITY_ZOMBIE_INFECT
-SoundEffects rM ENTITY_ZOMBIFIED_PIGLIN_AMBIENT
-SoundEffects rN ENTITY_ZOMBIFIED_PIGLIN_ANGRY
-SoundEffects rO ENTITY_ZOMBIFIED_PIGLIN_DEATH
-SoundEffects rP ENTITY_ZOMBIFIED_PIGLIN_HURT
-SoundEffects rQ ENTITY_ZOMBIE_STEP
-SoundEffects rR ENTITY_ZOMBIE_VILLAGER_AMBIENT
-SoundEffects rS ENTITY_ZOMBIE_VILLAGER_CONVERTED
-SoundEffects rT ENTITY_ZOMBIE_VILLAGER_CURE
-SoundEffects rU ENTITY_ZOMBIE_VILLAGER_DEATH
-SoundEffects rV ENTITY_ZOMBIE_VILLAGER_HURT
-SoundEffects rW ENTITY_ZOMBIE_VILLAGER_STEP
-SoundEffects ra ENTITY_WOLF_STEP
-SoundEffects rb ENTITY_WOLF_WHINE
-SoundEffects rc BLOCK_WOODEN_DOOR_CLOSE
-SoundEffects rd BLOCK_WOODEN_DOOR_OPEN
-SoundEffects re BLOCK_WOODEN_TRAPDOOR_CLOSE
-SoundEffects rf BLOCK_WOODEN_TRAPDOOR_OPEN
-SoundEffects rg BLOCK_WOOD_BREAK
-SoundEffects rh BLOCK_WOODEN_BUTTON_CLICK_OFF
-SoundEffects ri BLOCK_WOODEN_BUTTON_CLICK_ON
-SoundEffects rj BLOCK_WOOD_FALL
-SoundEffects rk BLOCK_WOOD_HIT
-SoundEffects rl BLOCK_WOOD_PLACE
-SoundEffects rm BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF
-SoundEffects rn BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON
-SoundEffects ro BLOCK_WOOD_STEP
-SoundEffects rp BLOCK_WOOL_BREAK
-SoundEffects rq BLOCK_WOOL_FALL
-SoundEffects rr BLOCK_WOOL_HIT
-SoundEffects rs BLOCK_WOOL_PLACE
-SoundEffects rt BLOCK_WOOL_STEP
-SoundEffects ru ENTITY_ZOGLIN_AMBIENT
-SoundEffects rv ENTITY_ZOGLIN_ANGRY
-SoundEffects rw ENTITY_ZOGLIN_ATTACK
-SoundEffects rx ENTITY_ZOGLIN_DEATH
-SoundEffects ry ENTITY_ZOGLIN_HURT
-SoundEffects rz ENTITY_ZOGLIN_STEP
+SoundEffects rA BLOCK_WOOL_STEP
+SoundEffects rB ENTITY_ZOGLIN_AMBIENT
+SoundEffects rC ENTITY_ZOGLIN_ANGRY
+SoundEffects rD ENTITY_ZOGLIN_ATTACK
+SoundEffects rE ENTITY_ZOGLIN_DEATH
+SoundEffects rF ENTITY_ZOGLIN_HURT
+SoundEffects rG ENTITY_ZOGLIN_STEP
+SoundEffects rH ENTITY_ZOMBIE_AMBIENT
+SoundEffects rI ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR
+SoundEffects rJ ENTITY_ZOMBIE_ATTACK_IRON_DOOR
+SoundEffects rK ENTITY_ZOMBIE_BREAK_WOODEN_DOOR
+SoundEffects rL ENTITY_ZOMBIE_CONVERTED_TO_DROWNED
+SoundEffects rM ENTITY_ZOMBIE_DEATH
+SoundEffects rN ENTITY_ZOMBIE_DESTROY_EGG
+SoundEffects rO ENTITY_ZOMBIE_HORSE_AMBIENT
+SoundEffects rP ENTITY_ZOMBIE_HORSE_DEATH
+SoundEffects rQ ENTITY_ZOMBIE_HORSE_HURT
+SoundEffects rR ENTITY_ZOMBIE_HURT
+SoundEffects rS ENTITY_ZOMBIE_INFECT
+SoundEffects rT ENTITY_ZOMBIFIED_PIGLIN_AMBIENT
+SoundEffects rU ENTITY_ZOMBIFIED_PIGLIN_ANGRY
+SoundEffects rV ENTITY_ZOMBIFIED_PIGLIN_DEATH
+SoundEffects rW ENTITY_ZOMBIFIED_PIGLIN_HURT
+SoundEffects rX ENTITY_ZOMBIE_STEP
+SoundEffects rY ENTITY_ZOMBIE_VILLAGER_AMBIENT
+SoundEffects rZ ENTITY_ZOMBIE_VILLAGER_CONVERTED
+SoundEffects ra ENTITY_WOLF_AMBIENT
+SoundEffects rb ENTITY_WOLF_DEATH
+SoundEffects rc ENTITY_WOLF_GROWL
+SoundEffects rd ENTITY_WOLF_HOWL
+SoundEffects re ENTITY_WOLF_HURT
+SoundEffects rf ENTITY_WOLF_PANT
+SoundEffects rg ENTITY_WOLF_SHAKE
+SoundEffects rh ENTITY_WOLF_STEP
+SoundEffects ri ENTITY_WOLF_WHINE
+SoundEffects rj BLOCK_WOODEN_DOOR_CLOSE
+SoundEffects rk BLOCK_WOODEN_DOOR_OPEN
+SoundEffects rl BLOCK_WOODEN_TRAPDOOR_CLOSE
+SoundEffects rm BLOCK_WOODEN_TRAPDOOR_OPEN
+SoundEffects rn BLOCK_WOOD_BREAK
+SoundEffects ro BLOCK_WOODEN_BUTTON_CLICK_OFF
+SoundEffects rp BLOCK_WOODEN_BUTTON_CLICK_ON
+SoundEffects rq BLOCK_WOOD_FALL
+SoundEffects rr BLOCK_WOOD_HIT
+SoundEffects rs BLOCK_WOOD_PLACE
+SoundEffects rt BLOCK_WOODEN_PRESSURE_PLATE_CLICK_OFF
+SoundEffects ru BLOCK_WOODEN_PRESSURE_PLATE_CLICK_ON
+SoundEffects rv BLOCK_WOOD_STEP
+SoundEffects rw BLOCK_WOOL_BREAK
+SoundEffects rx BLOCK_WOOL_FALL
+SoundEffects ry BLOCK_WOOL_HIT
+SoundEffects rz BLOCK_WOOL_PLACE
 SoundEffects s AMBIENT_UNDERWATER_LOOP
+SoundEffects sa ENTITY_ZOMBIE_VILLAGER_CURE
+SoundEffects sb ENTITY_ZOMBIE_VILLAGER_DEATH
+SoundEffects sc ENTITY_ZOMBIE_VILLAGER_HURT
+SoundEffects sd ENTITY_ZOMBIE_VILLAGER_STEP
 SoundEffects t AMBIENT_UNDERWATER_LOOP_ADDITIONS
 SoundEffects u AMBIENT_UNDERWATER_LOOP_ADDITIONS_RARE
 SoundEffects v AMBIENT_UNDERWATER_LOOP_ADDITIONS_ULTRA_RARE
@@ -6606,154 +6773,149 @@ SystemUtils$OS d OSX
 SystemUtils$OS e UNKNOWN
 Tag a (Ljava/lang/Object;)Z isTagged
 Tag b ()Ljava/util/List; getTagged
-TagRegistry a ()LTagsServer; getBlockTags
 TagRegistry a blockTags
-TagRegistry b ()LTagsServer; getItemTags
 TagRegistry b itemTags
 TagRegistry c fluidTags
-TagRegistry d ()LTagsServer; getFluidTags
 TagRegistry d entityTags
-TagRegistry e ()LTagsServer; getEntityTags
-TagRegistry f ()V bind
-TagsBlock A BANNERS
-TagsBlock B SAND
-TagsBlock C STAIRS
-TagsBlock D SLABS
-TagsBlock E WALLS
-TagsBlock F ANVIL
-TagsBlock G RAILS
-TagsBlock H LEAVES
-TagsBlock I TRAPDOORS
-TagsBlock J SMALL_FLOWERS
-TagsBlock K BEDS
-TagsBlock L FENCES
-TagsBlock M TALL_FLOWERS
-TagsBlock N FLOWERS
-TagsBlock O PIGLIN_REPELLENTS
-TagsBlock P GOLD_ORES
-TagsBlock Q NON_FLAMMABLE_WOOD
-TagsBlock R FLOWER_POTS
-TagsBlock S ENDERMAN_HOLDABLE
-TagsBlock T ICE
-TagsBlock U VALID_SPAWN
-TagsBlock V IMPERMEABLE
-TagsBlock W UNDERWATER_BONEMEALS
-TagsBlock X CORAL_BLOCKS
-TagsBlock Y WALL_CORALS
-TagsBlock Z CORAL_PLANTS
-TagsBlock a WOOL
-TagsBlock aa CORALS
-TagsBlock ab BAMBOO_PLANTABLE_ON
-TagsBlock ac STANDING_SIGNS
-TagsBlock ad WALL_SIGNS
-TagsBlock ae SIGNS
-TagsBlock af DRAGON_IMMUNE
-TagsBlock ag WITHER_IMMUNE
-TagsBlock ah WITHER_SUMMON_BASE_BLOCKS
-TagsBlock ai BEEHIVES
-TagsBlock aj CROPS
-TagsBlock ak BEE_GROWABLES
-TagsBlock al PORTALS
-TagsBlock am FIRE
-TagsBlock an NYLIUM
-TagsBlock ao WART_BLOCKS
-TagsBlock ap BEACON_BASE_BLOCKS
-TagsBlock aq SOUL_SPEED_BLOCKS
-TagsBlock ar WALL_POST_OVERRIDE
-TagsBlock as CLIMBABLE
-TagsBlock at SHULKER_BOXES
-TagsBlock au HOGLIN_REPELLENTS
-TagsBlock av SOUL_FIRE_BASE_BLOCKS
-TagsBlock aw STRIDER_WARM_BLOCKS
-TagsBlock ax CAMPFIRES
-TagsBlock ay GUARDED_BY_PIGLINS
-TagsBlock az PREVENT_MOB_SPAWNING_INSIDE
-TagsBlock b PLANKS
-TagsBlock c STONE_BRICKS
-TagsBlock d WOODEN_BUTTONS
-TagsBlock e BUTTONS
-TagsBlock f CARPETS
-TagsBlock g WOODEN_DOORS
-TagsBlock h WOODEN_STAIRS
-TagsBlock i WOODEN_SLABS
-TagsBlock j WOODEN_FENCES
-TagsBlock k PRESSURE_PLATES
-TagsBlock l WOODEN_PRESSURE_PLATES
-TagsBlock m STONE_PRESSURE_PLATES
-TagsBlock n WOODEN_TRAPDOORS
-TagsBlock o DOORS
-TagsBlock p SAPLINGS
-TagsBlock q LOGS_THAT_BURN
-TagsBlock r LOGS
-TagsBlock s DARK_OAK_LOGS
-TagsBlock t OAK_LOGS
-TagsBlock u BIRCH_LOGS
-TagsBlock v ACACIA_LOGS
-TagsBlock w JUNGLE_LOGS
-TagsBlock x SPRUCE_LOGS
-TagsBlock y CRIMSON_STEMS
-TagsBlock z WARPED_STEMS
-TagsEntity a SKELETONS
-TagsEntity b RADIERS
-TagsEntity c BEEHIVE_INHABITORS
-TagsEntity d ARROWS
-TagsEntity e IMPACT_PROJECTILES
-TagsFluid a WATER
-TagsFluid b LAVA
-TagsItem A STAIRS
-TagsItem B SLABS
-TagsItem C WALLS
-TagsItem D ANVIL
-TagsItem E RAILS
-TagsItem F LEAVES
-TagsItem G TRAPDOORS
-TagsItem H SMALL_FLOWERS
-TagsItem I BEDS
-TagsItem J FENCES
-TagsItem K TALL_FLOWERS
-TagsItem L FLOWERS
-TagsItem M PIGLIN_REPELLENTS
-TagsItem N PIGLIN_LOVED
-TagsItem O GOLD_ORES
-TagsItem P NON_FLAMMABLE_WOOD
-TagsItem Q SOUL_FIRE_BASE_BLOCKS
-TagsItem R BOATS
-TagsItem S FISHES
-TagsItem T SIGNS
-TagsItem U MUSIC_DISCS
-TagsItem V CREEPER_DROP_MUSIC_DISCS
-TagsItem W COALS
-TagsItem X ARROWS
-TagsItem Y LECTERN_BOOKS
-TagsItem Z BEACON_PAYMENT_ITEMS
-TagsItem a WOOL
-TagsItem aa STONE_TOOL_MATERIALS
-TagsItem ab FURNACE_MATERIALS
-TagsItem b PLANKS
-TagsItem c STONE_BRICKS
-TagsItem d WOODEN_BUTTONS
-TagsItem e BUTTONS
-TagsItem f CARPETS
-TagsItem g WOODEN_DOORS
-TagsItem h WOODEN_STAIRS
-TagsItem i WOODEN_SLABS
-TagsItem j WOODEN_FENCES
-TagsItem k WOODEN_PRESSURE_PLATES
-TagsItem l WOODEN_TRAPDOORS
-TagsItem m DOORS
-TagsItem n SAPLINGS
-TagsItem o LOGS_THAT_BURN
-TagsItem p LOGS
-TagsItem q DARK_OAK_LOGS
-TagsItem r OAK_LOGS
-TagsItem s BIRCH_LOGS
-TagsItem t ACACIA_LOGS
-TagsItem u JUNGLE_LOGS
-TagsItem v SPRUCE_LOGS
-TagsItem w CRIMSON_STEMS
-TagsItem x WARPED_STEMS
-TagsItem y BANNERS
-TagsItem z SAND
+TagsBlock A WARPED_STEMS
+TagsBlock B BANNERS
+TagsBlock C SAND
+TagsBlock D STAIRS
+TagsBlock E SLABS
+TagsBlock F WALLS
+TagsBlock G ANVIL
+TagsBlock H RAILS
+TagsBlock I LEAVES
+TagsBlock J TRAPDOORS
+TagsBlock K SMALL_FLOWERS
+TagsBlock L BEDS
+TagsBlock M FENCES
+TagsBlock N TALL_FLOWERS
+TagsBlock O FLOWERS
+TagsBlock P PIGLIN_REPELLENTS
+TagsBlock Q GOLD_ORES
+TagsBlock R NON_FLAMMABLE_WOOD
+TagsBlock S FLOWER_POTS
+TagsBlock T ENDERMAN_HOLDABLE
+TagsBlock U ICE
+TagsBlock V VALID_SPAWN
+TagsBlock W IMPERMEABLE
+TagsBlock X UNDERWATER_BONEMEALS
+TagsBlock Y CORAL_BLOCKS
+TagsBlock Z WALL_CORALS
+TagsBlock aA PREVENT_MOB_SPAWNING_INSIDE
+TagsBlock aa CORAL_PLANTS
+TagsBlock ab CORALS
+TagsBlock ac BAMBOO_PLANTABLE_ON
+TagsBlock ad STANDING_SIGNS
+TagsBlock ae WALL_SIGNS
+TagsBlock af SIGNS
+TagsBlock ag DRAGON_IMMUNE
+TagsBlock ah WITHER_IMMUNE
+TagsBlock ai WITHER_SUMMON_BASE_BLOCKS
+TagsBlock aj BEEHIVES
+TagsBlock ak CROPS
+TagsBlock al BEE_GROWABLES
+TagsBlock am PORTALS
+TagsBlock an FIRE
+TagsBlock ao NYLIUM
+TagsBlock ap WART_BLOCKS
+TagsBlock aq BEACON_BASE_BLOCKS
+TagsBlock ar SOUL_SPEED_BLOCKS
+TagsBlock as WALL_POST_OVERRIDE
+TagsBlock at CLIMBABLE
+TagsBlock au SHULKER_BOXES
+TagsBlock av HOGLIN_REPELLENTS
+TagsBlock aw SOUL_FIRE_BASE_BLOCKS
+TagsBlock ax STRIDER_WARM_BLOCKS
+TagsBlock ay CAMPFIRES
+TagsBlock az GUARDED_BY_PIGLINS
+TagsBlock b WOOL
+TagsBlock c PLANKS
+TagsBlock d STONE_BRICKS
+TagsBlock e WOODEN_BUTTONS
+TagsBlock f BUTTONS
+TagsBlock g CARPETS
+TagsBlock h WOODEN_DOORS
+TagsBlock i WOODEN_STAIRS
+TagsBlock j WOODEN_SLABS
+TagsBlock k WOODEN_FENCES
+TagsBlock l PRESSURE_PLATES
+TagsBlock m WOODEN_PRESSURE_PLATES
+TagsBlock n STONE_PRESSURE_PLATES
+TagsBlock o WOODEN_TRAPDOORS
+TagsBlock p DOORS
+TagsBlock q SAPLINGS
+TagsBlock r LOGS_THAT_BURN
+TagsBlock s LOGS
+TagsBlock t DARK_OAK_LOGS
+TagsBlock u OAK_LOGS
+TagsBlock v BIRCH_LOGS
+TagsBlock w ACACIA_LOGS
+TagsBlock x JUNGLE_LOGS
+TagsBlock y SPRUCE_LOGS
+TagsBlock z CRIMSON_STEMS
+TagsEntity b SKELETONS
+TagsEntity c RADIERS
+TagsEntity d BEEHIVE_INHABITORS
+TagsEntity e ARROWS
+TagsEntity f IMPACT_PROJECTILES
+TagsFluid b WATER
+TagsFluid c LAVA
+TagsItem A SAND
+TagsItem B STAIRS
+TagsItem C SLABS
+TagsItem D WALLS
+TagsItem E ANVIL
+TagsItem F RAILS
+TagsItem G LEAVES
+TagsItem H TRAPDOORS
+TagsItem I SMALL_FLOWERS
+TagsItem J BEDS
+TagsItem K FENCES
+TagsItem L TALL_FLOWERS
+TagsItem M FLOWERS
+TagsItem N PIGLIN_REPELLENTS
+TagsItem O PIGLIN_LOVED
+TagsItem P GOLD_ORES
+TagsItem Q NON_FLAMMABLE_WOOD
+TagsItem R SOUL_FIRE_BASE_BLOCKS
+TagsItem S BOATS
+TagsItem T FISHES
+TagsItem U SIGNS
+TagsItem V MUSIC_DISCS
+TagsItem W CREEPER_DROP_MUSIC_DISCS
+TagsItem X COALS
+TagsItem Y ARROWS
+TagsItem Z LECTERN_BOOKS
+TagsItem aa BEACON_PAYMENT_ITEMS
+TagsItem ab STONE_TOOL_MATERIALS
+TagsItem ac STONE_CRAFTING_MATERIALS
+TagsItem b WOOL
+TagsItem c PLANKS
+TagsItem d STONE_BRICKS
+TagsItem e WOODEN_BUTTONS
+TagsItem f BUTTONS
+TagsItem g CARPETS
+TagsItem h WOODEN_DOORS
+TagsItem i WOODEN_STAIRS
+TagsItem j WOODEN_SLABS
+TagsItem k WOODEN_FENCES
+TagsItem l WOODEN_PRESSURE_PLATES
+TagsItem m WOODEN_TRAPDOORS
+TagsItem n DOORS
+TagsItem o SAPLINGS
+TagsItem p LOGS_THAT_BURN
+TagsItem q LOGS
+TagsItem r DARK_OAK_LOGS
+TagsItem s OAK_LOGS
+TagsItem t BIRCH_LOGS
+TagsItem u ACACIA_LOGS
+TagsItem v JUNGLE_LOGS
+TagsItem w SPRUCE_LOGS
+TagsItem x CRIMSON_STEMS
+TagsItem y WARPED_STEMS
+TagsItem z BANNERS
 TickListPriority a EXTREMELY_HIGH
 TickListPriority b VERY_HIGH
 TickListPriority c HIGH
@@ -6774,7 +6936,7 @@ TicketType f PORTAL
 TicketType g POST_TELEPORT
 TicketType h UNKNOWN
 TicketType k loadPeriod
-TileEntity Z_ ()V update
+TileEntity X_ ()V update
 TileEntity a ()LPacketPlayOutTileEntityData; getUpdatePacket
 TileEntity a (LBlockPosition;)V setPosition
 TileEntity a (LIBlockData;LNBTTagCompound;)V load
@@ -6795,6 +6957,8 @@ TileEntity u ()LTileEntityTypes; getTileType
 TileEntity v ()LWorld; getWorld
 TileEntityBanner b color
 TileEntityBanner c patterns
+TileEntityBarrel a (LIBlockData;LSoundEffect;)V playOpenSound
+TileEntityBarrel a (LIBlockData;Z)V setOpenFlag
 TileEntityBarrel a items
 TileEntityBeacon a (LIChatBaseComponent;)V setCustomName
 TileEntityBeacon h levels
@@ -6827,6 +6991,7 @@ TileEntityCampfire a items
 TileEntityCampfire b cookingTimes
 TileEntityCampfire c cookingTotalTimes
 TileEntityCampfire d ()LNonNullList; getItems
+TileEntityChest a (LSoundEffect;)V playOpenSound
 TileEntityChest c viewingCount
 TileEntityChest h ()V onOpen
 TileEntityChest i items
@@ -6879,6 +7044,7 @@ TileEntityLootable g lootTable
 TileEntityLootable h lootTableSeed
 TileEntityMobSpawner d ()LMobSpawnerAbstract; getSpawner
 TileEntityShulkerBox b contents
+TileEntityShulkerBox c viewingCount
 TileEntityShulkerBox$AnimationPhase a CLOSED
 TileEntityShulkerBox$AnimationPhase b OPENING
 TileEntityShulkerBox$AnimationPhase c OPENED
@@ -6975,7 +7141,7 @@ VillagerData a (LVillagerProfession;)LVillagerData; withProfession
 VillagerData a (LVillagerType;)LVillagerData; withType
 VillagerData b ()LVillagerProfession; getProfession
 VillagerData c ()I getLevel
-VillagerDataHolder eY ()LVillagerData; getVillagerData
+VillagerDataHolder eX ()LVillagerData; getVillagerData
 VillagerProfession a NONE
 VillagerProfession b ARMORER
 VillagerProfession c BUTCHER
@@ -7008,20 +7174,17 @@ WeightedRandomEnchant c level
 WhiteList a (Lcom/mojang/authlib/GameProfile;)Z isWhitelisted
 World A biomeManager
 World B dimensionKey
-World C typeKey
-World D ()LScoreboard; getScoreboard
-World J ()Z isDay
-World K ()Z isNight
-World L ()V tickBlockEntities
-World Q ()J getTime
-World R ()J getDayTime
-World S ()LGameRules; getGameRules
-World U ()Z isRaining
-World V ()LResourceKey; getTypeKey
-World W ()LResourceKey; getDimensionKey
-World X ()LGameProfilerFiller; getMethodProfiler
-World Y ()Ljava/util/function/Supplier; getMethodProfilerSupplier
-World Z ()Z isDebugWorld
+World F ()LScoreboard; getScoreboard
+World L ()Z isDay
+World M ()Z isNight
+World N ()V tickBlockEntities
+World S ()J getTime
+World T ()J getDayTime
+World U ()LGameRules; getGameRules
+World W ()Z isRaining
+World X ()LResourceKey; getDimensionKey
+World Y ()LGameProfilerFiller; getMethodProfiler
+World Z ()Ljava/util/function/Supplier; getMethodProfilerSupplier
 World a (I)LEntity; getEntity
 World a (LBlockPosition;LBlock;II)V playBlockAction
 World a (LBlockPosition;LEnumDirection;)Z isBlockFacePowered
@@ -7035,6 +7198,7 @@ World a (LEntity;LAxisAlignedBB;Ljava/util/function/Predicate;)Ljava/util/List; 
 World a (LEntity;LDamageSource;LExplosionDamageCalculator;DDDFZLExplosion$Effect;)LExplosion; createExplosion
 World a (LEntityHuman;DDDLSoundEffect;LSoundCategory;FF)V playSound
 World a (LEntityHuman;LEntity;LSoundEffect;LSoundCategory;FF)V playSound
+World aa ()Z isDebugWorld
 World b (LBlockPosition;LBlock;)V applyPhysics
 World b (LBlockPosition;LEnumDirection;)I getBlockFacePower
 World b (ZZ)V setSpawnFlags
@@ -7044,12 +7208,12 @@ World c debugWorld
 World g OVERWORLD
 World h THE_NETHER
 World i THE_END
-World j (LBlockPosition;)Z isValidLocation
 World j tileEntityList
+World k (LBlockPosition;)Z isValidLocation
 World k tileEntityListTick
 World l ()Lnet/minecraft/server/MinecraftServer; getMinecraftServer
-World l (LBlockPosition;)Z isOutsideWorld
 World l tileEntityListPending
+World m (LBlockPosition;)Z isOutsideWorld
 World m tileEntityListUnload
 World n (LBlockPosition;)LChunk; getChunkAtWorldCoords
 World o ()LCraftingManager; getCraftingManager
@@ -7069,6 +7233,8 @@ World v isClientSide
 World w tickingTileEntities
 World y methodProfiler
 World z worldBorder
+WorldAccess E ()LWorldServer; getMinecraftWorld
+WorldAccess l (LEntity;)V addAllEntities
 WorldBorder a ()D getCenterX
 WorldBorder a (D)V setSize
 WorldBorder a (DDJ)V transitionSizeBetween
@@ -7085,25 +7251,27 @@ WorldBorder o ()D getDamageAmount
 WorldBorder q ()I getWarningTime
 WorldBorder r ()I getWarningDistance
 WorldData b (Z)V setStorm
-WorldData d ()J getTime
-WorldData e ()J getDayTime
-WorldData h ()Z isThundering
-WorldData j ()Z hasStorm
-WorldData m ()Z isHardcore
-WorldData r ()LEnumDifficulty; getDifficulty
-WorldData s ()Z isDifficultyLocked
-WorldDataMutable a (LBlockPosition;)V setSpawn
-WorldDataServer o clearWeatherTime
-WorldDataServer p raining
-WorldDataServer q rainTime
-WorldDataServer r thundering
-WorldDataServer s thunderTime
-WorldDataServer x customBossEvents
+WorldData e ()J getTime
+WorldData f ()J getDayTime
+WorldData i ()Z isThundering
+WorldData k ()Z hasStorm
+WorldData n ()Z isHardcore
+WorldData s ()LEnumDifficulty; getDifficulty
+WorldData t ()Z isDifficultyLocked
+WorldDataMutable a (LBlockPosition;F)V setSpawn
+WorldDataServer p clearWeatherTime
+WorldDataServer q raining
+WorldDataServer r rainTime
+WorldDataServer s thundering
+WorldDataServer t thunderTime
+WorldDataServer y customBossEvents
 WorldDimension b OVERWORLD
 WorldDimension c THE_NETHER
 WorldDimension d THE_END
 WorldGenFeatureDefinedStructurePoolTemplate$Matching a TERRAIN_MATCHING
 WorldGenFeatureDefinedStructurePoolTemplate$Matching b RIGID
+WorldGenFeatureHugeFungiConfiguration b CRIMSON_FUNGUS
+WorldGenFeatureHugeFungiConfiguration d WARPED_FUNGUS
 WorldGenFeatureOceanRuin$Temperature a WARM
 WorldGenFeatureOceanRuin$Temperature b COLD
 WorldGenFeatureOreConfiguration$Target a NATURAL_STONE
@@ -7140,59 +7308,59 @@ WorldGenStrongholdPieces$WorldGenStrongholdPiece$WorldGenStrongholdDoorType a OP
 WorldGenStrongholdPieces$WorldGenStrongholdPiece$WorldGenStrongholdDoorType b WOOD_DOOR
 WorldGenStrongholdPieces$WorldGenStrongholdPiece$WorldGenStrongholdDoorType c GRATES
 WorldGenStrongholdPieces$WorldGenStrongholdPiece$WorldGenStrongholdDoorType d IRON_DOOR
-WorldGenerator A END_SPIKE
-WorldGenerator B END_ISLAND
-WorldGenerator C END_GATEWAY
-WorldGenerator D SEAGRASS
-WorldGenerator E KELP
-WorldGenerator F CORAL_TREE
-WorldGenerator G CORAL_MUSHROOM
-WorldGenerator H CORAL_CLAW
-WorldGenerator I SEA_PICKLE
-WorldGenerator J SIMPLE_BLOCK
-WorldGenerator K BAMBOO
-WorldGenerator L HUGE_FUNGUS
-WorldGenerator M NETHER_FOREST_VEGETATION
-WorldGenerator N WEEPING_VINES
-WorldGenerator P BASALT_COLUMNS
-WorldGenerator Q DELTA_FEATURE
-WorldGenerator R NETHERRACK_REPLACE_BLOBS
-WorldGenerator S FILL_LAYER
-WorldGenerator T BONUS_CHEST
-WorldGenerator U BASALT_PILLAR
-WorldGenerator V NO_SURFACE_ORE
-WorldGenerator W RANDOM_RANDOM_SELECTOR
+WorldGenerator A ORE
+WorldGenerator B END_SPIKE
+WorldGenerator C END_ISLAND
+WorldGenerator D END_GATEWAY
+WorldGenerator E SEAGRASS
+WorldGenerator F KELP
+WorldGenerator G CORAL_TREE
+WorldGenerator H CORAL_MUSHROOM
+WorldGenerator I CORAL_CLAW
+WorldGenerator J SEA_PICKLE
+WorldGenerator K SIMPLE_BLOCK
+WorldGenerator L BAMBOO
+WorldGenerator M HUGE_FUNGUS
+WorldGenerator N NETHER_FOREST_VEGETATION
+WorldGenerator O WEEPING_VINES
+WorldGenerator P TWISTING_VINES
+WorldGenerator Q BASALT_COLUMNS
+WorldGenerator R DELTA_FEATURE
+WorldGenerator S NETHERRACK_REPLACE_BLOBS
+WorldGenerator T FILL_LAYER
+WorldGenerator U BONUS_CHEST
+WorldGenerator V BASALT_PILLAR
+WorldGenerator W NO_SURFACE_ORE
 WorldGenerator X RANDOM_SELECTOR
 WorldGenerator Y SIMPLE_RANDOM_SELECTOR
 WorldGenerator Z RANDOM_BOOLEAN_SELECTOR
-WorldGenerator a (LGeneratorAccessSeed;LStructureManager;LChunkGenerator;Ljava/util/Random;LBlockPosition;LWorldGenFeatureConfiguration;)Z generate
+WorldGenerator a (LGeneratorAccessSeed;LChunkGenerator;Ljava/util/Random;LBlockPosition;LWorldGenFeatureConfiguration;)Z generate
 WorldGenerator aa DECORATED
-WorldGenerator ab DECORATED_FLOWER
 WorldGenerator b NO_OP
 WorldGenerator c TREE
 WorldGenerator d FLOWER
-WorldGenerator e RANDOM_PATCH
-WorldGenerator f BLOCK_PILE
-WorldGenerator g SPRING_FEATURE
-WorldGenerator h CHORUS_PLANT
-WorldGenerator i EMERALD_ORE
-WorldGenerator j VOID_START_PLATFORM
-WorldGenerator k DESERT_WELL
-WorldGenerator l FOSSIL
-WorldGenerator m HUGE_RED_MUSHROOM
-WorldGenerator n HUGE_BROWN_MUSHROOM
-WorldGenerator o ICE_SPIKE
-WorldGenerator p GLOWSTONE_BLOB
-WorldGenerator q FREEZE_TOP_LAYER
-WorldGenerator r VINES
-WorldGenerator s MONSTER_ROOM
-WorldGenerator t BLUE_ICE
-WorldGenerator u ICEBERG
-WorldGenerator v FOREST_ROCK
-WorldGenerator w DISK
-WorldGenerator x ICE_PATCH
-WorldGenerator y LAKE
-WorldGenerator z ORE
+WorldGenerator e NO_BONEMEAL_FLOWER
+WorldGenerator f RANDOM_PATCH
+WorldGenerator g BLOCK_PILE
+WorldGenerator h SPRING_FEATURE
+WorldGenerator i CHORUS_PLANT
+WorldGenerator j EMERALD_ORE
+WorldGenerator k VOID_START_PLATFORM
+WorldGenerator l DESERT_WELL
+WorldGenerator m FOSSIL
+WorldGenerator n HUGE_RED_MUSHROOM
+WorldGenerator o HUGE_BROWN_MUSHROOM
+WorldGenerator p ICE_SPIKE
+WorldGenerator q GLOWSTONE_BLOB
+WorldGenerator r FREEZE_TOP_LAYER
+WorldGenerator s VINES
+WorldGenerator t MONSTER_ROOM
+WorldGenerator u BLUE_ICE
+WorldGenerator v ICEBERG
+WorldGenerator w FOREST_ROCK
+WorldGenerator x DISK
+WorldGenerator y ICE_PATCH
+WorldGenerator z LAKE
 WorldMap a (II)V flagDirty
 WorldMap a (LItemStack;LBlockPosition;Ljava/lang/String;LMapIcon$Type;)V decorateMap
 WorldMap a centerX
@@ -7212,11 +7380,11 @@ WorldNBTStorage a (LEntityHuman;)V save
 WorldNBTStorage b (LEntityHuman;)LNBTTagCompound; load
 WorldNBTStorage c playerDir
 WorldPersistentData b data
-WorldServer A ()Z isFlatWorld
 WorldServer A entitiesToAdd
+WorldServer B ()Z isFlatWorld
 WorldServer B players
-WorldServer C ()LEnderDragonBattle; getDragonBattle
 WorldServer C chunkProvider
+WorldServer D ()LEnderDragonBattle; getDragonBattle
 WorldServer D server
 WorldServer E worldDataServer
 WorldServer F everyoneSleeping
@@ -7239,8 +7407,8 @@ WorldServer a (LIProgressUpdate;ZZ)V save
 WorldServer a (Ljava/util/UUID;)LEntity; getEntity
 WorldServer a (Ljava/util/function/BooleanSupplier;)V doTick
 WorldServer a (ZZ)V doMobSpawning
-WorldServer ae ()V wakeupPlayers
-WorldServer af ()V clearWeather
+WorldServer ag ()V wakeupPlayers
+WorldServer ah ()V clearWeather
 WorldServer b (LEntity;)V chunkCheck
 WorldServer b (LEntityPlayer;)V addPlayerPortal
 WorldServer b tickingEntities
@@ -7253,20 +7421,21 @@ WorldServer e (LEntity;)V addEntityTeleport
 WorldServer e (LEntityPlayer;)V removePlayer
 WorldServer f (LEntity;)Z addEntityChunk
 WorldServer f (LEntityPlayer;)V addPlayer0
-WorldServer g (LEntity;)V unregisterEntity
-WorldServer h (LEntity;)V removeEntity
-WorldServer k (LEntity;)Z addEntity0
-WorldServer l (LEntity;)Z isUUIDTaken
-WorldServer m (LEntity;)V registerEntity
-WorldServer n (LEntity;)V removeEntityFromChunk
+WorldServer g (LEntity;)Z addAllEntitiesSafely
+WorldServer h (LEntity;)V unregisterEntity
+WorldServer i (LEntity;)V removeEntity
+WorldServer m ()LPortalTravelAgent; getTravelAgent
+WorldServer m (LEntity;)Z addEntity0
+WorldServer n (LEntity;)Z isUUIDTaken
 WorldServer n_ ()V everyoneSleeping
+WorldServer o (LEntity;)V registerEntity
+WorldServer p (LEntity;)V removeEntityFromChunk
 WorldServer p_ ()V resetEmptyTime
-WorldServer q_ ()LPortalTravelAgent; getTravelAgent
 WorldServer s ()LWorldPersistentData; getWorldPersistentData
 WorldServer u ()LBlockPosition; getSpawn
-WorldServer v ()Lit/unimi/dsi/fastutil/longs/LongSet; getForceLoadedChunks
-WorldServer y ()LPersistentRaid; getPersistentRaid
+WorldServer w ()Lit/unimi/dsi/fastutil/longs/LongSet; getForceLoadedChunks
 WorldServer y entitiesById
+WorldServer z ()LPersistentRaid; getPersistentRaid
 WorldServer z entitiesByUUID
 WorldSettings a ()Ljava/lang/String; getLevelName
 WorldSettings a levelName
@@ -7281,37 +7450,36 @@ WorldSettings f ()LGameRules; getGameRules
 WorldSettings f gameRules
 net/minecraft/server/Main a (LConvertable$ConversionSession;Lcom/mojang/datafixers/DataFixer;ZLjava/util/function/BooleanSupplier;Lcom/google/common/collect/ImmutableSet;)V convertWorld
 net/minecraft/server/MinecraftServer A onlineMode
-net/minecraft/server/MinecraftServer B ()Z getAllowNether
+net/minecraft/server/MinecraftServer C ()Z getAllowNether
 net/minecraft/server/MinecraftServer C pvpMode
 net/minecraft/server/MinecraftServer D allowFlight
 net/minecraft/server/MinecraftServer E motd
-net/minecraft/server/MinecraftServer F ()Ljava/lang/Iterable; getWorlds
-net/minecraft/server/MinecraftServer G ()Ljava/lang/String; getVersion
-net/minecraft/server/MinecraftServer H ()I getPlayerCount
-net/minecraft/server/MinecraftServer I ()I getMaxPlayers
-net/minecraft/server/MinecraftServer J ()[Ljava/lang/String; getPlayers
+net/minecraft/server/MinecraftServer G ()Ljava/lang/Iterable; getWorlds
+net/minecraft/server/MinecraftServer H ()Ljava/lang/String; getVersion
+net/minecraft/server/MinecraftServer I ()I getPlayerCount
+net/minecraft/server/MinecraftServer J ()I getMaxPlayers
 net/minecraft/server/MinecraftServer J demoMode
-net/minecraft/server/MinecraftServer K ()Ljava/security/KeyPair; getKeyPair
-net/minecraft/server/MinecraftServer L ()I getPort
-net/minecraft/server/MinecraftServer M ()Ljava/lang/String; getSinglePlayerName
+net/minecraft/server/MinecraftServer K ()[Ljava/lang/String; getPlayers
+net/minecraft/server/MinecraftServer L ()Ljava/security/KeyPair; getKeyPair
+net/minecraft/server/MinecraftServer M ()I getPort
 net/minecraft/server/MinecraftServer M hasTicked
-net/minecraft/server/MinecraftServer N ()Z isEmbeddedServer
+net/minecraft/server/MinecraftServer N ()Ljava/lang/String; getSinglePlayerName
 net/minecraft/server/MinecraftServer N lastOverloadTime
-net/minecraft/server/MinecraftServer O ()Z getSpawnMonsters
-net/minecraft/server/MinecraftServer P ()Z isDemoMode
-net/minecraft/server/MinecraftServer Q ()Ljava/lang/String; getResourcePack
+net/minecraft/server/MinecraftServer O ()Z isEmbeddedServer
+net/minecraft/server/MinecraftServer P ()Z getSpawnMonsters
+net/minecraft/server/MinecraftServer Q ()Z isDemoMode
 net/minecraft/server/MinecraftServer Q minecraftSessionService
-net/minecraft/server/MinecraftServer R ()Ljava/lang/String; getResourcePackHash
+net/minecraft/server/MinecraftServer R ()Ljava/lang/String; getResourcePack
 net/minecraft/server/MinecraftServer R gameProfileRepository
+net/minecraft/server/MinecraftServer S ()Ljava/lang/String; getResourcePackHash
 net/minecraft/server/MinecraftServer S userCache
-net/minecraft/server/MinecraftServer T ()Z getOnlineMode
+net/minecraft/server/MinecraftServer U ()Z getOnlineMode
 net/minecraft/server/MinecraftServer U serverThread
-net/minecraft/server/MinecraftServer V ()Z getSpawnAnimals
 net/minecraft/server/MinecraftServer V nextTick
-net/minecraft/server/MinecraftServer W ()Z getSpawnNPCs
-net/minecraft/server/MinecraftServer X ()Z getPVP
-net/minecraft/server/MinecraftServer Y ()Z getAllowFlight
-net/minecraft/server/MinecraftServer Z ()Ljava/lang/String; getMotd
+net/minecraft/server/MinecraftServer W ()Z getSpawnAnimals
+net/minecraft/server/MinecraftServer X ()Z getSpawnNPCs
+net/minecraft/server/MinecraftServer Y ()Z getPVP
+net/minecraft/server/MinecraftServer Z ()Z getAllowFlight
 net/minecraft/server/MinecraftServer Z resourcePackRepository
 net/minecraft/server/MinecraftServer a (I)V setPort
 net/minecraft/server/MinecraftServer a (LConvertable$ConversionSession;)V convertWorld
@@ -7320,43 +7488,45 @@ net/minecraft/server/MinecraftServer a (LWorldPersistentData;)V initializeScoreb
 net/minecraft/server/MinecraftServer a (Ljava/lang/String;Ljava/lang/String;)V setResourcePack
 net/minecraft/server/MinecraftServer a (Z)V safeShutdown
 net/minecraft/server/MinecraftServer a (ZZZ)Z saveChunks
-net/minecraft/server/MinecraftServer aA ()LResourcePackRepository; getResourcePackRepository
-net/minecraft/server/MinecraftServer aB ()LCommandDispatcher; getCommandDispatcher
-net/minecraft/server/MinecraftServer aC ()LCommandListenerWrapper; getServerCommandListener
-net/minecraft/server/MinecraftServer aD ()LCraftingManager; getCraftingManager
-net/minecraft/server/MinecraftServer aE ()LTagRegistry; getTagRegistry
-net/minecraft/server/MinecraftServer aF ()LScoreboardServer; getScoreboard
-net/minecraft/server/MinecraftServer aH ()LLootTableRegistry; getLootTableRegistry
-net/minecraft/server/MinecraftServer aJ ()LGameRules; getGameRules
-net/minecraft/server/MinecraftServer aK ()LBossBattleCustomData; getBossBattleCustomData
-net/minecraft/server/MinecraftServer aO ()LGameProfilerFiller; getMethodProfiler
-net/minecraft/server/MinecraftServer aT ()Z isSyncChunkWrites
-net/minecraft/server/MinecraftServer aU ()LDefinedStructureManager; getDefinedStructureManager
-net/minecraft/server/MinecraftServer aV ()LSaveData; getSaveData
-net/minecraft/server/MinecraftServer aX ()Lorg/apache/logging/log4j/Logger; getLogger
-net/minecraft/server/MinecraftServer aY ()Z canSleepForTick
-net/minecraft/server/MinecraftServer aa ()I getMaxBuildHeight
+net/minecraft/server/MinecraftServer aA ()LCustomFunctionData; getFunctionData
+net/minecraft/server/MinecraftServer aB ()LResourcePackRepository; getResourcePackRepository
+net/minecraft/server/MinecraftServer aC ()LCommandDispatcher; getCommandDispatcher
+net/minecraft/server/MinecraftServer aD ()LCommandListenerWrapper; getServerCommandListener
+net/minecraft/server/MinecraftServer aE ()LCraftingManager; getCraftingManager
+net/minecraft/server/MinecraftServer aF ()LITagRegistry; getTagRegistry
+net/minecraft/server/MinecraftServer aG ()LScoreboardServer; getScoreboard
+net/minecraft/server/MinecraftServer aI ()LLootTableRegistry; getLootTableRegistry
+net/minecraft/server/MinecraftServer aJ ()LLootPredicateManager; getLootPredicateManager
+net/minecraft/server/MinecraftServer aK ()LGameRules; getGameRules
+net/minecraft/server/MinecraftServer aL ()LBossBattleCustomData; getBossBattleCustomData
+net/minecraft/server/MinecraftServer aP ()LGameProfilerFiller; getMethodProfiler
+net/minecraft/server/MinecraftServer aU ()Z isSyncChunkWrites
+net/minecraft/server/MinecraftServer aV ()LDefinedStructureManager; getDefinedStructureManager
+net/minecraft/server/MinecraftServer aW ()LSaveData; getSaveData
+net/minecraft/server/MinecraftServer aY ()Lorg/apache/logging/log4j/Logger; getLogger
+net/minecraft/server/MinecraftServer aZ ()Z canSleepForTick
+net/minecraft/server/MinecraftServer aa ()Ljava/lang/String; getMotd
 net/minecraft/server/MinecraftServer aa scoreboardServer
-net/minecraft/server/MinecraftServer ab ()Z isStopped
+net/minecraft/server/MinecraftServer ab ()I getMaxBuildHeight
 net/minecraft/server/MinecraftServer ab persistentCommandStorage
-net/minecraft/server/MinecraftServer ac ()LPlayerList; getPlayerList
+net/minecraft/server/MinecraftServer ac ()Z isStopped
 net/minecraft/server/MinecraftServer ac bossBattleCustomData
-net/minecraft/server/MinecraftServer ad ()LServerConnection; getServerConnection
+net/minecraft/server/MinecraftServer ad ()LPlayerList; getPlayerList
 net/minecraft/server/MinecraftServer ad customFunctionData
+net/minecraft/server/MinecraftServer ae ()LServerConnection; getServerConnection
 net/minecraft/server/MinecraftServer ae circularTimer
 net/minecraft/server/MinecraftServer ah executorService
-net/minecraft/server/MinecraftServer ai ()I getSpawnProtection
-net/minecraft/server/MinecraftServer aj ()Z getForceGamemode
+net/minecraft/server/MinecraftServer aj ()I getSpawnProtection
 net/minecraft/server/MinecraftServer aj dataPackResources
-net/minecraft/server/MinecraftServer am ()I getIdleTimeout
-net/minecraft/server/MinecraftServer an ()Lcom/mojang/authlib/minecraft/MinecraftSessionService; getMinecraftSessionService
-net/minecraft/server/MinecraftServer ao ()Lcom/mojang/authlib/GameProfileRepository; getGameProfileRepository
-net/minecraft/server/MinecraftServer ap ()LUserCache; getUserCache
-net/minecraft/server/MinecraftServer aq ()LServerPing; getServerPing
-net/minecraft/server/MinecraftServer ar ()V invalidatePingSample
-net/minecraft/server/MinecraftServer ax ()Lcom/mojang/datafixers/DataFixer; getDataFixer
-net/minecraft/server/MinecraftServer ay ()LAdvancementDataWorld; getAdvancementData
-net/minecraft/server/MinecraftServer az ()LCustomFunctionData; getFunctionData
+net/minecraft/server/MinecraftServer ak ()Z getForceGamemode
+net/minecraft/server/MinecraftServer an ()I getIdleTimeout
+net/minecraft/server/MinecraftServer ao ()Lcom/mojang/authlib/minecraft/MinecraftSessionService; getMinecraftSessionService
+net/minecraft/server/MinecraftServer ap ()Lcom/mojang/authlib/GameProfileRepository; getGameProfileRepository
+net/minecraft/server/MinecraftServer aq ()LUserCache; getUserCache
+net/minecraft/server/MinecraftServer ar ()LServerPing; getServerPing
+net/minecraft/server/MinecraftServer as ()V invalidatePingSample
+net/minecraft/server/MinecraftServer ay ()Lcom/mojang/datafixers/DataFixer; getDataFixer
+net/minecraft/server/MinecraftServer az ()LAdvancementDataWorld; getAdvancementData
 net/minecraft/server/MinecraftServer b (LWorldLoadListener;)V loadSpawn
 net/minecraft/server/MinecraftServer d ()Z init
 net/minecraft/server/MinecraftServer d (I)V setIdleTimeout
@@ -7373,26 +7543,26 @@ net/minecraft/server/MinecraftServer g proxy
 net/minecraft/server/MinecraftServer h (Z)V setForceGamemode
 net/minecraft/server/MinecraftServer i saveData
 net/minecraft/server/MinecraftServer k snooper
-net/minecraft/server/MinecraftServer l ()Z getEnableCommandBlock
 net/minecraft/server/MinecraftServer l tickables
 net/minecraft/server/MinecraftServer l_ ()V loadWorld
-net/minecraft/server/MinecraftServer n ()Ljava/util/Optional; getModded
+net/minecraft/server/MinecraftServer m ()Z getEnableCommandBlock
 net/minecraft/server/MinecraftServer n methodProfiler
+net/minecraft/server/MinecraftServer o ()Ljava/util/Optional; getModded
 net/minecraft/server/MinecraftServer o serverConnection
-net/minecraft/server/MinecraftServer p ()V updateWorldSettings
 net/minecraft/server/MinecraftServer p worldLoadListenerFactory
-net/minecraft/server/MinecraftServer q ()V loadResourcesZip
+net/minecraft/server/MinecraftServer q ()V updateWorldSettings
 net/minecraft/server/MinecraftServer q serverPing
-net/minecraft/server/MinecraftServer r ()LEnumGamemode; getGamemode
-net/minecraft/server/MinecraftServer s ()V stop
+net/minecraft/server/MinecraftServer r ()V loadResourcesZip
+net/minecraft/server/MinecraftServer s ()LEnumGamemode; getGamemode
 net/minecraft/server/MinecraftServer s dataConverterManager
-net/minecraft/server/MinecraftServer t ()Ljava/lang/String; getServerIp
+net/minecraft/server/MinecraftServer t ()V stop
 net/minecraft/server/MinecraftServer t serverIp
-net/minecraft/server/MinecraftServer u ()Z isRunning
+net/minecraft/server/MinecraftServer u ()Ljava/lang/String; getServerIp
 net/minecraft/server/MinecraftServer u serverPort
+net/minecraft/server/MinecraftServer v ()Z isRunning
 net/minecraft/server/MinecraftServer v worldServer
-net/minecraft/server/MinecraftServer w ()V sleepForTick
 net/minecraft/server/MinecraftServer w playerList
+net/minecraft/server/MinecraftServer x ()V sleepForTick
 net/minecraft/server/MinecraftServer x isRunning
 net/minecraft/server/MinecraftServer y isStopped
 net/minecraft/server/MinecraftServer z ticks

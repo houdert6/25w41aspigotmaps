@@ -5,8 +5,8 @@ public net/minecraft/server/RecipeItemStack$Provider
 public net/minecraft/server/RecipeItemStack$StackProvider
 
 # No inheritance in AT :(
-public net/minecraft/server/BlockDispenser/dispense(Lnet/minecraft/server/World;Lnet/minecraft/server/BlockPosition;)V
-public net/minecraft/server/BlockDropper/dispense(Lnet/minecraft/server/World;Lnet/minecraft/server/BlockPosition;)V
+public net/minecraft/server/BlockDispenser/dispense(Lnet/minecraft/server/WorldServer;Lnet/minecraft/server/BlockPosition;)V
+public net/minecraft/server/BlockDropper/dispense(Lnet/minecraft/server/WorldServer;Lnet/minecraft/server/BlockPosition;)V
 
 public net/minecraft/server/EntityHanging/setDirection(Lnet/minecraft/server/EnumDirection;)V
 public net/minecraft/server/EntityItemFrame/setDirection(Lnet/minecraft/server/EnumDirection;)V
@@ -54,6 +54,8 @@ public net/minecraft/server/DedicatedServer/remoteControlCommandListener
 public net/minecraft/server/EnderDragonBattle/bossBattle
 public net/minecraft/server/EnderDragonBattle/dragonUUID
 public net/minecraft/server/EnderDragonBattle/exitPortalLocation
+public net/minecraft/server/EnderDragonBattle/generateExitPortal(Z)V
+public net/minecraft/server/EnderDragonBattle/getExitPortalShape()Lnet/minecraft/server/ShapeDetector$ShapeDetectorCollection;
 public net/minecraft/server/EnderDragonBattle/respawnPhase
 public net/minecraft/server/EnderDragonBattle/setRespawnPhase(Lnet/minecraft/server/EnumDragonRespawn;)V
 public net/minecraft/server/EnderDragonBattle/world
@@ -64,6 +66,7 @@ public net/minecraft/server/Entity/getSaveID()Ljava/lang/String;
 public net/minecraft/server/Entity/glowing
 public net/minecraft/server/Entity/inWater
 public net/minecraft/server/Entity/passengers
+public net/minecraft/server/Entity/portalCooldown
 public net/minecraft/server/Entity/setFlag(IZ)V
 public net/minecraft/server/EntityAnimal/breedCause
 public net/minecraft/server/EntityAnimal/loveTicks
@@ -111,6 +114,9 @@ public net/minecraft/server/EntityFox/setFoxType(Lnet/minecraft/server/EntityFox
 public net/minecraft/server/EntityFox/setSleeping(Z)V
 public net/minecraft/server/EntityGuardian/goalRandomStroll
 public net/minecraft/server/EntityHanging/blockPosition
+public net/minecraft/server/EntityHoglin/cannotBeHunted
+public net/minecraft/server/EntityHoglin/conversionTicks
+public net/minecraft/server/EntityHoglin/isImmuneToZombification()Z
 public net/minecraft/server/EntityHorse/setVariant(Lnet/minecraft/server/HorseColor;Lnet/minecraft/server/HorseStyle;)V
 public net/minecraft/server/EntityHorseAbstract/inventoryChest
 public net/minecraft/server/EntityHorseAbstract/loadChest()V
@@ -127,6 +133,7 @@ public net/minecraft/server/EntityInsentient/lootTableSeed
 public net/minecraft/server/EntityInsentient/persistent
 public net/minecraft/server/EntityItem/age
 public net/minecraft/server/EntityItem/pickupDelay
+public net/minecraft/server/EntityItemFrame/fixed
 public net/minecraft/server/EntityLightning/isEffect
 public net/minecraft/server/EntityLiving/HEALTH
 public net/minecraft/server/EntityLiving/effects
@@ -141,6 +148,9 @@ public net/minecraft/server/EntityMinecartContainer/lootTable
 public net/minecraft/server/EntityMinecartContainer/lootTableSeed
 public net/minecraft/server/EntityMushroomCow/setVariant(Lnet/minecraft/server/EntityMushroomCow$Type;)V
 public net/minecraft/server/EntityPig/saddleStorage
+public net/minecraft/server/EntityPiglin/cannotHunt
+public net/minecraft/server/EntityPiglinAbstract/conversionTicks
+public net/minecraft/server/EntityPiglinAbstract/isImmuneToZombification()Z
 public net/minecraft/server/EntityPillager/inventory
 public net/minecraft/server/EntityPlayer/invulnerableTicks
 public net/minecraft/server/EntityPlayer/lastSentExp
@@ -150,8 +160,10 @@ public net/minecraft/server/EntityPlayer/triggerDimensionAdvancements(Lnet/minec
 public net/minecraft/server/EntityPlayer/worldChangeInvuln
 public net/minecraft/server/EntityPotion/isLingering()Z
 public net/minecraft/server/EntityProjectileThrowable/getItem()Lnet/minecraft/server/ItemStack;
+public net/minecraft/server/EntityRabbit/initPathfinder()V
 public net/minecraft/server/EntityShulker/COLOR
 public net/minecraft/server/EntitySpectralArrow/duration
+public net/minecraft/server/EntityStrider/saddleStorage
 public net/minecraft/server/EntityThrownTrident/trident
 public net/minecraft/server/EntityTippedArrow/effects
 public net/minecraft/server/EntityTippedArrow/setColor(I)V
@@ -247,6 +259,7 @@ public net/minecraft/server/Raid/heroes
 public net/minecraft/server/Raid/numGroups
 public net/minecraft/server/Raid/ticksActive
 public net/minecraft/server/Raid/totalHealth
+public net/minecraft/server/RecipeBook/recipes
 public net/minecraft/server/RecipeItemStack$StackProvider/<init>(Lnet/minecraft/server/ItemStack;)V
 public net/minecraft/server/RecipeItemStack/<init>(Ljava/util/stream/Stream;)V
 public net/minecraft/server/RecipeItemStack/buildChoices()V
@@ -257,6 +270,8 @@ public net/minecraft/server/Slot/index
 public net/minecraft/server/Ticket/identifier
 public net/minecraft/server/TileEntityBanner/color
 public net/minecraft/server/TileEntityBanner/patterns
+public net/minecraft/server/TileEntityBarrel/setOpenFlag(Lnet/minecraft/server/IBlockData;Z)V 
+public net/minecraft/server/TileEntityBarrel/playOpenSound(Lnet/minecraft/server/IBlockData;Lnet/minecraft/server/SoundEffect;)V
 public net/minecraft/server/TileEntityBeacon/chestLock
 public net/minecraft/server/TileEntityBeacon/customName
 public net/minecraft/server/TileEntityBeacon/levels
@@ -268,6 +283,8 @@ public net/minecraft/server/TileEntityBrewingStand/brewTime
 public net/minecraft/server/TileEntityBrewingStand/fuelLevel
 public net/minecraft/server/TileEntityCampfire/cookingTimes
 public net/minecraft/server/TileEntityCampfire/cookingTotalTimes
+public net/minecraft/server/TileEntityChest/playOpenSound(Lnet/minecraft/server/SoundEffect;)V
+public net/minecraft/server/TileEntityChest/viewingCount
 public net/minecraft/server/TileEntityContainer/chestLock
 public net/minecraft/server/TileEntityContainer/customName
 public net/minecraft/server/TileEntityEndGateway/age
@@ -280,6 +297,7 @@ public net/minecraft/server/TileEntityLectern/inventory
 public net/minecraft/server/TileEntityLectern/setPage(I)V
 public net/minecraft/server/TileEntityLootable/lootTable
 public net/minecraft/server/TileEntityLootable/lootTableSeed
+public net/minecraft/server/TileEntityShulkerBox/viewingCount
 public net/minecraft/server/TileEntitySign/isEditable
 public net/minecraft/server/TileEntitySign/lines
 public net/minecraft/server/TileEntitySkull/gameProfile
