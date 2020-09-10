@@ -436,6 +436,7 @@ BlockAnvil a FACING
 BlockAttachable u FACE
 BlockBanner a ROTATION
 BlockBannerAbstract b ()LEnumColor; getColor
+BlockBarrel b OPEN
 BlockBase a (LIBlockData;)Z isComplexRedstone
 BlockBase a (LIBlockData;LEntityHuman;LIBlockAccess;LBlockPosition;)F getDamage
 BlockBase a (LIBlockData;LEnumDirection;LIBlockData;LGeneratorAccess;LBlockPosition;LBlockPosition;)LIBlockData; updateState
@@ -2219,7 +2220,7 @@ Entity a (LBlockPosition;FF)V setPositionRotation
 Entity a (LCrashReportSystemDetails;)V appendEntityCrashDetails
 Entity a (LDamageSource;F)Z damageEntity
 Entity a (LEntityPose;LEntitySize;)F getHeadHeight
-Entity a (LEnumItemSlot;LItemStack;)V setEquipment
+Entity a (LEnumItemSlot;LItemStack;)V setSlot
 Entity a (LEnumMoveType;LVec3D;)V move
 Entity a (LIChatBaseComponent;)V setCustomName
 Entity a (LNBTTagCompound;)V loadData
@@ -2425,6 +2426,7 @@ EntityArmorStand bB rightLegPose
 EntityArmorStand bs handItems
 EntityArmorStand bt armorItems
 EntityArmorStand bu armorStandInvisible
+EntityArmorStand bv disabledSlots
 EntityArmorStand bw headPose
 EntityArmorStand bx bodyPose
 EntityArmorStand by leftArmPose
@@ -2537,10 +2539,12 @@ EntityEnderDragon bx children
 EntityEnderDragon eK ()LDragonControllerManager; getDragonControllerManager
 EntityEnderDragon eL ()LEnderDragonBattle; getEnderDragonBattle
 EntityEnderDragon f (LDamageSource;F)Z dealDamage
+EntityEnderSignal b (LItemStack;)V setItem
 EntityEnderSignal c targetX
 EntityEnderSignal d targetY
 EntityEnderSignal e targetZ
 EntityEnderSignal f despawnTimer
+EntityEnderSignal g ()LItemStack; getItem
 EntityEnderSignal g shouldDropItem
 EntityEnderman c (LIBlockData;)V setCarried
 EntityEnderman eM ()LIBlockData; getCarried
@@ -2705,6 +2709,7 @@ EntityHuman$EnumBedResult f NOT_SAFE
 EntityIllagerWizard a (LEntityIllagerWizard$Spell;)V setSpell
 EntityIllagerWizard eM ()LSoundEffect; getSoundCastSpell
 EntityIllagerWizard eX ()LEntityIllagerWizard$Spell; getSpell
+EntityIllagerWizard$PathfinderGoalCastSpell l ()LEntityIllagerWizard$Spell; getCastSpell
 EntityIllagerWizard$Spell a NONE
 EntityIllagerWizard$Spell b SUMMON_VEX
 EntityIllagerWizard$Spell c FANGS
@@ -2800,7 +2805,6 @@ EntityLiving a (LEntity;I)V receive
 EntityLiving a (LEntityLiving;)V setLastDamager
 EntityLiving a (LEnumHand;)V swingHand
 EntityLiving a (LEnumHand;Z)V swingHand
-EntityLiving a (LEnumItemSlot;LItemStack;)V setSlot
 EntityLiving a (LMobEffectList;)Z hasEffect
 EntityLiving aF killer
 EntityLiving aG lastDamageByPlayerTime
@@ -2808,6 +2812,7 @@ EntityLiving aH killed
 EntityLiving aI ticksFarFromPlayer
 EntityLiving aP lastDamage
 EntityLiving aQ jumping
+EntityLiving al arrowCooldown
 EntityLiving an hurtTicks
 EntityLiving ao hurtDuration
 EntityLiving aq deathTicks
@@ -2818,6 +2823,7 @@ EntityLiving b (LDamageSource;F)V damageArmor
 EntityLiving b (LEnumItemSlot;)LItemStack; getEquipment
 EntityLiving b (LMobEffectList;)LMobEffect; getEffect
 EntityLiving bc activeItem
+EntityLiving bh ARROWS_IN_BODY
 EntityLiving bk attributeMap
 EntityLiving bl combatTracker
 EntityLiving bm effects
@@ -3461,6 +3467,7 @@ EnumItemRarity d EPIC
 EnumItemSlot a (Ljava/lang/String;)LEnumItemSlot; fromName
 EnumItemSlot a MAINHAND
 EnumItemSlot b OFFHAND
+EnumItemSlot c ()I getSlotFlag
 EnumItemSlot c FEET
 EnumItemSlot d ()Ljava/lang/String; getSlotName
 EnumItemSlot d LEGS
@@ -3490,6 +3497,7 @@ EnumMonsterType a UNDEFINED
 EnumMonsterType b UNDEAD
 EnumMonsterType c ARTHROPOD
 EnumMonsterType d ILLAGER
+EnumMonsterType e WATER_MOB
 EnumMoveType a SELF
 EnumMoveType b PLAYER
 EnumMoveType c PISTON
@@ -4001,6 +4009,7 @@ Item k ()Z usesDurability
 Item k name
 Item l foodInfo
 Item o ()LItem; getCraftingRemainingItem
+Item r ()LItemStack; createItemStack
 Item s ()Z isFood
 Item t ()LFoodInfo; getFoodInfo
 ItemActionContext a ()LBlockPosition; getClickPosition
@@ -7118,6 +7127,7 @@ TileEntityTypes z BARREL
 Unit a INSTANCE
 UserCache a (Ljava/lang/String;)Lcom/mojang/authlib/GameProfile; getProfile
 UserCache a (Ljava/util/UUID;)Lcom/mojang/authlib/GameProfile; getProfile
+Vec3D a ORIGIN
 Vec3D b (DDD)LVec3D; add
 Vec3D b x
 Vec3D c y
@@ -7503,6 +7513,7 @@ net/minecraft/server/MinecraftServer aP ()LGameProfilerFiller; getMethodProfiler
 net/minecraft/server/MinecraftServer aU ()Z isSyncChunkWrites
 net/minecraft/server/MinecraftServer aV ()LDefinedStructureManager; getDefinedStructureManager
 net/minecraft/server/MinecraftServer aW ()LSaveData; getSaveData
+net/minecraft/server/MinecraftServer aX ()LIRegistryCustom; getCustomRegistry
 net/minecraft/server/MinecraftServer aY ()Lorg/apache/logging/log4j/Logger; getLogger
 net/minecraft/server/MinecraftServer aZ ()Z canSleepForTick
 net/minecraft/server/MinecraftServer aa ()Ljava/lang/String; getMotd
@@ -7538,6 +7549,7 @@ net/minecraft/server/MinecraftServer e (Ljava/lang/String;)V setMotd
 net/minecraft/server/MinecraftServer e worldNBTStorage
 net/minecraft/server/MinecraftServer f ()Z isHardcore
 net/minecraft/server/MinecraftServer f (Z)V setPVP
+net/minecraft/server/MinecraftServer f customRegistry
 net/minecraft/server/MinecraftServer g (Z)V setAllowFlight
 net/minecraft/server/MinecraftServer g proxy
 net/minecraft/server/MinecraftServer h (Z)V setForceGamemode

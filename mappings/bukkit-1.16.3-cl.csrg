@@ -804,6 +804,7 @@ bdw$d EntitySlime$ControllerMoveSlime
 bdw$e EntitySlime$PathfinderGoalSlimeRandomDirection
 bdx EntityIllagerWizard
 bdx$a EntityIllagerWizard$Spell
+bdx$c EntityIllagerWizard$PathfinderGoalCastSpell
 bdy EntitySpider
 bdy$a EntitySpider$PathfinderGoalSpiderMeleeAttack
 bdy$b EntitySpider$GroupDataSpider

@@ -76,6 +76,7 @@ public net/minecraft/server/EntityAreaEffectCloud/radiusPerTick
 public net/minecraft/server/EntityAreaEffectCloud/reapplicationDelay
 public net/minecraft/server/EntityAreaEffectCloud/waitTime
 public net/minecraft/server/EntityArmorStand/bodyPose
+public net/minecraft/server/EntityArmorStand/disabledSlots
 public net/minecraft/server/EntityArmorStand/headPose
 public net/minecraft/server/EntityArmorStand/leftArmPose
 public net/minecraft/server/EntityArmorStand/leftLegPose
@@ -135,6 +136,7 @@ public net/minecraft/server/EntityItem/age
 public net/minecraft/server/EntityItem/pickupDelay
 public net/minecraft/server/EntityItemFrame/fixed
 public net/minecraft/server/EntityLightning/isEffect
+public net/minecraft/server/EntityLiving/ARROWS_IN_BODY
 public net/minecraft/server/EntityLiving/HEALTH
 public net/minecraft/server/EntityLiving/effects
 public net/minecraft/server/EntityLiving/hurtTimestamp
@@ -188,6 +190,7 @@ public net/minecraft/server/InventoryLargeChest/left
 public net/minecraft/server/InventoryLargeChest/right
 public net/minecraft/server/InventoryMerchant/selectedIndex
 public net/minecraft/server/InventorySubcontainer/items
+public net/minecraft/server/ItemActionContext/<init>(Lnet/minecraft/server/World;Lnet/minecraft/server/EntityHuman;Lnet/minecraft/server/EnumHand;Lnet/minecraft/server/ItemStack;Lnet/minecraft/server/MovingObjectPositionBlock;)V
 public net/minecraft/server/ItemBlockWallable/wallBlock
 public net/minecraft/server/ItemBucket/fluidType
 public net/minecraft/server/ItemCooldown$Info
@@ -202,6 +205,7 @@ public net/minecraft/server/MerchantRecipe/sellingItem
 public net/minecraft/server/MerchantRecipe/uses
 public net/minecraft/server/MerchantRecipe/xp
 public net/minecraft/server/MinecraftServer/LOGGER
+public net/minecraft/server/MinecraftServer/customRegistry
 public net/minecraft/server/MinecraftServer/dataConverterManager
 public net/minecraft/server/MinecraftServer/dataPackResources
 public net/minecraft/server/MinecraftServer/executorService
