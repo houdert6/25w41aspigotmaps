@@ -148,6 +148,7 @@ public net/minecraft/server/EntityLlama/setStrength(I)V
 public net/minecraft/server/EntityMinecartCommandBlock/COMMAND
 public net/minecraft/server/EntityMinecartContainer/lootTable
 public net/minecraft/server/EntityMinecartContainer/lootTableSeed
+public net/minecraft/server/EntityMinecartFurnace/fuel
 public net/minecraft/server/EntityMushroomCow/setVariant(Lnet/minecraft/server/EntityMushroomCow$Type;)V
 public net/minecraft/server/EntityPig/saddleStorage
 public net/minecraft/server/EntityPiglin/cannotHunt
@@ -169,6 +170,7 @@ public net/minecraft/server/EntityStrider/saddleStorage
 public net/minecraft/server/EntityThrownTrident/trident
 public net/minecraft/server/EntityTippedArrow/effects
 public net/minecraft/server/EntityTippedArrow/setColor(I)V
+public net/minecraft/server/EntityTNTPrimed/source
 public net/minecraft/server/EntityVillager/populateTrades()V
 public net/minecraft/server/EntityWither/bossBattle
 public net/minecraft/server/EntityZombie/DROWN_CONVERTING
