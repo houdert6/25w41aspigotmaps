@@ -328,6 +328,7 @@ BiomeFog$GrassColor a NONE
 BiomeFog$GrassColor b DARK_FOREST
 BiomeFog$GrassColor c SWAMP
 BiomeManager$Provider b (III)LBiomeBase; getBiome
+BiomeStorage g registry
 Biomes A SNOWY_BEACH
 Biomes B BIRCH_FOREST
 Biomes C BIRCH_FOREST_HILLS
@@ -493,6 +494,7 @@ BlockBrewingStand a HAS_BOTTLE
 BlockButtonAbstract a POWERED
 BlockCactus a AGE
 BlockCake a BITES
+BlockCampfire b LIT
 BlockCarpet b color
 BlockCauldron a LEVEL
 BlockChest a (LBlockChest;LIBlockData;LWorld;LBlockPosition;Z)LIInventory; getInventory
@@ -2225,6 +2227,7 @@ Entity a (LEnumMoveType;LVec3D;)V move
 Entity a (LIChatBaseComponent;)V setCustomName
 Entity a (LNBTTagCompound;)V loadData
 Entity a (LSoundEffect;FF)V playSound
+Entity a (LWorldServer;LBlockPosition;Z)Ljava/util/Optional; findOrCreatePortal
 Entity a (LWorldServer;LEntityLightning;)V onLightningStrike
 Entity a (Ljava/lang/String;)Z addScoreboardTag
 Entity aA ()Z isSilent
@@ -2324,6 +2327,7 @@ Entity ch ()Lnet/minecraft/server/MinecraftServer; getMinecraftServer
 Entity cm ()LEntity; getRidingPassenger
 Entity cn ()Ljava/util/List; getPassengers
 Entity co ()Ljava/util/Collection; getAllPassengers
+Entity cp ()Ljava/util/stream/Stream; recursiveStream
 Entity cq ()Z hasSinglePlayerPassenger
 Entity cr ()LEntity; getRootVehicle
 Entity ct ()LEntity; getVehicle
@@ -2582,9 +2586,17 @@ EntityFish b FROM_BUCKET
 EntityFish eM ()LSoundEffect; getSoundFlop
 EntityFish eN ()Z isFromBucket
 EntityFish t (Z)V setFromBucket
+EntityFishingHook ah waitTime
+EntityFishingHook ak inOpenWater
 EntityFishingHook al hooked
+EntityFishingHook am hookState
+EntityFishingHook ao lureLevel
+EntityFishingHook e HOOKED_ENTITY
+EntityFishingHook g ()Z isInOpenWater
 EntityFishingHook h ()V reel
 EntityFishingHook i ()LEntityHuman; getOwner
+EntityFishingHook k ()LEntity; getHooked
+EntityFishingHook n ()V updateHookedEntity
 EntityFishingHook$HookState a FLYING
 EntityFishingHook$HookState b HOOKED_IN_ENTITY
 EntityFishingHook$HookState c BOBBING
@@ -2787,6 +2799,7 @@ EntityItem x ()V mergeNearby
 EntityItemFrame a (I)V setRotation
 EntityItemFrame a (IZ)V setRotation
 EntityItemFrame a (LItemStack;Z)V setItem
+EntityItemFrame ag itemDropChance
 EntityItemFrame ah fixed
 EntityItemFrame b (LItemStack;)V setItem
 EntityItemFrame f ITEM
@@ -2822,6 +2835,7 @@ EntityLiving b (F)V heal
 EntityLiving b (LBlockPosition;)V entitySleep
 EntityLiving b (LDamageSource;F)V damageArmor
 EntityLiving b (LEnumItemSlot;)LItemStack; getEquipment
+EntityLiving b (LItemStack;)V playEquipSound
 EntityLiving b (LMobEffectList;)LMobEffect; getEffect
 EntityLiving bc activeItem
 EntityLiving bh ARROWS_IN_BODY
@@ -3937,6 +3951,7 @@ ITagRegistry e ()V bind
 ITickable aj_ ()V tick
 ITileEntity a (LIBlockAccess;)LTileEntity; createTile
 ITileInventory d ()LIChatBaseComponent; getScoreboardDisplayName
+IWorldDataServer a (I)V setClearWeatherTime
 IWorldDataServer a (J)V setTime
 IWorldDataServer a (LEnumGamemode;)V setGameType
 IWorldDataServer a (Z)V setThundering
@@ -3944,6 +3959,7 @@ IWorldDataServer b (J)V setDayTime
 IWorldDataServer e (I)V setThunderDuration
 IWorldDataServer f (I)V setWeatherDuration
 IWorldDataServer g ()Ljava/lang/String; getName
+IWorldDataServer h ()I getClearWeatherTime
 IWorldDataServer j ()I getThunderDuration
 IWorldDataServer l ()I getWeatherDuration
 IWorldDataServer m ()LEnumGamemode; getGameType
@@ -4532,6 +4548,7 @@ LootTableInfo$EntityTarget b KILLER
 LootTableInfo$EntityTarget c DIRECT_KILLER
 LootTableInfo$EntityTarget d KILLER_PLAYER
 LootTableRegistry a (LMinecraftKey;)LLootTable; getLootTable
+LootTableRegistry c keyToLootTable
 MapIcon a ()B getType
 MapIcon a type
 MapIcon b ()LMapIcon$Type; getType
@@ -5674,6 +5691,18 @@ SoundCategory g NEUTRAL
 SoundCategory h PLAYERS
 SoundCategory i AMBIENT
 SoundCategory j VOICE
+SoundEffectType V volume
+SoundEffectType W pitch
+SoundEffectType X breakSound
+SoundEffectType Y stepSound
+SoundEffectType Z placeSound
+SoundEffectType a ()F getVolume
+SoundEffectType aa hitSound
+SoundEffectType ab fallSound
+SoundEffectType b ()F getPitch
+SoundEffectType d ()LSoundEffect; getStepSound
+SoundEffectType e ()LSoundEffect; getPlaceSound
+SoundEffectType g ()LSoundEffect; getFallSound
 SoundEffects A BLOCK_ANCIENT_DEBRIS_FALL
 SoundEffects B BLOCK_ANVIL_BREAK
 SoundEffects C BLOCK_ANVIL_DESTROY
@@ -7541,6 +7570,7 @@ net/minecraft/server/MinecraftServer at ()V invalidatePingSample
 net/minecraft/server/MinecraftServer az ()Lcom/mojang/datafixers/DataFixer; getDataFixer
 net/minecraft/server/MinecraftServer b (LWorldLoadListener;)V loadSpawn
 net/minecraft/server/MinecraftServer ba ()Z canSleepForTick
+net/minecraft/server/MinecraftServer bc ()V updateSpawnFlags
 net/minecraft/server/MinecraftServer d ()Z init
 net/minecraft/server/MinecraftServer d (I)V setIdleTimeout
 net/minecraft/server/MinecraftServer d (LTickTask;)Z canExecute

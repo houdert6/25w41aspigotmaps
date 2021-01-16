@@ -1,5 +1,6 @@
 # (c) 2020 SpigotMC Pty. Ltd.
 
+public net/minecraft/server/EntityFishingHook$HookState
 public net/minecraft/server/PlayerChunkMap$EntityTracker
 public net/minecraft/server/RecipeItemStack$Provider
 public net/minecraft/server/RecipeItemStack$StackProvider
@@ -19,6 +20,7 @@ public net/minecraft/server/AdvancementDataWorld/DESERIALIZER
 public net/minecraft/server/AdvancementDataWorld/REGISTRY
 public net/minecraft/server/Advancements/advancements
 public net/minecraft/server/AttributeRanged/maximum
+public net/minecraft/server/BiomeStorage/registry
 public net/minecraft/server/BlockBase$BlockData/strength
 public net/minecraft/server/BlockDispenser/REGISTRY
 public net/minecraft/server/BlockJukeBox/dropRecord(Lnet/minecraft/server/World;Lnet/minecraft/server/BlockPosition;)V
@@ -109,6 +111,11 @@ public net/minecraft/server/EntityFireworks/FIREWORK_ITEM
 public net/minecraft/server/EntityFireworks/SHOT_AT_ANGLE
 public net/minecraft/server/EntityFireworks/expectedLifespan
 public net/minecraft/server/EntityFish/isFromBucket()Z
+public net/minecraft/server/EntityFishingHook/HOOKED_ENTITY
+public net/minecraft/server/EntityFishingHook/hookState
+public net/minecraft/server/EntityFishingHook/hooked
+public net/minecraft/server/EntityFishingHook/reel()V
+public net/minecraft/server/EntityFishingHook/updateHookedEntity()V
 public net/minecraft/server/EntityFox/FIRST_TRUSTED_PLAYER
 public net/minecraft/server/EntityFox/SECOND_TRUSTED_PLAYER
 public net/minecraft/server/EntityFox/setFoxType(Lnet/minecraft/server/EntityFox$Type;)V
@@ -135,6 +142,7 @@ public net/minecraft/server/EntityInsentient/persistent
 public net/minecraft/server/EntityItem/age
 public net/minecraft/server/EntityItem/pickupDelay
 public net/minecraft/server/EntityItemFrame/fixed
+public net/minecraft/server/EntityItemFrame/itemDropChance
 public net/minecraft/server/EntityLightning/isEffect
 public net/minecraft/server/EntityLiving/ARROWS_IN_BODY
 public net/minecraft/server/EntityLiving/HEALTH
@@ -273,6 +281,8 @@ public net/minecraft/server/RecipeItemStack/choices
 public net/minecraft/server/RegionFileCache/cache
 public net/minecraft/server/ScoreboardObjective/displayName
 public net/minecraft/server/Slot/index
+public net/minecraft/server/SoundEffectType/breakSound
+public net/minecraft/server/SoundEffectType/hitSound
 public net/minecraft/server/Ticket/identifier
 public net/minecraft/server/TileEntityBanner/color
 public net/minecraft/server/TileEntityBanner/patterns
