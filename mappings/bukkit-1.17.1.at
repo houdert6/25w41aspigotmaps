@@ -5,6 +5,9 @@ public net/minecraft/world/entity/monster/EntityIllagerWizard$Spell
 public net/minecraft/world/entity/projectile/EntityFishingHook$HookState
 public net/minecraft/world/item/crafting/RecipeItemStack$Provider
 public net/minecraft/world/item/crafting/RecipeItemStack$StackProvider
+public net/minecraft/world/level/block/BlockComposter$ContainerEmpty
+public net/minecraft/world/level/block/BlockComposter$ContainerInput
+public net/minecraft/world/level/block/BlockComposter$ContainerOutput
 
 # No inheritance in AT :(
 public net/minecraft/world/level/block/BlockDispenser/dispense(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/core/BlockPosition;)V
@@ -89,6 +92,7 @@ public net/minecraft/server/level/PlayerChunkMap/toDrop
 public net/minecraft/server/level/PlayerChunkMap/updatingChunkMap
 public net/minecraft/server/level/PlayerChunkMap/visibleChunkMap
 public net/minecraft/server/level/Ticket/key
+public net/minecraft/server/level/WorldServer/entityManager
 public net/minecraft/server/level/WorldServer/serverLevelData
 public net/minecraft/server/players/JsonListEntry/getKey()Ljava/lang/Object;
 public net/minecraft/server/players/PlayerList/playerIo
@@ -149,6 +153,8 @@ public net/minecraft/world/entity/animal/EntityFox/DATA_TRUSTED_ID_1
 public net/minecraft/world/entity/animal/EntityFox/setFoxType(Lnet/minecraft/world/entity/animal/EntityFox$Type;)V
 public net/minecraft/world/entity/animal/EntityFox/setSleeping(Z)V
 public net/minecraft/world/entity/animal/EntityMushroomCow/setVariant(Lnet/minecraft/world/entity/animal/EntityMushroomCow$Type;)V
+public net/minecraft/world/entity/animal/EntityOcelot/isTrusting()Z
+public net/minecraft/world/entity/animal/EntityOcelot/setTrusting(Z)V
 public net/minecraft/world/entity/animal/EntityPig/steering
 public net/minecraft/world/entity/animal/EntityRabbit/initPathfinder()V
 public net/minecraft/world/entity/animal/axolotl/Axolotl/setVariant(Lnet/minecraft/world/entity/animal/axolotl/Axolotl$Variant;)V
@@ -189,6 +195,9 @@ public net/minecraft/world/entity/monster/EntityShulker/DATA_COLOR_ID
 public net/minecraft/world/entity/monster/EntityShulker/getPeek()I
 public net/minecraft/world/entity/monster/EntityShulker/setAttachFace(Lnet/minecraft/core/EnumDirection;)V
 public net/minecraft/world/entity/monster/EntityShulker/setPeek(I)V
+public net/minecraft/world/entity/monster/EntitySkeleton/DATA_STRAY_CONVERSION_ID
+public net/minecraft/world/entity/monster/EntitySkeleton/conversionTime
+public net/minecraft/world/entity/monster/EntitySkeleton/startStrayConversion(I)V
 public net/minecraft/world/entity/monster/EntityStrider/steering
 public net/minecraft/world/entity/monster/EntityZombie/DATA_DROWNED_CONVERSION_ID
 public net/minecraft/world/entity/monster/EntityZombie/conversionTime
@@ -205,6 +214,7 @@ public net/minecraft/world/entity/monster/piglin/EntityPiglin/inventory
 public net/minecraft/world/entity/monster/piglin/EntityPiglinAbstract/isImmuneToZombification()Z
 public net/minecraft/world/entity/monster/piglin/EntityPiglinAbstract/timeInOverworld
 public net/minecraft/world/entity/npc/EntityVillager/populateTrades()V
+public net/minecraft/world/entity/npc/EntityVillager/shakeHead()V
 public net/minecraft/world/entity/player/EntityHuman/closeInventory()V
 public net/minecraft/world/entity/player/EntityHuman/getMaxFireTicks()I
 public net/minecraft/world/entity/player/EntityHuman/setShoulderEntityLeft(Lnet/minecraft/nbt/NBTTagCompound;)V
@@ -262,6 +272,7 @@ public net/minecraft/world/item/ItemCooldown$Info
 public net/minecraft/world/item/ItemCooldown$Info/endTime
 public net/minecraft/world/item/ItemCooldown/cooldowns
 public net/minecraft/world/item/ItemCooldown/tickCount
+public net/minecraft/world/item/ItemWorldMap/createNewSavedData(Lnet/minecraft/world/level/World;IIIZZLnet/minecraft/resources/ResourceKey;)I
 public net/minecraft/world/item/context/ItemActionContext/<init>(Lnet/minecraft/world/level/World;Lnet/minecraft/world/entity/player/EntityHuman;Lnet/minecraft/world/EnumHand;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/phys/MovingObjectPositionBlock;)V
 public net/minecraft/world/item/crafting/RecipeItemStack$StackProvider/<init>(Lnet/minecraft/world/item/ItemStack;)V
 public net/minecraft/world/item/crafting/RecipeItemStack/<init>(Ljava/util/stream/Stream;)V
@@ -377,7 +388,6 @@ private-final net/minecraft/server/MinecraftServer/connection
 public-final net/minecraft/server/MinecraftServer/storageSource
 protected-final net/minecraft/server/MinecraftServer/worldData
 public-final net/minecraft/server/dedicated/DedicatedServer/settings
-public-final net/minecraft/server/dedicated/DedicatedServerProperties/worldGenSettings
 public-final net/minecraft/server/level/TicketType/timeout
 public-final net/minecraft/world/entity/EntityAreaEffectCloud/effects
 public-final net/minecraft/world/entity/EntityInsentient/goalSelector
@@ -385,6 +395,7 @@ public-final net/minecraft/world/entity/EntityInsentient/targetSelector
 public-final net/minecraft/world/entity/EntityLiving/combatTracker
 public-final net/minecraft/world/entity/EntityLiving/invulnerableDuration
 public-final net/minecraft/world/inventory/Container/lastSlots
+public-final net/minecraft/world/inventory/Container/remoteSlots
 public-final net/minecraft/world/inventory/Container/slots
 private-final net/minecraft/world/item/ItemStack/item
 public-final net/minecraft/world/item/crafting/CraftingManager/recipes
