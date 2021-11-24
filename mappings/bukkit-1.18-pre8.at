@@ -299,6 +299,7 @@ public net/minecraft/world/level/World/levelData
 public net/minecraft/world/level/World/rainLevel
 public net/minecraft/world/level/World/thread
 public net/minecraft/world/level/World/thunderLevel
+public net/minecraft/world/level/biome/BiomeBase/getTemperature(Lnet/minecraft/core/BlockPosition;)F
 public net/minecraft/world/level/block/Block/popExperience(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/core/BlockPosition;I)V
 public net/minecraft/world/level/block/BlockDispenser/DISPENSER_REGISTRY
 public net/minecraft/world/level/block/BlockFire/flameOdds
