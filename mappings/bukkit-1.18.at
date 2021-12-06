@@ -112,6 +112,7 @@ public net/minecraft/world/entity/Entity/getSharedFlag(I)Z
 public net/minecraft/world/entity/Entity/getFireImmuneTicks()I
 public net/minecraft/world/entity/Entity/getEncodeId()Ljava/lang/String;
 public net/minecraft/world/entity/Entity/hasVisualFire
+public net/minecraft/world/entity/Entity/onGround
 public net/minecraft/world/entity/Entity/passengers
 public net/minecraft/world/entity/Entity/portalCooldown
 public net/minecraft/world/entity/Entity/remainingFireTicks
@@ -159,7 +160,6 @@ public net/minecraft/world/entity/animal/axolotl/Axolotl/setVariant(Lnet/minecra
 public net/minecraft/world/entity/animal/horse/EntityHorse/setVariantAndMarkings(Lnet/minecraft/world/entity/animal/horse/HorseColor;Lnet/minecraft/world/entity/animal/horse/HorseStyle;)V
 public net/minecraft/world/entity/animal/horse/EntityHorseAbstract/inventory
 public net/minecraft/world/entity/animal/horse/EntityHorseAbstract/createInventory()V
-public net/minecraft/world/entity/animal/horse/EntityLlama/setStrength(I)V
 public net/minecraft/world/entity/boss/enderdragon/EntityEnderDragon/subEntities
 public net/minecraft/world/entity/boss/wither/EntityWither/bossEvent
 public net/minecraft/world/entity/decoration/EntityArmorStand/bodyPose
@@ -213,6 +213,7 @@ public net/minecraft/world/entity/monster/piglin/EntityPiglin/inventory
 public net/minecraft/world/entity/monster/piglin/EntityPiglinAbstract/isImmuneToZombification()Z
 public net/minecraft/world/entity/monster/piglin/EntityPiglinAbstract/timeInOverworld
 public net/minecraft/world/entity/npc/EntityVillager/increaseMerchantCareer()V
+public net/minecraft/world/entity/npc/EntityVillager/releaseAllPois()V
 public net/minecraft/world/entity/npc/EntityVillager/setUnhappy()V
 public net/minecraft/world/entity/player/EntityHuman/closeContainer()V
 public net/minecraft/world/entity/player/EntityHuman/getFireImmuneTicks()I
