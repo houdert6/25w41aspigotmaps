@@ -1,4 +1,4 @@
-# (c) 2021 SpigotMC Pty. Ltd.
+# (c) 2022 SpigotMC Pty. Ltd.
 
 public net/minecraft/server/level/PlayerChunkMap$EntityTracker
 public net/minecraft/world/entity/monster/EntityIllagerWizard$Spell
@@ -58,13 +58,13 @@ public net/minecraft/server/MinecraftServer/LOGGER
 public net/minecraft/server/MinecraftServer/executor
 public net/minecraft/server/MinecraftServer/fixerUpper
 public net/minecraft/server/MinecraftServer/levels
-public net/minecraft/server/MinecraftServer/prepareLevels(Lnet/minecraft/server/level/progress/WorldLoadListener;)V
 public net/minecraft/server/MinecraftServer/playerDataStorage
-public net/minecraft/server/MinecraftServer/wrapRunnable(Ljava/lang/Runnable;)Lnet/minecraft/server/TickTask;
+public net/minecraft/server/MinecraftServer/prepareLevels(Lnet/minecraft/server/level/progress/WorldLoadListener;)V
 public net/minecraft/server/MinecraftServer/progressListenerFactory
 public net/minecraft/server/MinecraftServer/registryHolder
 public net/minecraft/server/MinecraftServer/resources
 public net/minecraft/server/MinecraftServer/serverThread
+public net/minecraft/server/MinecraftServer/wrapRunnable(Ljava/lang/Runnable;)Lnet/minecraft/server/TickTask;
 public net/minecraft/server/dedicated/DedicatedServer/rconConsoleSource
 public net/minecraft/server/dedicated/PropertyManager/properties
 public net/minecraft/server/level/BossBattleServer/broadcast(Ljava/util/function/Function;)V
@@ -108,9 +108,9 @@ public net/minecraft/world/ChestLock/key
 public net/minecraft/world/InventoryLargeChest/container1
 public net/minecraft/world/InventoryLargeChest/container2
 public net/minecraft/world/InventorySubcontainer/items
-public net/minecraft/world/entity/Entity/getSharedFlag(I)Z
-public net/minecraft/world/entity/Entity/getFireImmuneTicks()I
 public net/minecraft/world/entity/Entity/getEncodeId()Ljava/lang/String;
+public net/minecraft/world/entity/Entity/getFireImmuneTicks()I
+public net/minecraft/world/entity/Entity/getSharedFlag(I)Z
 public net/minecraft/world/entity/Entity/hasVisualFire
 public net/minecraft/world/entity/Entity/onGround
 public net/minecraft/world/entity/Entity/passengers
@@ -133,12 +133,12 @@ public net/minecraft/world/entity/EntityLightning/visualOnly
 public net/minecraft/world/entity/EntityLiving/DATA_ARROW_COUNT_ID
 public net/minecraft/world/entity/EntityLiving/DATA_HEALTH_ID
 public net/minecraft/world/entity/EntityLiving/activeEffects
+public net/minecraft/world/entity/EntityLiving/detectEquipmentUpdates()V
 public net/minecraft/world/entity/EntityLiving/effectsDirty
 public net/minecraft/world/entity/EntityLiving/lastHurt
 public net/minecraft/world/entity/EntityLiving/lastHurtByMob
 public net/minecraft/world/entity/EntityLiving/lastHurtByMobTimestamp
 public net/minecraft/world/entity/EntityLiving/lastHurtByPlayer
-public net/minecraft/world/entity/EntityLiving/detectEquipmentUpdates()V
 public net/minecraft/world/entity/GlowSquid/setDarkTicks(I)V
 public net/minecraft/world/entity/ai/attributes/AttributeRanged/maxValue
 public net/minecraft/world/entity/animal/EntityAnimal/inLove
@@ -158,8 +158,8 @@ public net/minecraft/world/entity/animal/EntityPig/steering
 public net/minecraft/world/entity/animal/EntityRabbit/registerGoals()V
 public net/minecraft/world/entity/animal/axolotl/Axolotl/setVariant(Lnet/minecraft/world/entity/animal/axolotl/Axolotl$Variant;)V
 public net/minecraft/world/entity/animal/horse/EntityHorse/setVariantAndMarkings(Lnet/minecraft/world/entity/animal/horse/HorseColor;Lnet/minecraft/world/entity/animal/horse/HorseStyle;)V
-public net/minecraft/world/entity/animal/horse/EntityHorseAbstract/inventory
 public net/minecraft/world/entity/animal/horse/EntityHorseAbstract/createInventory()V
+public net/minecraft/world/entity/animal/horse/EntityHorseAbstract/inventory
 public net/minecraft/world/entity/boss/enderdragon/EntityEnderDragon/subEntities
 public net/minecraft/world/entity/boss/wither/EntityWither/bossEvent
 public net/minecraft/world/entity/decoration/EntityArmorStand/bodyPose
@@ -169,9 +169,9 @@ public net/minecraft/world/entity/decoration/EntityArmorStand/leftArmPose
 public net/minecraft/world/entity/decoration/EntityArmorStand/leftLegPose
 public net/minecraft/world/entity/decoration/EntityArmorStand/rightArmPose
 public net/minecraft/world/entity/decoration/EntityArmorStand/rightLegPose
-public net/minecraft/world/entity/decoration/EntityArmorStand/setShowArms(Z)V
-public net/minecraft/world/entity/decoration/EntityArmorStand/setNoBasePlate(Z)V
 public net/minecraft/world/entity/decoration/EntityArmorStand/setMarker(Z)V
+public net/minecraft/world/entity/decoration/EntityArmorStand/setNoBasePlate(Z)V
+public net/minecraft/world/entity/decoration/EntityArmorStand/setShowArms(Z)V
 public net/minecraft/world/entity/decoration/EntityArmorStand/setSmall(Z)V
 public net/minecraft/world/entity/decoration/EntityHanging/pos
 public net/minecraft/world/entity/decoration/EntityItemFrame/dropChance
@@ -359,7 +359,9 @@ public net/minecraft/world/level/block/state/BlockBase$BlockData/destroySpeed
 public net/minecraft/world/level/block/state/IBlockDataHolder/PROPERTY_ENTRY_TO_STRING_FUNCTION
 public net/minecraft/world/level/chunk/Chunk/level
 public net/minecraft/world/level/chunk/Chunk/loaded
-public net/minecraft/world/level/chunk/ChunkGenerator/strongholdSeed
+public net/minecraft/world/level/chunk/ChunkGenerator/ringPlacementSeed
+public net/minecraft/world/level/chunk/ChunkGenerator/structureOverrides
+public net/minecraft/world/level/chunk/ChunkGenerator/structureSets
 public net/minecraft/world/level/chunk/DataPaletteBlock/registry
 public net/minecraft/world/level/chunk/IChunkAccess/blockEntities
 public net/minecraft/world/level/chunk/IChunkAccess/heightmaps
@@ -369,29 +371,29 @@ public net/minecraft/world/level/chunk/storage/EntityStorage/level
 public net/minecraft/world/level/chunk/storage/RegionFileCache/regionCache
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/dragonEvent
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/dragonUUID
-public net/minecraft/world/level/dimension/end/EnderDragonBattle/spawnExitPortal(Z)V
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/findExitPortal()Lnet/minecraft/world/level/block/state/pattern/ShapeDetector$ShapeDetectorCollection;
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/level
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/portalLocation
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/respawnStage
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/setRespawnStage(Lnet/minecraft/world/level/dimension/end/EnumDragonRespawn;)V
-public net/minecraft/world/level/entity/PersistentEntitySectionManager/permanentStorage
+public net/minecraft/world/level/dimension/end/EnderDragonBattle/spawnExitPortal(Z)V
 public net/minecraft/world/level/entity/PersistentEntitySectionManager/ensureChunkQueuedForLoad(J)V
+public net/minecraft/world/level/entity/PersistentEntitySectionManager/permanentStorage
 public net/minecraft/world/level/levelgen/ChunkGeneratorAbstract/noises
 public net/minecraft/world/level/levelgen/ChunkGeneratorAbstract/settings
 public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructure/entityInfoList
 public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructure/palettes
 public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructureManager/createAndValidatePathToStructure(Lnet/minecraft/resources/MinecraftKey;Ljava/lang/String;)Ljava/nio/file/Path;
+public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructureManager/loadFromGenerated(Lnet/minecraft/resources/MinecraftKey;)Ljava/util/Optional;
 public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructureManager/loadFromResource(Lnet/minecraft/resources/MinecraftKey;)Ljava/util/Optional;
 public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructureManager/readStructure(Ljava/io/InputStream;)Lnet/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructure;
-public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructureManager/loadFromGenerated(Lnet/minecraft/resources/MinecraftKey;)Ljava/util/Optional;
 public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructureManager/structureRepository
 public net/minecraft/world/level/material/MaterialMapColor/MATERIAL_COLORS
 public net/minecraft/world/level/saveddata/maps/WorldMap/carriedBy
 public net/minecraft/world/level/saveddata/maps/WorldMap/carriedByPlayers
 public net/minecraft/world/level/saveddata/maps/WorldMap/decorations
-public net/minecraft/world/level/saveddata/maps/WorldMap/setDecorationsDirty()V
 public net/minecraft/world/level/saveddata/maps/WorldMap/setColorsDirty(II)V
+public net/minecraft/world/level/saveddata/maps/WorldMap/setDecorationsDirty()V
 public net/minecraft/world/level/storage/Convertable$ConversionSession/levelPath
 public net/minecraft/world/level/storage/Convertable/baseDir
 public net/minecraft/world/level/storage/WorldDataServer/settings
