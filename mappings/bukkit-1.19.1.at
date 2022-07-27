@@ -256,6 +256,7 @@ public net/minecraft/world/entity/raid/Raid/heroesOfTheVillage
 public net/minecraft/world/entity/raid/Raid/numGroups
 public net/minecraft/world/entity/raid/Raid/ticksActive
 public net/minecraft/world/entity/raid/Raid/totalHealth
+public net/minecraft/world/entity/vehicle/EntityBoat/status
 public net/minecraft/world/entity/vehicle/EntityMinecartCommandBlock/DATA_ID_COMMAND_NAME
 public net/minecraft/world/entity/vehicle/EntityMinecartContainer/lootTable
 public net/minecraft/world/entity/vehicle/EntityMinecartContainer/lootTableSeed
@@ -340,6 +341,7 @@ public net/minecraft/world/level/block/entity/TileEntityContainer/name
 public net/minecraft/world/level/block/entity/TileEntityEndGateway/age
 public net/minecraft/world/level/block/entity/TileEntityEndGateway/exactTeleport
 public net/minecraft/world/level/block/entity/TileEntityEndGateway/exitPortal
+public net/minecraft/world/level/block/entity/TileEntityEnderChest/openersCounter
 public net/minecraft/world/level/block/entity/TileEntityFurnace/cookingProgress
 public net/minecraft/world/level/block/entity/TileEntityFurnace/cookingTotalTime
 public net/minecraft/world/level/block/entity/TileEntityFurnace/litTime
