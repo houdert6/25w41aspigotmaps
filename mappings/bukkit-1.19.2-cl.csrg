@@ -192,7 +192,7 @@ agz net/minecraft/server/network/PlayerConnection
 ah net/minecraft/advancements/AdvancementProgress
 aha net/minecraft/server/network/HandshakeListener
 ahb net/minecraft/server/network/LoginListener
-ahb$b net/minecraft/server/network/LoginListener$EnumProtocolState
+ahb$a net/minecraft/server/network/LoginListener$EnumProtocolState
 ahc net/minecraft/server/network/ServerPlayerConnection
 ahd net/minecraft/server/network/PacketStatusListener
 ahe net/minecraft/server/network/ITextFilter
