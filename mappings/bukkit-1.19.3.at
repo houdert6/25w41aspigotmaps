@@ -1,6 +1,7 @@
 # (c) 2022 SpigotMC Pty. Ltd.
 
 public net/minecraft/server/MinecraftServer$ReloadableResources
+public net/minecraft/server/dedicated/DedicatedServerProperties$WorldDimensionData
 public net/minecraft/server/level/PlayerChunkMap$EntityTracker
 public net/minecraft/world/entity/monster/EntityIllagerWizard$Spell
 public net/minecraft/world/entity/projectile/EntityFishingHook$HookState
@@ -50,18 +51,17 @@ public net/minecraft/network/protocol/handshake/PacketHandshakingInSetProtocol/p
 public net/minecraft/server/AdvancementDataPlayer/advancements
 public net/minecraft/server/AdvancementDataWorld/GSON
 public net/minecraft/server/AdvancementDataWorld/advancements
-public net/minecraft/server/Main/forceUpgrade(Lnet/minecraft/world/level/storage/Convertable$ConversionSession;Lcom/mojang/datafixers/DataFixer;ZLjava/util/function/BooleanSupplier;Lnet/minecraft/world/level/levelgen/GeneratorSettings;)V
+public net/minecraft/server/Main/forceUpgrade(Lnet/minecraft/world/level/storage/Convertable$ConversionSession;Lcom/mojang/datafixers/DataFixer;ZLjava/util/function/BooleanSupplier;Lnet/minecraft/core/IRegistry;)V
 public net/minecraft/server/MinecraftServer/LOGGER
 public net/minecraft/server/MinecraftServer/executor
 public net/minecraft/server/MinecraftServer/fixerUpper
-public net/minecraft/server/MinecraftServer/levels
 public net/minecraft/server/MinecraftServer/playerDataStorage
 public net/minecraft/server/MinecraftServer/prepareLevels(Lnet/minecraft/server/level/progress/WorldLoadListener;)V
 public net/minecraft/server/MinecraftServer/progressListenerFactory
-public net/minecraft/server/MinecraftServer/registryHolder
 public net/minecraft/server/MinecraftServer/resources
 public net/minecraft/server/MinecraftServer/serverThread
 public net/minecraft/server/MinecraftServer/wrapRunnable(Ljava/lang/Runnable;)Lnet/minecraft/server/TickTask;
+public net/minecraft/server/WorldLoader/loadAndReplaceLayer(Lnet/minecraft/server/packs/resources/IResourceManager;Lnet/minecraft/core/LayeredRegistryAccess;Lnet/minecraft/server/RegistryLayer;Ljava/util/List;)Lnet/minecraft/core/LayeredRegistryAccess;
 public net/minecraft/server/dedicated/DedicatedServer/rconConsoleSource
 public net/minecraft/server/dedicated/PropertyManager/properties
 public net/minecraft/server/level/BossBattleServer/broadcast(Ljava/util/function/Function;)V
@@ -145,14 +145,13 @@ public net/minecraft/world/entity/animal/EntityBee/setHasStung(Z)V
 public net/minecraft/world/entity/animal/EntityBee/stayOutOfHiveCountdown
 public net/minecraft/world/entity/animal/EntityFox/DATA_TRUSTED_ID_0
 public net/minecraft/world/entity/animal/EntityFox/DATA_TRUSTED_ID_1
-public net/minecraft/world/entity/animal/EntityFox/setFoxType(Lnet/minecraft/world/entity/animal/EntityFox$Type;)V
 public net/minecraft/world/entity/animal/EntityFox/setSleeping(Z)V
-public net/minecraft/world/entity/animal/EntityMushroomCow/setMushroomType(Lnet/minecraft/world/entity/animal/EntityMushroomCow$Type;)V
 public net/minecraft/world/entity/animal/EntityOcelot/isTrusting()Z
 public net/minecraft/world/entity/animal/EntityOcelot/setTrusting(Z)V
 public net/minecraft/world/entity/animal/EntityPig/steering
 public net/minecraft/world/entity/animal/EntityRabbit/registerGoals()V
-public net/minecraft/world/entity/animal/axolotl/Axolotl/setVariant(Lnet/minecraft/world/entity/animal/axolotl/Axolotl$Variant;)V
+public net/minecraft/world/entity/animal/EntityTropicalFish/getPackedVariant()I
+public net/minecraft/world/entity/animal/EntityTropicalFish/setPackedVariant(I)V
 public net/minecraft/world/entity/animal/frog/Tadpole/age
 public net/minecraft/world/entity/animal/goat/Goat/DATA_HAS_LEFT_HORN
 public net/minecraft/world/entity/animal/goat/Goat/DATA_HAS_RIGHT_HORN
@@ -174,9 +173,10 @@ public net/minecraft/world/entity/decoration/EntityArmorStand/setNoBasePlate(Z)V
 public net/minecraft/world/entity/decoration/EntityArmorStand/setShowArms(Z)V
 public net/minecraft/world/entity/decoration/EntityArmorStand/setSmall(Z)V
 public net/minecraft/world/entity/decoration/EntityHanging/pos
+public net/minecraft/world/entity/decoration/EntityItemFrame/DATA_ITEM
+public net/minecraft/world/entity/decoration/EntityItemFrame/DATA_ROTATION
 public net/minecraft/world/entity/decoration/EntityItemFrame/dropChance
 public net/minecraft/world/entity/decoration/EntityItemFrame/fixed
-public net/minecraft/world/entity/decoration/EntityPainting/setVariant(Lnet/minecraft/core/Holder;)V
 public net/minecraft/world/entity/item/EntityFallingBlock/hurtEntities
 public net/minecraft/world/entity/item/EntityItem/age
 public net/minecraft/world/entity/item/EntityItem/pickupDelay
@@ -237,6 +237,8 @@ public net/minecraft/world/entity/projectile/EntityEnderSignal/tz
 public net/minecraft/world/entity/projectile/EntityFireballFireball/getItemRaw()Lnet/minecraft/world/item/ItemStack;
 public net/minecraft/world/entity/projectile/EntityFireworks/DATA_ID_FIREWORKS_ITEM
 public net/minecraft/world/entity/projectile/EntityFireworks/DATA_SHOT_AT_ANGLE
+public net/minecraft/world/entity/projectile/EntityFireworks/attachedToEntity
+public net/minecraft/world/entity/projectile/EntityFireworks/life
 public net/minecraft/world/entity/projectile/EntityFireworks/lifetime
 public net/minecraft/world/entity/projectile/EntityFishingHook/DATA_HOOKED_ENTITY
 public net/minecraft/world/entity/projectile/EntityFishingHook/currentState
@@ -284,7 +286,6 @@ public net/minecraft/world/item/ItemWorldMap/createNewSavedData(Lnet/minecraft/w
 public net/minecraft/world/item/context/ItemActionContext/<init>(Lnet/minecraft/world/level/World;Lnet/minecraft/world/entity/player/EntityHuman;Lnet/minecraft/world/EnumHand;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/phys/MovingObjectPositionBlock;)V
 public net/minecraft/world/item/crafting/RecipeItemStack$StackProvider/<init>(Lnet/minecraft/world/item/ItemStack;)V
 public net/minecraft/world/item/crafting/RecipeItemStack/<init>(Ljava/util/stream/Stream;)V
-public net/minecraft/world/item/crafting/RecipeItemStack/dissolve()V
 public net/minecraft/world/item/crafting/RecipeItemStack/itemStacks
 public net/minecraft/world/item/trading/MerchantRecipe/demand
 public net/minecraft/world/item/trading/MerchantRecipe/priceMultiplier
@@ -316,6 +317,7 @@ public net/minecraft/world/level/block/BlockJukeBox/dropRecording(Lnet/minecraft
 public net/minecraft/world/level/block/BlockShulkerBox/color
 public net/minecraft/world/level/block/SoundEffectType/breakSound
 public net/minecraft/world/level/block/SoundEffectType/hitSound
+public net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity/lastInteractedSlot
 public net/minecraft/world/level/block/entity/SculkSensorBlockEntity/lastVibrationFrequency
 public net/minecraft/world/level/block/entity/SculkShriekerBlockEntity/warningLevel
 public net/minecraft/world/level/block/entity/TileEntityBanner/baseColor
@@ -372,8 +374,7 @@ public net/minecraft/world/level/block/state/properties/BlockStateInteger/max
 public net/minecraft/world/level/block/state/properties/BlockStateInteger/min
 public net/minecraft/world/level/chunk/Chunk/level
 public net/minecraft/world/level/chunk/Chunk/loaded
-public net/minecraft/world/level/chunk/ChunkGenerator/structureOverrides
-public net/minecraft/world/level/chunk/ChunkGenerator/structureSets
+public net/minecraft/world/level/chunk/ChunkGenerator/generationSettingsGetter
 public net/minecraft/world/level/chunk/DataPaletteBlock/registry
 public net/minecraft/world/level/chunk/IChunkAccess/blockEntities
 public net/minecraft/world/level/chunk/IChunkAccess/heightmaps
@@ -391,7 +392,6 @@ public net/minecraft/world/level/dimension/end/EnderDragonBattle/setRespawnStage
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/spawnExitPortal(Z)V
 public net/minecraft/world/level/entity/PersistentEntitySectionManager/ensureChunkQueuedForLoad(J)V
 public net/minecraft/world/level/entity/PersistentEntitySectionManager/permanentStorage
-public net/minecraft/world/level/levelgen/ChunkGeneratorAbstract/noises
 public net/minecraft/world/level/levelgen/ChunkGeneratorAbstract/settings
 public net/minecraft/world/level/levelgen/structure/placement/StructurePlacement/exclusionZone
 public net/minecraft/world/level/levelgen/structure/placement/StructurePlacement/frequency
@@ -421,6 +421,7 @@ public net/minecraft/world/scores/criteria/IScoreboardCriteria/CRITERIA_CACHE
 public-final net/minecraft/network/protocol/handshake/PacketHandshakingInSetProtocol/hostName
 public-final net/minecraft/server/DataPackResources/commands
 private-final net/minecraft/server/MinecraftServer/connection
+private-final net/minecraft/server/MinecraftServer/levels
 public-final net/minecraft/server/MinecraftServer/storageSource
 protected-final net/minecraft/server/MinecraftServer/worldData
 public-final net/minecraft/server/dedicated/DedicatedServer/settings
@@ -446,5 +447,5 @@ public-final net/minecraft/world/level/saveddata/maps/WorldMap/locked
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/scale
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/trackingPosition
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/unlimitedTracking
-public-final net/minecraft/world/level/saveddata/maps/WorldMap/x
-public-final net/minecraft/world/level/saveddata/maps/WorldMap/z
+public-final net/minecraft/world/level/saveddata/maps/WorldMap/centerX
+public-final net/minecraft/world/level/saveddata/maps/WorldMap/centerZ
