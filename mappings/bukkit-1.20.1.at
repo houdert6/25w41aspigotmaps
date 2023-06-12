@@ -154,7 +154,6 @@ public net/minecraft/world/entity/Entity/hasVisualFire
 public net/minecraft/world/entity/Entity/onGround
 public net/minecraft/world/entity/Entity/passengers
 public net/minecraft/world/entity/Entity/portalCooldown
-public net/minecraft/world/entity/Entity/remainingFireTicks
 public net/minecraft/world/entity/Entity/setSharedFlag(IZ)V
 public net/minecraft/world/entity/Entity/unsetRemoved()V
 public net/minecraft/world/entity/Entity/wasTouchingWater
@@ -247,6 +246,8 @@ public net/minecraft/world/entity/monster/EntityCreeper/maxSwell
 public net/minecraft/world/entity/monster/EntityCreeper/swell
 public net/minecraft/world/entity/monster/EntityDrowned/groundNavigation
 public net/minecraft/world/entity/monster/EntityDrowned/waterNavigation
+public net/minecraft/world/entity/monster/EntityEnderman/teleport()Z
+public net/minecraft/world/entity/monster/EntityEnderman/teleportTowards(Lnet/minecraft/world/entity/Entity;)Z 
 public net/minecraft/world/entity/monster/EntityGuardian$PathfinderGoalGuardianAttack/attackTime
 public net/minecraft/world/entity/monster/EntityGuardian/randomStrollGoal
 public net/minecraft/world/entity/monster/EntityGuardian/setActiveAttackTarget(I)V
@@ -503,6 +504,7 @@ public-final net/minecraft/server/MinecraftServer/storageSource
 protected-final net/minecraft/server/MinecraftServer/worldData
 public-final net/minecraft/server/dedicated/DedicatedServer/settings
 public-final net/minecraft/server/level/TicketType/timeout
+public-final net/minecraft/server/players/PlayerList/maxPlayers
 public-final net/minecraft/world/entity/ai/attributes/AttributeRanged/maxValue
 public-final net/minecraft/world/entity/EntityAreaEffectCloud/effects
 public-final net/minecraft/world/entity/EntityInsentient/goalSelector
