@@ -15,8 +15,8 @@ public net/minecraft/world/level/block/BlockComposter$ContainerInput
 public net/minecraft/world/level/block/BlockComposter$ContainerOutput
 
 # No inheritance in AT :(
-public net/minecraft/world/level/block/BlockDispenser/dispenseFrom(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/core/BlockPosition;)V
-public net/minecraft/world/level/block/BlockDropper/dispenseFrom(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/core/BlockPosition;)V
+public net/minecraft/world/level/block/BlockDispenser/dispenseFrom(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/world/level/block/state/IBlockData;Lnet/minecraft/core/BlockPosition;)V
+public net/minecraft/world/level/block/BlockDropper/dispenseFrom(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/world/level/block/state/IBlockData;Lnet/minecraft/core/BlockPosition;)V
 
 public net/minecraft/world/entity/decoration/EntityHanging/setDirection(Lnet/minecraft/core/EnumDirection;)V
 public net/minecraft/world/entity/decoration/EntityItemFrame/setDirection(Lnet/minecraft/core/EnumDirection;)V
@@ -27,15 +27,12 @@ public net/minecraft/world/level/World/getEntities()Lnet/minecraft/world/level/e
 public net/minecraft/world/entity/EntityInsentient/getDefaultLootTable()Lnet/minecraft/resources/MinecraftKey;
 
 public net/minecraft/EnumChatFormat/code
-public net/minecraft/advancements/Advancements/advancements
 public net/minecraft/commands/CommandListenerWrapper/source
 public net/minecraft/nbt/MojangsonParser/readArrayTag()Lnet/minecraft/nbt/NBTBase;
 public net/minecraft/nbt/MojangsonParser/type(Ljava/lang/String;)Lnet/minecraft/nbt/NBTBase;
 public net/minecraft/network/NetworkManager/address
 public net/minecraft/network/NetworkManager/channel
 public net/minecraft/network/chat/ChatHexColor/name
-public net/minecraft/network/protocol/game/PacketPlayInCustomPayload/data
-public net/minecraft/network/protocol/game/PacketPlayInCustomPayload/identifier
 public net/minecraft/network/protocol/game/PacketPlayInFlying/hasPos
 public net/minecraft/network/protocol/game/PacketPlayInFlying/hasRot
 public net/minecraft/network/protocol/game/PacketPlayInFlying/x
@@ -43,9 +40,6 @@ public net/minecraft/network/protocol/game/PacketPlayInFlying/xRot
 public net/minecraft/network/protocol/game/PacketPlayInFlying/y
 public net/minecraft/network/protocol/game/PacketPlayInFlying/yRot
 public net/minecraft/network/protocol/game/PacketPlayInFlying/z
-public net/minecraft/network/protocol/game/PacketPlayInResourcePackStatus/action
-public net/minecraft/network/protocol/game/PacketPlayInSettings/language
-public net/minecraft/network/protocol/game/PacketPlayInSettings/viewDistance
 public net/minecraft/network/protocol/game/PacketPlayOutBlockChange/blockState
 public net/minecraft/network/protocol/game/PacketPlayOutPlayerListHeaderFooter/footer
 public net/minecraft/network/protocol/game/PacketPlayOutPlayerListHeaderFooter/header
@@ -64,7 +58,6 @@ public net/minecraft/server/MinecraftServer/resources
 public net/minecraft/server/MinecraftServer/serverThread
 public net/minecraft/server/MinecraftServer/wrapRunnable(Ljava/lang/Runnable;)Lnet/minecraft/server/TickTask;
 public net/minecraft/server/WorldLoader/loadAndReplaceLayer(Lnet/minecraft/server/packs/resources/IResourceManager;Lnet/minecraft/core/LayeredRegistryAccess;Lnet/minecraft/server/RegistryLayer;Ljava/util/List;)Lnet/minecraft/core/LayeredRegistryAccess;
-public net/minecraft/server/dedicated/DedicatedServer/rconConsoleSource
 public net/minecraft/server/dedicated/PropertyManager/properties
 public net/minecraft/server/level/BossBattleServer/broadcast(Ljava/util/function/Function;)V
 public net/minecraft/server/level/BossBattleServer/visible
@@ -73,6 +66,7 @@ public net/minecraft/server/level/ChunkProviderServer/spawnEnemies
 public net/minecraft/server/level/ChunkProviderServer/spawnFriendlies
 public net/minecraft/server/level/EntityPlayer/initMenu(Lnet/minecraft/world/inventory/Container;)V
 public net/minecraft/server/level/EntityPlayer/isChangingDimension
+public net/minecraft/server/level/EntityPlayer/language
 public net/minecraft/server/level/EntityPlayer/lastSentExp
 public net/minecraft/server/level/EntityPlayer/nextContainerCounter()V
 public net/minecraft/server/level/EntityPlayer/spawnInvulnerableTime
@@ -115,36 +109,37 @@ public net/minecraft/world/entity/Display$ItemDisplay/getItemStack()Lnet/minecra
 public net/minecraft/world/entity/Display$ItemDisplay/getItemTransform()Lnet/minecraft/world/item/ItemDisplayContext;
 public net/minecraft/world/entity/Display$ItemDisplay/setItemStack(Lnet/minecraft/world/item/ItemStack;)V
 public net/minecraft/world/entity/Display$ItemDisplay/setItemTransform(Lnet/minecraft/world/item/ItemDisplayContext;)V
+public net/minecraft/world/entity/Display$TextDisplay/DATA_BACKGROUND_COLOR_ID
+public net/minecraft/world/entity/Display$TextDisplay/DATA_LINE_WIDTH_ID
 public net/minecraft/world/entity/Display$TextDisplay/getBackgroundColor()I
 public net/minecraft/world/entity/Display$TextDisplay/getFlags()B
 public net/minecraft/world/entity/Display$TextDisplay/getLineWidth()I
 public net/minecraft/world/entity/Display$TextDisplay/getText()Lnet/minecraft/network/chat/IChatBaseComponent;
 public net/minecraft/world/entity/Display$TextDisplay/getTextOpacity()B
-public net/minecraft/world/entity/Display$TextDisplay/setBackgroundColor(I)V
 public net/minecraft/world/entity/Display$TextDisplay/setFlags(B)V
-public net/minecraft/world/entity/Display$TextDisplay/setLineWidth(I)V
 public net/minecraft/world/entity/Display$TextDisplay/setText(Lnet/minecraft/network/chat/IChatBaseComponent;)V
 public net/minecraft/world/entity/Display$TextDisplay/setTextOpacity(B)V
+public net/minecraft/world/entity/Display/DATA_POS_ROT_INTERPOLATION_DURATION_ID
 public net/minecraft/world/entity/Display/createTransformation(Lnet/minecraft/network/syncher/DataWatcher;)Lcom/mojang/math/Transformation;
 public net/minecraft/world/entity/Display/getBillboardConstraints()Lnet/minecraft/world/entity/Display$BillboardConstraints;
 public net/minecraft/world/entity/Display/getBrightnessOverride()Lnet/minecraft/util/Brightness;
 public net/minecraft/world/entity/Display/getGlowColorOverride()I
 public net/minecraft/world/entity/Display/getHeight()F
-public net/minecraft/world/entity/Display/getInterpolationDelay()I
-public net/minecraft/world/entity/Display/getInterpolationDuration()I
 public net/minecraft/world/entity/Display/getShadowRadius()F
 public net/minecraft/world/entity/Display/getShadowStrength()F
+public net/minecraft/world/entity/Display/getTransformationInterpolationDelay()I
+public net/minecraft/world/entity/Display/getTransformationInterpolationDuration()I
 public net/minecraft/world/entity/Display/getViewRange()F
 public net/minecraft/world/entity/Display/getWidth()F
 public net/minecraft/world/entity/Display/setBillboardConstraints(Lnet/minecraft/world/entity/Display$BillboardConstraints;)V
 public net/minecraft/world/entity/Display/setBrightnessOverride(Lnet/minecraft/util/Brightness;)V
 public net/minecraft/world/entity/Display/setGlowColorOverride(I)V
 public net/minecraft/world/entity/Display/setHeight(F)V
-public net/minecraft/world/entity/Display/setInterpolationDelay(I)V
-public net/minecraft/world/entity/Display/setInterpolationDuration(I)V
 public net/minecraft/world/entity/Display/setShadowRadius(F)V
 public net/minecraft/world/entity/Display/setShadowStrength(F)V
 public net/minecraft/world/entity/Display/setTransformation(Lcom/mojang/math/Transformation;)V
+public net/minecraft/world/entity/Display/setTransformationInterpolationDelay(I)V
+public net/minecraft/world/entity/Display/setTransformationInterpolationDuration(I)V
 public net/minecraft/world/entity/Display/setViewRange(F)V
 public net/minecraft/world/entity/Display/setWidth(F)V
 public net/minecraft/world/entity/Entity/getEncodeId()Ljava/lang/String;
@@ -158,9 +153,11 @@ public net/minecraft/world/entity/Entity/setSharedFlag(IZ)V
 public net/minecraft/world/entity/Entity/unsetRemoved()V
 public net/minecraft/world/entity/Entity/wasTouchingWater
 public net/minecraft/world/entity/EntityAreaEffectCloud/durationOnUse
+public net/minecraft/world/entity/EntityAreaEffectCloud/potion
 public net/minecraft/world/entity/EntityAreaEffectCloud/radiusOnUse
 public net/minecraft/world/entity/EntityAreaEffectCloud/radiusPerTick
 public net/minecraft/world/entity/EntityAreaEffectCloud/reapplicationDelay
+public net/minecraft/world/entity/EntityAreaEffectCloud/updateColor()V
 public net/minecraft/world/entity/EntityAreaEffectCloud/waitTime
 public net/minecraft/world/entity/EntityExperienceOrb/value
 public net/minecraft/world/entity/EntityInsentient/armorDropChances
@@ -189,6 +186,7 @@ public net/minecraft/world/entity/Interaction/setWidth(F)V
 public net/minecraft/world/entity/SaddleStorage/boostTime
 public net/minecraft/world/entity/SaddleStorage/boostTimeTotal()I
 public net/minecraft/world/entity/SaddleStorage/boosting
+public net/minecraft/world/entity/ai/attributes/AttributeModifiable/removeModifier(Lnet/minecraft/world/entity/ai/attributes/AttributeModifier;)V
 public net/minecraft/world/entity/animal/EntityAnimal/inLove
 public net/minecraft/world/entity/animal/EntityAnimal/loveCause
 public net/minecraft/world/entity/animal/EntityBee/hivePos
@@ -204,6 +202,11 @@ public net/minecraft/world/entity/animal/EntityPig/steering
 public net/minecraft/world/entity/animal/EntityRabbit/registerGoals()V
 public net/minecraft/world/entity/animal/EntityTropicalFish/getPackedVariant()I
 public net/minecraft/world/entity/animal/EntityTropicalFish/setPackedVariant(I)V
+public net/minecraft/world/entity/animal/allay/Allay/canDuplicate()Z
+public net/minecraft/world/entity/animal/allay/Allay/duplicateAllay()V
+public net/minecraft/world/entity/animal/allay/Allay/duplicationCooldown
+public net/minecraft/world/entity/animal/allay/Allay/jukeboxPos
+public net/minecraft/world/entity/animal/allay/Allay/resetDuplicationCooldown()V
 public net/minecraft/world/entity/animal/frog/Tadpole/age
 public net/minecraft/world/entity/animal/goat/Goat/DATA_HAS_LEFT_HORN
 public net/minecraft/world/entity/animal/goat/Goat/DATA_HAS_RIGHT_HORN
@@ -232,6 +235,7 @@ public net/minecraft/world/entity/decoration/EntityItemFrame/DATA_ITEM
 public net/minecraft/world/entity/decoration/EntityItemFrame/DATA_ROTATION
 public net/minecraft/world/entity/decoration/EntityItemFrame/dropChance
 public net/minecraft/world/entity/decoration/EntityItemFrame/fixed
+public net/minecraft/world/entity/item/EntityFallingBlock/cancelDrop
 public net/minecraft/world/entity/item/EntityFallingBlock/fallDamageMax
 public net/minecraft/world/entity/item/EntityFallingBlock/fallDamagePerDistance
 public net/minecraft/world/entity/item/EntityFallingBlock/hurtEntities
@@ -314,7 +318,9 @@ public net/minecraft/world/entity/projectile/EntityProjectileThrowable/getItemRa
 public net/minecraft/world/entity/projectile/EntitySpectralArrow/duration
 public net/minecraft/world/entity/projectile/EntityThrownTrident/tridentItem
 public net/minecraft/world/entity/projectile/EntityTippedArrow/effects
+public net/minecraft/world/entity/projectile/EntityTippedArrow/potion
 public net/minecraft/world/entity/projectile/EntityTippedArrow/setFixedColor(I)V
+public net/minecraft/world/entity/projectile/EntityTippedArrow/updateColor()V
 public net/minecraft/world/entity/raid/PersistentRaid/raidMap
 public net/minecraft/world/entity/raid/Raid/badOmenLevel
 public net/minecraft/world/entity/raid/Raid/heroesOfTheVillage
@@ -355,6 +361,7 @@ public net/minecraft/world/item/context/ItemActionContext/<init>(Lnet/minecraft/
 public net/minecraft/world/item/crafting/RecipeItemStack$StackProvider/<init>(Lnet/minecraft/world/item/ItemStack;)V
 public net/minecraft/world/item/crafting/RecipeItemStack/<init>(Ljava/util/stream/Stream;)V
 public net/minecraft/world/item/crafting/RecipeItemStack/itemStacks
+public net/minecraft/world/item/crafting/SmithingTrimRecipe/<init>(Lnet/minecraft/world/item/crafting/RecipeItemStack;Lnet/minecraft/world/item/crafting/RecipeItemStack;Lnet/minecraft/world/item/crafting/RecipeItemStack;)V
 public net/minecraft/world/item/trading/MerchantRecipe/demand
 public net/minecraft/world/item/trading/MerchantRecipe/priceMultiplier
 public net/minecraft/world/item/trading/MerchantRecipe/result
@@ -384,6 +391,7 @@ public net/minecraft/world/level/block/Block/popExperience(Lnet/minecraft/server
 public net/minecraft/world/level/block/BlockDispenser/DISPENSER_REGISTRY
 public net/minecraft/world/level/block/BlockFire/igniteOdds
 public net/minecraft/world/level/block/BlockShulkerBox/color
+public net/minecraft/world/level/block/ChiseledBookShelfBlock/getHitSlot(Lnet/minecraft/world/phys/Vec2F;)I
 public net/minecraft/world/level/block/SoundEffectType/breakSound
 public net/minecraft/world/level/block/SoundEffectType/hitSound
 public net/minecraft/world/level/block/entity/BrushableBlockEntity/item
@@ -391,6 +399,7 @@ public net/minecraft/world/level/block/entity/BrushableBlockEntity/lootTable
 public net/minecraft/world/level/block/entity/BrushableBlockEntity/lootTableSeed
 public net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity/lastInteractedSlot
 public net/minecraft/world/level/block/entity/DecoratedPotBlockEntity/decorations
+public net/minecraft/world/level/block/entity/SculkCatalystBlockEntity$CatalystListener/bloom(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/core/BlockPosition;Lnet/minecraft/world/level/block/state/IBlockData;Lnet/minecraft/util/RandomSource;)V
 public net/minecraft/world/level/block/entity/SculkSensorBlockEntity/lastVibrationFrequency
 public net/minecraft/world/level/block/entity/SculkShriekerBlockEntity/warningLevel
 public net/minecraft/world/level/block/entity/TileEntityBanner/baseColor
@@ -432,6 +441,7 @@ public net/minecraft/world/level/block/entity/TileEntityLootable/lootTable
 public net/minecraft/world/level/block/entity/TileEntityLootable/lootTableSeed
 public net/minecraft/world/level/block/entity/TileEntityShulkerBox/openCount
 public net/minecraft/world/level/block/entity/TileEntitySign/playerWhoMayEdit
+public net/minecraft/world/level/block/entity/TileEntitySkull/fillProfileTextures(Lcom/mojang/authlib/GameProfile;)Ljava/util/concurrent/CompletableFuture;
 public net/minecraft/world/level/block/entity/TileEntitySkull/noteBlockSound
 public net/minecraft/world/level/block/entity/TileEntitySkull/owner
 public net/minecraft/world/level/block/entity/TileEntityStructure/author
@@ -465,6 +475,7 @@ public net/minecraft/world/level/dimension/end/EnderDragonBattle/dragonUUID
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/findExitPortal()Lnet/minecraft/world/level/block/state/pattern/ShapeDetector$ShapeDetectorCollection;
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/level
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/portalLocation
+public net/minecraft/world/level/dimension/end/EnderDragonBattle/respawnDragon(Ljava/util/List;)V
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/respawnStage
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/setRespawnStage(Lnet/minecraft/world/level/dimension/end/EnumDragonRespawn;)V
 public net/minecraft/world/level/dimension/end/EnderDragonBattle/spawnExitPortal(Z)V
