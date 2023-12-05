@@ -149,6 +149,7 @@ public net/minecraft/world/entity/Entity/hasVisualFire
 public net/minecraft/world/entity/Entity/onGround
 public net/minecraft/world/entity/Entity/passengers
 public net/minecraft/world/entity/Entity/portalCooldown
+public net/minecraft/world/entity/Entity/random
 public net/minecraft/world/entity/Entity/setSharedFlag(IZ)V
 public net/minecraft/world/entity/Entity/unsetRemoved()V
 public net/minecraft/world/entity/Entity/wasTouchingWater
@@ -164,6 +165,8 @@ public net/minecraft/world/entity/EntityInsentient/armorDropChances
 public net/minecraft/world/entity/EntityInsentient/handDropChances
 public net/minecraft/world/entity/EntityInsentient/lootTable
 public net/minecraft/world/entity/EntityInsentient/lootTableSeed
+public net/minecraft/world/entity/EntityLightning/flashes
+public net/minecraft/world/entity/EntityLightning/life
 public net/minecraft/world/entity/EntityLightning/visualOnly
 public net/minecraft/world/entity/EntityLiving/DATA_ARROW_COUNT_ID
 public net/minecraft/world/entity/EntityLiving/DATA_HEALTH_ID
@@ -187,6 +190,7 @@ public net/minecraft/world/entity/SaddleStorage/boostTime
 public net/minecraft/world/entity/SaddleStorage/boostTimeTotal()I
 public net/minecraft/world/entity/SaddleStorage/boosting
 public net/minecraft/world/entity/ai/attributes/AttributeModifiable/removeModifier(Lnet/minecraft/world/entity/ai/attributes/AttributeModifier;)V
+public net/minecraft/world/entity/ai/attributes/AttributeModifier/name
 public net/minecraft/world/entity/animal/EntityAnimal/inLove
 public net/minecraft/world/entity/animal/EntityAnimal/loveCause
 public net/minecraft/world/entity/animal/EntityBee/hivePos
@@ -296,11 +300,13 @@ public net/minecraft/world/entity/player/PlayerAbilities/walkingSpeed
 public net/minecraft/world/entity/projectile/EntityArrow/inGround
 public net/minecraft/world/entity/projectile/EntityArrow/knockback
 public net/minecraft/world/entity/projectile/EntityArrow/life
+public net/minecraft/world/entity/projectile/EntityArrow/pickupItemStack
 public net/minecraft/world/entity/projectile/EntityEnderSignal/life
 public net/minecraft/world/entity/projectile/EntityEnderSignal/surviveAfterDeath
 public net/minecraft/world/entity/projectile/EntityEnderSignal/tx
 public net/minecraft/world/entity/projectile/EntityEnderSignal/ty
 public net/minecraft/world/entity/projectile/EntityEnderSignal/tz
+public net/minecraft/world/entity/projectile/EntityEvokerFangs/warmupDelayTicks
 public net/minecraft/world/entity/projectile/EntityFireballFireball/getItemRaw()Lnet/minecraft/world/item/ItemStack;
 public net/minecraft/world/entity/projectile/EntityFireworks/DATA_ID_FIREWORKS_ITEM
 public net/minecraft/world/entity/projectile/EntityFireworks/DATA_SHOT_AT_ANGLE
@@ -316,7 +322,6 @@ public net/minecraft/world/entity/projectile/EntityLargeFireball/explosionPower
 public net/minecraft/world/entity/projectile/EntityPotion/isLingering()Z
 public net/minecraft/world/entity/projectile/EntityProjectileThrowable/getItemRaw()Lnet/minecraft/world/item/ItemStack;
 public net/minecraft/world/entity/projectile/EntitySpectralArrow/duration
-public net/minecraft/world/entity/projectile/EntityThrownTrident/tridentItem
 public net/minecraft/world/entity/projectile/EntityTippedArrow/effects
 public net/minecraft/world/entity/projectile/EntityTippedArrow/potion
 public net/minecraft/world/entity/projectile/EntityTippedArrow/setFixedColor(I)V
@@ -361,7 +366,6 @@ public net/minecraft/world/item/context/ItemActionContext/<init>(Lnet/minecraft/
 public net/minecraft/world/item/crafting/RecipeItemStack$StackProvider/<init>(Lnet/minecraft/world/item/ItemStack;)V
 public net/minecraft/world/item/crafting/RecipeItemStack/<init>(Ljava/util/stream/Stream;)V
 public net/minecraft/world/item/crafting/RecipeItemStack/itemStacks
-public net/minecraft/world/item/crafting/SmithingTrimRecipe/<init>(Lnet/minecraft/world/item/crafting/RecipeItemStack;Lnet/minecraft/world/item/crafting/RecipeItemStack;Lnet/minecraft/world/item/crafting/RecipeItemStack;)V
 public net/minecraft/world/item/trading/MerchantRecipe/demand
 public net/minecraft/world/item/trading/MerchantRecipe/priceMultiplier
 public net/minecraft/world/item/trading/MerchantRecipe/result
@@ -398,6 +402,7 @@ public net/minecraft/world/level/block/entity/BrushableBlockEntity/item
 public net/minecraft/world/level/block/entity/BrushableBlockEntity/lootTable
 public net/minecraft/world/level/block/entity/BrushableBlockEntity/lootTableSeed
 public net/minecraft/world/level/block/entity/ChiseledBookShelfBlockEntity/lastInteractedSlot
+public net/minecraft/world/level/block/entity/CrafterBlockEntity/craftingTicksRemaining
 public net/minecraft/world/level/block/entity/DecoratedPotBlockEntity/decorations
 public net/minecraft/world/level/block/entity/SculkCatalystBlockEntity$CatalystListener/bloom(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/core/BlockPosition;Lnet/minecraft/world/level/block/state/IBlockData;Lnet/minecraft/util/RandomSource;)V
 public net/minecraft/world/level/block/entity/SculkSensorBlockEntity/lastVibrationFrequency
@@ -441,7 +446,6 @@ public net/minecraft/world/level/block/entity/TileEntityLootable/lootTable
 public net/minecraft/world/level/block/entity/TileEntityLootable/lootTableSeed
 public net/minecraft/world/level/block/entity/TileEntityShulkerBox/openCount
 public net/minecraft/world/level/block/entity/TileEntitySign/playerWhoMayEdit
-public net/minecraft/world/level/block/entity/TileEntitySkull/fillProfileTextures(Lcom/mojang/authlib/GameProfile;)Ljava/util/concurrent/CompletableFuture;
 public net/minecraft/world/level/block/entity/TileEntitySkull/noteBlockSound
 public net/minecraft/world/level/block/entity/TileEntitySkull/owner
 public net/minecraft/world/level/block/entity/TileEntityStructure/author
