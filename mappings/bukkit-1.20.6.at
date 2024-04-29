@@ -44,6 +44,7 @@ public net/minecraft/network/protocol/game/PacketPlayInFlying/y
 public net/minecraft/network/protocol/game/PacketPlayInFlying/yRot
 public net/minecraft/network/protocol/game/PacketPlayInFlying/z
 public net/minecraft/network/protocol/game/PacketPlayOutBlockChange/blockState
+public net/minecraft/network/protocol/game/PacketPlayOutTileEntityData/<init>(Lnet/minecraft/core/BlockPosition;Lnet/minecraft/world/level/block/entity/TileEntityTypes;Lnet/minecraft/nbt/NBTTagCompound;)V
 public net/minecraft/network/protocol/game/PacketPlayOutPlayerListHeaderFooter/footer
 public net/minecraft/network/protocol/game/PacketPlayOutPlayerListHeaderFooter/header
 public net/minecraft/network/protocol/game/PacketPlayOutSpawnPosition/pos
