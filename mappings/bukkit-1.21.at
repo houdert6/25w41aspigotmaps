@@ -2,6 +2,7 @@
 
 public net/minecraft/server/MinecraftServer$ReloadableResources
 public net/minecraft/server/dedicated/DedicatedServerProperties$WorldDimensionData
+public net/minecraft/server/level/EntityPlayer$RespawnPosAngle
 public net/minecraft/server/level/PlayerChunkMap$EntityTracker
 public net/minecraft/world/entity/Interaction$PlayerAction
 public net/minecraft/world/entity/monster/EntityGuardian$PathfinderGoalGuardianAttack
@@ -24,9 +25,9 @@ public net/minecraft/world/entity/decoration/EntityItemFrame/setDirection(Lnet/m
 public net/minecraft/server/level/WorldServer/getEntities()Lnet/minecraft/world/level/entity/LevelEntityGetter;
 public net/minecraft/world/level/World/getEntities()Lnet/minecraft/world/level/entity/LevelEntityGetter;
 
-public net/minecraft/world/entity/projectile/windcharge/AbstractWindCharge/explode()V
-public net/minecraft/world/entity/projectile/windcharge/BreezeWindCharge/explode()V
-public net/minecraft/world/entity/projectile/windcharge/WindCharge/explode()V
+public net/minecraft/world/entity/projectile/windcharge/AbstractWindCharge/explode(Lnet/minecraft/world/phys/Vec3D;)V
+public net/minecraft/world/entity/projectile/windcharge/BreezeWindCharge/explode(Lnet/minecraft/world/phys/Vec3D;)V
+public net/minecraft/world/entity/projectile/windcharge/WindCharge/explode(Lnet/minecraft/world/phys/Vec3D;)V
 
 public net/minecraft/EnumChatFormat/code
 public net/minecraft/commands/CommandListenerWrapper/source
@@ -69,6 +70,7 @@ public net/minecraft/server/level/ChunkMapDistance/simulationDistance
 public net/minecraft/server/level/ChunkMapDistance/tickets
 public net/minecraft/server/level/ChunkProviderServer/spawnEnemies
 public net/minecraft/server/level/ChunkProviderServer/spawnFriendlies
+public net/minecraft/server/level/EntityPlayer/findRespawnAndUseSpawnBlock(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/core/BlockPosition;FZZ)Ljava/util/Optional;
 public net/minecraft/server/level/EntityPlayer/initMenu(Lnet/minecraft/world/inventory/Container;)V
 public net/minecraft/server/level/EntityPlayer/isChangingDimension
 public net/minecraft/server/level/EntityPlayer/language
@@ -79,9 +81,9 @@ public net/minecraft/server/level/EntityPlayer/triggerDimensionChangeTriggers(Ln
 public net/minecraft/server/level/PlayerChunk/oldTicketLevel
 public net/minecraft/server/level/PlayerChunk/playerProvider
 public net/minecraft/server/level/PlayerChunkMap$EntityTracker/seenBy
+public net/minecraft/server/level/PlayerChunkMap$EntityTracker/serverEntity
 public net/minecraft/server/level/PlayerChunkMap/distanceManager
 public net/minecraft/server/level/PlayerChunkMap/entityMap
-public net/minecraft/server/level/PlayerChunkMap/generator
 public net/minecraft/server/level/PlayerChunkMap/level
 public net/minecraft/server/level/PlayerChunkMap/progressListener
 public net/minecraft/server/level/PlayerChunkMap/save(Lnet/minecraft/world/level/chunk/IChunkAccess;)Z
@@ -199,7 +201,6 @@ public net/minecraft/world/entity/OminousItemSpawner/spawnItemAfterTicks
 public net/minecraft/world/entity/SaddleStorage/boostTime
 public net/minecraft/world/entity/SaddleStorage/boostTimeTotal()I
 public net/minecraft/world/entity/SaddleStorage/boosting
-public net/minecraft/world/entity/ai/attributes/AttributeModifier/name
 public net/minecraft/world/entity/animal/EntityAnimal/inLove
 public net/minecraft/world/entity/animal/EntityAnimal/loveCause
 public net/minecraft/world/entity/animal/EntityBee/hivePos
@@ -246,7 +247,6 @@ public net/minecraft/world/entity/decoration/EntityArmorStand/rightArmPose
 public net/minecraft/world/entity/decoration/EntityArmorStand/rightLegPose
 public net/minecraft/world/entity/decoration/EntityArmorStand/setMarker(Z)V
 public net/minecraft/world/entity/decoration/EntityArmorStand/setSmall(Z)V
-public net/minecraft/world/entity/decoration/EntityHanging/pos
 public net/minecraft/world/entity/decoration/EntityItemFrame/DATA_ITEM
 public net/minecraft/world/entity/decoration/EntityItemFrame/DATA_ROTATION
 public net/minecraft/world/entity/decoration/EntityItemFrame/dropChance
@@ -309,17 +309,18 @@ public net/minecraft/world/entity/player/EntityHuman/setShoulderEntityRight(Lnet
 public net/minecraft/world/entity/player/EntityHuman/sleepCounter
 public net/minecraft/world/entity/player/PlayerAbilities/flyingSpeed
 public net/minecraft/world/entity/player/PlayerAbilities/walkingSpeed
+public net/minecraft/world/entity/projectile/EntityArrow/firedFromWeapon
 public net/minecraft/world/entity/projectile/EntityArrow/inGround
-public net/minecraft/world/entity/projectile/EntityArrow/knockback
 public net/minecraft/world/entity/projectile/EntityArrow/life
 public net/minecraft/world/entity/projectile/EntityArrow/pickupItemStack
+public net/minecraft/world/entity/projectile/EntityArrow/setPierceLevel(B)V
 public net/minecraft/world/entity/projectile/EntityEnderSignal/life
 public net/minecraft/world/entity/projectile/EntityEnderSignal/surviveAfterDeath
 public net/minecraft/world/entity/projectile/EntityEnderSignal/tx
 public net/minecraft/world/entity/projectile/EntityEnderSignal/ty
 public net/minecraft/world/entity/projectile/EntityEnderSignal/tz
 public net/minecraft/world/entity/projectile/EntityEvokerFangs/warmupDelayTicks
-public net/minecraft/world/entity/projectile/EntityFireball/assignPower(DDD)V
+public net/minecraft/world/entity/projectile/EntityFireball/assignDirectionalMovement(Lnet/minecraft/world/phys/Vec3D;D)V
 public net/minecraft/world/entity/projectile/EntityFireworks/DATA_ID_FIREWORKS_ITEM
 public net/minecraft/world/entity/projectile/EntityFireworks/DATA_SHOT_AT_ANGLE
 public net/minecraft/world/entity/projectile/EntityFireworks/attachedToEntity
@@ -374,6 +375,7 @@ public net/minecraft/world/item/ItemCooldown/cooldowns
 public net/minecraft/world/item/ItemCooldown/tickCount
 public net/minecraft/world/item/ItemDebugStick/handleInteraction(Lnet/minecraft/world/entity/player/EntityHuman;Lnet/minecraft/world/level/block/state/IBlockData;Lnet/minecraft/world/level/GeneratorAccess;Lnet/minecraft/core/BlockPosition;ZLnet/minecraft/world/item/ItemStack;)Z
 public net/minecraft/world/item/ItemWorldMap/createNewSavedData(Lnet/minecraft/world/level/World;IIIZZLnet/minecraft/resources/ResourceKey;)Lnet/minecraft/world/level/saveddata/maps/MapId;
+public net/minecraft/world/item/JukeboxSongPlayer/song
 public net/minecraft/world/item/armortrim/ArmorTrim/showInTooltip
 public net/minecraft/world/item/context/ItemActionContext/<init>(Lnet/minecraft/world/level/World;Lnet/minecraft/world/entity/player/EntityHuman;Lnet/minecraft/world/EnumHand;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/phys/MovingObjectPositionBlock;)V
 public net/minecraft/world/item/crafting/RecipeItemStack$StackProvider/<init>(Lnet/minecraft/world/item/ItemStack;)V
@@ -451,9 +453,6 @@ public net/minecraft/world/level/block/entity/TileEntityFurnace/cookingProgress
 public net/minecraft/world/level/block/entity/TileEntityFurnace/cookingTotalTime
 public net/minecraft/world/level/block/entity/TileEntityFurnace/litTime
 public net/minecraft/world/level/block/entity/TileEntityFurnace/recipesUsed
-public net/minecraft/world/level/block/entity/TileEntityJukeBox/isPlaying
-public net/minecraft/world/level/block/entity/TileEntityJukeBox/recordStartedTick
-public net/minecraft/world/level/block/entity/TileEntityJukeBox/tickCount
 public net/minecraft/world/level/block/entity/TileEntityLectern/bookAccess
 public net/minecraft/world/level/block/entity/TileEntityLectern/setPage(I)V
 public net/minecraft/world/level/block/entity/TileEntityLootable/lootTable
@@ -513,7 +512,6 @@ public net/minecraft/world/level/levelgen/structure/placement/StructurePlacement
 public net/minecraft/world/level/levelgen/structure/placement/StructurePlacement/salt
 public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructure/entityInfoList
 public net/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructure/palettes
-public net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager/createAndValidatePathToStructure(Ljava/nio/file/Path;Lnet/minecraft/resources/MinecraftKey;Ljava/lang/String;)Ljava/nio/file/Path;
 public net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager/loadFromGenerated(Lnet/minecraft/resources/MinecraftKey;)Ljava/util/Optional;
 public net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager/loadFromResource(Lnet/minecraft/resources/MinecraftKey;)Ljava/util/Optional;
 public net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager/readStructure(Ljava/io/InputStream;)Lnet/minecraft/world/level/levelgen/structure/templatesystem/DefinedStructure;
@@ -537,6 +535,7 @@ private-final net/minecraft/server/MinecraftServer/connection
 private-final net/minecraft/server/MinecraftServer/levels
 public-final net/minecraft/server/MinecraftServer/storageSource
 protected-final net/minecraft/server/MinecraftServer/worldData
+public-final net/minecraft/server/dedicated/DedicatedServer/serverLinks
 public-final net/minecraft/server/dedicated/DedicatedServer/settings
 public-final net/minecraft/server/level/TicketType/timeout
 public-final net/minecraft/server/players/PlayerList/maxPlayers
