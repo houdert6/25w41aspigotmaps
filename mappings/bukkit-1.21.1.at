@@ -474,6 +474,7 @@ public net/minecraft/world/level/block/entity/TileEntityStructure/showBoundingBo
 public net/minecraft/world/level/block/entity/TileEntityStructure/structurePos
 public net/minecraft/world/level/block/entity/TileEntityStructure/structureSize
 public net/minecraft/world/level/block/entity/TrialSpawnerBlockEntity/trialSpawner
+public net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/isOminous
 public net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/stateAccessor
 public net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerData/currentMobs
 public net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerData/detectedPlayers
@@ -559,6 +560,11 @@ public-final net/minecraft/world/item/trading/MerchantRecipe/rewardExp
 public-final net/minecraft/world/item/trading/MerchantRecipe/xp
 public-final net/minecraft/world/level/WorldSettings/hardcore
 public-final net/minecraft/world/level/WorldSettings/levelName
+private-final net/minecraft/world/level/block/entity/TileEntityBeehive/stored
+public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/normalConfig
+public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/ominousConfig
+public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/requiredPlayerRange
+public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/targetCooldownLength
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/dimension
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/locked
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/scale
