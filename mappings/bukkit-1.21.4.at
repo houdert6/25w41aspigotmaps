@@ -71,7 +71,6 @@ public net/minecraft/server/level/EntityPlayer/isChangingDimension
 public net/minecraft/server/level/EntityPlayer/language
 public net/minecraft/server/level/EntityPlayer/lastSentExp
 public net/minecraft/server/level/EntityPlayer/nextContainerCounter()V
-public net/minecraft/server/level/EntityPlayer/spawnInvulnerableTime
 public net/minecraft/server/level/EntityPlayer/triggerDimensionChangeTriggers(Lnet/minecraft/server/level/WorldServer;)V
 public net/minecraft/server/level/PlayerChunk/oldTicketLevel
 public net/minecraft/server/level/PlayerChunk/playerProvider
@@ -350,6 +349,7 @@ public net/minecraft/world/entity/vehicle/EntityMinecartContainer/lootTableSeed
 public net/minecraft/world/entity/vehicle/EntityMinecartFurnace/fuel
 public net/minecraft/world/entity/vehicle/EntityMinecartTNT/explode(D)V
 public net/minecraft/world/entity/vehicle/EntityMinecartTNT/explosionPowerBase
+public net/minecraft/world/entity/vehicle/EntityMinecartTNT/explosionSpeedFactor
 public net/minecraft/world/entity/vehicle/EntityMinecartTNT/fuse
 public net/minecraft/world/flag/FeatureFlag/mask
 public net/minecraft/world/flag/FeatureFlag/universe
@@ -416,7 +416,6 @@ public net/minecraft/world/level/block/entity/DecoratedPotBlockEntity/decoration
 public net/minecraft/world/level/block/entity/SculkCatalystBlockEntity$CatalystListener/bloom(Lnet/minecraft/server/level/WorldServer;Lnet/minecraft/core/BlockPosition;Lnet/minecraft/world/level/block/state/IBlockData;Lnet/minecraft/util/RandomSource;)V
 public net/minecraft/world/level/block/entity/SculkSensorBlockEntity/lastVibrationFrequency
 public net/minecraft/world/level/block/entity/SculkShriekerBlockEntity/warningLevel
-public net/minecraft/world/level/block/entity/TileEntityBanner/baseColor
 public net/minecraft/world/level/block/entity/TileEntityBarrel/openersCounter
 public net/minecraft/world/level/block/entity/TileEntityBarrel/playSound(Lnet/minecraft/world/level/block/state/IBlockData;Lnet/minecraft/sounds/SoundEffect;)V
 public net/minecraft/world/level/block/entity/TileEntityBarrel/updateBlockState(Lnet/minecraft/world/level/block/state/IBlockData;Z)V
@@ -445,9 +444,9 @@ public net/minecraft/world/level/block/entity/TileEntityEndGateway/age
 public net/minecraft/world/level/block/entity/TileEntityEndGateway/exactTeleport
 public net/minecraft/world/level/block/entity/TileEntityEndGateway/exitPortal
 public net/minecraft/world/level/block/entity/TileEntityEnderChest/openersCounter
-public net/minecraft/world/level/block/entity/TileEntityFurnace/cookingProgress
+public net/minecraft/world/level/block/entity/TileEntityFurnace/cookingTimer
 public net/minecraft/world/level/block/entity/TileEntityFurnace/cookingTotalTime
-public net/minecraft/world/level/block/entity/TileEntityFurnace/litTime
+public net/minecraft/world/level/block/entity/TileEntityFurnace/litTimeRemaining
 public net/minecraft/world/level/block/entity/TileEntityFurnace/recipesUsed
 public net/minecraft/world/level/block/entity/TileEntityLectern/bookAccess
 public net/minecraft/world/level/block/entity/TileEntityLectern/setPage(I)V
@@ -555,6 +554,7 @@ public-final net/minecraft/world/item/trading/MerchantRecipe/rewardExp
 public-final net/minecraft/world/item/trading/MerchantRecipe/xp
 public-final net/minecraft/world/level/WorldSettings/hardcore
 public-final net/minecraft/world/level/WorldSettings/levelName
+public-final net/minecraft/world/level/block/entity/TileEntityBanner/baseColor
 private-final net/minecraft/world/level/block/entity/TileEntityBeehive/stored
 public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/normalConfig
 public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/ominousConfig
