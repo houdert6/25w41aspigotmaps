@@ -70,6 +70,7 @@ public net/minecraft/server/level/EntityPlayer/isChangingDimension
 public net/minecraft/server/level/EntityPlayer/language
 public net/minecraft/server/level/EntityPlayer/lastSentExp
 public net/minecraft/server/level/EntityPlayer/nextContainerCounter()V
+public net/minecraft/server/level/EntityPlayer/server
 public net/minecraft/server/level/EntityPlayer/triggerDimensionChangeTriggers(Lnet/minecraft/server/level/WorldServer;)V
 public net/minecraft/server/level/PlayerChunk/oldTicketLevel
 public net/minecraft/server/level/PlayerChunk/playerProvider
@@ -161,7 +162,7 @@ public net/minecraft/world/entity/EntityAreaEffectCloud/potionContents
 public net/minecraft/world/entity/EntityAreaEffectCloud/radiusOnUse
 public net/minecraft/world/entity/EntityAreaEffectCloud/radiusPerTick
 public net/minecraft/world/entity/EntityAreaEffectCloud/reapplicationDelay
-public net/minecraft/world/entity/EntityAreaEffectCloud/updateColor()V
+public net/minecraft/world/entity/EntityAreaEffectCloud/updateParticle()V
 public net/minecraft/world/entity/EntityAreaEffectCloud/waitTime
 public net/minecraft/world/entity/EntityExperienceOrb/setValue(I)V
 public net/minecraft/world/entity/EntityInsentient/lootTable
@@ -175,6 +176,7 @@ public net/minecraft/world/entity/EntityLiving/LIVING_ENTITY_FLAG_SPIN_ATTACK
 public net/minecraft/world/entity/EntityLiving/activeEffects
 public net/minecraft/world/entity/EntityLiving/detectEquipmentUpdates()V
 public net/minecraft/world/entity/EntityLiving/effectsDirty
+public net/minecraft/world/entity/EntityLiving/equipment
 public net/minecraft/world/entity/EntityLiving/lastHurt
 public net/minecraft/world/entity/EntityLiving/lastHurtByMob
 public net/minecraft/world/entity/EntityLiving/lastHurtByMobTimestamp
@@ -246,13 +248,7 @@ public net/minecraft/world/entity/animal/wolf/EntityWolf/setCollarColor(Lnet/min
 public net/minecraft/world/entity/animal/wolf/EntityWolf/setVariant(Lnet/minecraft/core/Holder;)V
 public net/minecraft/world/entity/boss/enderdragon/EntityEnderDragon/subEntities
 public net/minecraft/world/entity/boss/wither/EntityWither/bossEvent
-public net/minecraft/world/entity/decoration/EntityArmorStand/bodyPose
 public net/minecraft/world/entity/decoration/EntityArmorStand/disabledSlots
-public net/minecraft/world/entity/decoration/EntityArmorStand/headPose
-public net/minecraft/world/entity/decoration/EntityArmorStand/leftArmPose
-public net/minecraft/world/entity/decoration/EntityArmorStand/leftLegPose
-public net/minecraft/world/entity/decoration/EntityArmorStand/rightArmPose
-public net/minecraft/world/entity/decoration/EntityArmorStand/rightLegPose
 public net/minecraft/world/entity/decoration/EntityArmorStand/setMarker(Z)V
 public net/minecraft/world/entity/decoration/EntityArmorStand/setSmall(Z)V
 public net/minecraft/world/entity/decoration/EntityItemFrame/DATA_ITEM
@@ -274,8 +270,6 @@ public net/minecraft/world/entity/monster/EntityCreeper/explodeCreeper()V
 public net/minecraft/world/entity/monster/EntityCreeper/explosionRadius
 public net/minecraft/world/entity/monster/EntityCreeper/maxSwell
 public net/minecraft/world/entity/monster/EntityCreeper/swell
-public net/minecraft/world/entity/monster/EntityDrowned/groundNavigation
-public net/minecraft/world/entity/monster/EntityDrowned/waterNavigation
 public net/minecraft/world/entity/monster/EntityEnderman/teleport()Z
 public net/minecraft/world/entity/monster/EntityEnderman/teleportTowards(Lnet/minecraft/world/entity/Entity;)Z 
 public net/minecraft/world/entity/monster/EntityGuardian$PathfinderGoalGuardianAttack/attackTime
@@ -326,9 +320,7 @@ public net/minecraft/world/entity/projectile/EntityArrow/pickupItemStack
 public net/minecraft/world/entity/projectile/EntityArrow/setPierceLevel(B)V
 public net/minecraft/world/entity/projectile/EntityEnderSignal/life
 public net/minecraft/world/entity/projectile/EntityEnderSignal/surviveAfterDeath
-public net/minecraft/world/entity/projectile/EntityEnderSignal/tx
-public net/minecraft/world/entity/projectile/EntityEnderSignal/ty
-public net/minecraft/world/entity/projectile/EntityEnderSignal/tz
+public net/minecraft/world/entity/projectile/EntityEnderSignal/target
 public net/minecraft/world/entity/projectile/EntityEvokerFangs/warmupDelayTicks
 public net/minecraft/world/entity/projectile/EntityFireball/assignDirectionalMovement(Lnet/minecraft/world/phys/Vec3D;D)V
 public net/minecraft/world/entity/projectile/EntityFireworks/DATA_ID_FIREWORKS_ITEM
@@ -447,7 +439,6 @@ public net/minecraft/world/level/block/entity/TileEntityCampfire/cookingTime
 public net/minecraft/world/level/block/entity/TileEntityChest/openersCounter
 public net/minecraft/world/level/block/entity/TileEntityChest/playSound(Lnet/minecraft/world/level/World;Lnet/minecraft/core/BlockPosition;Lnet/minecraft/world/level/block/state/IBlockData;Lnet/minecraft/sounds/SoundEffect;)V
 public net/minecraft/world/level/block/entity/TileEntityConduit/destroyTarget
-public net/minecraft/world/level/block/entity/TileEntityConduit/destroyTargetUUID
 public net/minecraft/world/level/block/entity/TileEntityConduit/effectBlocks
 public net/minecraft/world/level/block/entity/TileEntityConduit/getDestroyRangeAABB(Lnet/minecraft/core/BlockPosition;)Lnet/minecraft/world/phys/AxisAlignedBB;
 public net/minecraft/world/level/block/entity/TileEntityContainer/lockKey
@@ -481,6 +472,7 @@ public net/minecraft/world/level/block/entity/TileEntityStructure/showBoundingBo
 public net/minecraft/world/level/block/entity/TileEntityStructure/structurePos
 public net/minecraft/world/level/block/entity/TileEntityStructure/structureSize
 public net/minecraft/world/level/block/entity/TrialSpawnerBlockEntity/trialSpawner
+public net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/config
 public net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/isOminous
 public net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/stateAccessor
 public net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerData/currentMobs
@@ -533,6 +525,7 @@ public net/minecraft/world/level/saveddata/maps/WorldMap/setColorsDirty(II)V
 public net/minecraft/world/level/saveddata/maps/WorldMap/setDecorationsDirty()V
 public net/minecraft/world/level/storage/Convertable$ConversionSession/levelDirectory
 public net/minecraft/world/level/storage/Convertable/baseDir
+public net/minecraft/world/level/storage/TagValueInput/input
 public net/minecraft/world/level/storage/WorldDataServer/settings
 public net/minecraft/world/level/storage/WorldPersistentData/cache
 public net/minecraft/world/scores/ScoreboardObjective/displayName
@@ -568,10 +561,6 @@ public-final net/minecraft/world/level/WorldSettings/hardcore
 public-final net/minecraft/world/level/WorldSettings/levelName
 public-final net/minecraft/world/level/block/entity/TileEntityBanner/baseColor
 private-final net/minecraft/world/level/block/entity/TileEntityBeehive/stored
-public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/normalConfig
-public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/ominousConfig
-public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/requiredPlayerRange
-public-final net/minecraft/world/level/block/entity/trialspawner/TrialSpawner/targetCooldownLength
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/dimension
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/locked
 public-final net/minecraft/world/level/saveddata/maps/WorldMap/scale
